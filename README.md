@@ -54,19 +54,20 @@ Git stuff
 .gitattributes forces LF line endings so Windows and Mac don't fight over every file, leave it.
 
 How we work
-Don't push to main, it's protected anyway.
-Pick a task on the Projects board, assign yourself, move it to Doing.
-git checkout main, git pull, then make a branch like feature/whatever or fix/whatever or art/whatever.
-Commit small. Before you push do git pull origin main so you're up to date.
-Run the game, make sure nothing broke, push, open a PR, move the card to Review and ping me.
-I review it, I'm just checking it runs and didn't break stuff, not judging your code lol.
+We all push straight to main, we're each working on separate stuff so it should be fine.
+Tasks are on Trello. Pick one, put your name on it, move it to Doing.
+Always git pull before you start working and again before you push.
+Use git pull --rebase so we don't get "merge branch main" commits everywhere.
+Commit small and push often, not a whole day of work at once.
+Run the game before every push, if main is broken it's broken for everyone.
+If git pull gives you a conflict and you're not sure what to do, stop and ping me, don't just pick a side.
 
 Few rules that'll save us
 - Say in Discord which scene you're editing, 2 people on the same scene = merge hell
 - Don't touch Project Settings (input map, layers, autoloads etc.), tell me and I'll do it. project.godot conflicts the most
 - Move/rename files inside Godot, not Finder/Explorer, or references break
 - Commit the .uid and .import files, they look useless but they're not
-- Never git push --force
+- Never git push --force, it can wipe other people's work
 - No AI generated anything, art, music, code, dialogue. Jam rules, we get DQ'd
 - Any asset you download goes in CREDITS.md with the link and license when you add it, not on the last day
 
