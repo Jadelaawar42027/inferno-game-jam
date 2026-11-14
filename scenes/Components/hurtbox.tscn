@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bvschcfxqd4kd"]
+
+[ext_resource type="Script" uid="uid://cxhylc5150e6" path="res://scripts/Components/hurtbox.gd" id="1_3tuf5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80f48"]
+resource_local_to_scene = true
+
+[node name="Hurtbox" type="Area2D" unique_id=887145532]
+monitoring = false
+script = ExtResource("1_3tuf5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1868882131]
+shape = SubResource("RectangleShape2D_80f48")

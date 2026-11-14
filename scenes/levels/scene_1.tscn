@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://deejvq1mv7666" path="res://scenes/player/player.tscn" id="1_e77pf"]
 [ext_resource type="PackedScene" uid="uid://cmxd0mu2gy1gr" path="res://scenes/player/platform.tscn" id="2_ake7g"]
+[ext_resource type="PackedScene" uid="uid://cuc72ti0bomoo" path="res://scenes/Components/test_dummy.tscn" id="3_ectdm"]
 
 [node name="TestArea" type="Node2D" unique_id=1130552543]
 
@@ -12,7 +13,10 @@ position = Vector2(0, -3)
 position = Vector2(-1, 14)
 
 [node name="Platform2" parent="." unique_id=1256549350 instance=ExtResource("2_ake7g")]
-position = Vector2(93, 14)
+position = Vector2(63, 14)
+
+[node name="Platform6" parent="." unique_id=1541722420 instance=ExtResource("2_ake7g")]
+position = Vector2(122, 14)
 
 [node name="Platform3" parent="." unique_id=1678934641 instance=ExtResource("2_ake7g")]
 position = Vector2(195, -27)
@@ -22,3 +26,9 @@ position = Vector2(307, -76)
 
 [node name="Platform5" parent="." unique_id=1585276328 instance=ExtResource("2_ake7g")]
 position = Vector2(440, 21)
+
+[node name="TestDummy" parent="." unique_id=1285509833 instance=ExtResource("3_ectdm")]
+position = Vector2(92, 2)
+
+[node name="TestDummy2" parent="." unique_id=751473398 instance=ExtResource("3_ectdm")]
+position = Vector2(190, -40)

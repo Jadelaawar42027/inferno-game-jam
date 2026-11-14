@@ -1,13 +1,35 @@
 [gd_scene format=3 uid="uid://deejvq1mv7666"]
 
 [ext_resource type="Script" uid="uid://bbnn5ew4afvmn" path="res://scripts/player/player.gd" id="1_8afob"]
+[ext_resource type="PackedScene" uid="uid://bc8hi61nfjm5p" path="res://scenes/Components/health_component.tscn" id="2_lvxji"]
+[ext_resource type="PackedScene" uid="uid://bvschcfxqd4kd" path="res://scenes/Components/hurtbox.tscn" id="3_p47bc"]
+[ext_resource type="PackedScene" uid="uid://bsxufnevdum76" path="res://scenes/Components/hitbox.tscn" id="4_75vfm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_docu8"]
 size = Vector2(12, 22)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lvxji"]
+resource_local_to_scene = true
+size = Vector2(10, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p47bc"]
+resource_local_to_scene = true
+size = Vector2(26, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75vfm"]
+resource_local_to_scene = true
+size = Vector2(20, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0owmy"]
+resource_local_to_scene = true
+size = Vector2(20, 22)
+
 [node name="Player" type="CharacterBody2D" unique_id=1407468611]
 collision_layer = 2
 script = ExtResource("1_8afob")
+
+[node name="health_component" parent="." unique_id=555885103 instance=ExtResource("2_lvxji")]
+max_health = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1261211899]
 position = Vector2(0, -11)
@@ -32,3 +54,44 @@ color = Color(0, 0, 0, 1)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=623591930]
 position_smoothing_enabled = true
 position_smoothing_speed = 9.0
+
+[node name="Hurtbox" parent="." unique_id=887145532 node_paths=PackedStringArray("health") instance=ExtResource("3_p47bc")]
+collision_layer = 64
+collision_mask = 0
+health = NodePath("../health_component")
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=1868882131]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_lvxji")
+
+[node name="Attacks" type="Node2D" parent="." unique_id=804652063]
+
+[node name="SideSlash" parent="Attacks" unique_id=1898026828 instance=ExtResource("4_75vfm")]
+position = Vector2(19, -11)
+collision_layer = 8
+collision_mask = 384
+
+[node name="CollisionShape2D" parent="Attacks/SideSlash" index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_p47bc")
+
+[node name="UpSlash" parent="Attacks" unique_id=2052691650 instance=ExtResource("4_75vfm")]
+position = Vector2(0, -34)
+collision_layer = 8
+collision_mask = 384
+
+[node name="CollisionShape2D" parent="Attacks/UpSlash" index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_75vfm")
+
+[node name="DownSlash" parent="Attacks" unique_id=614013444 instance=ExtResource("4_75vfm")]
+position = Vector2(0, 11)
+collision_layer = 8
+collision_mask = 384
+pogo_allowed = true
+
+[node name="CollisionShape2D" parent="Attacks/DownSlash" index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_0owmy")
+
+[editable path="Hurtbox"]
+[editable path="Attacks/SideSlash"]
+[editable path="Attacks/UpSlash"]
+[editable path="Attacks/DownSlash"]
