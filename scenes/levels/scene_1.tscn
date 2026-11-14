@@ -1,3 +1,24 @@
 [gd_scene format=3 uid="uid://degaw268gnce8"]
 
-[node name="Scene1" type="Node2D" unique_id=1130552543]
+[ext_resource type="PackedScene" uid="uid://deejvq1mv7666" path="res://scenes/player/player.tscn" id="1_e77pf"]
+[ext_resource type="PackedScene" uid="uid://cmxd0mu2gy1gr" path="res://scenes/player/platform.tscn" id="2_ake7g"]
+
+[node name="TestArea" type="Node2D" unique_id=1130552543]
+
+[node name="Player" parent="." unique_id=1407468611 instance=ExtResource("1_e77pf")]
+position = Vector2(0, -3)
+
+[node name="Platform" parent="." unique_id=512230578 instance=ExtResource("2_ake7g")]
+position = Vector2(-1, 14)
+
+[node name="Platform2" parent="." unique_id=1256549350 instance=ExtResource("2_ake7g")]
+position = Vector2(93, 14)
+
+[node name="Platform3" parent="." unique_id=1678934641 instance=ExtResource("2_ake7g")]
+position = Vector2(195, -27)
+
+[node name="Platform4" parent="." unique_id=866854054 instance=ExtResource("2_ake7g")]
+position = Vector2(307, -76)
+
+[node name="Platform5" parent="." unique_id=1585276328 instance=ExtResource("2_ake7g")]
+position = Vector2(440, 21)
