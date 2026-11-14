@@ -4,7 +4,7 @@ class_name Enemy
 #Signals
 signal HEALTH_DEPLETED
 
-#EXPORT var for other enemy classes to use
+#EXPORT var 
 @export var MAX_HEALTH: int = 10
 @export var MEDIUM_ATTACK: int = 1
 @export var MOVEMENT: float = 10.0
@@ -14,9 +14,6 @@ signal HEALTH_DEPLETED
 
 #EXPORT variables to possibly be removed later
 @export var PLAYER_DAMAGE: int = 1
-
-
-
 
 var HEALTH: int
 var DEAD: bool = false
@@ -60,5 +57,9 @@ func take_damage(amount):
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body is Player:
 		take_damage(PLAYER_DAMAGE)
-		
-		
+				
+#Gravity func taken from https://www.youtube.com/watch?v=kHki30-DxRQ&t=16s
+func _physics_process(delta: float) -> void:
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+	move_and_slide()

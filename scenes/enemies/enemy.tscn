@@ -18,6 +18,7 @@ shader_parameter/flash_amount = 0.0
 shader_parameter/additive_mix = 0.0
 
 [node name="Enemy" type="CharacterBody2D" unique_id=319771871]
+visible = false
 collision_layer = 4
 script = ExtResource("1_6xk8f")
 
