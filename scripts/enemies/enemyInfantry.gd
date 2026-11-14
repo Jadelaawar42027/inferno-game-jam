@@ -7,7 +7,7 @@ enum STATES{PATROL, CHASE, LUNGE}
 var CURRENTSTATE = STATES.PATROL
 
 #Walk vars
-var SPEED_WALK = 20
+@export var SPEED_WALK = 20
 var PATROL_RANGE = 10 
 var DIRECTION = 1
 

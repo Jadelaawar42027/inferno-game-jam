@@ -3,7 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://deejvq1mv7666" path="res://scenes/player/player.tscn" id="1_e77pf"]
 [ext_resource type="PackedScene" uid="uid://cmxd0mu2gy1gr" path="res://scenes/player/platform.tscn" id="2_ake7g"]
 [ext_resource type="PackedScene" uid="uid://s0mlbmx6yihv" path="res://scenes/enemies/enemy.tscn" id="3_ectdm"]
-[ext_resource type="PackedScene" uid="uid://cnv77abw2gf6x" path="res://scenes/enemies/enemyInfantry.tscn" id="4_drx3o"]
+[ext_resource type="PackedScene" uid="uid://cqafy7ipeychu" path="res://scenes/enemies/enemyInfantry.tscn" id="4_drx3o"]
+[ext_resource type="PackedScene" uid="uid://wll4q5h4hwvl" path="res://scenes/enemies/enemyHeavy.tscn" id="5_mok1g"]
 
 [node name="TestArea" type="Node2D" unique_id=1130552543]
 
@@ -29,9 +30,14 @@ position = Vector2(440, 21)
 position = Vector2(95, -7)
 
 [node name="Enemy2" parent="." unique_id=1367007200 instance=ExtResource("4_drx3o")]
-visible = true
 position = Vector2(189, -47)
+SPEED_WALK = 20
 
 [node name="Enemy3" parent="." unique_id=1746525357 instance=ExtResource("4_drx3o")]
-visible = true
 position = Vector2(305, -95)
+SPEED_WALK = 20
+
+[node name="Enemy4" parent="." unique_id=1355936591 instance=ExtResource("5_mok1g")]
+position = Vector2(74, -10)
+SPEED_WALK = 10
+MAX_HEALTH = 15

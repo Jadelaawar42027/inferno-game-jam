@@ -7,7 +7,7 @@ signal HEALTH_DEPLETED
 #EXPORT var 
 @export var MAX_HEALTH: int = 10
 @export var MEDIUM_ATTACK: int = 1
-@export var MOVEMENT: float = 10.0
+var MOVEMENT: float = 10.0
 @export var TURN_SPEED: float = 10.0
 @export var FLASH_HIT: float = 0.2
 
