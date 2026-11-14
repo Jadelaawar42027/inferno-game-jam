@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bwufakh3eeoq0" path="res://assets/art/temp_enemy_infantry.svg" id="3_08pws"]
 [ext_resource type="PackedScene" uid="uid://bsxufnevdum76" path="res://scenes/Components/hitbox.tscn" id="5_vyw6b"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_w6bsu"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vyw6b"]
 resource_local_to_scene = true
 shader = ExtResource("2_08pws")
 shader_parameter/flash_color = Color(1, 1, 1, 1)
@@ -16,19 +16,19 @@ shader_parameter/additive_mix = 0.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_3mldf"]
 radius = 25.019993
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w6bsu"]
+resource_local_to_scene = true
+size = Vector2(12, 22)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xb5ci"]
 resource_local_to_scene = true
 size = Vector2(12, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qv27v"]
 resource_local_to_scene = true
-size = Vector2(12, 22)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uqbr0"]
-resource_local_to_scene = true
 size = Vector2(16, 16)
 
-[node name="Enemy" unique_id=319771871 instance=ExtResource("1_7q55p")]
+[node name="Infantry" unique_id=319771871 instance=ExtResource("1_7q55p")]
 script = ExtResource("2_6xbgx")
 chase_speed = 50.0
 lunge_range = 20.0
@@ -38,7 +38,7 @@ lunge_time = 0.3
 cooldown = 5.0
 
 [node name="Sprite2D" parent="." index="1" unique_id=1340461075]
-material = SubResource("ShaderMaterial_w6bsu")
+material = SubResource("ShaderMaterial_vyw6b")
 texture = ExtResource("3_08pws")
 
 [node name="Check_Platform" type="RayCast2D" parent="." index="3" unique_id=703057103]
@@ -54,10 +54,10 @@ shape = SubResource("CircleShape2D_3mldf")
 debug_color = Color(0.69198674, 0.48641932, 0.2929939, 0.41960785)
 
 [node name="CollisionShape2D" parent="Hurtbox" parent_id_path=PackedInt32Array(887145532) index="0" unique_id=1868882131]
-shape = SubResource("RectangleShape2D_xb5ci")
+shape = SubResource("RectangleShape2D_w6bsu")
 
 [node name="CollisionShape2D" parent="ContactHitbox" parent_id_path=PackedInt32Array(1898026828) index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_qv27v")
+shape = SubResource("RectangleShape2D_xb5ci")
 
 [node name="LungeHitbox" parent="." index="7" unique_id=1898026828 instance=ExtResource("5_vyw6b")]
 position = Vector2(10, 0)
@@ -66,7 +66,7 @@ collision_mask = 64
 damage = 1
 
 [node name="CollisionShape2D" parent="LungeHitbox" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_uqbr0")
+shape = SubResource("RectangleShape2D_qv27v")
 
 [connection signal="body_entered" from="DetectionRadius" to="." method="_on_detection_radius_body_entered"]
 [connection signal="body_exited" from="DetectionRadius" to="." method="_on_detection_radius_body_exited"]

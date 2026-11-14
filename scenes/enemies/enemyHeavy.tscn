@@ -23,7 +23,7 @@ size = Vector2(12, 22)
 resource_local_to_scene = true
 size = Vector2(12, 22)
 
-[node name="Enemy" unique_id=319771871 instance=ExtResource("1_waqqm")]
+[node name="Heavy" unique_id=319771871 instance=ExtResource("1_waqqm")]
 script = ExtResource("2_waqqm")
 walk_speed = 10.0
 
