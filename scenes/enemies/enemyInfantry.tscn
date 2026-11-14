@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cnv77abw2gf6x"]
+
+[ext_resource type="PackedScene" uid="uid://s0mlbmx6yihv" path="res://scenes/enemies/enemy.tscn" id="1_7q55p"]
+[ext_resource type="Shader" uid="uid://bcycvorrmew66" path="res://scenes/enemies/hitflash.gdshader" id="2_08pws"]
+[ext_resource type="Texture2D" uid="uid://bwufakh3eeoq0" path="res://assets/art/temp_enemy_infantry.svg" id="3_08pws"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6xbgx"]
+resource_local_to_scene = true
+shader = ExtResource("2_08pws")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_amount = 0.0
+shader_parameter/additive_mix = 0.0
+
+[node name="Enemy" unique_id=319771871 instance=ExtResource("1_7q55p")]
+
+[node name="Sprite2D" parent="." index="2" unique_id=1340461075]
+material = SubResource("ShaderMaterial_6xbgx")
+texture = ExtResource("3_08pws")
