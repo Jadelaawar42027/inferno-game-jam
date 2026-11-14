@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://cuc72ti0bomoo"]
+
+[ext_resource type="Script" uid="uid://d0slenu1c70qr" path="res://test_dummy.gd" id="1_jdgpn"]
+[ext_resource type="PackedScene" uid="uid://bvschcfxqd4kd" path="res://scenes/Components/hurtbox.tscn" id="2_q5m7h"]
+[ext_resource type="PackedScene" uid="uid://bsxufnevdum76" path="res://scenes/Components/hitbox.tscn" id="3_4k2qb"]
+[ext_resource type="PackedScene" uid="uid://bc8hi61nfjm5p" path="res://scenes/Components/health_component.tscn" id="4_arn6h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80f48"]
+size = Vector2(16, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ge1kg"]
+resource_local_to_scene = true
+size = Vector2(16, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wrbtg"]
+resource_local_to_scene = true
+size = Vector2(14, 22)
+
+[node name="TestDummy" type="StaticBody2D" unique_id=1285509833]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_jdgpn")
+
+[node name="Body" type="ColorRect" parent="." unique_id=39970801]
+offset_left = -8.0
+offset_top = -24.0
+offset_right = 8.0
+mouse_filter = 2
+color = Color(0.9509724, 0.2197201, 1.92523e-07, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=117248926]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_80f48")
+
+[node name="Hurtbox" parent="." unique_id=887145532 node_paths=PackedStringArray("health") instance=ExtResource("2_q5m7h")]
+collision_layer = 128
+collision_mask = 0
+health = NodePath("../health_component")
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=1868882131]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_ge1kg")
+
+[node name="ContactHitbox" parent="." unique_id=1898026828 instance=ExtResource("3_4k2qb")]
+visible = false
+collision_layer = 16
+collision_mask = 64
+damage = 1
+knowckback_force = 150.0
+pogo_allowed = false
+persistent = true
+
+[node name="CollisionShape2D" parent="ContactHitbox" index="0" unique_id=612733107]
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_wrbtg")
+
+[node name="health_component" parent="." unique_id=555885103 instance=ExtResource("4_arn6h")]
+max_health = 5
+
+[editable path="Hurtbox"]
+[editable path="ContactHitbox"]
