@@ -12,14 +12,35 @@ shader_parameter/flash_color = Color(1, 1, 1, 1)
 shader_parameter/flash_amount = 0.0
 shader_parameter/additive_mix = 0.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_3mldf"]
+radius = 25.019993
+
 [node name="Enemy" unique_id=319771871 instance=ExtResource("1_7q55p")]
 visible = true
 script = ExtResource("2_6xbgx")
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=220595465]
+visible = false
+
+[node name="Hitbox" parent="." index="1" unique_id=1854460611]
+visible = false
 
 [node name="Sprite2D" parent="." index="2" unique_id=1340461075]
 material = SubResource("ShaderMaterial_6xbgx")
 texture = ExtResource("3_08pws")
 
 [node name="Check_Platform" type="RayCast2D" parent="." index="3" unique_id=703057103]
+visible = false
 position = Vector2(7, 0)
 target_position = Vector2(0, 16)
+
+[node name="DetectionRadius" type="Area2D" parent="." index="4" unique_id=622217433]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionRadius" index="0" unique_id=1093336923]
+shape = SubResource("CircleShape2D_3mldf")
+debug_color = Color(0.69198674, 0.48641932, 0.2929939, 0.41960785)
+
+[connection signal="body_entered" from="DetectionRadius" to="." method="_on_detection_radius_body_entered"]
+[connection signal="body_exited" from="DetectionRadius" to="." method="_on_detection_radius_body_exited"]
