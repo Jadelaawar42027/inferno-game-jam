@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dsdemrjm0ref5"]
+
+[ext_resource type="PackedScene" uid="uid://s0mlbmx6yihv" path="res://scenes/enemies/enemy.tscn" id="1_rdia2"]
+[ext_resource type="Shader" uid="uid://bcycvorrmew66" path="res://scenes/enemies/hitflash.gdshader" id="2_buxl7"]
+[ext_resource type="Script" uid="uid://t60ar30ej75i" path="res://scripts/bosses/boss.gd" id="2_tsxae"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tsxae"]
+resource_local_to_scene = true
+shader = ExtResource("2_buxl7")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_amount = 0.0
+shader_parameter/additive_mix = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jvuli"]
+resource_local_to_scene = true
+size = Vector2(12, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kygh1"]
+resource_local_to_scene = true
+size = Vector2(12, 22)
+
+[node name="Boss" unique_id=319771871 instance=ExtResource("1_rdia2")]
+script = ExtResource("2_tsxae")
+boss_name = "Boss"
+phase_thresholds = Array[float]([0.5])
+recover_time = 0.8
+auto_start = false
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=962650832]
+material = SubResource("ShaderMaterial_tsxae")
+
+[node name="HealthComponent" parent="." index="2" unique_id=555885103]
+max_health = 100
+
+[node name="CollisionShape2D" parent="Hurtbox" parent_id_path=PackedInt32Array(887145532) index="0" unique_id=1868882131]
+shape = SubResource("RectangleShape2D_jvuli")
+
+[node name="CollisionShape2D" parent="ContactHitbox" parent_id_path=PackedInt32Array(1898026828) index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_kygh1")
+
+[editable path="Hurtbox"]
+[editable path="ContactHitbox"]
