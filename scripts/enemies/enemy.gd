@@ -9,11 +9,11 @@ signal HEALTH_DEPLETED
 @export var MEDIUM_ATTACK: int = 1
 @export var MOVEMENT: float = 10.0
 @export var TURN_SPEED: float = 10.0
-@export var FLASH_HIT: float = 0.05
+@export var FLASH_HIT: float = 0.2
 
 
 #EXPORT variables to possibly be removed later
-@export var PLAYER_DAMAGE: int = 10
+@export var PLAYER_DAMAGE: int = 1
 
 
 
@@ -58,7 +58,7 @@ func take_damage(amount):
 
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
-	if body.has_method("take_damage"):
-		body.take_damage(PLAYER_DAMAGE)
+	if body is Player:
+		take_damage(PLAYER_DAMAGE)
 		
 		
