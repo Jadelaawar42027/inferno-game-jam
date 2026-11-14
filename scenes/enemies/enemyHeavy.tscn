@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://s0mlbmx6yihv" path="res://scenes/enemies/enemy.tscn" id="1_waqqm"]
 [ext_resource type="Script" uid="uid://b2r6hr0bmc132" path="res://scripts/enemies/enemyHeavy.gd" id="2_waqqm"]
 [ext_resource type="Shader" uid="uid://bcycvorrmew66" path="res://scenes/enemies/hitflash.gdshader" id="3_c6sqk"]
-[ext_resource type="Texture2D" uid="uid://b7fhhu4w3f7st" path="res://assets/art/temp_enemy_heavy.svg" id="4_waqqm"]
+[ext_resource type="PackedScene" uid="uid://bsxufnevdum76" path="res://scenes/Components/hitbox.tscn" id="4_waqqm"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_waqqm"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n1unk"]
 resource_local_to_scene = true
 shader = ExtResource("3_c6sqk")
 shader_parameter/flash_color = Color(1, 1, 1, 1)
@@ -13,7 +13,11 @@ shader_parameter/flash_amount = 0.0
 shader_parameter/additive_mix = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3mldf"]
-radius = 25.019993
+radius = 90.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_waqqm"]
+resource_local_to_scene = true
+size = Vector2(12, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fhf6d"]
 resource_local_to_scene = true
@@ -21,15 +25,26 @@ size = Vector2(12, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6sqk"]
 resource_local_to_scene = true
-size = Vector2(12, 22)
+size = Vector2(14, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bvpw7"]
+resource_local_to_scene = true
+size = Vector2(36, 12)
 
 [node name="Heavy" unique_id=319771871 instance=ExtResource("1_waqqm")]
 script = ExtResource("2_waqqm")
+charge_speed = 120.0
+charge_windup_time = 0.6
+charge_time = 0.8
+slam_range = 28.0
+slam_windup_time = 0.7
+slam_active_time = 0.15
+recover_time = 1.0
+cooldown = 2.0
 walk_speed = 10.0
 
-[node name="Sprite2D" parent="." index="1" unique_id=1340461075]
-material = SubResource("ShaderMaterial_waqqm")
-texture = ExtResource("4_waqqm")
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=962650832]
+material = SubResource("ShaderMaterial_n1unk")
 
 [node name="HealthComponent" parent="." index="2" unique_id=555885103]
 max_health = 15
@@ -47,13 +62,37 @@ shape = SubResource("CircleShape2D_3mldf")
 debug_color = Color(0.69198674, 0.48641932, 0.2929939, 0.41960785)
 
 [node name="CollisionShape2D" parent="Hurtbox" parent_id_path=PackedInt32Array(887145532) index="0" unique_id=1868882131]
+shape = SubResource("RectangleShape2D_waqqm")
+
+[node name="ContactHitbox" parent="." index="6" unique_id=1898026828]
+knowckback_force = 150.0
+pogo_allowed = false
+
+[node name="CollisionShape2D" parent="ContactHitbox" index="0" unique_id=612733107]
 shape = SubResource("RectangleShape2D_fhf6d")
 
-[node name="CollisionShape2D" parent="ContactHitbox" parent_id_path=PackedInt32Array(1898026828) index="0" unique_id=612733107]
+[node name="ChargeHitbox" parent="." index="7" unique_id=1396349982 instance=ExtResource("4_waqqm")]
+position = Vector2(10, 0)
+collision_layer = 16
+collision_mask = 64
+damage = 2
+
+[node name="CollisionShape2D" parent="ChargeHitbox" index="0" unique_id=612733107]
 shape = SubResource("RectangleShape2D_c6sqk")
+
+[node name="SlamHitbox" parent="." index="8" unique_id=2139374393 instance=ExtResource("4_waqqm")]
+position = Vector2(18, 6)
+collision_layer = 16
+collision_mask = 64
+damage = 3
+
+[node name="CollisionShape2D" parent="SlamHitbox" index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_bvpw7")
 
 [connection signal="body_entered" from="DetectionRadius" to="." method="_on_detection_radius_body_entered"]
 [connection signal="body_exited" from="DetectionRadius" to="." method="_on_detection_radius_body_exited"]
 
 [editable path="Hurtbox"]
 [editable path="ContactHitbox"]
+[editable path="ChargeHitbox"]
+[editable path="SlamHitbox"]

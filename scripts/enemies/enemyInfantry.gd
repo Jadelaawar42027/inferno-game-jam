@@ -32,6 +32,8 @@ func _physics_process(delta: float) -> void:
 		State.PATROL: patrol()
 		State.CHASE: chase()
 		State.LUNGE: lunge(delta)
+	
+	update_animation()
 	move_and_slide()
 
 func set_facing(dir: float)-> void:
@@ -68,3 +70,9 @@ func end_lunge()->void:
 	lunge_hitbox.deactivate()
 	cooldown_timer = cooldown
 	state = State.CHASE
+
+func update_animation()-> void:
+	match state:
+		State.PATROL: play_anim("walk")
+		State.CHASE: play_anim("run")
+		State.LUNGE: play_anim("windup" if windup_timer > 0 else "lunge")

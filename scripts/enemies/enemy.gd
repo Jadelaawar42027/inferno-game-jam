@@ -11,7 +11,7 @@ var _tween: Tween
 
 @onready var health: HealthComponent = $HealthComponent
 @onready var hurtbox: Hurtbox = $Hurtbox
-@onready var sprite: Sprite2D = $Sprite2D
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var direction := 1.0
 var is_dead := false
@@ -70,3 +70,8 @@ func _on_detection_radius_body_exited(body: Node2D) -> void:
 	if body == player_target:
 		player_in_range = false
 		player_target = null
+
+func play_anim(anim_name: String)->void:
+	if sprite.sprite_frames == null: return
+	if not sprite.sprite_frames.has_animation(anim_name): return
+	if sprite.animation != anim_name: sprite.play(anim_name)

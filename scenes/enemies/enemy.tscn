@@ -17,11 +17,22 @@ shader_parameter/flash_color = Color(1, 1, 1, 1)
 shader_parameter/flash_amount = 0.0
 shader_parameter/additive_mix = 0.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qch6t"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_jt03m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8e3ao")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lu5c6"]
 resource_local_to_scene = true
 size = Vector2(12, 22)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y5th1"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nb6gf"]
 resource_local_to_scene = true
 size = Vector2(12, 22)
 
@@ -32,9 +43,12 @@ script = ExtResource("1_6xk8f")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=220595465]
 shape = SubResource("RectangleShape2D_3mldf")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1340461075]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=962650832]
 material = SubResource("ShaderMaterial_ectdm")
-texture = ExtResource("2_8e3ao")
+sprite_frames = SubResource("SpriteFrames_jt03m")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.64986116
 
 [node name="HealthComponent" parent="." unique_id=555885103 instance=ExtResource("4_nb6gf")]
 max_health = 10
@@ -45,7 +59,7 @@ collision_mask = 0
 health = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=1868882131]
-shape = SubResource("RectangleShape2D_qch6t")
+shape = SubResource("RectangleShape2D_lu5c6")
 
 [node name="ContactHitbox" parent="." unique_id=1898026828 instance=ExtResource("6_n7575")]
 collision_layer = 16
@@ -54,7 +68,7 @@ damage = 1
 persistent = true
 
 [node name="CollisionShape2D" parent="ContactHitbox" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_y5th1")
+shape = SubResource("RectangleShape2D_nb6gf")
 
 [editable path="Hurtbox"]
 [editable path="ContactHitbox"]

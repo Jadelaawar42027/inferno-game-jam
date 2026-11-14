@@ -34,5 +34,5 @@ func reset()->void:
 	health_changed.emit(current_health, max_health)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
