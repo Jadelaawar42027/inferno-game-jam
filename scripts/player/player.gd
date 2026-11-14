@@ -48,6 +48,7 @@ var hurt_lock_timer := 0.0
 var invincibility_timer := 0.0
 var active_hitbox: Hitbox = null
 var shake_strength := 0.0
+var last_dir := 0.0
 
 var action_lock := false
 var was_on_floor := true
@@ -57,7 +58,10 @@ var fall_speed_peak := 0.0
 var slash_combo := 0
 var is_dead = false
 
-func start_attack() -> void:
+func start_attack(dir: float) -> void:
+	if dir != 0:
+		facing = int(dir)
+		visual.scale.x = facing
 	if Input.is_action_pressed("move_up"): 
 		active_hitbox = up_slash
 		play_action("slash_up")
@@ -101,7 +105,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y += fall_gravity * delta
 		velocity.y = minf(velocity.y, max_fall_speed)
 		
-	var direction: float = signf(Input.get_axis("move_left", "move_right"))
+	var direction: float = get_move_dir()
 	if hurt_lock_timer > 0:
 		pass
 	elif recoil_timer > 0:
@@ -119,7 +123,7 @@ func _physics_process(delta: float) -> void:
 			velocity.y *= jump_cut_multiplier
 	
 	if Input.is_action_just_pressed("attack") and attack_cooldown_timer <= 0 and hurt_lock_timer <= 0:
-		start_attack()
+		start_attack(direction)
 	
 	if active_hitbox != null and attack_active_timer <= 0:
 		end_attack()
@@ -194,7 +198,8 @@ func _ready() -> void:
 	anim.animation_finished.connect(_on_anim_finished)
 	anim.frame_changed.connect(_on_frame_changed)
 	anim.play("idle")
-	
+	add_to_group("player")
+
 func _on_anim_finished()->void:
 	if anim.animation == "run_start": anim.play("run"); return
 	if anim.animation == "stop": anim.play("idle"); return
@@ -230,3 +235,13 @@ func update_animation()-> void:
 		elif Input.is_action_pressed("move_down"): anim.play("look_down")
 		elif anim.animation in ["run", "run_start"]: anim.play("stop")
 		elif anim.animation != "stop": anim.play("idle")
+
+func get_move_dir() -> float:
+	if Input.is_action_just_pressed("move_right"): last_dir = 1.0
+	if Input.is_action_just_pressed("move_left"): last_dir = -1.0
+	var right := Input.is_action_pressed("move_right")
+	var left := Input.is_action_pressed("move_left")
+	if right and left: return last_dir
+	if right: return 1.0
+	if left: return -1.0
+	return 0.0

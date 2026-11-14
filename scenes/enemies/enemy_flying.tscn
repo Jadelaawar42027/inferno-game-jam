@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://0xkohbbfcjkg"]
+
+[ext_resource type="PackedScene" uid="uid://s0mlbmx6yihv" path="res://scenes/enemies/enemy.tscn" id="1_lptkl"]
+[ext_resource type="Shader" uid="uid://bcycvorrmew66" path="res://scenes/enemies/hitflash.gdshader" id="2_1bpvv"]
+[ext_resource type="Script" uid="uid://dgypwp5fa43v5" path="res://scripts/enemies/enemyFlying.gd" id="2_okcxb"]
+[ext_resource type="PackedScene" uid="uid://bsxufnevdum76" path="res://scenes/Components/hitbox.tscn" id="3_1bpvv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_okcxb"]
+resource_local_to_scene = true
+shader = ExtResource("2_1bpvv")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_amount = 0.0
+shader_parameter/additive_mix = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1a5h"]
+resource_local_to_scene = true
+size = Vector2(12, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fmfxg"]
+resource_local_to_scene = true
+size = Vector2(12, 22)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_80f48"]
+radius = 120.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_okcxb"]
+resource_local_to_scene = true
+size = Vector2(16, 16)
+
+[node name="Flying" unique_id=319771871 instance=ExtResource("1_lptkl")]
+motion_mode = 1
+script = ExtResource("2_okcxb")
+patrol_range = 40.0
+bob_height = 4.0
+bob_speed = 3.0
+windup_time = 0.5
+swoop_speed = 160.0
+swoop_time = 0.8
+return_speed = 50.0
+cooldown = 2.5
+walk_speed = 30.0
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=962650832]
+modulate = Color(0.4666667, 0, 1, 1)
+material = SubResource("ShaderMaterial_okcxb")
+
+[node name="HealthComponent" parent="." index="2" unique_id=555885103]
+max_health = 6
+
+[node name="CollisionShape2D" parent="Hurtbox" parent_id_path=PackedInt32Array(887145532) index="0" unique_id=1868882131]
+shape = SubResource("RectangleShape2D_q1a5h")
+
+[node name="CollisionShape2D" parent="ContactHitbox" parent_id_path=PackedInt32Array(1898026828) index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_fmfxg")
+
+[node name="DetectionRadius" type="Area2D" parent="." index="5" unique_id=1193266170]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionRadius" index="0" unique_id=1349090564]
+shape = SubResource("CircleShape2D_80f48")
+
+[node name="SwoopHitbox" parent="." index="6" unique_id=1898026828 instance=ExtResource("3_1bpvv")]
+collision_layer = 16
+collision_mask = 64
+damage = 2
+
+[node name="CollisionShape2D" parent="SwoopHitbox" index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_okcxb")
+
+[editable path="Hurtbox"]
+[editable path="ContactHitbox"]
+[editable path="SwoopHitbox"]
