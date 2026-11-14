@@ -31,6 +31,10 @@ class_name Player
 @onready var hurtbox: Hurtbox = $Hurtbox
 @onready var health: HealthComponent = $health_component
 
+@onready var anim: AnimatedSprite2D = $Visual/AnimatedSprite2D
+@onready var breath_puff: CPUParticles2D = $Visual/BreathPuff
+
+
 @onready var camera: Camera2D = $Camera2D
 
 var coyote_timer := 0.0
@@ -45,12 +49,26 @@ var invincibility_timer := 0.0
 var active_hitbox: Hitbox = null
 var shake_strength := 0.0
 
+var action_lock := false
+var was_on_floor := true
+var fall_speed_peak := 0.0
+
+@export var hard_land_speed := 600.0
+var slash_combo := 0
+var is_dead = false
+
 func start_attack() -> void:
-	if Input.is_action_pressed("move_up"): active_hitbox = up_slash
-	elif Input.is_action_pressed("move_down") and not is_on_floor(): active_hitbox = down_slash
+	if Input.is_action_pressed("move_up"): 
+		active_hitbox = up_slash
+		play_action("slash_up")
+	elif Input.is_action_pressed("move_down") and not is_on_floor(): 
+		active_hitbox = down_slash
+		play_action("slash_down")
 	else:
 		active_hitbox = side_slash
 		side_slash.position.x = facing * 19
+		play_action("slash_side" if slash_combo == 0 else "slash_side_alt")
+		slash_combo = 1 - slash_combo
 	active_hitbox.activate()
 	attack_active_timer = attack_active_time
 	attack_cooldown_timer = attack_cooldown
@@ -61,7 +79,6 @@ func end_attack() -> void:
 	active_hitbox = null
 
 func _physics_process(delta: float) -> void:
-	
 	attack_cooldown_timer -= delta
 	attack_active_timer -= delta
 	recoil_timer -= delta
@@ -107,9 +124,12 @@ func _physics_process(delta: float) -> void:
 	if active_hitbox != null and attack_active_timer <= 0:
 		end_attack()
 	
+	if not is_on_floor():
+		fall_speed_peak = max(fall_speed_peak, velocity.y)
+		
 	move_and_slide()
 	
-	if direction != 0 and hurt_lock_timer <= 0:
+	if direction != 0 and hurt_lock_timer <= 0 and not action_lock:
 		facing = int(direction)
 		visual.scale.x = facing
 	
@@ -118,9 +138,13 @@ func _physics_process(delta: float) -> void:
 	elif hurtbox.invulnerable:
 		visual.visible = true
 		hurtbox.invulnerable = false
+	update_animation()
+	was_on_floor = is_on_floor()
 
 func _on_slash_hit(_hurtbox: Hurtbox, slash: Hitbox)->void:
-	if slash == down_slash: velocity.y = pogo_velocity
+	if slash == down_slash: 
+		velocity.y = pogo_velocity
+		play_action("pogo")
 	elif slash == side_slash: recoil_timer = recoil_time
 	hit_stop(0.05)
 	shake(2.0)
@@ -134,6 +158,7 @@ func _on_hurt(hitbox: Hitbox) ->void:
 	invincibility_timer = invincibility_time
 	hurtbox.invulnerable = true
 	end_attack()
+	play_action("recoil")
 	hit_stop(0.1)
 	shake(5.0)
 
@@ -141,6 +166,8 @@ func _on_died() ->void:
 	print("Dead")
 	Engine.time_scale = 1.0
 	get_tree().reload_current_scene.call_deferred()
+	is_dead = true
+	anim.play("death")
 
 func hit_stop(duration: float) ->void:
 	Engine.time_scale = 0.05
@@ -164,3 +191,42 @@ func _ready() -> void:
 	down_slash.hit_landed.connect(_on_slash_hit.bind(down_slash))
 	hurtbox.hurt.connect(_on_hurt)
 	health.died.connect(_on_died)
+	anim.animation_finished.connect(_on_anim_finished)
+	anim.frame_changed.connect(_on_frame_changed)
+	anim.play("idle")
+	
+func _on_anim_finished()->void:
+	if anim.animation == "run_start": anim.play("run"); return
+	if anim.animation == "stop": anim.play("idle"); return
+	if anim.animation == "death": return
+	action_lock = false
+
+func _on_frame_changed():
+	if anim.animation == "idle" and anim.frame == 2: breath_puff.restart()
+
+func play_action(anim_name: String)->void:
+	action_lock = true
+	anim.stop()
+	anim.play(anim_name)
+
+func update_animation()-> void:
+	if is_dead or action_lock:
+		return
+	if is_on_floor() and not was_on_floor:
+		if fall_speed_peak > hard_land_speed:
+			play_action("hard_land")
+		else:
+			play_action("land")
+		fall_speed_peak = 0.0
+		return
+	if not is_on_floor() and velocity.y < 0: anim.play("jump"); return
+	if not is_on_floor(): anim.play("fall"); return
+	if abs(velocity.x) > 10.0:
+		if anim.animation in ["idle", "stop", "look_up", "look_down"]:
+			anim.play("run_start")
+		elif anim.animation != "run_start": anim.play("run")
+	else:
+		if Input.is_action_pressed("move_up"): anim.play("look_up")
+		elif Input.is_action_pressed("move_down"): anim.play("look_down")
+		elif anim.animation in ["run", "run_start"]: anim.play("stop")
+		elif anim.animation != "stop": anim.play("idle")

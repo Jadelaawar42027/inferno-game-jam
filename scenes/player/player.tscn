@@ -2,27 +2,42 @@
 
 [ext_resource type="Script" uid="uid://bbnn5ew4afvmn" path="res://scripts/player/player.gd" id="1_8afob"]
 [ext_resource type="PackedScene" uid="uid://bc8hi61nfjm5p" path="res://scenes/Components/health_component.tscn" id="2_lvxji"]
+[ext_resource type="SpriteFrames" uid="uid://d0xfs35vehcfq" path="res://assets/sprites/knight/knight_frames.tres" id="3_75vfm"]
 [ext_resource type="PackedScene" uid="uid://bvschcfxqd4kd" path="res://scenes/Components/hurtbox.tscn" id="3_p47bc"]
 [ext_resource type="PackedScene" uid="uid://bsxufnevdum76" path="res://scenes/Components/hitbox.tscn" id="4_75vfm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_docu8"]
 size = Vector2(12, 22)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lvxji"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0owmy"]
 resource_local_to_scene = true
 size = Vector2(10, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p47bc"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qek5x"]
 resource_local_to_scene = true
 size = Vector2(26, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_75vfm"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5gtgg"]
 resource_local_to_scene = true
 size = Vector2(20, 24)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0owmy"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h17s1"]
 resource_local_to_scene = true
 size = Vector2(20, 22)
+
+[sub_resource type="Gradient" id="Gradient_p47bc"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_80f48"]
+gradient = SubResource("Gradient_p47bc")
+width = 8
+height = 8
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_docu8"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="Player" type="CharacterBody2D" unique_id=1407468611]
 collision_layer = 2
@@ -35,22 +50,6 @@ max_health = 5
 position = Vector2(0, -11)
 shape = SubResource("RectangleShape2D_docu8")
 
-[node name="Visual" type="Node2D" parent="." unique_id=1205085032]
-
-[node name="Body" type="ColorRect" parent="Visual" unique_id=863281164]
-offset_left = -6.0
-offset_top = -22.0
-offset_right = 6.0
-mouse_filter = 2
-color = Color(1, 1, 0.6862745, 1)
-
-[node name="Eye" type="ColorRect" parent="Visual" unique_id=1387387546]
-offset_left = 1.0
-offset_top = -19.0
-offset_right = 5.0
-offset_bottom = -15.0
-color = Color(0, 0, 0, 1)
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=623591930]
 position_smoothing_enabled = true
 position_smoothing_speed = 9.0
@@ -62,7 +61,7 @@ health = NodePath("../health_component")
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=1868882131]
 position = Vector2(0, -10)
-shape = SubResource("RectangleShape2D_lvxji")
+shape = SubResource("RectangleShape2D_0owmy")
 
 [node name="Attacks" type="Node2D" parent="." unique_id=804652063]
 
@@ -72,7 +71,7 @@ collision_layer = 8
 collision_mask = 384
 
 [node name="CollisionShape2D" parent="Attacks/SideSlash" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_p47bc")
+shape = SubResource("RectangleShape2D_qek5x")
 
 [node name="UpSlash" parent="Attacks" unique_id=2052691650 instance=ExtResource("4_75vfm")]
 position = Vector2(0, -34)
@@ -80,7 +79,7 @@ collision_layer = 8
 collision_mask = 384
 
 [node name="CollisionShape2D" parent="Attacks/UpSlash" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_75vfm")
+shape = SubResource("RectangleShape2D_5gtgg")
 
 [node name="DownSlash" parent="Attacks" unique_id=614013444 instance=ExtResource("4_75vfm")]
 position = Vector2(0, 11)
@@ -89,7 +88,34 @@ collision_mask = 384
 pogo_allowed = true
 
 [node name="CollisionShape2D" parent="Attacks/DownSlash" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_0owmy")
+shape = SubResource("RectangleShape2D_h17s1")
+
+[node name="Visual" type="Node2D" parent="." unique_id=727021128]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visual" unique_id=806931827]
+texture_filter = 2
+scale = Vector2(0.6, 0.6)
+sprite_frames = ExtResource("3_75vfm")
+animation = &"walk"
+frame_progress = 0.49651882
+offset = Vector2(0, -18)
+
+[node name="BreathPuff" type="CPUParticles2D" parent="Visual" unique_id=483567130]
+position = Vector2(4, -13)
+emitting = false
+amount = 4
+texture = SubResource("GradientTexture2D_80f48")
+lifetime = 0.7
+one_shot = true
+explosiveness = 0.6
+direction = Vector2(1, -0.3)
+spread = 20.0
+gravity = Vector2(0, -15)
+initial_velocity_min = 8.0
+initial_velocity_max = 16.0
+scale_amount_min = 0.8
+scale_amount_max = 1.4
+color_ramp = SubResource("Gradient_docu8")
 
 [editable path="Hurtbox"]
 [editable path="Attacks/SideSlash"]

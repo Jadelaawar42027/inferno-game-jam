@@ -7,7 +7,7 @@ extends StaticBody2D
 
 const BASE_COLOR := Color.RED
 
-func _on_hurt():
+func _on_hurt(_hitbox: Hitbox):
 	body.color = Color.WHITE
 	var tween := create_tween()
 	tween.tween_property(body, "color", BASE_COLOR, 0.12)
