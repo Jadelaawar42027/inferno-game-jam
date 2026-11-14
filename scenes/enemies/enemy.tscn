@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://bflvhcxl2d2ca" path="res://scripts/enemies/enemy.gd" id="1_6xk8f"]
 [ext_resource type="Texture2D" uid="uid://c6m46aup6amqy" path="res://assets/art/temp_enemy.svg" id="2_8e3ao"]
 [ext_resource type="Shader" uid="uid://bcycvorrmew66" path="res://scenes/enemies/hitflash.gdshader" id="2_38ino"]
+[ext_resource type="PackedScene" uid="uid://bc8hi61nfjm5p" path="res://scenes/Components/health_component.tscn" id="4_nb6gf"]
+[ext_resource type="PackedScene" uid="uid://bvschcfxqd4kd" path="res://scenes/Components/hurtbox.tscn" id="5_jt03m"]
+[ext_resource type="PackedScene" uid="uid://bsxufnevdum76" path="res://scenes/Components/hitbox.tscn" id="6_n7575"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3mldf"]
-size = Vector2(12, 22)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8up58"]
 size = Vector2(12, 22)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ectdm"]
@@ -17,25 +17,44 @@ shader_parameter/flash_color = Color(1, 1, 1, 1)
 shader_parameter/flash_amount = 0.0
 shader_parameter/additive_mix = 0.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qch6t"]
+resource_local_to_scene = true
+size = Vector2(12, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y5th1"]
+resource_local_to_scene = true
+size = Vector2(12, 22)
+
 [node name="Enemy" type="CharacterBody2D" unique_id=319771871]
-visible = false
 collision_layer = 4
 script = ExtResource("1_6xk8f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=220595465]
-position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_3mldf")
-
-[node name="Hitbox" type="Area2D" parent="." unique_id=1854460611]
-collision_layer = 16
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1326313942]
-position = Vector2(1, 0)
-shape = SubResource("RectangleShape2D_8up58")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1340461075]
 material = SubResource("ShaderMaterial_ectdm")
 texture = ExtResource("2_8e3ao")
 
-[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[node name="HealthComponent" parent="." unique_id=555885103 instance=ExtResource("4_nb6gf")]
+max_health = 10
+
+[node name="Hurtbox" parent="." unique_id=887145532 node_paths=PackedStringArray("health") instance=ExtResource("5_jt03m")]
+collision_layer = 128
+collision_mask = 0
+health = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=1868882131]
+shape = SubResource("RectangleShape2D_qch6t")
+
+[node name="ContactHitbox" parent="." unique_id=1898026828 instance=ExtResource("6_n7575")]
+collision_layer = 16
+collision_mask = 64
+damage = 1
+persistent = true
+
+[node name="CollisionShape2D" parent="ContactHitbox" index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_y5th1")
+
+[editable path="Hurtbox"]
+[editable path="ContactHitbox"]

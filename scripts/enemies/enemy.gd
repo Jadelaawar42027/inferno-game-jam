@@ -1,65 +1,72 @@
 extends CharacterBody2D
 class_name Enemy
 
-#Signals
-signal HEALTH_DEPLETED
 
-#EXPORT var 
-@export var MAX_HEALTH: int = 10
-@export var MEDIUM_ATTACK: int = 1
-var MOVEMENT: float = 10.0
-@export var TURN_SPEED: float = 10.0
-@export var FLASH_HIT: float = 0.2
+@export var flash_time := 0.2
+@onready var check_platform: RayCast2D = get_node_or_null("Check_Platform")
 
-
-#EXPORT variables to possibly be removed later
-@export var PLAYER_DAMAGE: int = 1
-
-var HEALTH: int
-var DEAD: bool = false
 var _tween: Tween
+
+@export var walk_speed := 20.0
+
+@onready var health: HealthComponent = $HealthComponent
+@onready var hurtbox: Hurtbox = $Hurtbox
+@onready var sprite: Sprite2D = $Sprite2D
+
+var direction := 1.0
+var is_dead := false
+var player_target: Player = null
+var player_in_range := false
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	HEALTH = MAX_HEALTH
+	health.died.connect(die)
+	hurtbox.hurt.connect(_on_hurt)
+
+func _on_hurt(_hitbox: Hitbox)->void:
+	if is_dead:
+		return
+	on_hit_flash()
 	
-	
-func die():
-	DEAD = true
-	HEALTH_DEPLETED.emit()
+func die()->void:
+	if is_dead: return
+	is_dead = true
+	hurtbox.set_deferred("monitorable", false)
 	queue_free()
 
 func on_hit_flash(color: Color = Color.WHITE) -> void:
-	var mat := $Sprite2D.material as ShaderMaterial
+	var mat := sprite.material as ShaderMaterial
 	if mat == null:
 		return
 	mat.set_shader_parameter("flash_color", color)
 	if _tween:
 		_tween.kill()
 	_tween = create_tween()
-	_tween.tween_method(func(v): mat.set_shader_parameter("flash_amount", v), 1.0, 0.0, FLASH_HIT)
+	_tween.tween_method(func(v: float): mat.set_shader_parameter("flash_amount", v), 1.0, 0.0, flash_time)
 	
-#
-#Signal functions
-#
+func apply_gravity(delta: float)->void:
+	if not is_on_floor(): velocity += get_gravity() * delta
 
-#Sig of damage taken
-func take_damage(amount):
-	#Could cause frame issues if statement is not below
-	if DEAD == true:
-		return
-	on_hit_flash()
-	HEALTH -= amount
-	if HEALTH <= 0:
-		die()
+func set_facing(dir: float) -> void:
+	direction = dir
+	sprite.flip_h = dir < 0
+	if check_platform:
+		check_platform.position.x = 7 * dir
+		check_platform.force_raycast_update()
 
 
-func _on_hitbox_body_entered(body: Node2D) -> void:
+func patrol()->void:
+	velocity.x = direction * walk_speed
+	if is_on_wall(): set_facing(-direction)
+	elif check_platform and is_on_floor() and not check_platform.is_colliding(): set_facing(-direction)
+
+func _on_detection_radius_body_entered(body: Node2D) -> void:
 	if body is Player:
-		take_damage(PLAYER_DAMAGE)
-				
-#Gravity func taken from https://www.youtube.com/watch?v=kHki30-DxRQ&t=16s
-func _physics_process(delta: float) -> void:
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-	move_and_slide()
+		player_target = body
+		player_in_range = true
+
+func _on_detection_radius_body_exited(body: Node2D) -> void:
+	if body == player_target:
+		player_in_range = false
+		player_target = null

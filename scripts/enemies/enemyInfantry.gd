@@ -1,116 +1,70 @@
 extends Enemy
 
 
+enum State { PATROL, CHASE, LUNGE }
+var state := State.PATROL
 
-#States the enemy can be in
-enum STATES{PATROL, CHASE, LUNGE}
-var CURRENTSTATE = STATES.PATROL
+@export var chase_speed := 50.0
+@export var lunge_range := 20.0
+@export var lunge_speed := 100.0
+@export var windup_time := 0.3
+@export var lunge_time := 0.3
+@export var cooldown := 5.0
 
-#Walk vars
-@export var SPEED_WALK = 20
-var PATROL_RANGE = 10 
-var DIRECTION = 1
+var cooldown_timer := 0.0
+var windup_timer := 0.0
+var lunge_timer := 0.0
+var lunge_dir := 1.0
+var lunge_started := false
 
-#Chase vars
-var SPEED_CHASE = 50
-var CHASE_RANGE = 10
+@onready var lunge_hitbox: Hitbox = $LungeHitbox
 
-
-#Lunge vars 
-var RANGE_LUNGE = 20
-var WINDUP_TIME = .3
-var LUNGE_TIME = .3
-var COOLDOWN = 5.0 #secs 
-var LUNGE_DIRECITON = 0
-var LUNGE_SPEED = 100
-
-#Will be reduced then knocked back up to the times above
-var COOLDOWN_TIMER = 0.0
-var WINDUP_TIMER = .3
-var LUNGE_TIMER = .3
-
-#Signal functions
-var BODY_ENTERED = false
-var PLAYER_SEEN = false
-var PLAYER_TARGET
-
-#baseline movement function that will reach out to others
 
 func _physics_process(delta: float) -> void:
-	
-	COOLDOWN_TIMER -= delta
-	LUNGE_DIRECITON = DIRECTION
-	#Sets the state to chase
-	if BODY_ENTERED == true and CURRENTSTATE == STATES.PATROL:
-		if signf(PLAYER_TARGET.global_position.x - self.global_position.x ) == DIRECTION:
-			CURRENTSTATE = STATES.CHASE
-	
-	#Sets the state to Lunge
-	if BODY_ENTERED == true and CURRENTSTATE == STATES.CHASE:
-		if abs(PLAYER_TARGET.global_position.x - self.global_position.x) < RANGE_LUNGE:
-			if COOLDOWN_TIMER <= 0:
-				CURRENTSTATE = STATES.LUNGE
-			
-	#Changes enemy behavior
-	if CURRENTSTATE == STATES.PATROL:
-		_enemyInfantry_patrol(delta)
-	elif CURRENTSTATE == STATES.CHASE:
-		_enemyInfantry_chase(delta)
-	elif CURRENTSTATE == STATES.LUNGE:
-		_enemyInfantry_lunge(delta)
-	super(delta)
+	apply_gravity(delta)
+	cooldown_timer -= delta
+	if not player_in_range and state != State.LUNGE: state = State.PATROL
+	if player_in_range:
+		var dx := player_target.global_position.x - global_position.x
+		if state == State.PATROL and signf(dx) == direction: state = State.CHASE
+		if state == State.CHASE and absf(dx) < lunge_range and cooldown_timer <= 0: start_lunge()
+	match state:
+		State.PATROL: patrol()
+		State.CHASE: chase()
+		State.LUNGE: lunge(delta)
+	move_and_slide()
 
-#Enemy patrol
-func _enemyInfantry_patrol(delta):
-	velocity.x = SPEED_WALK * DIRECTION
-	if not $Check_Platform.is_colliding():
-		if is_on_floor():
-			DIRECTION = DIRECTION * -1
-			
-			#Flips the asset and raycast
-			$Sprite2D.flip_h = DIRECTION == -1
-			$Check_Platform.position.x = 7 * DIRECTION
-			
-	
-#Enemy chase
-func _enemyInfantry_chase(delta):
-	if $Check_Platform.is_colliding():
-		if is_on_floor():
-			velocity.x = SPEED_CHASE * signf(PLAYER_TARGET.global_position.x - self.global_position.x )
-			$Sprite2D.flip_h = signf(PLAYER_TARGET.global_position.x - self.global_position.x )
-			DIRECTION = signf(PLAYER_TARGET.global_position.x - self.global_position.x )
-			$Check_Platform.position.x = 7 * signf(PLAYER_TARGET.global_position.x - self.global_position.x )
-	elif not $Check_Platform.is_colliding():
-		velocity.x = 0
-		
+func set_facing(dir: float)-> void:
+	super(dir)
+	lunge_hitbox.position.x = 10 * dir
 
+func chase()->void:
+	var dir := signf(player_target.global_position.x - global_position.x)
+	if dir != 0: set_facing(dir)
+	if check_platform.is_colliding(): velocity.x = direction * chase_speed
+	else: velocity.x = 0
 
-#Melee lunge
-func _enemyInfantry_lunge(delta):
-	if WINDUP_TIMER > 0:
-		WINDUP_TIMER -= delta
-		velocity.x = 0
-		on_hit_flash(Color.RED)
-	if WINDUP_TIMER <= 0:
-		LUNGE_TIMER -= delta
-		velocity.x = LUNGE_DIRECITON * LUNGE_SPEED
-	#		
-	#Does damage to player
-	#
-	if LUNGE_TIMER <=0:	
-		CURRENTSTATE = STATES.CHASE
-		COOLDOWN_TIMER = COOLDOWN
-		WINDUP_TIMER = WINDUP_TIME
-		LUNGE_TIMER = LUNGE_TIME
+func start_lunge()->void:
+	state = State.LUNGE
+	windup_timer = windup_time
+	lunge_timer = lunge_time
+	lunge_dir = direction
+	lunge_started = false
+	on_hit_flash(Color.RED)
 
+func lunge(delta: float)->void:
+	velocity.x = 0
+	if windup_timer > 0:
+		windup_timer -= delta
+		return
+	if not lunge_started:
+		lunge_started = true
+		lunge_hitbox.activate()
+	velocity.x = lunge_dir * lunge_speed
+	lunge_timer -= delta
+	if lunge_timer <= 0: end_lunge()
 
-func _on_detection_radius_body_entered(body: Node2D) -> void:
-	if body is Player:
-		BODY_ENTERED = true
-		PLAYER_TARGET = body
-
-
-func _on_detection_radius_body_exited(body: Node2D) -> void:
-	if body is Player:
-		BODY_ENTERED = false
-	CURRENTSTATE = STATES.PATROL
+func end_lunge()->void:
+	lunge_hitbox.deactivate()
+	cooldown_timer = cooldown
+	state = State.CHASE
