@@ -4,7 +4,7 @@ class_name Enemy
 #Signals
 signal HEALTH_DEPLETED
 
-#EXPORT var for other enemy classes to use
+#EXPORT var 
 @export var MAX_HEALTH: int = 10
 @export var MEDIUM_ATTACK: int = 1
 @export var MOVEMENT: float = 10.0

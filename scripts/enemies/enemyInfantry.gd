@@ -17,10 +17,17 @@ var CHASE_RANGE = 10
 
 
 #Lunge vars 
-var RANGE_LUNGE
-var WINDUP_TIME
-var LUNGE_TIME
-var COOLDOWN
+var RANGE_LUNGE = 20
+var WINDUP_TIME = .3
+var LUNGE_TIME = .3
+var COOLDOWN = 5.0 #secs 
+var LUNGE_DIRECITON = 0
+var LUNGE_SPEED = 100
+
+#Will be reduced then knocked back up to the times above
+var COOLDOWN_TIMER = 0.0
+var WINDUP_TIMER = .3
+var LUNGE_TIMER = .3
 
 #Signal functions
 var BODY_ENTERED = false
@@ -30,9 +37,21 @@ var PLAYER_TARGET
 #baseline movement function that will reach out to others
 
 func _physics_process(delta: float) -> void:
-	if BODY_ENTERED == true:
+	
+	COOLDOWN_TIMER -= delta
+	LUNGE_DIRECITON = DIRECTION
+	#Sets the state to chase
+	if BODY_ENTERED == true and CURRENTSTATE == STATES.PATROL:
 		if signf(PLAYER_TARGET.global_position.x - self.global_position.x ) == DIRECTION:
 			CURRENTSTATE = STATES.CHASE
+	
+	#Sets the state to Lunge
+	if BODY_ENTERED == true and CURRENTSTATE == STATES.CHASE:
+		if abs(PLAYER_TARGET.global_position.x - self.global_position.x) < RANGE_LUNGE:
+			if COOLDOWN_TIMER <= 0:
+				CURRENTSTATE = STATES.LUNGE
+			
+	#Changes enemy behavior
 	if CURRENTSTATE == STATES.PATROL:
 		_enemyInfantry_patrol(delta)
 	elif CURRENTSTATE == STATES.CHASE:
@@ -64,15 +83,25 @@ func _enemyInfantry_chase(delta):
 	elif not $Check_Platform.is_colliding():
 		velocity.x = 0
 		
-	
 
 
 #Melee lunge
 func _enemyInfantry_lunge(delta):
-	#Check if player is close
-	#Flashes before lunges
+	if WINDUP_TIMER > 0:
+		WINDUP_TIMER -= delta
+		velocity.x = 0
+		on_hit_flash(Color.RED)
+	if WINDUP_TIMER <= 0:
+		LUNGE_TIMER -= delta
+		velocity.x = LUNGE_DIRECITON * LUNGE_SPEED
+	#		
 	#Does damage to player
-	pass
+	#
+	if LUNGE_TIMER <=0:	
+		CURRENTSTATE = STATES.CHASE
+		COOLDOWN_TIMER = COOLDOWN
+		WINDUP_TIMER = WINDUP_TIME
+		LUNGE_TIMER = LUNGE_TIME
 
 
 func _on_detection_radius_body_entered(body: Node2D) -> void:
