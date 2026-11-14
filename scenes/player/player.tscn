@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://deejvq1mv7666"]
+
+[ext_resource type="Script" uid="uid://bbnn5ew4afvmn" path="res://scripts/player/player.gd" id="1_8afob"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_docu8"]
+size = Vector2(12, 22)
+
+[node name="Player" type="CharacterBody2D" unique_id=1407468611]
+collision_layer = 2
+script = ExtResource("1_8afob")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1261211899]
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_docu8")
+
+[node name="Visual" type="Node2D" parent="." unique_id=1205085032]
+
+[node name="Body" type="ColorRect" parent="Visual" unique_id=863281164]
+offset_left = -6.0
+offset_top = -22.0
+offset_right = 6.0
+mouse_filter = 2
+color = Color(1, 1, 0.6862745, 1)
+
+[node name="Eye" type="ColorRect" parent="Visual" unique_id=1387387546]
+offset_left = 1.0
+offset_top = -19.0
+offset_right = 5.0
+offset_bottom = -15.0
+color = Color(0, 0, 0, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=623591930]
+position_smoothing_enabled = true
+position_smoothing_speed = 9.0
