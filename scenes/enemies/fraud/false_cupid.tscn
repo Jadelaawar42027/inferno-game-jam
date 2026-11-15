@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://x8171s2yedi"]
+
+[ext_resource type="PackedScene" uid="uid://0xkohbbfcjkg" path="res://scenes/enemies/enemy_flying.tscn" id="1_pugr6"]
+[ext_resource type="Shader" uid="uid://bcycvorrmew66" path="res://scenes/enemies/hitflash.gdshader" id="2_4rgax"]
+[ext_resource type="Script" uid="uid://cvbl3ek83u88j" path="res://scenes/enemies/fraud/false_cupid.gd" id="2_tbo68"]
+[ext_resource type="SpriteFrames" uid="uid://pje238nr0psa" path="res://assets/sprites/enemies/false_cupid/false_cupid_frames.tres" id="3_4rgax"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4rgax"]
+size = Vector2(12, 16)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tbo68"]
+resource_local_to_scene = true
+shader = ExtResource("2_4rgax")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_amount = 0.0
+shader_parameter/additive_mix = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0nnvo"]
+resource_local_to_scene = true
+size = Vector2(12, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bbrb3"]
+resource_local_to_scene = true
+size = Vector2(12, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bb8kk"]
+resource_local_to_scene = true
+size = Vector2(16, 16)
+
+[node name="FalseCupid" unique_id=319771871 instance=ExtResource("1_pugr6")]
+script = ExtResource("2_tbo68")
+hover_distance = 40.0
+hover_height_min = 55.0
+hover_height_max = 80.0
+hover_speed = 80.0
+orbit_speed = 1.5
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=220595465]
+shape = SubResource("RectangleShape2D_4rgax")
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=962650832]
+modulate = Color(1, 1, 1, 1)
+material = SubResource("ShaderMaterial_tbo68")
+position = Vector2(0, 2)
+scale = Vector2(0.2, 0.2)
+sprite_frames = ExtResource("3_4rgax")
+frame_progress = 0.0
+
+[node name="CollisionShape2D" parent="Hurtbox" parent_id_path=PackedInt32Array(887145532) index="0" unique_id=1868882131]
+shape = SubResource("RectangleShape2D_0nnvo")
+
+[node name="CollisionShape2D" parent="ContactHitbox" parent_id_path=PackedInt32Array(1898026828) index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_bbrb3")
+
+[node name="CollisionShape2D" parent="SwoopHitbox" parent_id_path=PackedInt32Array(1898026828) index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_bb8kk")
+
+[editable path="Hurtbox"]
+[editable path="ContactHitbox"]
+[editable path="SwoopHitbox"]

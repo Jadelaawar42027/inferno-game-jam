@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dpj5d4186sng6"]
+
+[ext_resource type="PackedScene" uid="uid://0xkohbbfcjkg" path="res://scenes/enemies/enemy_flying.tscn" id="1_cg2t4"]
+[ext_resource type="Shader" uid="uid://bcycvorrmew66" path="res://scenes/enemies/hitflash.gdshader" id="2_45q4r"]
+[ext_resource type="SpriteFrames" uid="uid://dtj5vhhanquim" path="res://assets/sprites/enemies/gargoyle_cook/gargoyle_cook_frames.tres" id="3_45q4r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45q4r"]
+size = Vector2(12, 18)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_45q4r"]
+resource_local_to_scene = true
+shader = ExtResource("2_45q4r")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_amount = 0.0
+shader_parameter/additive_mix = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5f45e"]
+resource_local_to_scene = true
+size = Vector2(12, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gjufq"]
+resource_local_to_scene = true
+size = Vector2(12, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qdg8y"]
+resource_local_to_scene = true
+size = Vector2(16, 16)
+
+[node name="GargoyleCook" unique_id=319771871 instance=ExtResource("1_cg2t4")]
+hover_distance = 40.0
+hover_height_min = 55.0
+hover_height_max = 80.0
+hover_speed = 80.0
+orbit_speed = 1.5
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=220595465]
+shape = SubResource("RectangleShape2D_45q4r")
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=962650832]
+modulate = Color(1, 1, 1, 1)
+texture_filter = 4
+material = SubResource("ShaderMaterial_45q4r")
+scale = Vector2(0.2, 0.2)
+sprite_frames = ExtResource("3_45q4r")
+frame_progress = 0.0
+
+[node name="CollisionShape2D" parent="Hurtbox" parent_id_path=PackedInt32Array(887145532) index="0" unique_id=1868882131]
+shape = SubResource("RectangleShape2D_5f45e")
+
+[node name="CollisionShape2D" parent="ContactHitbox" parent_id_path=PackedInt32Array(1898026828) index="0" unique_id=612733107]
+texture_filter = 4
+shape = SubResource("RectangleShape2D_gjufq")
+
+[node name="CollisionShape2D" parent="SwoopHitbox" parent_id_path=PackedInt32Array(1898026828) index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_qdg8y")
+
+[editable path="Hurtbox"]
+[editable path="ContactHitbox"]
+[editable path="SwoopHitbox"]

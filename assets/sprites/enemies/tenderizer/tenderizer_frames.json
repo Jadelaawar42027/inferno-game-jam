@@ -1,0 +1,130 @@
+{
+ "enemy": "tenderizer",
+ "floor": "gluttony",
+ "type": "heavy",
+ "sheet": "tenderizer_hd_frame468x312_8cols_10rows.png",
+ "frame_size": [
+  468,
+  312
+ ],
+ "columns": 8,
+ "rows": 10,
+ "godot": {
+  "animated_sprite_scale": 0.2,
+  "offset": [
+   0,
+   -120.0
+  ],
+  "texture_filter": "Linear Mipmap",
+  "facing": "right (flip_h for left)",
+  "origin": "feet"
+ },
+ "animations": [
+  {
+   "name": "idle",
+   "row": 0,
+   "frames": 6,
+   "fps": 6,
+   "loop": true,
+   "events": {}
+  },
+  {
+   "name": "walk",
+   "row": 1,
+   "frames": 8,
+   "fps": 8,
+   "loop": true,
+   "events": {
+    "step": [
+     0,
+     4
+    ]
+   }
+  },
+  {
+   "name": "alert",
+   "row": 2,
+   "frames": 6,
+   "fps": 12,
+   "loop": false,
+   "events": {
+    "hat_land": [
+     5
+    ]
+   },
+   "note": "plays once when the player is first spotted"
+  },
+  {
+   "name": "charge_windup",
+   "row": 3,
+   "frames": 4,
+   "fps": 10,
+   "loop": false,
+   "events": {}
+  },
+  {
+   "name": "charge",
+   "row": 4,
+   "frames": 8,
+   "fps": 12,
+   "loop": true,
+   "events": {
+    "step": [
+     0,
+     4
+    ]
+   }
+  },
+  {
+   "name": "slam_windup",
+   "row": 5,
+   "frames": 5,
+   "fps": 10,
+   "loop": false,
+   "events": {}
+  },
+  {
+   "name": "slam",
+   "row": 6,
+   "frames": 4,
+   "fps": 14,
+   "loop": false,
+   "events": {
+    "impact": [
+     1
+    ],
+    "hit_active": [
+     1,
+     2
+    ]
+   },
+   "note": "enable SlamHitbox on frames 1-2, play the slam sound on frame 1"
+  },
+  {
+   "name": "recover",
+   "row": 7,
+   "frames": 6,
+   "fps": 8,
+   "loop": false,
+   "events": {},
+   "note": "punish window after a slam or a missed charge"
+  },
+  {
+   "name": "hurt",
+   "row": 8,
+   "frames": 3,
+   "fps": 12,
+   "loop": false,
+   "events": {}
+  },
+  {
+   "name": "death",
+   "row": 9,
+   "frames": 7,
+   "fps": 10,
+   "loop": false,
+   "events": {},
+   "note": "queue_free after the last frame"
+  }
+ ]
+}

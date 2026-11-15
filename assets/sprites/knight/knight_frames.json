@@ -1,0 +1,334 @@
+{
+ "sheet": "knight_hd_frame252x204_8cols_28rows.png",
+ "frame_size": [
+  252,
+  204
+ ],
+ "columns": 8,
+ "rows": 28,
+ "godot": {
+  "animated_sprite_scale": 0.2,
+  "offset": [
+   0,
+   -54.0
+  ],
+  "texture_filter": "Linear Mipmap"
+ },
+ "animations": [
+  {
+   "name": "idle",
+   "row": 0,
+   "frames": 8,
+   "fps": 8,
+   "loop": true,
+   "events": {
+    "breath_puff": [
+     2
+    ]
+   }
+  },
+  {
+   "name": "run",
+   "row": 1,
+   "frames": 8,
+   "fps": 14,
+   "loop": true,
+   "events": {
+    "footstep": [
+     2,
+     6
+    ]
+   }
+  },
+  {
+   "name": "run_start",
+   "row": 2,
+   "frames": 5,
+   "fps": 14,
+   "loop": false,
+   "events": {}
+  },
+  {
+   "name": "stop",
+   "row": 3,
+   "frames": 4,
+   "fps": 14,
+   "loop": false,
+   "events": {}
+  },
+  {
+   "name": "turn",
+   "row": 4,
+   "frames": 3,
+   "fps": 14,
+   "loop": false,
+   "events": {
+    "flip_h_at_end": true
+   }
+  },
+  {
+   "name": "jump",
+   "row": 5,
+   "frames": 3,
+   "fps": 12,
+   "loop": false,
+   "events": {
+    "dust": [
+     0
+    ]
+   }
+  },
+  {
+   "name": "fall",
+   "row": 6,
+   "frames": 3,
+   "fps": 10,
+   "loop": true,
+   "events": {}
+  },
+  {
+   "name": "land",
+   "row": 7,
+   "frames": 3,
+   "fps": 14,
+   "loop": false,
+   "events": {
+    "footstep": [
+     0
+    ]
+   }
+  },
+  {
+   "name": "hard_land",
+   "row": 8,
+   "frames": 6,
+   "fps": 12,
+   "loop": false,
+   "events": {
+    "camera_shake": [
+     0
+    ],
+    "lock_input_frames": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ]
+   }
+  },
+  {
+   "name": "double_jump",
+   "row": 9,
+   "frames": 8,
+   "fps": 16,
+   "loop": false,
+   "events": {}
+  },
+  {
+   "name": "dash",
+   "row": 10,
+   "frames": 6,
+   "fps": 16,
+   "loop": false,
+   "events": {
+    "invincible_frames": [
+     1,
+     2,
+     3
+    ]
+   }
+  },
+  {
+   "name": "wall_slide",
+   "row": 11,
+   "frames": 4,
+   "fps": 8,
+   "loop": true,
+   "events": {}
+  },
+  {
+   "name": "wall_jump",
+   "row": 12,
+   "frames": 4,
+   "fps": 14,
+   "loop": false,
+   "events": {}
+  },
+  {
+   "name": "slash_side",
+   "row": 13,
+   "frames": 5,
+   "fps": 18,
+   "loop": false,
+   "events": {
+    "hit_active": [
+     1,
+     2,
+     3
+    ]
+   }
+  },
+  {
+   "name": "slash_side_alt",
+   "row": 14,
+   "frames": 5,
+   "fps": 18,
+   "loop": false,
+   "events": {
+    "hit_active": [
+     1,
+     2,
+     3
+    ]
+   }
+  },
+  {
+   "name": "slash_up",
+   "row": 15,
+   "frames": 5,
+   "fps": 18,
+   "loop": false,
+   "events": {
+    "hit_active": [
+     1,
+     2,
+     3
+    ]
+   }
+  },
+  {
+   "name": "slash_down",
+   "row": 16,
+   "frames": 5,
+   "fps": 18,
+   "loop": false,
+   "events": {
+    "hit_active": [
+     1,
+     2,
+     3
+    ]
+   }
+  },
+  {
+   "name": "pogo",
+   "row": 17,
+   "frames": 4,
+   "fps": 14,
+   "loop": false,
+   "events": {
+    "bounce": [
+     0
+    ]
+   }
+  },
+  {
+   "name": "look_up",
+   "row": 18,
+   "frames": 4,
+   "fps": 10,
+   "loop": false,
+   "events": {}
+  },
+  {
+   "name": "look_down",
+   "row": 19,
+   "frames": 4,
+   "fps": 10,
+   "loop": false,
+   "events": {}
+  },
+  {
+   "name": "focus",
+   "row": 20,
+   "frames": 8,
+   "fps": 10,
+   "loop": true,
+   "events": {
+    "heal_after_seconds": 1.0
+   }
+  },
+  {
+   "name": "focus_heal",
+   "row": 21,
+   "frames": 4,
+   "fps": 12,
+   "loop": false,
+   "events": {
+    "heal": [
+     0
+    ]
+   }
+  },
+  {
+   "name": "cast",
+   "row": 22,
+   "frames": 6,
+   "fps": 14,
+   "loop": false,
+   "events": {
+    "spawn_spell": [
+     2
+    ]
+   }
+  },
+  {
+   "name": "super_dash_charge",
+   "row": 23,
+   "frames": 6,
+   "fps": 12,
+   "loop": true,
+   "events": {}
+  },
+  {
+   "name": "super_dash",
+   "row": 24,
+   "frames": 4,
+   "fps": 14,
+   "loop": true,
+   "events": {
+    "hit_active": "all"
+   }
+  },
+  {
+   "name": "recoil",
+   "row": 25,
+   "frames": 4,
+   "fps": 14,
+   "loop": false,
+   "events": {
+    "invincible_frames": [
+     0,
+     1,
+     2,
+     3
+    ]
+   }
+  },
+  {
+   "name": "death",
+   "row": 26,
+   "frames": 8,
+   "fps": 10,
+   "loop": false,
+   "events": {
+    "camera_shake": [
+     6
+    ]
+   }
+  },
+  {
+   "name": "sit",
+   "row": 27,
+   "frames": 4,
+   "fps": 8,
+   "loop": false,
+   "events": {
+    "save_game": [
+     3
+    ]
+   }
+  }
+ ]
+}

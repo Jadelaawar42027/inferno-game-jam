@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b53sgiawj64cb"]
+
+[ext_resource type="Script" uid="uid://cwdllrws53aga" path="res://scenes/abilities/invisibility_behavior.gd" id="1_2xwd2"]
+
+[node name="InvisibilityBehavior" type="Node" unique_id=177731336]
+script = ExtResource("1_2xwd2")

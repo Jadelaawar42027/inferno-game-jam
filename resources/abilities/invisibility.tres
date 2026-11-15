@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ability" format=3 uid="uid://dwaimmhu01eyt"]
+
+[ext_resource type="PackedScene" uid="uid://b53sgiawj64cb" path="res://scenes/abilities/invisibility_behavior.tscn" id="1_33sjm"]
+[ext_resource type="Script" uid="uid://bx64sb70mo5f" path="res://scripts/abilities/ability.gd" id="1_vfpxl"]
+
+[resource]
+script = ExtResource("1_vfpxl")
+id = &"invisibility"
+display_name = "Invisibility"
+behavior = ExtResource("1_33sjm")
+metadata/_custom_type_script = "uid://bx64sb70mo5f"

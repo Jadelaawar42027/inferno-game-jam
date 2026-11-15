@@ -1,7 +1,7 @@
 extends Enemy
 
 
-enum State { PATROL, CHASE, LUNGE }
+enum State { PATROL, ALERT, CHASE, LUNGE }
 var state := State.PATROL
 
 @export var chase_speed := 50.0
@@ -16,22 +16,26 @@ var windup_timer := 0.0
 var lunge_timer := 0.0
 var lunge_dir := 1.0
 var lunge_started := false
+var alert_timer := 0.0
 
 @onready var lunge_hitbox: Hitbox = $LungeHitbox
 
-
 func _physics_process(delta: float) -> void:
+	if is_dead: return
 	apply_gravity(delta)
 	cooldown_timer -= delta
 	if not player_in_range and state != State.LUNGE: state = State.PATROL
 	if player_in_range:
 		var dx := player_target.global_position.x - global_position.x
-		if state == State.PATROL and signf(dx) == direction: state = State.CHASE
+		if state == State.PATROL and signf(dx) == direction:
+			if alerted: state = State.CHASE
+			else: start_alert()
 		if state == State.CHASE and absf(dx) < lunge_range and cooldown_timer <= 0: start_lunge()
 	match state:
 		State.PATROL: patrol()
 		State.CHASE: chase()
 		State.LUNGE: lunge(delta)
+		State.ALERT: alert(delta)
 	
 	update_animation()
 	move_and_slide()
@@ -76,3 +80,15 @@ func update_animation()-> void:
 		State.PATROL: play_anim("walk")
 		State.CHASE: play_anim("run")
 		State.LUNGE: play_anim("windup" if windup_timer > 0 else "lunge")
+
+func start_alert() -> void:
+	state = State.ALERT
+	alerted = true
+	alert_timer = alert_time
+	velocity.x = 0
+	play_locked("alert")
+
+func alert(delta: float) -> void:
+	velocity.x = 0
+	alert_timer -= delta
+	if alert_timer <= 0: state = State.CHASE

@@ -1,6 +1,6 @@
 extends Enemy
 
-enum State { PATROL, CHARGE_WINDUP, CHARGE, SLAM_WINDUP, SLAM, RECOVER }
+enum State { PATROL, ALERT, CHARGE_WINDUP, CHARGE, SLAM_WINDUP, SLAM, RECOVER }
 var state := State.PATROL
 
 @export var charge_speed := 120.0
@@ -19,6 +19,7 @@ var cooldown_timer := 0.0
 @onready var slam_hitbox: Hitbox = $SlamHitbox
 
 func _physics_process(delta: float) -> void:
+	if is_dead: return
 	apply_gravity(delta)
 	cooldown_timer -= delta
 	state_timer -= delta
@@ -29,6 +30,7 @@ func _physics_process(delta: float) -> void:
 		State.SLAM_WINDUP: slam_windup()
 		State.SLAM: slam()
 		State.RECOVER: recover()
+		State.ALERT: alert()
 	update_animation()
 	move_and_slide()
 
@@ -44,7 +46,10 @@ func heavy_patrol() -> void:
 	patrol()
 	if not player_in_range or cooldown_timer > 0: return
 	if absf(player_dx()) < slam_range: start_slam()
-	elif signf(player_dx()) == direction: start_charge()
+	elif signf(player_dx()) == direction:
+		if alerted: start_charge()
+		else: start_alert()
+
 
 func start_charge() -> void:
 	state = State.CHARGE_WINDUP
@@ -106,3 +111,14 @@ func update_animation() -> void:
 		State.SLAM_WINDUP: play_anim("slam_windup")
 		State.SLAM: play_anim("slam")
 		State.RECOVER: play_anim("recover")
+
+func start_alert() -> void:
+	state = State.ALERT
+	alerted = true
+	state_timer = alert_time
+	velocity.x = 0
+	play_locked("alert")
+
+func alert() -> void:
+	velocity.x = 0
+	if state_timer <= 0: start_charge()

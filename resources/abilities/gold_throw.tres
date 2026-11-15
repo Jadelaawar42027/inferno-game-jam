@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ability" format=3 uid="uid://6fovqhr0gt1m"]
+
+[ext_resource type="Script" uid="uid://bx64sb70mo5f" path="res://scripts/abilities/ability.gd" id="1_l4hqf"]
+[ext_resource type="PackedScene" uid="uid://0dg8hyuvjssx" path="res://scenes/abilities/gold_throw_behavior.tscn" id="1_wyhvj"]
+
+[resource]
+script = ExtResource("1_l4hqf")
+id = &"gold_throw"
+display_name = "Gold Throw"
+behavior = ExtResource("1_wyhvj")
+metadata/_custom_type_script = "uid://bx64sb70mo5f"

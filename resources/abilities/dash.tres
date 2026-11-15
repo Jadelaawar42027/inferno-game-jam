@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ability" format=3 uid="uid://dux8jnhiqyqwi"]
+
+[ext_resource type="PackedScene" uid="uid://bdat257tark2a" path="res://scenes/abilities/dash_behavior.tscn" id="1_4eicd"]
+[ext_resource type="Script" uid="uid://bx64sb70mo5f" path="res://scripts/abilities/ability.gd" id="1_8kwqy"]
+
+[resource]
+script = ExtResource("1_8kwqy")
+id = &"dash"
+display_name = "Dash"
+behavior = ExtResource("1_4eicd")
+metadata/_custom_type_script = "uid://bx64sb70mo5f"

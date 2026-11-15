@@ -2,26 +2,27 @@
 
 [ext_resource type="Script" uid="uid://bbnn5ew4afvmn" path="res://scripts/player/player.gd" id="1_8afob"]
 [ext_resource type="PackedScene" uid="uid://bc8hi61nfjm5p" path="res://scenes/Components/health_component.tscn" id="2_lvxji"]
-[ext_resource type="SpriteFrames" uid="uid://d0xfs35vehcfq" path="res://assets/sprites/knight/knight_frames.tres" id="3_75vfm"]
 [ext_resource type="PackedScene" uid="uid://bvschcfxqd4kd" path="res://scenes/Components/hurtbox.tscn" id="3_p47bc"]
 [ext_resource type="PackedScene" uid="uid://bsxufnevdum76" path="res://scenes/Components/hitbox.tscn" id="4_75vfm"]
+[ext_resource type="SpriteFrames" uid="uid://bjrxl5oe3ln10" path="res://assets/sprites/knight/knight_frames_hd.tres" id="5_p47bc"]
+[ext_resource type="Script" uid="uid://be3r6wqkyspak" path="res://scenes/player/ability_manager.gd" id="6_75vfm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_docu8"]
 size = Vector2(12, 22)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0owmy"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p47bc"]
 resource_local_to_scene = true
 size = Vector2(10, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qek5x"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75vfm"]
 resource_local_to_scene = true
 size = Vector2(26, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5gtgg"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0owmy"]
 resource_local_to_scene = true
 size = Vector2(20, 24)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h17s1"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qek5x"]
 resource_local_to_scene = true
 size = Vector2(20, 22)
 
@@ -51,6 +52,7 @@ position = Vector2(0, -11)
 shape = SubResource("RectangleShape2D_docu8")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=623591930]
+zoom = Vector2(1.5, 1.5)
 position_smoothing_enabled = true
 position_smoothing_speed = 9.0
 
@@ -61,7 +63,7 @@ health = NodePath("../health_component")
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=1868882131]
 position = Vector2(0, -10)
-shape = SubResource("RectangleShape2D_0owmy")
+shape = SubResource("RectangleShape2D_p47bc")
 
 [node name="Attacks" type="Node2D" parent="." unique_id=804652063]
 
@@ -71,7 +73,7 @@ collision_layer = 8
 collision_mask = 384
 
 [node name="CollisionShape2D" parent="Attacks/SideSlash" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_qek5x")
+shape = SubResource("RectangleShape2D_75vfm")
 
 [node name="UpSlash" parent="Attacks" unique_id=2052691650 instance=ExtResource("4_75vfm")]
 position = Vector2(0, -34)
@@ -79,7 +81,7 @@ collision_layer = 8
 collision_mask = 384
 
 [node name="CollisionShape2D" parent="Attacks/UpSlash" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_5gtgg")
+shape = SubResource("RectangleShape2D_0owmy")
 
 [node name="DownSlash" parent="Attacks" unique_id=614013444 instance=ExtResource("4_75vfm")]
 position = Vector2(0, 11)
@@ -88,16 +90,18 @@ collision_mask = 384
 pogo_allowed = true
 
 [node name="CollisionShape2D" parent="Attacks/DownSlash" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_h17s1")
+shape = SubResource("RectangleShape2D_qek5x")
 
 [node name="Visual" type="Node2D" parent="." unique_id=727021128]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visual" unique_id=806931827]
-texture_filter = 2
-scale = Vector2(0.6, 0.6)
-sprite_frames = ExtResource("3_75vfm")
-animation = &"walk"
-frame_progress = 0.49651882
+texture_filter = 4
+position = Vector2(0, -8)
+scale = Vector2(0.2, 0.2)
+sprite_frames = ExtResource("5_p47bc")
+animation = &"heavy_charge"
+frame = 1
+frame_progress = 0.11405343
 offset = Vector2(0, -18)
 
 [node name="BreathPuff" type="CPUParticles2D" parent="Visual" unique_id=483567130]
@@ -116,6 +120,9 @@ initial_velocity_max = 16.0
 scale_amount_min = 0.8
 scale_amount_max = 1.4
 color_ramp = SubResource("Gradient_docu8")
+
+[node name="AbilityManager" type="Node" parent="." unique_id=355958008]
+script = ExtResource("6_75vfm")
 
 [editable path="Hurtbox"]
 [editable path="Attacks/SideSlash"]
