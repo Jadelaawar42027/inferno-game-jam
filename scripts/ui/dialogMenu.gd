@@ -25,14 +25,17 @@ func dialog_start(target_name: String, lines: Array[DialogLine]):
 
 func show_line():
 	var line = LINES_ARRAY[LINES_INDEX]
-	TEXT_CONTAINER.text = line.TEXT
 	
-	if line.SPEAKER == DialogLine.STATE_SPEAKER.HERO:
-		HERO_CONTAINER.text = NAME_HERO
-		TARGET_CONTAINER.text = ""
-	elif line.SPEAKER == DialogLine.STATE_SPEAKER.OTHER:
-		HERO_CONTAINER.text = ""
-		TARGET_CONTAINER.text = NAME_TARGET
+	if line == null:
+		push_error("DialogTrigger Cannot have empty element at index " + str(LINES_INDEX))
+	else:
+		TEXT_CONTAINER.text = line.TEXT
+		if line.SPEAKER == DialogLine.STATE_SPEAKER.HERO:
+			HERO_CONTAINER.text = NAME_HERO
+			TARGET_CONTAINER.text = ""
+		elif line.SPEAKER == DialogLine.STATE_SPEAKER.OTHER:
+			HERO_CONTAINER.text = ""
+			TARGET_CONTAINER.text = NAME_TARGET
 
 func next_line():
 	LINES_INDEX += 1
