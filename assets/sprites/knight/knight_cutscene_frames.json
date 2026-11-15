@@ -1,0 +1,60 @@
+{
+ "name": "knight_cutscene",
+ "floor": "player",
+ "px_per_unit": 0.3,
+ "sheet": "knight_cutscene_frame252x204_16cols_3rows.png",
+ "frame_size": [
+  252,
+  204
+ ],
+ "columns": 16,
+ "rows": 3,
+ "frames_total": 33,
+ "godot": {
+  "animated_sprite_scale": 0.2,
+  "offset": [
+   0,
+   -54.0
+  ],
+  "texture_filter": "Linear Mipmap",
+  "facing": "right (flip_h for left)"
+ },
+ "animations": [
+  {
+   "name": "sleep",
+   "frames": 6,
+   "fps": 6,
+   "loop": true,
+   "seconds": 1.0,
+   "events": {},
+   "note": "lying on his back, eyes closed, breathing"
+  },
+  {
+   "name": "wake",
+   "frames": 7,
+   "fps": 8,
+   "loop": false,
+   "seconds": 0.88,
+   "events": {},
+   "note": "eyes flicker open while still lying down"
+  },
+  {
+   "name": "get_up",
+   "frames": 8,
+   "fps": 10,
+   "loop": false,
+   "seconds": 0.8,
+   "events": {},
+   "note": "sits up, crouches, stands; ends on the idle pose"
+  },
+  {
+   "name": "spell_learn",
+   "frames": 12,
+   "fps": 10,
+   "loop": false,
+   "seconds": 1.2,
+   "events": {},
+   "note": "absorb motion in blue magic, eyes stay normal: learning Vinculum Aeternum (P-08)"
+  }
+ ]
+}

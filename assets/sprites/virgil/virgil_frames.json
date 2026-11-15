@@ -1,0 +1,63 @@
+{
+ "frame_size": [
+  330,
+  340
+ ],
+ "columns": 10,
+ "rows": 7,
+ "godot": {
+  "scale": 0.2,
+  "offset": [
+   25.0,
+   -142.5
+  ],
+  "texture_filter": "Linear Mipmap"
+ },
+ "animations": [
+  {
+   "name": "idle",
+   "frames": 8,
+   "fps": 8,
+   "loop": true
+  },
+  {
+   "name": "talk",
+   "frames": 8,
+   "fps": 10,
+   "loop": true
+  },
+  {
+   "name": "cast",
+   "frames": 8,
+   "fps": 12,
+   "loop": false,
+   "note": "Raise staff. Ends on the held pose; play cast_hold after it."
+  },
+  {
+   "name": "cast_hold",
+   "frames": 4,
+   "fps": 10,
+   "loop": true
+  },
+  {
+   "name": "gesture",
+   "frames": 6,
+   "fps": 12,
+   "loop": false,
+   "note": "Points screen-left. flip_h to point right."
+  },
+  {
+   "name": "gesture_hold",
+   "frames": 4,
+   "fps": 8,
+   "loop": true
+  },
+  {
+   "name": "dissolve",
+   "frames": 10,
+   "fps": 10,
+   "loop": false,
+   "note": "Turns to smoke drifting screen-right (towards the ice). Last frame is empty. flip_h if the ice is on his left."
+  }
+ ]
+}

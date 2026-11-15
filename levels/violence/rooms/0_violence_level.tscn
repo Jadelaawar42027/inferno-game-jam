@@ -342,111 +342,111 @@ tile_set = ExtResource("6_r")
 
 [node name="Chain0" type="Sprite2D" parent="Chains"]
 texture_repeat = 2
-position = Vector2(2538.31, 704.00)
+position = Vector2(2540.42, 704.00)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 14, 649.5)
+region_rect = Rect2(0, 0, 14, 768.0)
 
 [node name="Chain1" type="Sprite2D" parent="Chains"]
 texture_repeat = 2
-position = Vector2(2595.35, 704.00)
+position = Vector2(2596.45, 704.00)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 14, 649.5)
+region_rect = Rect2(0, 0, 14, 768.0)
 
 [node name="Chain2" type="Sprite2D" parent="Chains"]
 texture_repeat = 2
-position = Vector2(2691.91, 704.00)
+position = Vector2(2694.02, 704.00)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 14, 649.5)
+region_rect = Rect2(0, 0, 14, 768.0)
 
 [node name="Chain3" type="Sprite2D" parent="Chains"]
 texture_repeat = 2
-position = Vector2(2748.95, 704.00)
+position = Vector2(2750.05, 704.00)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 14, 649.5)
+region_rect = Rect2(0, 0, 14, 768.0)
 
 [node name="Chain4" type="Sprite2D" parent="Chains"]
 texture_repeat = 2
-position = Vector2(2845.51, 704.00)
+position = Vector2(2847.62, 704.00)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 14, 649.5)
+region_rect = Rect2(0, 0, 14, 768.0)
 
 [node name="Chain5" type="Sprite2D" parent="Chains"]
 texture_repeat = 2
-position = Vector2(2902.55, 704.00)
+position = Vector2(2903.65, 704.00)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 14, 649.5)
+region_rect = Rect2(0, 0, 14, 768.0)
 
 [node name="Chain6" type="Sprite2D" parent="Chains"]
 texture_repeat = 2
-position = Vector2(2999.11, 704.00)
+position = Vector2(3001.22, 704.00)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 14, 649.5)
+region_rect = Rect2(0, 0, 14, 768.0)
 
 [node name="Chain7" type="Sprite2D" parent="Chains"]
 texture_repeat = 2
-position = Vector2(3056.15, 704.00)
+position = Vector2(3057.25, 704.00)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 14, 649.5)
+region_rect = Rect2(0, 0, 14, 768.0)
 
 [node name="Chain8" type="Sprite2D" parent="Chains"]
 texture_repeat = 2
-position = Vector2(3152.71, 704.00)
+position = Vector2(3154.82, 704.00)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 14, 649.5)
+region_rect = Rect2(0, 0, 14, 768.0)
 
 [node name="Chain9" type="Sprite2D" parent="Chains"]
 texture_repeat = 2
-position = Vector2(3209.75, 704.00)
+position = Vector2(3210.85, 704.00)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 14, 649.5)
+region_rect = Rect2(0, 0, 14, 768.0)
 
 [node name="Chain10" type="Sprite2D" parent="Chains"]
 texture_repeat = 2
-position = Vector2(3306.31, 704.00)
+position = Vector2(3308.42, 704.00)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 14, 649.5)
+region_rect = Rect2(0, 0, 14, 768.0)
 
 [node name="Chain11" type="Sprite2D" parent="Chains"]
 texture_repeat = 2
-position = Vector2(3363.35, 704.00)
+position = Vector2(3364.45, 704.00)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 14, 649.5)
+region_rect = Rect2(0, 0, 14, 768.0)
 
 [node name="Decor" type="Node2D" parent="."]
 
