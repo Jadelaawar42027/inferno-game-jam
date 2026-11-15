@@ -2,8 +2,27 @@
 
 [ext_resource type="PackedScene" uid="uid://deejvq1mv7666" path="res://scenes/player/player.tscn" id="1_e77pf"]
 [ext_resource type="PackedScene" uid="uid://cmxd0mu2gy1gr" path="res://scenes/levels/platform.tscn" id="2_ake7g"]
+[ext_resource type="PackedScene" uid="uid://cr0p8do4wfyk5" path="res://scenes/Components/dialog_trigger.tscn" id="3_mok1g"]
+[ext_resource type="Script" uid="uid://dkj0fvj30brcg" path="res://scripts/ui/dialog_line.gd" id="4_c22k0"]
 [ext_resource type="PackedScene" uid="uid://7ekpfe2fw7i1" path="res://scenes/ui/dialogMenu.tscn" id="4_drx3o"]
 [ext_resource type="PackedScene" uid="uid://cvj618ugsj3gy" path="res://scenes/ui/pauseMenu.tscn" id="7_0786d"]
+
+[sub_resource type="Resource" id="Resource_jxckr"]
+script = ExtResource("4_c22k0")
+TEXT = "You will not defeat me"
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="Resource_uj060"]
+script = ExtResource("4_c22k0")
+SPEAKER = 1
+TEXT = "Hahahahahah me very evil"
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="Resource_3b2qd"]
+script = ExtResource("4_c22k0")
+SPEAKER = 1
+TEXT = "I will kill you soon!"
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
 
 [node name="TestArea" type="Node2D" unique_id=1130552543]
 
@@ -28,8 +47,14 @@ position = Vector2(307, -76)
 [node name="Platform5" parent="." unique_id=1585276328 instance=ExtResource("2_ake7g")]
 position = Vector2(440, 21)
 
+[node name="DialogTrigger" parent="." unique_id=852595368 instance=ExtResource("3_mok1g")]
+position = Vector2(2, -11)
+NAME_SPEAKER = "Devil"
+LINES = Array[ExtResource("4_c22k0")]([SubResource("Resource_jxckr"), SubResource("Resource_uj060"), SubResource("Resource_3b2qd")])
+
 [node name="UI" type="CanvasLayer" parent="." unique_id=1064284943]
 
 [node name="PauseMenu" parent="UI" unique_id=578825807 instance=ExtResource("7_0786d")]
 
 [node name="DialogMenu" parent="UI" unique_id=1994849097 instance=ExtResource("4_drx3o")]
+visible = false

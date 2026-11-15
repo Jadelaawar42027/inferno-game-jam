@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://n102nfex5a5" path="res://scripts/ui/dialogMenu.gd" id="1_nwicm"]
 
-[node name="DialogMenu" type="Control" unique_id=1994849097]
+[node name="DialogMenu" type="Control" unique_id=1994849097 groups=["dialog_box"]]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15

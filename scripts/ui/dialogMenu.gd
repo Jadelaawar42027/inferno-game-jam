@@ -49,6 +49,3 @@ func _unhandled_input(event):
 		next_line()
 		get_viewport().set_input_as_handled()
 		
-		
-#Might want to remove this once done with test
-	
