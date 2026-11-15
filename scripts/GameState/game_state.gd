@@ -5,7 +5,13 @@ signal floor_changed(new_floor: int)
 
 const TOTAL_SINS := 4
 const INTRO_SCENE := "res://scenes/cutscenes/intro.tscn"
-const FLOORS := ["res://scenes/levels/floor_1.tscn", "res://scenes/levels/floor_2.tscn", "res://scenes/levels/floor_3.tscn", "res://scenes/levels/floor_4.tscn", "res://scenes/levels/floor_5.tscn"]
+const FLOORS := [
+	"res://levels/gluttony/rooms/0_gluttony_level.tscn",
+	"res://levels/greed/rooms/0_greed_level.tscn",
+	"res://levels/violence/rooms/0_violence_level.tscn",
+	"res://levels/fraud/rooms/0_fraud_level.tscn",
+	"res://levels/treachery/rooms/1_satan_arena.tscn",
+]
 const ENDING_SCENE := "res://scenes/cutscenes/ending.tscn"
 const MENU_SCENE := "res://scenes/ui/mainMenu.tscn"
 

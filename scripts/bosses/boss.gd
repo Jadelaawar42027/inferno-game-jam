@@ -157,4 +157,4 @@ func _on_hurt(_hitbox: Hitbox) -> void:
 
 func say(moment: String, interrupt := true) -> void:
 	if voice_id == "": return
-	VoiceManager.play_line(voice_id + "_" + moment, "BossVoice", voice_pitch, interrupt)
+	VoiceManager.play_line(voice_id + "_" + moment, "Boss Voice", voice_pitch, interrupt)

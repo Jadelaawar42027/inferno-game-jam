@@ -11,6 +11,8 @@ var guarding := false
 var guard_hit := false
 
 func _ready() -> void:
+	hurtbox.monitoring = true
+	hurtbox.set_collision_mask_value(4, true)
 	super()
 	touch_hitbox.hit_landed.connect(_on_touch_hit)
 	hurtbox.area_entered.connect(_on_hurtbox_area_entered)
@@ -49,7 +51,7 @@ func golden_touch() -> void:
 	if is_dead: return
 	velocity.x = 0
 	touch_hitbox.deactivate()
-	await sprite.animation_finished
+	if sprite.is_playing(): await sprite.animation_finished
 	await play_and_wait("touch_recover")
 	if phase == 2 and not is_dead: await statue_stomp()
 

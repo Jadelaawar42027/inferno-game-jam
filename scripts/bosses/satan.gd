@@ -51,8 +51,9 @@ func get_attacks() -> Array[String]:
 	var list: Array[String] = ["slam"]
 	if d < 110: list.append_array(["claw", "claw", "tail"])
 	else: list.append("charge")
-	if phase >= 2: list.append_array(["flight", "flight"])
 	if phase == 3: list.append_array(["breath", "orbs", "beam", "roar", "combo"])
+	if phase == 2: list.append_array(["flight", "flight"])
+	if phase == 3: list.append("flight")
 	return list
 
 func do_attack(attack_name: String) -> void:
@@ -126,13 +127,18 @@ func flight() -> void:
 	var hover := get_node_or_null("../Fight/HoverCenter") as Marker2D
 	var top := hover.global_position if hover else global_position + Vector2(0, -150)
 	await create_tween().tween_property(self, "global_position", top, 0.5).finished
-	var end := Time.get_ticks_msec() + int(fly_time * 1000)
-	while Time.get_ticks_msec() < end and not is_dead:
+	var left := fly_time
+	while left > 0 and not is_dead:
 		face_player()
-		if randf() < 0.6: await swoop()
-		else: await gust()
+		if randf() < 0.6: 
+			left -= 1.5 
+			await swoop()
+		else: 
+			left -= 1.5
+			await gust()
 		if not is_dead: sprite.play("fly")
 		await wait(0.6)
+		left -= 0.6
 	if is_dead: return
 	await land()
 

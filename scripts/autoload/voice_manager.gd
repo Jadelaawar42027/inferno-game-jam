@@ -24,7 +24,7 @@ func play_line(id: String, bus := "Voice", pitch := 1.0, interrupt := true) -> v
 
 func update_corruption() -> void:
 	var idx := AudioServer.get_bus_index("Voice")
-	var c := GameState.corruption()
+	var c: float = GameState.corruption()
 	var shift := AudioServer.get_bus_effect(idx, 0) as AudioEffectPitchShift
 	shift.pitch_scale = lerpf(1.0, 0.75, c)
 	var dist := AudioServer.get_bus_effect(idx, 1) as AudioEffectDistortion
