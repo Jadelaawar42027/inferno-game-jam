@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bc8hi61nfjm5p" path="res://scenes/Components/health_component.tscn" id="2_lvxji"]
 [ext_resource type="PackedScene" uid="uid://bvschcfxqd4kd" path="res://scenes/Components/hurtbox.tscn" id="3_p47bc"]
 [ext_resource type="PackedScene" uid="uid://bsxufnevdum76" path="res://scenes/Components/hitbox.tscn" id="4_75vfm"]
-[ext_resource type="SpriteFrames" uid="uid://bjrxl5oe3ln10" path="res://assets/sprites/knight/knight_frames_hd.tres" id="5_p47bc"]
+[ext_resource type="SpriteFrames" uid="uid://bl1elduuoxp86" path="res://assets/sprites/knight/knight_frames_hd.tres" id="5_p47bc"]
 [ext_resource type="Script" uid="uid://be3r6wqkyspak" path="res://scenes/player/ability_manager.gd" id="6_75vfm"]
 [ext_resource type="PackedScene" uid="uid://cvj618ugsj3gy" path="res://scenes/ui/pauseMenu.tscn" id="7_0owmy"]
 
@@ -103,9 +103,8 @@ texture_filter = 4
 position = Vector2(0, -8)
 scale = Vector2(0.2, 0.2)
 sprite_frames = ExtResource("5_p47bc")
-animation = &"heavy_charge"
-frame = 1
-frame_progress = 0.11405343
+animation = &"idle"
+frame_progress = 0.43328258
 offset = Vector2(0, -18)
 
 [node name="BreathPuff" type="CPUParticles2D" parent="Visual" unique_id=483567130]

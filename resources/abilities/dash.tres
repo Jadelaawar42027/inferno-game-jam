@@ -8,4 +8,6 @@ script = ExtResource("1_8kwqy")
 id = &"dash"
 display_name = "Dash"
 behavior = ExtResource("1_4eicd")
+action = &"dash"
+description = "Press SHIFT to dash."
 metadata/_custom_type_script = "uid://bx64sb70mo5f"

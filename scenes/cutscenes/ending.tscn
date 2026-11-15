@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cjx7q7y7f7yb4"]
+
+[ext_resource type="Script" uid="uid://4x3hrtuau33" path="res://scenes/cutscenes/ending.gd" id="1_behwe"]
+
+[node name="Ending" type="Node2D" unique_id=1962749658]
+script = ExtResource("1_behwe")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1236754971]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=143181280]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/CenterContainer" unique_id=2123813577]
+layout_mode = 2
+text = "To be Continued..."

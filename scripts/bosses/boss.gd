@@ -24,6 +24,9 @@ var active := false
 var last_attack := ""
 
 func _ready() -> void:
+	if reward and GameState.has_ability(reward.id):
+		queue_free()
+		return
 	super()
 	health.health_changed.connect(_on_health_changed)
 	if auto_start:

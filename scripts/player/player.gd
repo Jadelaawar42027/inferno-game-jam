@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 class_name Player
 
+signal absorb_finished(ability: Ability)
+
 @onready var visual: Node2D = $Visual
 
 @export_group("Movement")
@@ -41,6 +43,7 @@ class_name Player
 var coyote_timer := 0.0
 var jump_buffer_timer := 0.0
 var facing := 1
+var absorbing := false
 
 var attack_cooldown_timer := 0.0
 var attack_active_timer := 0.0
@@ -91,6 +94,12 @@ func _physics_process(delta: float) -> void:
 	recoil_timer -= delta
 	hurt_lock_timer -= delta
 	invincibility_timer -= delta
+	
+	if absorbing or is_dead:
+		velocity.x = 0
+		velocity.y = minf(velocity.y + fall_gravity * delta, max_fall_speed)
+		move_and_slide()
+		return
 	
 	if is_on_floor():
 		coyote_timer = coyote_time
@@ -171,11 +180,13 @@ func _on_hurt(hitbox: Hitbox) ->void:
 	shake(5.0)
 
 func _on_died() ->void:
-	print("Dead")
-	Engine.time_scale = 1.0
-	get_tree().reload_current_scene.call_deferred()
+	if is_dead: return
 	is_dead = true
-	anim.play("death")
+	Engine.time_scale = 1.0
+	end_attack()
+	play_action("death")
+	await get_tree().create_timer(0.8).timeout
+	GameState.reload_floor()
 
 func hit_stop(duration: float) ->void:
 	Engine.time_scale = 0.05
@@ -203,6 +214,7 @@ func _ready() -> void:
 	anim.frame_changed.connect(_on_frame_changed)
 	anim.play("idle")
 	add_to_group("player")
+	if GameState.checkpoint != Vector2.INF: global_position = GameState.checkpoint
 
 func _on_anim_finished()->void:
 	if anim.animation == "run_start": anim.play("run"); return
@@ -250,5 +262,17 @@ func get_move_dir() -> float:
 	if left: return -1.0
 	return 0.0
 
-func play_absorb_animation() -> void:
-	pass
+func play_absorb_animation(ability: Ability) -> void:
+	absorbing = true
+	end_attack()
+	hurtbox.invulnerable = true
+	var cam_tween := create_tween()
+	cam_tween.tween_property(camera, "zoom", camera.zoom * 1.3, 0.4)
+	play_action("absorb")
+	await anim.animation_finished
+	shake(4.0)
+	var back := create_tween()
+	back.tween_property(camera, "zoom", camera.zoom / 1.3, 0.5)
+	hurtbox.invulnerable = false
+	absorbing = false
+	absorb_finished.emit(ability)

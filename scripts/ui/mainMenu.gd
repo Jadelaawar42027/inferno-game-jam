@@ -2,8 +2,7 @@ extends Control
 
 
 func _on_play_button_pressed() -> void:
-	GameState.reset()
-	get_tree().change_scene_to_file("res://scenes/levels/scene_1.tscn")
+	GameState.start_new_game()
 
 
 func _on_quit_pressed() -> void:

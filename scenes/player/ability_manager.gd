@@ -13,7 +13,7 @@ func _ready() -> void:
 
 func _on_sin_absorbed(ability: Ability)->void:
 	_add_behavior(ability)
-	player.play_absorb_animation()
+	player.play_absorb_animation(ability)
 
 func _add_behavior(ability: Ability)->void:
 	if ability.behavior == null or active.has(ability.id): return
