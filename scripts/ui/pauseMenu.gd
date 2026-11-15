@@ -4,6 +4,8 @@ extends Control
 func _unhandled_input(event):
 	if get_tree().current_scene.scene_file_path == GameState.MENU_SCENE: return
 	if GameState.transitioning: return
+	var dialog := get_tree().get_first_node_in_group("dialog_box")
+	if dialog and dialog.visible: return
 	if event.is_action_pressed("pause"):
 		get_tree().paused = not get_tree().paused
 		visible = get_tree().paused

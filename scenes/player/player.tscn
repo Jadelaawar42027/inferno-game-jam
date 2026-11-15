@@ -8,23 +8,24 @@
 [ext_resource type="Shader" uid="uid://ddibj6ssw35jd" path="res://assets/shaders/corruption.gdshader" id="5_qek5x"]
 [ext_resource type="Script" uid="uid://be3r6wqkyspak" path="res://scenes/player/ability_manager.gd" id="6_75vfm"]
 [ext_resource type="PackedScene" uid="uid://cvj618ugsj3gy" path="res://scenes/ui/pauseMenu.tscn" id="7_0owmy"]
+[ext_resource type="PackedScene" uid="uid://7ekpfe2fw7i1" path="res://scenes/ui/dialogMenu.tscn" id="9_5gtgg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_docu8"]
 size = Vector2(12, 22)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qek5x"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h17s1"]
 resource_local_to_scene = true
 size = Vector2(10, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5gtgg"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_je7p5"]
 resource_local_to_scene = true
 size = Vector2(26, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h17s1"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fm80t"]
 resource_local_to_scene = true
 size = Vector2(20, 24)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_je7p5"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gx1jg"]
 resource_local_to_scene = true
 size = Vector2(20, 22)
 
@@ -75,7 +76,7 @@ health = NodePath("../health_component")
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=1868882131]
 position = Vector2(0, -10)
-shape = SubResource("RectangleShape2D_qek5x")
+shape = SubResource("RectangleShape2D_h17s1")
 
 [node name="Attacks" type="Node2D" parent="." unique_id=804652063]
 
@@ -86,7 +87,7 @@ collision_mask = 384
 damage = 100
 
 [node name="CollisionShape2D" parent="Attacks/SideSlash" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_5gtgg")
+shape = SubResource("RectangleShape2D_je7p5")
 
 [node name="UpSlash" parent="Attacks" unique_id=2052691650 instance=ExtResource("4_75vfm")]
 position = Vector2(0, -34)
@@ -95,7 +96,7 @@ collision_mask = 384
 damage = 20
 
 [node name="CollisionShape2D" parent="Attacks/UpSlash" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_h17s1")
+shape = SubResource("RectangleShape2D_fm80t")
 
 [node name="DownSlash" parent="Attacks" unique_id=614013444 instance=ExtResource("4_75vfm")]
 position = Vector2(0, 11)
@@ -105,7 +106,7 @@ damage = 20
 pogo_allowed = true
 
 [node name="CollisionShape2D" parent="Attacks/DownSlash" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_je7p5")
+shape = SubResource("RectangleShape2D_gx1jg")
 
 [node name="Visual" type="Node2D" parent="." unique_id=727021128]
 
@@ -143,6 +144,8 @@ script = ExtResource("6_75vfm")
 [node name="UI" type="CanvasLayer" parent="." unique_id=1341298659]
 
 [node name="PauseMenu" parent="UI" unique_id=578825807 instance=ExtResource("7_0owmy")]
+
+[node name="DialogMenu" parent="UI" unique_id=1994849097 instance=ExtResource("9_5gtgg")]
 
 [editable path="Hurtbox"]
 [editable path="Attacks/SideSlash"]

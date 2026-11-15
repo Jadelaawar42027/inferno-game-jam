@@ -11,14 +11,14 @@
 [ext_resource type="Texture2D" path="res://levels/fraud/art/platforms/platform_bridge_stub.png" id="9_r"]
 [ext_resource type="Texture2D" path="res://levels/fraud/art/gameplay/fx_false_seal.png" id="10_r"]
 [ext_resource type="Texture2D" path="res://levels/fraud/art/props/prop_cards_dice.png" id="11_r"]
-[ext_resource type="Texture2D" path="res://levels/fraud/art/props/prop_hooded_hypocrite.png" id="12_r"]
-[ext_resource type="Texture2D" path="res://levels/fraud/art/props/prop_forged_scrolls.png" id="13_r"]
-[ext_resource type="Texture2D" path="res://levels/fraud/art/gameplay/harlequin_arch.png" id="14_r"]
-[ext_resource type="Texture2D" path="res://levels/fraud/art/props/prop_lantern.png" id="15_r"]
-[ext_resource type="Texture2D" path="res://levels/fraud/art/props/prop_harlequin_banner.png" id="16_r"]
-[ext_resource type="Texture2D" path="res://levels/fraud/art/gameplay/breakable_block.png" id="17_r"]
-[ext_resource type="PackedScene" uid="uid://bvschcfxqd4kd" path="res://scenes/Components/hurtbox.tscn" id="18_r"]
-[ext_resource type="PackedScene" uid="uid://bc8hi61nfjm5p" path="res://scenes/Components/health_component.tscn" id="19_r"]
+[ext_resource type="PackedScene" uid="uid://bvschcfxqd4kd" path="res://scenes/Components/hurtbox.tscn" id="12_r"]
+[ext_resource type="PackedScene" uid="uid://bc8hi61nfjm5p" path="res://scenes/Components/health_component.tscn" id="13_r"]
+[ext_resource type="Texture2D" path="res://levels/fraud/art/props/prop_hooded_hypocrite.png" id="14_r"]
+[ext_resource type="Texture2D" path="res://levels/fraud/art/props/prop_forged_scrolls.png" id="15_r"]
+[ext_resource type="Texture2D" path="res://levels/fraud/art/gameplay/harlequin_arch.png" id="16_r"]
+[ext_resource type="Texture2D" path="res://levels/fraud/art/props/prop_lantern.png" id="17_r"]
+[ext_resource type="Texture2D" path="res://levels/fraud/art/props/prop_harlequin_banner.png" id="18_r"]
+[ext_resource type="Texture2D" path="res://levels/fraud/art/gameplay/breakable_block.png" id="19_r"]
 [ext_resource type="Texture2D" path="res://levels/fraud/art/gameplay/breakable_block_damaged.png" id="20_r"]
 [ext_resource type="Texture2D" path="res://levels/fraud/art/props/prop_scorpion_statue.png" id="21_r"]
 [ext_resource type="Texture2D" path="res://levels/fraud/art/props/prop_candelabra.png" id="22_r"]
@@ -31,19 +31,20 @@
 [ext_resource type="Texture2D" path="res://levels/fraud/art/gameplay/lead_door.png" id="29_r"]
 [ext_resource type="Texture2D" path="res://levels/fraud/art/props/prop_hooded_procession.png" id="30_r"]
 [ext_resource type="Texture2D" path="res://levels/fraud/art/arena/arena_harlequin_floor_tile.png" id="31_r"]
-[ext_resource type="PackedScene" uid="uid://bsxufnevdum76" path="res://scenes/Components/hitbox.tscn" id="32_r"]
-[ext_resource type="Texture2D" path="res://levels/fraud/art/gameplay/arena_gate_frame_0.png" id="33_r"]
-[ext_resource type="Texture2D" path="res://levels/fraud/art/gameplay/arena_gate_frame_1.png" id="34_r"]
-[ext_resource type="Texture2D" path="res://levels/fraud/art/gameplay/arena_gate_frame_2.png" id="35_r"]
-[ext_resource type="Texture2D" path="res://levels/fraud/art/gameplay/arena_gate_frame_3.png" id="36_r"]
-[ext_resource type="PackedScene" uid="uid://deejvq1mv7666" path="res://scenes/player/player.tscn" id="37_r"]
-[ext_resource type="Texture2D" path="res://levels/fraud/art/bg/fg_frame.png" id="38_r"]
+[ext_resource type="Texture2D" path="res://levels/fraud/art/props/prop_candle_cluster.png" id="32_r"]
+[ext_resource type="PackedScene" uid="uid://bsxufnevdum76" path="res://scenes/Components/hitbox.tscn" id="33_r"]
+[ext_resource type="Texture2D" path="res://levels/fraud/art/gameplay/arena_gate_frame_0.png" id="34_r"]
+[ext_resource type="Texture2D" path="res://levels/fraud/art/gameplay/arena_gate_frame_1.png" id="35_r"]
+[ext_resource type="Texture2D" path="res://levels/fraud/art/gameplay/arena_gate_frame_2.png" id="36_r"]
+[ext_resource type="Texture2D" path="res://levels/fraud/art/gameplay/arena_gate_frame_3.png" id="37_r"]
+[ext_resource type="PackedScene" uid="uid://deejvq1mv7666" path="res://scenes/player/player.tscn" id="38_r"]
+[ext_resource type="Texture2D" path="res://levels/fraud/art/bg/fg_frame.png" id="39_r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
-size = Vector2(32.00, 32.00)
+size = Vector2(34.40, 10.40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2"]
-size = Vector2(38.00, 38.00)
+size = Vector2(40.80, 22.00)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3"]
 size = Vector2(32.00, 32.00)
@@ -112,47 +113,116 @@ size = Vector2(32.00, 32.00)
 size = Vector2(38.00, 38.00)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_25"]
-size = Vector2(79.50, 6.00)
+size = Vector2(32.00, 32.00)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_26"]
-size = Vector2(79.50, 6.00)
+size = Vector2(38.00, 38.00)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_27"]
-size = Vector2(79.50, 6.00)
+size = Vector2(31.20, 43.20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_28"]
-size = Vector2(28.00, 96.00)
+size = Vector2(35.20, 19.20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_29"]
-size = Vector2(34.00, 102.00)
+size = Vector2(34.40, 10.40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_30"]
-size = Vector2(28.00, 96.00)
+size = Vector2(79.50, 6.00)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_31"]
-size = Vector2(34.00, 102.00)
+size = Vector2(79.50, 6.00)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_32"]
-size = Vector2(256.00, 16.00)
+size = Vector2(79.50, 6.00)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33"]
-size = Vector2(256.00, 16.00)
+size = Vector2(43.20, 62.40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_34"]
-size = Vector2(256.00, 16.00)
+size = Vector2(43.20, 62.40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_35"]
-size = Vector2(160.00, 16.00)
+size = Vector2(36.00, 49.60)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_36"]
+size = Vector2(28.00, 96.00)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_37"]
+size = Vector2(34.00, 102.00)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_38"]
+size = Vector2(28.00, 96.00)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_39"]
+size = Vector2(34.00, 102.00)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_40"]
+size = Vector2(40.80, 22.00)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_41"]
+size = Vector2(33.60, 46.40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_42"]
+size = Vector2(32.00, 9.60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_43"]
+size = Vector2(32.00, 9.60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_44"]
+size = Vector2(36.00, 29.20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45"]
+size = Vector2(32.00, 9.60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_46"]
+size = Vector2(38.00, 20.80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_47"]
+size = Vector2(38.00, 20.80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_48"]
+size = Vector2(36.00, 29.20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_49"]
+size = Vector2(38.00, 20.80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_50"]
+size = Vector2(38.00, 20.80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_51"]
+size = Vector2(36.00, 29.20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_52"]
+size = Vector2(36.00, 29.20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_53"]
+size = Vector2(32.00, 9.60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54"]
+size = Vector2(36.00, 29.20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_55"]
+size = Vector2(36.00, 29.20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_56"]
 size = Vector2(256.00, 16.00)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_37"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57"]
+size = Vector2(256.00, 16.00)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_58"]
+size = Vector2(256.00, 16.00)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_59"]
+size = Vector2(160.00, 16.00)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_60"]
+size = Vector2(256.00, 16.00)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_61"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("33_r")
-}, {
 "duration": 1.0,
 "texture": ExtResource("34_r")
 }, {
@@ -161,22 +231,25 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("36_r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_r")
 }],
 "loop": false,
 "name": &"close",
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_38"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_62"]
 size = Vector2(54.40, 109.20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_39"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_63"]
 size = Vector2(54.40, 109.20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_40"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_64"]
 size = Vector2(32.00, 96.00)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_41"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65"]
 size = Vector2(32.00, 96.00)
 
 [node name="FraudLevel" type="Node2D"]
@@ -544,58 +617,88 @@ scale = Vector2(0.33, 0.33)
 texture = ExtResource("10_r")
 centered = false
 
-[node name="CardsDice1" type="Sprite2D" parent="Decor"]
+[node name="PotCardsDice1" type="Node2D" parent="Breakables"]
 position = Vector2(486.00, 1304.00)
+
+[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotCardsDice1"]
+position = Vector2(0.00, 0.00)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("11_r")
 centered = false
 
+[node name="health_component" parent="Breakables/PotCardsDice1" instance=ExtResource("13_r")]
+max_health = 1
+
+[node name="Hurtbox" parent="Breakables/PotCardsDice1" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
+collision_layer = 256
+collision_mask = 0
+health = NodePath("../health_component")
+
+[node name="CollisionShape2D" parent="Breakables/PotCardsDice1/Hurtbox" index="0" unique_id=1868882131]
+position = Vector2(21.50, 6.50)
+shape = SubResource("RectangleShape2D_1")
+
 [node name="HoodedHypocrite1" type="Sprite2D" parent="Decor"]
 position = Vector2(876.50, 1247.00)
 scale = Vector2(0.23, 0.23)
-texture = ExtResource("12_r")
+texture = ExtResource("14_r")
 centered = false
 
-[node name="ForgedScrolls1" type="Sprite2D" parent="Decor"]
+[node name="PotForgedScrolls1" type="Node2D" parent="Breakables"]
 position = Vector2(1248.00, 1289.50)
+
+[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotForgedScrolls1"]
+position = Vector2(0.00, 0.00)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("13_r")
+texture = ExtResource("15_r")
 centered = false
+
+[node name="health_component" parent="Breakables/PotForgedScrolls1" instance=ExtResource("13_r")]
+max_health = 1
+
+[node name="Hurtbox" parent="Breakables/PotForgedScrolls1" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
+collision_layer = 256
+collision_mask = 0
+health = NodePath("../health_component")
+
+[node name="CollisionShape2D" parent="Breakables/PotForgedScrolls1/Hurtbox" index="0" unique_id=1868882131]
+position = Vector2(25.50, 13.75)
+shape = SubResource("RectangleShape2D_2")
 
 [node name="HarlequinArch1" type="Sprite2D" parent="Decor"]
 position = Vector2(1235.00, 1188.00)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("14_r")
+texture = ExtResource("16_r")
 centered = false
 
 [node name="Lantern1" type="Sprite2D" parent="Decor"]
 position = Vector2(128.00, 1019.00)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("15_r")
+texture = ExtResource("17_r")
 centered = false
 
 [node name="Lantern2" type="Sprite2D" parent="Decor"]
 position = Vector2(512.00, 1019.00)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("15_r")
+texture = ExtResource("17_r")
 centered = false
 
 [node name="Lantern3" type="Sprite2D" parent="Decor"]
 position = Vector2(896.00, 1019.00)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("15_r")
+texture = ExtResource("17_r")
 centered = false
 
 [node name="HarlequinBanner1" type="Sprite2D" parent="Decor"]
 position = Vector2(320.00, 1021.00)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("16_r")
+texture = ExtResource("18_r")
 centered = false
 
 [node name="HarlequinBanner2" type="Sprite2D" parent="Decor"]
 position = Vector2(1075.00, 1021.00)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("16_r")
+texture = ExtResource("18_r")
 centered = false
 
 [node name="Block1" type="StaticBody2D" parent="Breakables"]
@@ -606,24 +709,24 @@ collision_mask = 0
 [node name="Sprite2D" type="Sprite2D" parent="Breakables/Block1"]
 position = Vector2(0.00, 0.00)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("17_r")
+texture = ExtResource("19_r")
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Breakables/Block1"]
 position = Vector2(16.00, 16.00)
-shape = SubResource("RectangleShape2D_1")
+shape = SubResource("RectangleShape2D_3")
 
-[node name="health_component" parent="Breakables/Block1" instance=ExtResource("19_r")]
+[node name="health_component" parent="Breakables/Block1" instance=ExtResource("13_r")]
 max_health = 4
 
-[node name="Hurtbox" parent="Breakables/Block1" node_paths=PackedStringArray("health") instance=ExtResource("18_r")]
+[node name="Hurtbox" parent="Breakables/Block1" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
 collision_layer = 256
 collision_mask = 0
 health = NodePath("../health_component")
 
 [node name="CollisionShape2D" parent="Breakables/Block1/Hurtbox" index="0" unique_id=1868882131]
 position = Vector2(16.00, 16.00)
-shape = SubResource("RectangleShape2D_2")
+shape = SubResource("RectangleShape2D_4")
 
 [node name="Block2" type="StaticBody2D" parent="Breakables"]
 position = Vector2(1664.00, 1408.00)
@@ -638,19 +741,19 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Breakables/Block2"]
 position = Vector2(16.00, 16.00)
-shape = SubResource("RectangleShape2D_3")
+shape = SubResource("RectangleShape2D_5")
 
-[node name="health_component" parent="Breakables/Block2" instance=ExtResource("19_r")]
+[node name="health_component" parent="Breakables/Block2" instance=ExtResource("13_r")]
 max_health = 4
 
-[node name="Hurtbox" parent="Breakables/Block2" node_paths=PackedStringArray("health") instance=ExtResource("18_r")]
+[node name="Hurtbox" parent="Breakables/Block2" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
 collision_layer = 256
 collision_mask = 0
 health = NodePath("../health_component")
 
 [node name="CollisionShape2D" parent="Breakables/Block2/Hurtbox" index="0" unique_id=1868882131]
 position = Vector2(16.00, 16.00)
-shape = SubResource("RectangleShape2D_4")
+shape = SubResource("RectangleShape2D_6")
 
 [node name="Block3" type="StaticBody2D" parent="Breakables"]
 position = Vector2(1696.00, 1408.00)
@@ -660,24 +763,24 @@ collision_mask = 0
 [node name="Sprite2D" type="Sprite2D" parent="Breakables/Block3"]
 position = Vector2(0.00, 0.00)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("17_r")
+texture = ExtResource("19_r")
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Breakables/Block3"]
 position = Vector2(16.00, 16.00)
-shape = SubResource("RectangleShape2D_5")
+shape = SubResource("RectangleShape2D_7")
 
-[node name="health_component" parent="Breakables/Block3" instance=ExtResource("19_r")]
+[node name="health_component" parent="Breakables/Block3" instance=ExtResource("13_r")]
 max_health = 4
 
-[node name="Hurtbox" parent="Breakables/Block3" node_paths=PackedStringArray("health") instance=ExtResource("18_r")]
+[node name="Hurtbox" parent="Breakables/Block3" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
 collision_layer = 256
 collision_mask = 0
 health = NodePath("../health_component")
 
 [node name="CollisionShape2D" parent="Breakables/Block3/Hurtbox" index="0" unique_id=1868882131]
 position = Vector2(16.00, 16.00)
-shape = SubResource("RectangleShape2D_6")
+shape = SubResource("RectangleShape2D_8")
 
 [node name="Block4" type="StaticBody2D" parent="Breakables"]
 position = Vector2(1472.00, 1600.00)
@@ -687,24 +790,24 @@ collision_mask = 0
 [node name="Sprite2D" type="Sprite2D" parent="Breakables/Block4"]
 position = Vector2(0.00, 0.00)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("17_r")
+texture = ExtResource("19_r")
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Breakables/Block4"]
 position = Vector2(16.00, 16.00)
-shape = SubResource("RectangleShape2D_7")
+shape = SubResource("RectangleShape2D_9")
 
-[node name="health_component" parent="Breakables/Block4" instance=ExtResource("19_r")]
+[node name="health_component" parent="Breakables/Block4" instance=ExtResource("13_r")]
 max_health = 4
 
-[node name="Hurtbox" parent="Breakables/Block4" node_paths=PackedStringArray("health") instance=ExtResource("18_r")]
+[node name="Hurtbox" parent="Breakables/Block4" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
 collision_layer = 256
 collision_mask = 0
 health = NodePath("../health_component")
 
 [node name="CollisionShape2D" parent="Breakables/Block4/Hurtbox" index="0" unique_id=1868882131]
 position = Vector2(16.00, 16.00)
-shape = SubResource("RectangleShape2D_8")
+shape = SubResource("RectangleShape2D_10")
 
 [node name="Block5" type="StaticBody2D" parent="Breakables"]
 position = Vector2(1504.00, 1600.00)
@@ -719,19 +822,19 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Breakables/Block5"]
 position = Vector2(16.00, 16.00)
-shape = SubResource("RectangleShape2D_9")
+shape = SubResource("RectangleShape2D_11")
 
-[node name="health_component" parent="Breakables/Block5" instance=ExtResource("19_r")]
+[node name="health_component" parent="Breakables/Block5" instance=ExtResource("13_r")]
 max_health = 4
 
-[node name="Hurtbox" parent="Breakables/Block5" node_paths=PackedStringArray("health") instance=ExtResource("18_r")]
+[node name="Hurtbox" parent="Breakables/Block5" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
 collision_layer = 256
 collision_mask = 0
 health = NodePath("../health_component")
 
 [node name="CollisionShape2D" parent="Breakables/Block5/Hurtbox" index="0" unique_id=1868882131]
 position = Vector2(16.00, 16.00)
-shape = SubResource("RectangleShape2D_10")
+shape = SubResource("RectangleShape2D_12")
 
 [node name="Block6" type="StaticBody2D" parent="Breakables"]
 position = Vector2(1536.00, 1600.00)
@@ -741,24 +844,24 @@ collision_mask = 0
 [node name="Sprite2D" type="Sprite2D" parent="Breakables/Block6"]
 position = Vector2(0.00, 0.00)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("17_r")
+texture = ExtResource("19_r")
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Breakables/Block6"]
 position = Vector2(16.00, 16.00)
-shape = SubResource("RectangleShape2D_11")
+shape = SubResource("RectangleShape2D_13")
 
-[node name="health_component" parent="Breakables/Block6" instance=ExtResource("19_r")]
+[node name="health_component" parent="Breakables/Block6" instance=ExtResource("13_r")]
 max_health = 4
 
-[node name="Hurtbox" parent="Breakables/Block6" node_paths=PackedStringArray("health") instance=ExtResource("18_r")]
+[node name="Hurtbox" parent="Breakables/Block6" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
 collision_layer = 256
 collision_mask = 0
 health = NodePath("../health_component")
 
 [node name="CollisionShape2D" parent="Breakables/Block6/Hurtbox" index="0" unique_id=1868882131]
 position = Vector2(16.00, 16.00)
-shape = SubResource("RectangleShape2D_12")
+shape = SubResource("RectangleShape2D_14")
 
 [node name="Block7" type="StaticBody2D" parent="Breakables"]
 position = Vector2(1632.00, 1792.00)
@@ -768,24 +871,24 @@ collision_mask = 0
 [node name="Sprite2D" type="Sprite2D" parent="Breakables/Block7"]
 position = Vector2(0.00, 0.00)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("17_r")
+texture = ExtResource("19_r")
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Breakables/Block7"]
 position = Vector2(16.00, 16.00)
-shape = SubResource("RectangleShape2D_13")
+shape = SubResource("RectangleShape2D_15")
 
-[node name="health_component" parent="Breakables/Block7" instance=ExtResource("19_r")]
+[node name="health_component" parent="Breakables/Block7" instance=ExtResource("13_r")]
 max_health = 4
 
-[node name="Hurtbox" parent="Breakables/Block7" node_paths=PackedStringArray("health") instance=ExtResource("18_r")]
+[node name="Hurtbox" parent="Breakables/Block7" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
 collision_layer = 256
 collision_mask = 0
 health = NodePath("../health_component")
 
 [node name="CollisionShape2D" parent="Breakables/Block7/Hurtbox" index="0" unique_id=1868882131]
 position = Vector2(16.00, 16.00)
-shape = SubResource("RectangleShape2D_14")
+shape = SubResource("RectangleShape2D_16")
 
 [node name="Block8" type="StaticBody2D" parent="Breakables"]
 position = Vector2(1664.00, 1792.00)
@@ -800,19 +903,19 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Breakables/Block8"]
 position = Vector2(16.00, 16.00)
-shape = SubResource("RectangleShape2D_15")
+shape = SubResource("RectangleShape2D_17")
 
-[node name="health_component" parent="Breakables/Block8" instance=ExtResource("19_r")]
+[node name="health_component" parent="Breakables/Block8" instance=ExtResource("13_r")]
 max_health = 4
 
-[node name="Hurtbox" parent="Breakables/Block8" node_paths=PackedStringArray("health") instance=ExtResource("18_r")]
+[node name="Hurtbox" parent="Breakables/Block8" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
 collision_layer = 256
 collision_mask = 0
 health = NodePath("../health_component")
 
 [node name="CollisionShape2D" parent="Breakables/Block8/Hurtbox" index="0" unique_id=1868882131]
 position = Vector2(16.00, 16.00)
-shape = SubResource("RectangleShape2D_16")
+shape = SubResource("RectangleShape2D_18")
 
 [node name="Block9" type="StaticBody2D" parent="Breakables"]
 position = Vector2(1696.00, 1792.00)
@@ -822,24 +925,24 @@ collision_mask = 0
 [node name="Sprite2D" type="Sprite2D" parent="Breakables/Block9"]
 position = Vector2(0.00, 0.00)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("17_r")
+texture = ExtResource("19_r")
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Breakables/Block9"]
 position = Vector2(16.00, 16.00)
-shape = SubResource("RectangleShape2D_17")
+shape = SubResource("RectangleShape2D_19")
 
-[node name="health_component" parent="Breakables/Block9" instance=ExtResource("19_r")]
+[node name="health_component" parent="Breakables/Block9" instance=ExtResource("13_r")]
 max_health = 4
 
-[node name="Hurtbox" parent="Breakables/Block9" node_paths=PackedStringArray("health") instance=ExtResource("18_r")]
+[node name="Hurtbox" parent="Breakables/Block9" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
 collision_layer = 256
 collision_mask = 0
 health = NodePath("../health_component")
 
 [node name="CollisionShape2D" parent="Breakables/Block9/Hurtbox" index="0" unique_id=1868882131]
 position = Vector2(16.00, 16.00)
-shape = SubResource("RectangleShape2D_18")
+shape = SubResource("RectangleShape2D_20")
 
 [node name="Block10" type="StaticBody2D" parent="Breakables"]
 position = Vector2(1472.00, 1984.00)
@@ -849,24 +952,24 @@ collision_mask = 0
 [node name="Sprite2D" type="Sprite2D" parent="Breakables/Block10"]
 position = Vector2(0.00, 0.00)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("17_r")
+texture = ExtResource("19_r")
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Breakables/Block10"]
 position = Vector2(16.00, 16.00)
-shape = SubResource("RectangleShape2D_19")
+shape = SubResource("RectangleShape2D_21")
 
-[node name="health_component" parent="Breakables/Block10" instance=ExtResource("19_r")]
+[node name="health_component" parent="Breakables/Block10" instance=ExtResource("13_r")]
 max_health = 4
 
-[node name="Hurtbox" parent="Breakables/Block10" node_paths=PackedStringArray("health") instance=ExtResource("18_r")]
+[node name="Hurtbox" parent="Breakables/Block10" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
 collision_layer = 256
 collision_mask = 0
 health = NodePath("../health_component")
 
 [node name="CollisionShape2D" parent="Breakables/Block10/Hurtbox" index="0" unique_id=1868882131]
 position = Vector2(16.00, 16.00)
-shape = SubResource("RectangleShape2D_20")
+shape = SubResource("RectangleShape2D_22")
 
 [node name="Block11" type="StaticBody2D" parent="Breakables"]
 position = Vector2(1504.00, 1984.00)
@@ -881,19 +984,19 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Breakables/Block11"]
 position = Vector2(16.00, 16.00)
-shape = SubResource("RectangleShape2D_21")
+shape = SubResource("RectangleShape2D_23")
 
-[node name="health_component" parent="Breakables/Block11" instance=ExtResource("19_r")]
+[node name="health_component" parent="Breakables/Block11" instance=ExtResource("13_r")]
 max_health = 4
 
-[node name="Hurtbox" parent="Breakables/Block11" node_paths=PackedStringArray("health") instance=ExtResource("18_r")]
+[node name="Hurtbox" parent="Breakables/Block11" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
 collision_layer = 256
 collision_mask = 0
 health = NodePath("../health_component")
 
 [node name="CollisionShape2D" parent="Breakables/Block11/Hurtbox" index="0" unique_id=1868882131]
 position = Vector2(16.00, 16.00)
-shape = SubResource("RectangleShape2D_22")
+shape = SubResource("RectangleShape2D_24")
 
 [node name="Block12" type="StaticBody2D" parent="Breakables"]
 position = Vector2(1536.00, 1984.00)
@@ -903,24 +1006,24 @@ collision_mask = 0
 [node name="Sprite2D" type="Sprite2D" parent="Breakables/Block12"]
 position = Vector2(0.00, 0.00)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("17_r")
+texture = ExtResource("19_r")
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Breakables/Block12"]
 position = Vector2(16.00, 16.00)
-shape = SubResource("RectangleShape2D_23")
+shape = SubResource("RectangleShape2D_25")
 
-[node name="health_component" parent="Breakables/Block12" instance=ExtResource("19_r")]
+[node name="health_component" parent="Breakables/Block12" instance=ExtResource("13_r")]
 max_health = 4
 
-[node name="Hurtbox" parent="Breakables/Block12" node_paths=PackedStringArray("health") instance=ExtResource("18_r")]
+[node name="Hurtbox" parent="Breakables/Block12" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
 collision_layer = 256
 collision_mask = 0
 health = NodePath("../health_component")
 
 [node name="CollisionShape2D" parent="Breakables/Block12/Hurtbox" index="0" unique_id=1868882131]
 position = Vector2(16.00, 16.00)
-shape = SubResource("RectangleShape2D_24")
+shape = SubResource("RectangleShape2D_26")
 
 [node name="ScorpionStatue1" type="Sprite2D" parent="Decor"]
 position = Vector2(1472.00, 1356.00)
@@ -934,28 +1037,73 @@ scale = Vector2(0.20, 0.20)
 texture = ExtResource("22_r")
 centered = false
 
-[node name="CrackedMirror1" type="Sprite2D" parent="Decor"]
+[node name="PotCrackedMirror1" type="Node2D" parent="Breakables"]
 position = Vector2(1664.00, 1743.00)
+
+[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotCrackedMirror1"]
+position = Vector2(0.00, 0.00)
 scale = Vector2(0.22, 0.22)
 texture = ExtResource("23_r")
 centered = false
 
-[node name="ForgedScrolls2" type="Sprite2D" parent="Decor"]
+[node name="health_component" parent="Breakables/PotCrackedMirror1" instance=ExtResource("13_r")]
+max_health = 1
+
+[node name="Hurtbox" parent="Breakables/PotCrackedMirror1" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
+collision_layer = 256
+collision_mask = 0
+health = NodePath("../health_component")
+
+[node name="CollisionShape2D" parent="Breakables/PotCrackedMirror1/Hurtbox" index="0" unique_id=1868882131]
+position = Vector2(19.50, 27.00)
+shape = SubResource("RectangleShape2D_27")
+
+[node name="PotForgedScrolls2" type="Node2D" parent="Breakables"]
 position = Vector2(1632.00, 1965.00)
+
+[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotForgedScrolls2"]
+position = Vector2(0.00, 0.00)
 scale = Vector2(0.22, 0.22)
-texture = ExtResource("13_r")
+texture = ExtResource("15_r")
 centered = false
 
-[node name="CardsDice2" type="Sprite2D" parent="Decor"]
+[node name="health_component" parent="Breakables/PotForgedScrolls2" instance=ExtResource("13_r")]
+max_health = 1
+
+[node name="Hurtbox" parent="Breakables/PotForgedScrolls2" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
+collision_layer = 256
+collision_mask = 0
+health = NodePath("../health_component")
+
+[node name="CollisionShape2D" parent="Breakables/PotForgedScrolls2/Hurtbox" index="0" unique_id=1868882131]
+position = Vector2(22.00, 12.00)
+shape = SubResource("RectangleShape2D_28")
+
+[node name="PotCardsDice2" type="Node2D" parent="Breakables"]
 position = Vector2(1504.00, 2200.00)
+
+[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotCardsDice2"]
+position = Vector2(0.00, 0.00)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("11_r")
 centered = false
 
+[node name="health_component" parent="Breakables/PotCardsDice2" instance=ExtResource("13_r")]
+max_health = 1
+
+[node name="Hurtbox" parent="Breakables/PotCardsDice2" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
+collision_layer = 256
+collision_mask = 0
+health = NodePath("../health_component")
+
+[node name="CollisionShape2D" parent="Breakables/PotCardsDice2/Hurtbox" index="0" unique_id=1868882131]
+position = Vector2(21.50, 6.50)
+shape = SubResource("RectangleShape2D_29")
+
 [node name="Lantern4" type="Sprite2D" parent="Decor"]
 position = Vector2(1574.00, 1179.00)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("15_r")
+texture = ExtResource("17_r")
 centered = false
 
 [node name="Drape1" type="Sprite2D" parent="Decor"]
@@ -1103,7 +1251,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/GildedLedge1"]
 position = Vector2(41.75, 4.50)
-shape = SubResource("RectangleShape2D_25")
+shape = SubResource("RectangleShape2D_30")
 one_way_collision = true
 
 [node name="GildedLedge2" type="StaticBody2D" parent="Platforms"]
@@ -1119,7 +1267,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/GildedLedge2"]
 position = Vector2(41.75, 4.50)
-shape = SubResource("RectangleShape2D_26")
+shape = SubResource("RectangleShape2D_31")
 one_way_collision = true
 
 [node name="GildedLedge3" type="StaticBody2D" parent="Platforms"]
@@ -1135,7 +1283,7 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/GildedLedge3"]
 position = Vector2(41.75, 4.50)
-shape = SubResource("RectangleShape2D_27")
+shape = SubResource("RectangleShape2D_32")
 one_way_collision = true
 
 [node name="IllusionOverlay6" type="Sprite2D" parent="Decor"]
@@ -1186,17 +1334,47 @@ scale = Vector2(0.33, 0.33)
 texture = ExtResource("27_r")
 centered = false
 
-[node name="OrnateMirror1" type="Sprite2D" parent="Decor"]
+[node name="PotOrnateMirror1" type="Node2D" parent="Breakables"]
 position = Vector2(1952.00, 2135.00)
+
+[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotOrnateMirror1"]
+position = Vector2(0.00, 0.00)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("28_r")
 centered = false
 
-[node name="OrnateMirror2" type="Sprite2D" parent="Decor"]
+[node name="health_component" parent="Breakables/PotOrnateMirror1" instance=ExtResource("13_r")]
+max_health = 1
+
+[node name="Hurtbox" parent="Breakables/PotOrnateMirror1" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
+collision_layer = 256
+collision_mask = 0
+health = NodePath("../health_component")
+
+[node name="CollisionShape2D" parent="Breakables/PotOrnateMirror1/Hurtbox" index="0" unique_id=1868882131]
+position = Vector2(27.00, 39.00)
+shape = SubResource("RectangleShape2D_33")
+
+[node name="PotOrnateMirror2" type="Node2D" parent="Breakables"]
 position = Vector2(2400.00, 2135.00)
+
+[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotOrnateMirror2"]
+position = Vector2(0.00, 0.00)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("28_r")
 centered = false
+
+[node name="health_component" parent="Breakables/PotOrnateMirror2" instance=ExtResource("13_r")]
+max_health = 1
+
+[node name="Hurtbox" parent="Breakables/PotOrnateMirror2" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
+collision_layer = 256
+collision_mask = 0
+health = NodePath("../health_component")
+
+[node name="CollisionShape2D" parent="Breakables/PotOrnateMirror2/Hurtbox" index="0" unique_id=1868882131]
+position = Vector2(27.00, 39.00)
+shape = SubResource("RectangleShape2D_34")
 
 [node name="Candelabra2" type="Sprite2D" parent="Decor"]
 position = Vector2(2067.00, 2148.50)
@@ -1204,11 +1382,26 @@ scale = Vector2(0.23, 0.23)
 texture = ExtResource("22_r")
 centered = false
 
-[node name="CrackedMirror2" type="Sprite2D" parent="Decor"]
+[node name="PotCrackedMirror2" type="Node2D" parent="Breakables"]
 position = Vector2(2784.00, 2151.00)
+
+[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotCrackedMirror2"]
+position = Vector2(0.00, 0.00)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("23_r")
 centered = false
+
+[node name="health_component" parent="Breakables/PotCrackedMirror2" instance=ExtResource("13_r")]
+max_health = 1
+
+[node name="Hurtbox" parent="Breakables/PotCrackedMirror2" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
+collision_layer = 256
+collision_mask = 0
+health = NodePath("../health_component")
+
+[node name="CollisionShape2D" parent="Breakables/PotCrackedMirror2/Hurtbox" index="0" unique_id=1868882131]
+position = Vector2(22.50, 31.00)
+shape = SubResource("RectangleShape2D_35")
 
 [node name="Drape5" type="Sprite2D" parent="Decor"]
 position = Vector2(1920.00, 1918.00)
@@ -1237,19 +1430,19 @@ centered = false
 [node name="Lantern5" type="Sprite2D" parent="Decor"]
 position = Vector2(2035.00, 1915.00)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("15_r")
+texture = ExtResource("17_r")
 centered = false
 
 [node name="Lantern6" type="Sprite2D" parent="Decor"]
 position = Vector2(2560.00, 1915.00)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("15_r")
+texture = ExtResource("17_r")
 centered = false
 
 [node name="Lantern7" type="Sprite2D" parent="Decor"]
 position = Vector2(2912.00, 1915.00)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("15_r")
+texture = ExtResource("17_r")
 centered = false
 
 [node name="LeadDoor1" type="StaticBody2D" parent="Breakables"]
@@ -1265,19 +1458,19 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Breakables/LeadDoor1"]
 position = Vector2(20.00, 52.00)
-shape = SubResource("RectangleShape2D_28")
+shape = SubResource("RectangleShape2D_36")
 
-[node name="health_component" parent="Breakables/LeadDoor1" instance=ExtResource("19_r")]
+[node name="health_component" parent="Breakables/LeadDoor1" instance=ExtResource("13_r")]
 max_health = 6
 
-[node name="Hurtbox" parent="Breakables/LeadDoor1" node_paths=PackedStringArray("health") instance=ExtResource("18_r")]
+[node name="Hurtbox" parent="Breakables/LeadDoor1" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
 collision_layer = 256
 collision_mask = 0
 health = NodePath("../health_component")
 
 [node name="CollisionShape2D" parent="Breakables/LeadDoor1/Hurtbox" index="0" unique_id=1868882131]
 position = Vector2(20.00, 50.00)
-shape = SubResource("RectangleShape2D_29")
+shape = SubResource("RectangleShape2D_37")
 
 [node name="LeadDoor2" type="StaticBody2D" parent="Breakables"]
 position = Vector2(4029.00, 2112.00)
@@ -1292,19 +1485,19 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Breakables/LeadDoor2"]
 position = Vector2(20.00, 52.00)
-shape = SubResource("RectangleShape2D_30")
+shape = SubResource("RectangleShape2D_38")
 
-[node name="health_component" parent="Breakables/LeadDoor2" instance=ExtResource("19_r")]
+[node name="health_component" parent="Breakables/LeadDoor2" instance=ExtResource("13_r")]
 max_health = 6
 
-[node name="Hurtbox" parent="Breakables/LeadDoor2" node_paths=PackedStringArray("health") instance=ExtResource("18_r")]
+[node name="Hurtbox" parent="Breakables/LeadDoor2" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
 collision_layer = 256
 collision_mask = 0
 health = NodePath("../health_component")
 
 [node name="CollisionShape2D" parent="Breakables/LeadDoor2/Hurtbox" index="0" unique_id=1868882131]
 position = Vector2(20.00, 50.00)
-shape = SubResource("RectangleShape2D_31")
+shape = SubResource("RectangleShape2D_39")
 
 [node name="HoodedProcession1" type="Sprite2D" parent="Decor"]
 position = Vector2(3168.00, 2150.00)
@@ -1327,7 +1520,7 @@ centered = false
 [node name="HoodedHypocrite2" type="Sprite2D" parent="Decor"]
 position = Vector2(3712.00, 2106.00)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("12_r")
+texture = ExtResource("14_r")
 centered = false
 
 [node name="Candelabra3" type="Sprite2D" parent="Decor"]
@@ -1342,52 +1535,67 @@ scale = Vector2(0.22, 0.22)
 texture = ExtResource("22_r")
 centered = false
 
-[node name="ForgedScrolls3" type="Sprite2D" parent="Decor"]
+[node name="PotForgedScrolls3" type="Node2D" parent="Breakables"]
 position = Vector2(3360.00, 2185.50)
+
+[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotForgedScrolls3"]
+position = Vector2(0.00, 0.00)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("13_r")
+texture = ExtResource("15_r")
 centered = false
+
+[node name="health_component" parent="Breakables/PotForgedScrolls3" instance=ExtResource("13_r")]
+max_health = 1
+
+[node name="Hurtbox" parent="Breakables/PotForgedScrolls3" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
+collision_layer = 256
+collision_mask = 0
+health = NodePath("../health_component")
+
+[node name="CollisionShape2D" parent="Breakables/PotForgedScrolls3/Hurtbox" index="0" unique_id=1868882131]
+position = Vector2(25.50, 13.75)
+shape = SubResource("RectangleShape2D_40")
 
 [node name="HarlequinBanner3" type="Sprite2D" parent="Decor"]
 position = Vector2(3296.00, 1917.00)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("16_r")
+texture = ExtResource("18_r")
 centered = false
 
 [node name="HarlequinBanner4" type="Sprite2D" parent="Decor"]
 position = Vector2(3744.00, 1917.00)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("16_r")
+texture = ExtResource("18_r")
 centered = false
 
 [node name="HarlequinBanner5" type="Sprite2D" parent="Decor"]
 position = Vector2(4128.00, 1917.00)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("16_r")
+texture = ExtResource("18_r")
 centered = false
 
 [node name="Lantern8" type="Sprite2D" parent="Decor"]
 position = Vector2(3155.00, 1915.00)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("15_r")
+texture = ExtResource("17_r")
 centered = false
 
 [node name="Lantern9" type="Sprite2D" parent="Decor"]
 position = Vector2(3584.00, 1915.00)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("15_r")
+texture = ExtResource("17_r")
 centered = false
 
 [node name="Lantern10" type="Sprite2D" parent="Decor"]
 position = Vector2(3968.00, 1915.00)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("15_r")
+texture = ExtResource("17_r")
 centered = false
 
 [node name="Lantern11" type="Sprite2D" parent="Decor"]
 position = Vector2(4320.00, 1915.00)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("15_r")
+texture = ExtResource("17_r")
 centered = false
 
 [node name="ArenaHarlequinFloorTile1" type="Sprite2D" parent="Decor"]
@@ -1550,10 +1758,332 @@ centered = false
 [node name="Lantern12" type="Sprite2D" parent="Decor"]
 position = Vector2(4876.50, 1851.00)
 scale = Vector2(0.33, 0.33)
+texture = ExtResource("17_r")
+centered = false
+
+[node name="PotCrackedMirror3" type="Node2D" parent="Breakables"]
+position = Vector2(1565.00, 1739.00)
+
+[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotCrackedMirror3"]
+position = Vector2(0.00, 0.00)
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("23_r")
+centered = false
+
+[node name="health_component" parent="Breakables/PotCrackedMirror3" instance=ExtResource("13_r")]
+max_health = 1
+
+[node name="Hurtbox" parent="Breakables/PotCrackedMirror3" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
+collision_layer = 256
+collision_mask = 0
+health = NodePath("../health_component")
+
+[node name="CollisionShape2D" parent="Breakables/PotCrackedMirror3/Hurtbox" index="0" unique_id=1868882131]
+position = Vector2(21.00, 29.00)
+shape = SubResource("RectangleShape2D_41")
+
+[node name="PotCardsDice3" type="Node2D" parent="Breakables"]
+position = Vector2(1539.50, 1401.00)
+
+[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotCardsDice3"]
+position = Vector2(0.00, 0.00)
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("11_r")
+centered = false
+flip_h = true
+
+[node name="health_component" parent="Breakables/PotCardsDice3" instance=ExtResource("13_r")]
+max_health = 1
+
+[node name="Hurtbox" parent="Breakables/PotCardsDice3" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
+collision_layer = 256
+collision_mask = 0
+health = NodePath("../health_component")
+
+[node name="CollisionShape2D" parent="Breakables/PotCardsDice3/Hurtbox" index="0" unique_id=1868882131]
+position = Vector2(20.00, 6.00)
+shape = SubResource("RectangleShape2D_42")
+
+[node name="PotCardsDice4" type="Node2D" parent="Breakables"]
+position = Vector2(1504.00, 1785.00)
+
+[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotCardsDice4"]
+position = Vector2(0.00, 0.00)
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("11_r")
+centered = false
+
+[node name="health_component" parent="Breakables/PotCardsDice4" instance=ExtResource("13_r")]
+max_health = 1
+
+[node name="Hurtbox" parent="Breakables/PotCardsDice4" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
+collision_layer = 256
+collision_mask = 0
+health = NodePath("../health_component")
+
+[node name="CollisionShape2D" parent="Breakables/PotCardsDice4/Hurtbox" index="0" unique_id=1868882131]
+position = Vector2(20.00, 6.00)
+shape = SubResource("RectangleShape2D_43")
+
+[node name="PotCandleCluster1" type="Node2D" parent="Breakables"]
+position = Vector2(1599.00, 2176.50)
+
+[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotCandleCluster1"]
+position = Vector2(0.00, 0.00)
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("32_r")
+centered = false
+flip_h = true
+
+[node name="health_component" parent="Breakables/PotCandleCluster1" instance=ExtResource("13_r")]
+max_health = 1
+
+[node name="Hurtbox" parent="Breakables/PotCandleCluster1" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
+collision_layer = 256
+collision_mask = 0
+health = NodePath("../health_component")
+
+[node name="CollisionShape2D" parent="Breakables/PotCandleCluster1/Hurtbox" index="0" unique_id=1868882131]
+position = Vector2(22.50, 18.25)
+shape = SubResource("RectangleShape2D_44")
+
+[node name="PotCardsDice5" type="Node2D" parent="Breakables"]
+position = Vector2(1475.00, 1977.00)
+
+[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotCardsDice5"]
+position = Vector2(0.00, 0.00)
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("11_r")
+centered = false
+
+[node name="health_component" parent="Breakables/PotCardsDice5" instance=ExtResource("13_r")]
+max_health = 1
+
+[node name="Hurtbox" parent="Breakables/PotCardsDice5" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
+collision_layer = 256
+collision_mask = 0
+health = NodePath("../health_component")
+
+[node name="CollisionShape2D" parent="Breakables/PotCardsDice5/Hurtbox" index="0" unique_id=1868882131]
+position = Vector2(20.00, 6.00)
+shape = SubResource("RectangleShape2D_45")
+
+[node name="PotForgedScrolls4" type="Node2D" parent="Breakables"]
+position = Vector2(1699.00, 1579.00)
+
+[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotForgedScrolls4"]
+position = Vector2(0.00, 0.00)
+scale = Vector2(0.23, 0.23)
 texture = ExtResource("15_r")
 centered = false
 
-[node name="Pool1" parent="Hazards" instance=ExtResource("32_r")]
+[node name="health_component" parent="Breakables/PotForgedScrolls4" instance=ExtResource("13_r")]
+max_health = 1
+
+[node name="Hurtbox" parent="Breakables/PotForgedScrolls4" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
+collision_layer = 256
+collision_mask = 0
+health = NodePath("../health_component")
+
+[node name="CollisionShape2D" parent="Breakables/PotForgedScrolls4/Hurtbox" index="0" unique_id=1868882131]
+position = Vector2(23.75, 13.00)
+shape = SubResource("RectangleShape2D_46")
+
+[node name="PotForgedScrolls5" type="Node2D" parent="Breakables"]
+position = Vector2(2942.50, 2187.00)
+
+[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotForgedScrolls5"]
+position = Vector2(0.00, 0.00)
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("15_r")
+centered = false
+
+[node name="health_component" parent="Breakables/PotForgedScrolls5" instance=ExtResource("13_r")]
+max_health = 1
+
+[node name="Hurtbox" parent="Breakables/PotForgedScrolls5" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
+collision_layer = 256
+collision_mask = 0
+health = NodePath("../health_component")
+
+[node name="CollisionShape2D" parent="Breakables/PotForgedScrolls5/Hurtbox" index="0" unique_id=1868882131]
+position = Vector2(23.75, 13.00)
+shape = SubResource("RectangleShape2D_47")
+
+[node name="PotCandleCluster2" type="Node2D" parent="Breakables"]
+position = Vector2(1886.50, 2176.50)
+
+[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotCandleCluster2"]
+position = Vector2(0.00, 0.00)
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("32_r")
+centered = false
+
+[node name="health_component" parent="Breakables/PotCandleCluster2" instance=ExtResource("13_r")]
+max_health = 1
+
+[node name="Hurtbox" parent="Breakables/PotCandleCluster2" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
+collision_layer = 256
+collision_mask = 0
+health = NodePath("../health_component")
+
+[node name="CollisionShape2D" parent="Breakables/PotCandleCluster2/Hurtbox" index="0" unique_id=1868882131]
+position = Vector2(22.50, 18.25)
+shape = SubResource("RectangleShape2D_48")
+
+[node name="PotForgedScrolls6" type="Node2D" parent="Breakables"]
+position = Vector2(2012.50, 2187.00)
+
+[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotForgedScrolls6"]
+position = Vector2(0.00, 0.00)
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("15_r")
+centered = false
+flip_h = true
+
+[node name="health_component" parent="Breakables/PotForgedScrolls6" instance=ExtResource("13_r")]
+max_health = 1
+
+[node name="Hurtbox" parent="Breakables/PotForgedScrolls6" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
+collision_layer = 256
+collision_mask = 0
+health = NodePath("../health_component")
+
+[node name="CollisionShape2D" parent="Breakables/PotForgedScrolls6/Hurtbox" index="0" unique_id=1868882131]
+position = Vector2(23.75, 13.00)
+shape = SubResource("RectangleShape2D_49")
+
+[node name="PotForgedScrolls7" type="Node2D" parent="Breakables"]
+position = Vector2(3808.50, 2155.00)
+
+[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotForgedScrolls7"]
+position = Vector2(0.00, 0.00)
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("15_r")
+centered = false
+
+[node name="health_component" parent="Breakables/PotForgedScrolls7" instance=ExtResource("13_r")]
+max_health = 1
+
+[node name="Hurtbox" parent="Breakables/PotForgedScrolls7" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
+collision_layer = 256
+collision_mask = 0
+health = NodePath("../health_component")
+
+[node name="CollisionShape2D" parent="Breakables/PotForgedScrolls7/Hurtbox" index="0" unique_id=1868882131]
+position = Vector2(23.75, 13.00)
+shape = SubResource("RectangleShape2D_50")
+
+[node name="PotCandleCluster3" type="Node2D" parent="Breakables"]
+position = Vector2(3553.00, 2176.50)
+
+[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotCandleCluster3"]
+position = Vector2(0.00, 0.00)
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("32_r")
+centered = false
+flip_h = true
+
+[node name="health_component" parent="Breakables/PotCandleCluster3" instance=ExtResource("13_r")]
+max_health = 1
+
+[node name="Hurtbox" parent="Breakables/PotCandleCluster3" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
+collision_layer = 256
+collision_mask = 0
+health = NodePath("../health_component")
+
+[node name="CollisionShape2D" parent="Breakables/PotCandleCluster3/Hurtbox" index="0" unique_id=1868882131]
+position = Vector2(22.50, 18.25)
+shape = SubResource("RectangleShape2D_51")
+
+[node name="PotCandleCluster4" type="Node2D" parent="Breakables"]
+position = Vector2(4319.00, 2176.50)
+
+[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotCandleCluster4"]
+position = Vector2(0.00, 0.00)
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("32_r")
+centered = false
+
+[node name="health_component" parent="Breakables/PotCandleCluster4" instance=ExtResource("13_r")]
+max_health = 1
+
+[node name="Hurtbox" parent="Breakables/PotCandleCluster4" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
+collision_layer = 256
+collision_mask = 0
+health = NodePath("../health_component")
+
+[node name="CollisionShape2D" parent="Breakables/PotCandleCluster4/Hurtbox" index="0" unique_id=1868882131]
+position = Vector2(22.50, 18.25)
+shape = SubResource("RectangleShape2D_52")
+
+[node name="PotCardsDice6" type="Node2D" parent="Breakables"]
+position = Vector2(4095.00, 2201.00)
+
+[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotCardsDice6"]
+position = Vector2(0.00, 0.00)
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("11_r")
+centered = false
+flip_h = true
+
+[node name="health_component" parent="Breakables/PotCardsDice6" instance=ExtResource("13_r")]
+max_health = 1
+
+[node name="Hurtbox" parent="Breakables/PotCardsDice6" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
+collision_layer = 256
+collision_mask = 0
+health = NodePath("../health_component")
+
+[node name="CollisionShape2D" parent="Breakables/PotCardsDice6/Hurtbox" index="0" unique_id=1868882131]
+position = Vector2(20.00, 6.00)
+shape = SubResource("RectangleShape2D_53")
+
+[node name="PotCandleCluster5" type="Node2D" parent="Breakables"]
+position = Vector2(3422.00, 2176.50)
+
+[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotCandleCluster5"]
+position = Vector2(0.00, 0.00)
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("32_r")
+centered = false
+flip_h = true
+
+[node name="health_component" parent="Breakables/PotCandleCluster5" instance=ExtResource("13_r")]
+max_health = 1
+
+[node name="Hurtbox" parent="Breakables/PotCandleCluster5" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
+collision_layer = 256
+collision_mask = 0
+health = NodePath("../health_component")
+
+[node name="CollisionShape2D" parent="Breakables/PotCandleCluster5/Hurtbox" index="0" unique_id=1868882131]
+position = Vector2(22.50, 18.25)
+shape = SubResource("RectangleShape2D_54")
+
+[node name="PotCandleCluster6" type="Node2D" parent="Breakables"]
+position = Vector2(3292.50, 2176.50)
+
+[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotCandleCluster6"]
+position = Vector2(0.00, 0.00)
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("32_r")
+centered = false
+flip_h = true
+
+[node name="health_component" parent="Breakables/PotCandleCluster6" instance=ExtResource("13_r")]
+max_health = 1
+
+[node name="Hurtbox" parent="Breakables/PotCandleCluster6" node_paths=PackedStringArray("health") instance=ExtResource("12_r")]
+collision_layer = 256
+collision_mask = 0
+health = NodePath("../health_component")
+
+[node name="CollisionShape2D" parent="Breakables/PotCandleCluster6/Hurtbox" index="0" unique_id=1868882131]
+position = Vector2(22.50, 18.25)
+shape = SubResource("RectangleShape2D_55")
+
+[node name="Pool1" parent="Hazards" instance=ExtResource("33_r")]
 position = Vector2(320.00, 1337.00)
 collision_layer = 16
 collision_mask = 64
@@ -1563,9 +2093,9 @@ pogo_allowed = true
 persistent = true
 
 [node name="CollisionShape2D" parent="Hazards/Pool1" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_32")
+shape = SubResource("RectangleShape2D_56")
 
-[node name="Pool2" parent="Hazards" instance=ExtResource("32_r")]
+[node name="Pool2" parent="Hazards" instance=ExtResource("33_r")]
 position = Vector2(704.00, 1337.00)
 collision_layer = 16
 collision_mask = 64
@@ -1575,9 +2105,9 @@ pogo_allowed = true
 persistent = true
 
 [node name="CollisionShape2D" parent="Hazards/Pool2" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_33")
+shape = SubResource("RectangleShape2D_57")
 
-[node name="Pool3" parent="Hazards" instance=ExtResource("32_r")]
+[node name="Pool3" parent="Hazards" instance=ExtResource("33_r")]
 position = Vector2(1088.00, 1337.00)
 collision_layer = 16
 collision_mask = 64
@@ -1587,9 +2117,9 @@ pogo_allowed = true
 persistent = true
 
 [node name="CollisionShape2D" parent="Hazards/Pool3" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_34")
+shape = SubResource("RectangleShape2D_58")
 
-[node name="Pool4" parent="Hazards" instance=ExtResource("32_r")]
+[node name="Pool4" parent="Hazards" instance=ExtResource("33_r")]
 position = Vector2(2256.00, 2233.00)
 collision_layer = 16
 collision_mask = 64
@@ -1599,9 +2129,9 @@ pogo_allowed = true
 persistent = true
 
 [node name="CollisionShape2D" parent="Hazards/Pool4" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_35")
+shape = SubResource("RectangleShape2D_59")
 
-[node name="Pool5" parent="Hazards" instance=ExtResource("32_r")]
+[node name="Pool5" parent="Hazards" instance=ExtResource("33_r")]
 position = Vector2(2624.00, 2233.00)
 collision_layer = 16
 collision_mask = 64
@@ -1611,14 +2141,14 @@ pogo_allowed = true
 persistent = true
 
 [node name="CollisionShape2D" parent="Hazards/Pool5" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_36")
+shape = SubResource("RectangleShape2D_60")
 
 [node name="Gate_L" type="Node2D" parent="Gates"]
 position = Vector2(4430.00, 2072.00)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Gates/Gate_L"]
 scale = Vector2(0.33, 0.33)
-sprite_frames = SubResource("SpriteFrames_37")
+sprite_frames = SubResource("SpriteFrames_61")
 animation = &"close"
 centered = false
 
@@ -1629,14 +2159,14 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate_L/GateBody"]
 position = Vector2(34.00, 84.00)
-shape = SubResource("RectangleShape2D_38")
+shape = SubResource("RectangleShape2D_62")
 
 [node name="Gate_R" type="Node2D" parent="Gates"]
 position = Vector2(5293.50, 2072.00)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Gates/Gate_R"]
 scale = Vector2(0.33, 0.33)
-sprite_frames = SubResource("SpriteFrames_37")
+sprite_frames = SubResource("SpriteFrames_61")
 animation = &"close"
 centered = false
 flip_h = true
@@ -1648,7 +2178,7 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate_R/GateBody"]
 position = Vector2(34.00, 84.00)
-shape = SubResource("RectangleShape2D_39")
+shape = SubResource("RectangleShape2D_63")
 
 [node name="Exits" type="Node2D" parent="."]
 
@@ -1661,7 +2191,7 @@ collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exits/Exit_L"]
-shape = SubResource("RectangleShape2D_40")
+shape = SubResource("RectangleShape2D_64")
 
 [node name="Spawn_L" type="Marker2D" parent="Spawns"]
 position = Vector2(83.20, 1312.00)
@@ -1673,12 +2203,12 @@ collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exits/Exit_R"]
-shape = SubResource("RectangleShape2D_41")
+shape = SubResource("RectangleShape2D_65")
 
 [node name="Spawn_R" type="Marker2D" parent="Spawns"]
 position = Vector2(5292.80, 2208.00)
 
-[node name="Player" parent="." instance=ExtResource("37_r")]
+[node name="Player" parent="." instance=ExtResource("38_r")]
 position = Vector2(83.20, 1312.00)
 
 [node name="Camera2D" parent="Player" index="2" unique_id=623591930]
@@ -1696,7 +2226,7 @@ repeat_times = 3
 [node name="Sprite0" type="Sprite2D" parent="Foreground"]
 position = Vector2(0.00, 1239.20)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("38_r")
+texture = ExtResource("39_r")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 669, 3840, 411)
@@ -1704,11 +2234,13 @@ region_rect = Rect2(0, 669, 3840, 411)
 [node name="Sprite1" type="Sprite2D" parent="Foreground"]
 position = Vector2(0.00, 2135.20)
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("38_r")
+texture = ExtResource("39_r")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 669, 3840, 411)
 
+[connection signal="died" from="Breakables/PotCardsDice1/health_component" to="Breakables/PotCardsDice1" method="queue_free"]
+[connection signal="died" from="Breakables/PotForgedScrolls1/health_component" to="Breakables/PotForgedScrolls1" method="queue_free"]
 [connection signal="died" from="Breakables/Block1/health_component" to="Breakables/Block1" method="queue_free"]
 [connection signal="died" from="Breakables/Block2/health_component" to="Breakables/Block2" method="queue_free"]
 [connection signal="died" from="Breakables/Block3/health_component" to="Breakables/Block3" method="queue_free"]
@@ -1721,9 +2253,33 @@ region_rect = Rect2(0, 669, 3840, 411)
 [connection signal="died" from="Breakables/Block10/health_component" to="Breakables/Block10" method="queue_free"]
 [connection signal="died" from="Breakables/Block11/health_component" to="Breakables/Block11" method="queue_free"]
 [connection signal="died" from="Breakables/Block12/health_component" to="Breakables/Block12" method="queue_free"]
+[connection signal="died" from="Breakables/PotCrackedMirror1/health_component" to="Breakables/PotCrackedMirror1" method="queue_free"]
+[connection signal="died" from="Breakables/PotForgedScrolls2/health_component" to="Breakables/PotForgedScrolls2" method="queue_free"]
+[connection signal="died" from="Breakables/PotCardsDice2/health_component" to="Breakables/PotCardsDice2" method="queue_free"]
+[connection signal="died" from="Breakables/PotOrnateMirror1/health_component" to="Breakables/PotOrnateMirror1" method="queue_free"]
+[connection signal="died" from="Breakables/PotOrnateMirror2/health_component" to="Breakables/PotOrnateMirror2" method="queue_free"]
+[connection signal="died" from="Breakables/PotCrackedMirror2/health_component" to="Breakables/PotCrackedMirror2" method="queue_free"]
 [connection signal="died" from="Breakables/LeadDoor1/health_component" to="Breakables/LeadDoor1" method="queue_free"]
 [connection signal="died" from="Breakables/LeadDoor2/health_component" to="Breakables/LeadDoor2" method="queue_free"]
+[connection signal="died" from="Breakables/PotForgedScrolls3/health_component" to="Breakables/PotForgedScrolls3" method="queue_free"]
+[connection signal="died" from="Breakables/PotCrackedMirror3/health_component" to="Breakables/PotCrackedMirror3" method="queue_free"]
+[connection signal="died" from="Breakables/PotCardsDice3/health_component" to="Breakables/PotCardsDice3" method="queue_free"]
+[connection signal="died" from="Breakables/PotCardsDice4/health_component" to="Breakables/PotCardsDice4" method="queue_free"]
+[connection signal="died" from="Breakables/PotCandleCluster1/health_component" to="Breakables/PotCandleCluster1" method="queue_free"]
+[connection signal="died" from="Breakables/PotCardsDice5/health_component" to="Breakables/PotCardsDice5" method="queue_free"]
+[connection signal="died" from="Breakables/PotForgedScrolls4/health_component" to="Breakables/PotForgedScrolls4" method="queue_free"]
+[connection signal="died" from="Breakables/PotForgedScrolls5/health_component" to="Breakables/PotForgedScrolls5" method="queue_free"]
+[connection signal="died" from="Breakables/PotCandleCluster2/health_component" to="Breakables/PotCandleCluster2" method="queue_free"]
+[connection signal="died" from="Breakables/PotForgedScrolls6/health_component" to="Breakables/PotForgedScrolls6" method="queue_free"]
+[connection signal="died" from="Breakables/PotForgedScrolls7/health_component" to="Breakables/PotForgedScrolls7" method="queue_free"]
+[connection signal="died" from="Breakables/PotCandleCluster3/health_component" to="Breakables/PotCandleCluster3" method="queue_free"]
+[connection signal="died" from="Breakables/PotCandleCluster4/health_component" to="Breakables/PotCandleCluster4" method="queue_free"]
+[connection signal="died" from="Breakables/PotCardsDice6/health_component" to="Breakables/PotCardsDice6" method="queue_free"]
+[connection signal="died" from="Breakables/PotCandleCluster5/health_component" to="Breakables/PotCandleCluster5" method="queue_free"]
+[connection signal="died" from="Breakables/PotCandleCluster6/health_component" to="Breakables/PotCandleCluster6" method="queue_free"]
 
+[editable path="Breakables/PotCardsDice1/Hurtbox"]
+[editable path="Breakables/PotForgedScrolls1/Hurtbox"]
 [editable path="Breakables/Block1/Hurtbox"]
 [editable path="Breakables/Block2/Hurtbox"]
 [editable path="Breakables/Block3/Hurtbox"]
@@ -1736,8 +2292,30 @@ region_rect = Rect2(0, 669, 3840, 411)
 [editable path="Breakables/Block10/Hurtbox"]
 [editable path="Breakables/Block11/Hurtbox"]
 [editable path="Breakables/Block12/Hurtbox"]
+[editable path="Breakables/PotCrackedMirror1/Hurtbox"]
+[editable path="Breakables/PotForgedScrolls2/Hurtbox"]
+[editable path="Breakables/PotCardsDice2/Hurtbox"]
+[editable path="Breakables/PotOrnateMirror1/Hurtbox"]
+[editable path="Breakables/PotOrnateMirror2/Hurtbox"]
+[editable path="Breakables/PotCrackedMirror2/Hurtbox"]
 [editable path="Breakables/LeadDoor1/Hurtbox"]
 [editable path="Breakables/LeadDoor2/Hurtbox"]
+[editable path="Breakables/PotForgedScrolls3/Hurtbox"]
+[editable path="Breakables/PotCrackedMirror3/Hurtbox"]
+[editable path="Breakables/PotCardsDice3/Hurtbox"]
+[editable path="Breakables/PotCardsDice4/Hurtbox"]
+[editable path="Breakables/PotCandleCluster1/Hurtbox"]
+[editable path="Breakables/PotCardsDice5/Hurtbox"]
+[editable path="Breakables/PotForgedScrolls4/Hurtbox"]
+[editable path="Breakables/PotForgedScrolls5/Hurtbox"]
+[editable path="Breakables/PotCandleCluster2/Hurtbox"]
+[editable path="Breakables/PotForgedScrolls6/Hurtbox"]
+[editable path="Breakables/PotForgedScrolls7/Hurtbox"]
+[editable path="Breakables/PotCandleCluster3/Hurtbox"]
+[editable path="Breakables/PotCandleCluster4/Hurtbox"]
+[editable path="Breakables/PotCardsDice6/Hurtbox"]
+[editable path="Breakables/PotCandleCluster5/Hurtbox"]
+[editable path="Breakables/PotCandleCluster6/Hurtbox"]
 [editable path="Hazards/Pool1"]
 [editable path="Hazards/Pool2"]
 [editable path="Hazards/Pool3"]

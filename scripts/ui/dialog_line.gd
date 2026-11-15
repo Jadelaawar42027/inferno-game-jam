@@ -6,3 +6,4 @@ class_name DialogLine
 enum STATE_SPEAKER { HERO, OTHER }
 @export var SPEAKER := STATE_SPEAKER.HERO
 @export_multiline var TEXT: String
+@export var VOICE := ""
