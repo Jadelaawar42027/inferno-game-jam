@@ -39,6 +39,8 @@
 [ext_resource type="Texture2D" uid="uid://dmg7u1rbu5yd0" path="res://levels/fraud/art/gameplay/arena_gate_frame_3.png" id="37_r"]
 [ext_resource type="PackedScene" uid="uid://deejvq1mv7666" path="res://scenes/player/player.tscn" id="38_r"]
 [ext_resource type="Texture2D" uid="uid://bqkcfj8abow7t" path="res://levels/fraud/art/bg/fg_frame.png" id="39_r"]
+[ext_resource type="PackedScene" uid="uid://bhwatpo0qwwtx" path="res://scenes/levels/wall_text.tscn" id="49_bu14c"]
+[ext_resource type="Resource" uid="uid://dwaimmhu01eyt" path="res://resources/abilities/invisibility.tres" id="50_nt4uj"]
 [ext_resource type="PackedScene" uid="uid://tso14itdyc7m" path="res://scenes/levels/checkpoint.tscn" id="900_lv"]
 [ext_resource type="PackedScene" uid="uid://1cqsut32py03" path="res://scenes/levels/floor_exit.tscn" id="901_lv"]
 [ext_resource type="PackedScene" uid="uid://cajlavpcicmhj" path="res://scenes/levels/arena_trigger.tscn" id="902_lv"]
@@ -2475,6 +2477,10 @@ position = Vector2(2256, 2097)
 [node name="GildedMonk" parent="Enemies" unique_id=998424207 instance=ExtResource("908_lv")]
 position = Vector2(3376, 2196.33)
 patrol_distance = 120.0
+
+[node name="WallText" parent="." unique_id=529411422 instance=ExtResource("49_bu14c")]
+position = Vector2(4896, 2052)
+ability = ExtResource("50_nt4uj")
 
 [connection signal="died" from="Breakables/PotCardsDice1/health_component" to="Breakables/PotCardsDice1" method="queue_free"]
 [connection signal="died" from="Breakables/PotForgedScrolls1/health_component" to="Breakables/PotForgedScrolls1" method="queue_free"]

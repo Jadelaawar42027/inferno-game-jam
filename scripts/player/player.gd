@@ -83,6 +83,13 @@ func start_attack(dir: float) -> void:
 		play_action("slash_side" if slash_combo == 0 else "slash_side_alt")
 		slash_combo = 1 - slash_combo
 	active_hitbox.activate()
+	var fx: AnimatedSprite2D = active_hitbox.get_node("SlashFX")
+	fx.flip_h = facing < 0
+	fx.flip_v = active_hitbox == side_slash and slash_combo == 1
+	fx.show()
+	fx.modulate = Color.WHITE.lerp(Color(1, 0.3, 0.35), GameState.corruption())
+	fx.stop()
+	fx.play("slash")
 	attack_active_timer = attack_active_time
 	attack_cooldown_timer = attack_cooldown
 	VoiceManager.play_line("dante_attack", "Voice", randf_range(0.95, 1.05), false)
@@ -226,6 +233,9 @@ func _ready() -> void:
 		global_position = GameState.checkpoint
 		camera.reset_smoothing()
 	eye_mat.set_shader_parameter("corruption", GameState.corruption())
+	for h in [side_slash, up_slash, down_slash]:
+		var fx: AnimatedSprite2D = h.get_node("SlashFX")
+		fx.animation_finished.connect(fx.hide)
 
 func _on_anim_finished()->void:
 	if anim.animation == "run_start": anim.play("run"); return

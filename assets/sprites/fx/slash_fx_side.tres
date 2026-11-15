@@ -1,0 +1,45 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://digwrfvhe4nv7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0"]
+region = Rect2(0, 0, 300, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1"]
+region = Rect2(300, 0, 300, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2"]
+region = Rect2(600, 0, 300, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3"]
+region = Rect2(900, 0, 300, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4"]
+region = Rect2(1200, 0, 300, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5"]
+region = Rect2(1500, 0, 300, 260)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5")
+}],
+"loop": 0,
+"name": &"slash",
+"speed": 24.0
+}]

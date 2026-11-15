@@ -4,30 +4,42 @@
 [ext_resource type="PackedScene" uid="uid://bc8hi61nfjm5p" path="res://scenes/Components/health_component.tscn" id="2_lvxji"]
 [ext_resource type="PackedScene" uid="uid://bvschcfxqd4kd" path="res://scenes/Components/hurtbox.tscn" id="3_p47bc"]
 [ext_resource type="PackedScene" uid="uid://bsxufnevdum76" path="res://scenes/Components/hitbox.tscn" id="4_75vfm"]
+[ext_resource type="SpriteFrames" uid="uid://ddbvbibspfad8" path="res://assets/sprites/fx/slash/slash_fx_side.tres" id="5_h17s1"]
 [ext_resource type="SpriteFrames" uid="uid://bl1elduuoxp86" path="res://assets/sprites/knight/knight_frames_hd.tres" id="5_p47bc"]
 [ext_resource type="Shader" uid="uid://ddibj6ssw35jd" path="res://assets/shaders/corruption.gdshader" id="5_qek5x"]
 [ext_resource type="Script" uid="uid://be3r6wqkyspak" path="res://scenes/player/ability_manager.gd" id="6_75vfm"]
+[ext_resource type="SpriteFrames" uid="uid://s8g0jewed85c" path="res://assets/sprites/fx/slash/slash_fx_up.tres" id="6_je7p5"]
 [ext_resource type="PackedScene" uid="uid://cvj618ugsj3gy" path="res://scenes/ui/pauseMenu.tscn" id="7_0owmy"]
+[ext_resource type="SpriteFrames" uid="uid://700ht5y4cx0g" path="res://assets/sprites/fx/slash/slash_fx_down.tres" id="7_fm80t"]
 [ext_resource type="PackedScene" uid="uid://7ekpfe2fw7i1" path="res://scenes/ui/dialogMenu.tscn" id="9_5gtgg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_docu8"]
 size = Vector2(12, 22)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h17s1"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_je7p5"]
 resource_local_to_scene = true
 size = Vector2(10, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_je7p5"]
-resource_local_to_scene = true
-size = Vector2(26, 16)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fm80t"]
 resource_local_to_scene = true
-size = Vector2(20, 24)
+size = Vector2(40, 34)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_y5xv1"]
+blend_mode = 1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gx1jg"]
 resource_local_to_scene = true
-size = Vector2(20, 22)
+size = Vector2(34, 40)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_80f48"]
+blend_mode = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugbui"]
+resource_local_to_scene = true
+size = Vector2(34, 40)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_docu8"]
+blend_mode = 1
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qek5x"]
 shader = ExtResource("5_qek5x")
@@ -76,7 +88,7 @@ position = Vector2(0, -11)
 shape = SubResource("RectangleShape2D_docu8")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=623591930]
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 position_smoothing_speed = 9.0
 
@@ -87,7 +99,7 @@ health = NodePath("../health_component")
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=1868882131]
 position = Vector2(0, -10)
-shape = SubResource("RectangleShape2D_h17s1")
+shape = SubResource("RectangleShape2D_je7p5")
 
 [node name="Attacks" type="Node2D" parent="." unique_id=804652063]
 
@@ -98,7 +110,15 @@ collision_mask = 384
 damage = 100
 
 [node name="CollisionShape2D" parent="Attacks/SideSlash" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_je7p5")
+shape = SubResource("RectangleShape2D_fm80t")
+
+[node name="SlashFX" type="AnimatedSprite2D" parent="Attacks/SideSlash" unique_id=1823698374]
+visible = false
+z_index = 1
+material = SubResource("CanvasItemMaterial_y5xv1")
+scale = Vector2(0.2, 0.2)
+sprite_frames = ExtResource("5_h17s1")
+animation = &"slash"
 
 [node name="UpSlash" parent="Attacks" unique_id=2052691650 instance=ExtResource("4_75vfm")]
 position = Vector2(0, -34)
@@ -107,7 +127,15 @@ collision_mask = 384
 damage = 20
 
 [node name="CollisionShape2D" parent="Attacks/UpSlash" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_fm80t")
+shape = SubResource("RectangleShape2D_gx1jg")
+
+[node name="SlashFX" type="AnimatedSprite2D" parent="Attacks/UpSlash" unique_id=602250638]
+visible = false
+z_index = 1
+material = SubResource("CanvasItemMaterial_80f48")
+scale = Vector2(0.2, 0.2)
+sprite_frames = ExtResource("6_je7p5")
+animation = &"slash"
 
 [node name="DownSlash" parent="Attacks" unique_id=614013444 instance=ExtResource("4_75vfm")]
 position = Vector2(0, 11)
@@ -117,7 +145,15 @@ damage = 20
 pogo_allowed = true
 
 [node name="CollisionShape2D" parent="Attacks/DownSlash" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_gx1jg")
+shape = SubResource("RectangleShape2D_ugbui")
+
+[node name="SlashFX" type="AnimatedSprite2D" parent="Attacks/DownSlash" unique_id=1053420339]
+visible = false
+z_index = 1
+material = SubResource("CanvasItemMaterial_docu8")
+scale = Vector2(0.2, 0.2)
+sprite_frames = ExtResource("7_fm80t")
+animation = &"slash"
 
 [node name="Visual" type="Node2D" parent="." unique_id=727021128]
 

@@ -42,6 +42,8 @@
 [ext_resource type="Texture2D" uid="uid://dpfgc8cxohg" path="res://levels/violence/art/gameplay/arena_gate_frame_3.png" id="40_r"]
 [ext_resource type="PackedScene" uid="uid://deejvq1mv7666" path="res://scenes/player/player.tscn" id="41_r"]
 [ext_resource type="Texture2D" uid="uid://poup65eeewqk" path="res://levels/violence/art/bg/fg_frame.png" id="42_r"]
+[ext_resource type="PackedScene" uid="uid://bhwatpo0qwwtx" path="res://scenes/levels/wall_text.tscn" id="52_15o2y"]
+[ext_resource type="Resource" uid="uid://8nhwloo4s556" path="res://resources/abilities/charge_attack.tres" id="53_wugjm"]
 [ext_resource type="PackedScene" uid="uid://tso14itdyc7m" path="res://scenes/levels/checkpoint.tscn" id="900_lv"]
 [ext_resource type="PackedScene" uid="uid://1cqsut32py03" path="res://scenes/levels/floor_exit.tscn" id="901_lv"]
 [ext_resource type="PackedScene" uid="uid://cajlavpcicmhj" path="res://scenes/levels/arena_trigger.tscn" id="902_lv"]
@@ -2268,6 +2270,10 @@ position = Vector2(2642, 845)
 
 [node name="WarHarpy5" parent="." unique_id=1536775180 instance=ExtResource("909_lv")]
 position = Vector2(3256, 839)
+
+[node name="WallText" parent="." unique_id=529411422 instance=ExtResource("52_15o2y")]
+position = Vector2(5408, 836)
+ability = ExtResource("53_wugjm")
 
 [connection signal="died" from="Breakables/PotSkullPile1/health_component" to="Breakables/PotSkullPile1" method="queue_free"]
 [connection signal="died" from="Breakables/PotSwordsInGround1/health_component" to="Breakables/PotSwordsInGround1" method="queue_free"]

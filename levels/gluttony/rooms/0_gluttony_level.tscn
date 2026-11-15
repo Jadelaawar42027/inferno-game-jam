@@ -37,6 +37,8 @@
 [ext_resource type="PackedScene" uid="uid://dpj5d4186sng6" path="res://scenes/enemies/gluttony/gargoyle_cook.tscn" id="43_ftkg2"]
 [ext_resource type="Texture2D" uid="uid://chqak6qhbrkrf" path="res://levels/gluttony/art/bg/fg_frame.png" id="43_r"]
 [ext_resource type="PackedScene" uid="uid://tso14itdyc7m" path="res://scenes/levels/checkpoint.tscn" id="44_rrmma"]
+[ext_resource type="PackedScene" uid="uid://bhwatpo0qwwtx" path="res://scenes/levels/wall_text.tscn" id="44_vuwda"]
+[ext_resource type="Resource" uid="uid://dux8jnhiqyqwi" path="res://resources/abilities/dash.tres" id="45_ewe4t"]
 [ext_resource type="PackedScene" uid="uid://dij1hnakfww2u" path="res://scenes/bosses/teppani_oni.tscn" id="45_vuwda"]
 [ext_resource type="PackedScene" uid="uid://cajlavpcicmhj" path="res://scenes/levels/arena_trigger.tscn" id="47_ewe4t"]
 [ext_resource type="PackedScene" path="res://scenes/levels/lantern_light.tscn" id="49_uo6sk"]
@@ -1603,7 +1605,7 @@ boss = NodePath("../../TeppaniOni")
 [node name="Spawns" type="Node2D" parent="." unique_id=252135801]
 
 [node name="Player" parent="." unique_id=921023227 instance=ExtResource("42_r")]
-position = Vector2(102.4, 1315)
+position = Vector2(3558, 386)
 
 [node name="Camera2D" parent="Player" index="2" unique_id=623591930]
 limit_left = 0
@@ -1791,6 +1793,10 @@ position = Vector2(3695, 642)
 
 [node name="GargoyleCook9" parent="." unique_id=1962405422 instance=ExtResource("43_ftkg2")]
 position = Vector2(3515, 419)
+
+[node name="WallText" parent="." unique_id=529411422 instance=ExtResource("44_vuwda")]
+position = Vector2(4256, 260)
+ability = ExtResource("45_ewe4t")
 
 [editable path="Hazards/Spikes1"]
 [editable path="Player"]
