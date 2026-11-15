@@ -10,19 +10,19 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_docu8"]
 size = Vector2(12, 22)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p47bc"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75vfm"]
 resource_local_to_scene = true
 size = Vector2(10, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_75vfm"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0owmy"]
 resource_local_to_scene = true
 size = Vector2(26, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0owmy"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qek5x"]
 resource_local_to_scene = true
 size = Vector2(20, 24)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qek5x"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5gtgg"]
 resource_local_to_scene = true
 size = Vector2(20, 22)
 
@@ -63,7 +63,7 @@ health = NodePath("../health_component")
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=1868882131]
 position = Vector2(0, -10)
-shape = SubResource("RectangleShape2D_p47bc")
+shape = SubResource("RectangleShape2D_75vfm")
 
 [node name="Attacks" type="Node2D" parent="." unique_id=804652063]
 
@@ -71,26 +71,29 @@ shape = SubResource("RectangleShape2D_p47bc")
 position = Vector2(19, -11)
 collision_layer = 8
 collision_mask = 384
+damage = 100
 
 [node name="CollisionShape2D" parent="Attacks/SideSlash" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_75vfm")
+shape = SubResource("RectangleShape2D_0owmy")
 
 [node name="UpSlash" parent="Attacks" unique_id=2052691650 instance=ExtResource("4_75vfm")]
 position = Vector2(0, -34)
 collision_layer = 8
 collision_mask = 384
+damage = 20
 
 [node name="CollisionShape2D" parent="Attacks/UpSlash" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_0owmy")
+shape = SubResource("RectangleShape2D_qek5x")
 
 [node name="DownSlash" parent="Attacks" unique_id=614013444 instance=ExtResource("4_75vfm")]
 position = Vector2(0, 11)
 collision_layer = 8
 collision_mask = 384
+damage = 20
 pogo_allowed = true
 
 [node name="CollisionShape2D" parent="Attacks/DownSlash" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_qek5x")
+shape = SubResource("RectangleShape2D_5gtgg")
 
 [node name="Visual" type="Node2D" parent="." unique_id=727021128]
 

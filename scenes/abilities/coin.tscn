@@ -7,7 +7,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_hpwfp"]
 radius = 4.0
 
-[node name="Coin" type="Node" unique_id=545474644]
+[node name="Coin" type="Node2D" unique_id=2082167516]
 script = ExtResource("1_1q4w4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1384852403]

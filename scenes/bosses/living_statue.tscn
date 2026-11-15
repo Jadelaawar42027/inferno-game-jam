@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://dsf1jtugeef0n"]
+
+[ext_resource type="PackedScene" uid="uid://dsdemrjm0ref5" path="res://scenes/bosses/boss.tscn" id="1_kgv15"]
+[ext_resource type="Shader" uid="uid://bcycvorrmew66" path="res://scenes/enemies/hitflash.gdshader" id="2_3gqlq"]
+[ext_resource type="Script" uid="uid://ta0l1ol2n1a8" path="res://scripts/bosses/living_statue.gd" id="2_vo3ww"]
+[ext_resource type="Resource" uid="uid://6fovqhr0gt1m" path="res://resources/abilities/gold_throw.tres" id="2_xq2ia"]
+[ext_resource type="SpriteFrames" uid="uid://cxye8oynbufww" path="res://assets/sprites/bosses/living_statue/living_statue_frames.tres" id="3_3gqlq"]
+[ext_resource type="PackedScene" uid="uid://bsxufnevdum76" path="res://scenes/Components/hitbox.tscn" id="4_i81qd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gqlq"]
+size = Vector2(64, 100)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vo3ww"]
+resource_local_to_scene = true
+shader = ExtResource("2_3gqlq")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_amount = 0.0
+shader_parameter/additive_mix = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxuph"]
+resource_local_to_scene = true
+size = Vector2(80, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5jpt"]
+resource_local_to_scene = true
+size = Vector2(64, 86)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_23gyv"]
+resource_local_to_scene = true
+size = Vector2(110, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ouvd"]
+resource_local_to_scene = true
+size = Vector2(110, 70)
+
+[node name="LivingStatue" unique_id=319771871 instance=ExtResource("1_kgv15")]
+script = ExtResource("2_vo3ww")
+touch_speed = 220.0
+freeze_time = 1.0
+guard_time = 1.5
+down_time = 1.6
+boss_name = "Living Statue"
+auto_start = true
+reward = ExtResource("2_xq2ia")
+think_time = Vector2(0.8, 1.5)
+preferred_range = Vector2(70, 150)
+move_speed = 45.0
+reposition_time = 1.5
+intro_anim = "roar"
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=220595465]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_3gqlq")
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=962650832]
+texture_filter = 4
+material = SubResource("ShaderMaterial_vo3ww")
+scale = Vector2(0.46, 0.46)
+sprite_frames = ExtResource("3_3gqlq")
+frame_progress = 0.0
+
+[node name="HealthComponent" parent="." index="2" unique_id=555885103]
+max_health = 50
+
+[node name="Hurtbox" parent="." index="3" unique_id=887145532]
+collision_mask = 8
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=1868882131]
+shape = SubResource("RectangleShape2D_rxuph")
+
+[node name="CollisionShape2D" parent="ContactHitbox" parent_id_path=PackedInt32Array(1898026828) index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_j5jpt")
+
+[node name="TouchHitbox" parent="." index="5" unique_id=1898026828 instance=ExtResource("4_i81qd")]
+position = Vector2(75, -10)
+collision_layer = 16
+collision_mask = 64
+damage = 2
+
+[node name="CollisionShape2D" parent="TouchHitbox" index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_23gyv")
+
+[node name="ToppleHitbox" parent="." index="6" unique_id=781299958 instance=ExtResource("4_i81qd")]
+position = Vector2(55, 10)
+collision_layer = 16
+collision_mask = 64
+damage = 2
+
+[node name="CollisionShape2D" parent="ToppleHitbox" index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_0ouvd")
+
+[editable path="Hurtbox"]
+[editable path="ContactHitbox"]
+[editable path="TouchHitbox"]
+[editable path="ToppleHitbox"]
