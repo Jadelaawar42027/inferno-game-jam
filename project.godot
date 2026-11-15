@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Inferno Game Jam"
-run/main_scene="uid://degaw268gnce8"
+run/main_scene="uid://crpl31c0famvp"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
