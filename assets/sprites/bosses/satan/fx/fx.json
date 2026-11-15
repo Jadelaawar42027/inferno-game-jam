@@ -1,0 +1,64 @@
+{
+ "shockwave": {
+  "frame_size": [
+   360,
+   200
+  ],
+  "frames": 5,
+  "fps": 12,
+  "loop": false,
+  "note": "Ground wave of ice spikes travelling right (flip for left). Hurtbox ~ bottom 40 game px. Move the node along the floor."
+ },
+ "icicle": {
+  "note": "Falling icicle, 1 game-px tip at the bottom. Show icicle_shadow on the floor ~0.6 s before it lands."
+ },
+ "frost_orb": {
+  "frame_size": [
+   150,
+   150
+  ],
+  "frames": 6,
+  "fps": 12,
+  "loop": true,
+  "note": "Seeker orb (right head). Bursts with ice_burst. Loses track while the player is invisible."
+ },
+ "gaze_beam": {
+  "note": "gaze_beam_segment tiles horizontally (texture_repeat + region). Rotate the beam node from the middle head toward the player and sweep it. Origin glow sits on the eyes."
+ },
+ "ice_pillar": {
+  "frame_size": [
+   200,
+   500
+  ],
+  "frames": 5,
+  "fps": 14,
+  "loop": false,
+  "note": "Rises from the floor in phase 3 (roar). 2 tiles wide x 5 tall. Solid top + sides (cover and a temporary platform) for ~8 s, then play backwards and remove."
+ },
+ "breath_cone": {
+  "frame_size": [
+   640,
+   260
+  ],
+  "frames": 4,
+  "fps": 10,
+  "loop": false,
+  "note": "Left head frost breath, pointing right from the mouth, sweeping down to the floor. Leaves slippery_ice where it touches the floor."
+ },
+ "slippery_ice": {
+  "note": "Floor patch, tiles horizontally. Lower the player friction while standing on it (~3 s)."
+ },
+ "ice_burst": {
+  "frame_size": [
+   260,
+   260
+  ],
+  "frames": 5,
+  "fps": 15,
+  "loop": false,
+  "note": "Generic ice hit / orb burst / icicle shatter."
+ },
+ "seal_glow": {
+  "note": "Pulse this over his chest during chest_open (weak point). Additive blend looks best."
+ }
+}

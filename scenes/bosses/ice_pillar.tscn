@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://btqnhrjyxyaln"]
+
+[ext_resource type="Texture2D" uid="uid://dtlbgupx1v6b0" path="res://assets/sprites/bosses/satan/fx/ice_pillar.png" id="1_gi1i7"]
+[ext_resource type="Script" uid="uid://dpyd2bh54amr7" path="res://scripts/bosses/ice_pillar.gd" id="1_ktjgu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80f48"]
+size = Vector2(56, 160)
+
+[node name="IcePillar" type="StaticBody2D" unique_id=197827067]
+script = ExtResource("1_ktjgu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=250827486]
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_gi1i7")
+offset = Vector2(0, -250)
+region_enabled = true
+region_rect = Rect2(800, 0, 200, 500)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1636477494]
+position = Vector2(0, -80)
+shape = SubResource("RectangleShape2D_80f48")

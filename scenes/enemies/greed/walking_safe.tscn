@@ -39,7 +39,7 @@ shape = SubResource("RectangleShape2D_ocy3h")
 [node name="AnimatedSprite2D" parent="." index="1" unique_id=962650832]
 material = SubResource("ShaderMaterial_1k4l7")
 position = Vector2(0, -8)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(-0.2, 0.2)
 sprite_frames = ExtResource("3_1k4l7")
 frame_progress = 0.0
 

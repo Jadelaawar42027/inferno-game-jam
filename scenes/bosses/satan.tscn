@@ -1,0 +1,153 @@
+[gd_scene format=3 uid="uid://cqbggeanxf2hx"]
+
+[ext_resource type="PackedScene" uid="uid://dsdemrjm0ref5" path="res://scenes/bosses/boss.tscn" id="1_pvd36"]
+[ext_resource type="Shader" uid="uid://bcycvorrmew66" path="res://scenes/enemies/hitflash.gdshader" id="2_edr2l"]
+[ext_resource type="Script" uid="uid://dbq1rgccldy2t" path="res://scripts/bosses/satan.gd" id="2_o4rvv"]
+[ext_resource type="SpriteFrames" uid="uid://dtwh5jx24jmvk" path="res://assets/sprites/bosses/satan/satan_frames.tres" id="3_edr2l"]
+[ext_resource type="PackedScene" uid="uid://bsxufnevdum76" path="res://scenes/Components/hitbox.tscn" id="4_xxn4j"]
+[ext_resource type="Texture2D" uid="uid://dywdm8l1dp2ue" path="res://assets/sprites/bosses/satan/fx/gaze_beam_segment.png" id="5_467h7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_edr2l"]
+size = Vector2(70, 140)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xxn4j"]
+resource_local_to_scene = true
+shader = ExtResource("2_edr2l")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_amount = 0.0
+shader_parameter/additive_mix = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_467h7"]
+resource_local_to_scene = true
+size = Vector2(90, 140)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o4rvv"]
+resource_local_to_scene = true
+size = Vector2(70, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxn4j"]
+resource_local_to_scene = true
+size = Vector2(70, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d04so"]
+resource_local_to_scene = true
+size = Vector2(140, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ms46o"]
+resource_local_to_scene = true
+size = Vector2(80, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ultc"]
+resource_local_to_scene = true
+size = Vector2(160, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8o6s5"]
+resource_local_to_scene = true
+size = Vector2(400, 16)
+
+[node name="Satan" unique_id=319771871 instance=ExtResource("1_pvd36")]
+script = ExtResource("2_o4rvv")
+charge_speed = 320.0
+swoop_speed = 340.0
+fly_time = 6.0
+boss_name = "Satan"
+phase_thresholds = Array[float]([0.66, 0.33])
+auto_start = true
+reward = null
+think_time = Vector2(0.5, 1)
+preferred_range = Vector2(50, 150)
+move_speed = 70.0
+reposition_time = 1.5
+intro_anim = "rise"
+voice_id = ""
+voice_pitch = 1.0
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=220595465]
+position = Vector2(0, -70)
+shape = SubResource("RectangleShape2D_edr2l")
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=962650832]
+texture_filter = 4
+material = SubResource("ShaderMaterial_xxn4j")
+scale = Vector2(0.333, 0.333)
+sprite_frames = ExtResource("3_edr2l")
+frame_progress = 0.0
+offset = Vector2(0, -301)
+
+[node name="HealthComponent" parent="." index="2" unique_id=555885103]
+max_health = 120
+
+[node name="Hurtbox" parent="." index="3" unique_id=887145532]
+position = Vector2(0, -70)
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=1868882131]
+shape = SubResource("RectangleShape2D_467h7")
+
+[node name="ContactHitbox" parent="." index="4" unique_id=1898026828]
+position = Vector2(0, -60)
+
+[node name="CollisionShape2D" parent="ContactHitbox" index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_o4rvv")
+
+[node name="ClawHitbox" parent="." index="5" unique_id=1163225649 instance=ExtResource("4_xxn4j")]
+position = Vector2(60, -80)
+collision_layer = 16
+collision_mask = 64
+damage = 1
+
+[node name="CollisionShape2D" parent="ClawHitbox" index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_xxn4j")
+
+[node name="TailHitbox" parent="." index="6" unique_id=108164802 instance=ExtResource("4_xxn4j")]
+position = Vector2(40, -15)
+collision_layer = 16
+collision_mask = 64
+damage = 1
+
+[node name="CollisionShape2D" parent="TailHitbox" index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_d04so")
+
+[node name="ChargeHitbox" parent="." index="7" unique_id=269974463 instance=ExtResource("4_xxn4j")]
+position = Vector2(40, -60)
+collision_layer = 16
+collision_mask = 64
+damage = 2
+
+[node name="CollisionShape2D" parent="ChargeHitbox" index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_ms46o")
+
+[node name="SlamHitbox" parent="." index="8" unique_id=2086307984 instance=ExtResource("4_xxn4j")]
+position = Vector2(0, -20)
+collision_layer = 16
+collision_mask = 64
+
+[node name="CollisionShape2D" parent="SlamHitbox" index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_2ultc")
+
+[node name="BeamPivot" type="Node2D" parent="." index="9" unique_id=533983086]
+position = Vector2(0, -130)
+
+[node name="BeamHitbox" parent="BeamPivot" index="0" unique_id=1381672821 instance=ExtResource("4_xxn4j")]
+position = Vector2(200, 0)
+collision_layer = 16
+collision_mask = 64
+
+[node name="CollisionShape2D" parent="BeamPivot/BeamHitbox" index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_8o6s5")
+
+[node name="Beam" type="Sprite2D" parent="BeamPivot" index="1" unique_id=1613223604]
+texture_repeat = 2
+position = Vector2(0, -15)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("5_467h7")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1200, 90)
+
+[editable path="Hurtbox"]
+[editable path="ContactHitbox"]
+[editable path="ClawHitbox"]
+[editable path="TailHitbox"]
+[editable path="ChargeHitbox"]
+[editable path="SlamHitbox"]
+[editable path="BeamPivot/BeamHitbox"]
