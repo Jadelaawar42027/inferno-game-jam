@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dkvr8w33s6etj"]
+
+[ext_resource type="Script" uid="uid://bd6ix8om4lhv7" path="res://scenes/levels/lore_text.gd" id="1_rq5sw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80f48"]
+size = Vector2(140, 200)
+
+[node name="LoreText" type="Node2D" unique_id=1882387057]
+script = ExtResource("1_rq5sw")
+
+[node name="Label" type="Label" parent="." unique_id=1234412466]
+offset_left = -80.0
+offset_top = -20.0
+offset_right = 80.0
+offset_bottom = 20.0
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1167132616]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1659298641]
+shape = SubResource("RectangleShape2D_80f48")

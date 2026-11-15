@@ -8,26 +8,16 @@
 [ext_resource type="TileSet" uid="uid://rq8x5icm87q2" path="res://levels/gluttony/gluttony_tileset.tres" id="6_r"]
 [ext_resource type="Texture2D" uid="uid://c74w5ljxfya3o" path="res://levels/gluttony/art/fx/chain_link.png" id="7_r"]
 [ext_resource type="Texture2D" uid="uid://c6lvinc71m4r0" path="res://levels/gluttony/art/gameplay/fx_feast_seal.png" id="8_r"]
-[ext_resource type="Texture2D" uid="uid://ci2p00goyivdk" path="res://levels/gluttony/art/props/prop_barrel.png" id="9_r"]
-[ext_resource type="PackedScene" uid="uid://bvschcfxqd4kd" path="res://scenes/Components/hurtbox.tscn" id="10_r"]
-[ext_resource type="PackedScene" uid="uid://bc8hi61nfjm5p" path="res://scenes/Components/health_component.tscn" id="11_r"]
-[ext_resource type="Texture2D" uid="uid://bduod5xhry6y5" path="res://levels/gluttony/art/props/prop_flour_sack.png" id="12_r"]
 [ext_resource type="Texture2D" uid="uid://ddvqj7bakufrt" path="res://levels/gluttony/art/props/prop_candle_cluster.png" id="13_r"]
 [ext_resource type="Texture2D" uid="uid://cltyaqaxsc0uw" path="res://levels/gluttony/art/props/prop_stove.png" id="14_r"]
-[ext_resource type="Texture2D" uid="uid://dyo3n6376vfkn" path="res://levels/gluttony/art/props/prop_clay_crock.png" id="15_r"]
 [ext_resource type="Texture2D" uid="uid://boymth1v7t00j" path="res://levels/gluttony/art/props/prop_broken_crockery.png" id="16_r"]
 [ext_resource type="Texture2D" uid="uid://bx2yw5fu34lhk" path="res://levels/gluttony/art/gameplay/hearth_arch.png" id="17_r"]
 [ext_resource type="Texture2D" uid="uid://bnbvjr7hxrcrj" path="res://levels/gluttony/art/props/prop_lantern.png" id="18_r"]
 [ext_resource type="Texture2D" uid="uid://ektj6he2st4y" path="res://levels/gluttony/art/props/prop_hanging_ham.png" id="19_r"]
 [ext_resource type="Texture2D" uid="uid://csf7lxoqm1lry" path="res://levels/gluttony/art/props/prop_garlic_bundle.png" id="20_r"]
 [ext_resource type="Texture2D" uid="uid://cvrcw012hogn2" path="res://levels/gluttony/art/props/prop_chopping_block.png" id="21_r"]
-[ext_resource type="Texture2D" uid="uid://csuvfisit2xgg" path="res://levels/gluttony/art/props/prop_kettle.png" id="22_r"]
 [ext_resource type="Texture2D" uid="uid://cbb3ub0flu6ey" path="res://levels/gluttony/art/platforms/platform_prep_counter.png" id="23_r"]
-[ext_resource type="Texture2D" uid="uid://cpi7j1vd48sr" path="res://levels/gluttony/art/props/prop_bread_pile.png" id="24_r"]
 [ext_resource type="Texture2D" uid="uid://b7l85nsinawbg" path="res://levels/gluttony/art/props/prop_cook_husk.png" id="25_r"]
-[ext_resource type="Texture2D" uid="uid://ssrcoglr8b4w" path="res://levels/gluttony/art/props/prop_plate_stack.png" id="26_r"]
-[ext_resource type="Texture2D" uid="uid://6ftj37vkfb0j" path="res://levels/gluttony/art/props/prop_stockpot.png" id="27_r"]
-[ext_resource type="Texture2D" uid="uid://b1fy2f7a5vne6" path="res://levels/gluttony/art/props/prop_mug.png" id="28_r"]
 [ext_resource type="Texture2D" uid="uid://c6irebdiiuwj4" path="res://levels/gluttony/art/props/prop_sausage_links.png" id="29_r"]
 [ext_resource type="Texture2D" uid="uid://dxd2qftay3ikh" path="res://levels/gluttony/art/props/prop_pot_rack.png" id="30_r"]
 [ext_resource type="Texture2D" uid="uid://bvyq4ct2xr8ne" path="res://levels/gluttony/art/hazards/hazard_grease_strip.png" id="31_r"]
@@ -41,16 +31,18 @@
 [ext_resource type="Texture2D" uid="uid://codoyq7higla7" path="res://levels/gluttony/art/gameplay/arena_gate_frame_1.png" id="39_r"]
 [ext_resource type="Texture2D" uid="uid://bdj8a5tv1w2g5" path="res://levels/gluttony/art/gameplay/arena_gate_frame_2.png" id="40_r"]
 [ext_resource type="Texture2D" uid="uid://c4s088shffmhh" path="res://levels/gluttony/art/gameplay/arena_gate_frame_3.png" id="41_r"]
+[ext_resource type="PackedScene" uid="uid://dgu6t255y56x7" path="res://scenes/enemies/gluttony/tenderizer.tscn" id="42_f8evt"]
 [ext_resource type="PackedScene" uid="uid://deejvq1mv7666" path="res://scenes/player/player.tscn" id="42_r"]
 [ext_resource type="PackedScene" uid="uid://1cqsut32py03" path="res://scenes/levels/floor_exit.tscn" id="42_un0ih"]
+[ext_resource type="PackedScene" uid="uid://dpj5d4186sng6" path="res://scenes/enemies/gluttony/gargoyle_cook.tscn" id="43_ftkg2"]
 [ext_resource type="Texture2D" uid="uid://chqak6qhbrkrf" path="res://levels/gluttony/art/bg/fg_frame.png" id="43_r"]
 [ext_resource type="PackedScene" uid="uid://tso14itdyc7m" path="res://scenes/levels/checkpoint.tscn" id="44_rrmma"]
 [ext_resource type="PackedScene" uid="uid://dij1hnakfww2u" path="res://scenes/bosses/teppani_oni.tscn" id="45_vuwda"]
-[ext_resource type="Script" uid="uid://dkj0fvj30brcg" path="res://scripts/ui/dialog_line.gd" id="46_vuwda"]
 [ext_resource type="PackedScene" uid="uid://cajlavpcicmhj" path="res://scenes/levels/arena_trigger.tscn" id="47_ewe4t"]
 [ext_resource type="PackedScene" path="res://scenes/levels/lantern_light.tscn" id="49_uo6sk"]
 [ext_resource type="PackedScene" path="res://scenes/levels/furnace_light.tscn" id="50_knvbm"]
 [ext_resource type="PackedScene" uid="uid://dvx74v4hbgqfw" path="res://scenes/enemies/gluttony/burger_grunt.tscn" id="51_i0aog"]
+[ext_resource type="PackedScene" uid="uid://dkvr8w33s6etj" path="res://scenes/levels/lore_text.tscn" id="51_p0jqe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6"]
 size = Vector2(145.5, 6)
@@ -151,72 +143,6 @@ size = Vector2(91.5, 6)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_56"]
 size = Vector2(636, 40)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
-size = Vector2(37.6, 51.2)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2"]
-size = Vector2(34.4, 46.4)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3"]
-size = Vector2(51.2, 41.6)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4"]
-size = Vector2(35.6, 47.2)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5"]
-size = Vector2(42.8, 42)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_9"]
-size = Vector2(35.6, 47.2)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_10"]
-size = Vector2(64, 29.6)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_11"]
-size = Vector2(39.2, 26.8)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_12"]
-size = Vector2(50.4, 53.2)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_13"]
-size = Vector2(26.4, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_14"]
-size = Vector2(34.4, 46.4)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_20"]
-size = Vector2(51.2, 41.6)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_45"]
-size = Vector2(51.2, 41.6)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_46"]
-size = Vector2(64, 29.6)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_47"]
-size = Vector2(35.6, 47.2)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_49"]
-size = Vector2(24, 32.4)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_50"]
-size = Vector2(26.4, 36)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_51"]
-size = Vector2(26.4, 36)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_52"]
-size = Vector2(18.4, 22.4)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_53"]
-size = Vector2(27.6, 18.8)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_54"]
-size = Vector2(24.8, 33.2)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_55"]
-size = Vector2(18.4, 22.4)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_57"]
 animations = [{
 "frames": [{
@@ -243,19 +169,19 @@ size = Vector2(54.4, 106.86)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_59"]
 size = Vector2(54.4, 106.86)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_knvbm"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrmma"]
 resource_local_to_scene = true
 size = Vector2(10, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0aog"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vuwda"]
 resource_local_to_scene = true
 size = Vector2(26, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0jqe"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ewe4t"]
 resource_local_to_scene = true
 size = Vector2(20, 24)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5860a"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_un0ih"]
 resource_local_to_scene = true
 size = Vector2(20, 22)
 
@@ -1629,454 +1555,6 @@ persistent = true
 [node name="CollisionShape2D" parent="Hazards/Spikes1" index="0" unique_id=612733107]
 shape = SubResource("RectangleShape2D_56")
 
-[node name="Breakables" type="Node2D" parent="." unique_id=1882299839]
-
-[node name="PotBarrel1" type="Node2D" parent="Breakables" unique_id=1823787110]
-position = Vector2(70, 1253)
-
-[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotBarrel1" unique_id=339581467]
-scale = Vector2(0.33, 0.33)
-texture = ExtResource("9_r")
-centered = false
-
-[node name="health_component" parent="Breakables/PotBarrel1" unique_id=1872893789 instance=ExtResource("11_r")]
-max_health = 1
-
-[node name="Hurtbox" parent="Breakables/PotBarrel1" unique_id=1163571464 node_paths=PackedStringArray("health") instance=ExtResource("10_r")]
-collision_layer = 256
-collision_mask = 0
-health = NodePath("../health_component")
-
-[node name="CollisionShape2D" parent="Breakables/PotBarrel1/Hurtbox" index="0" unique_id=1868882131]
-position = Vector2(23.5, 32)
-shape = SubResource("RectangleShape2D_1")
-
-[node name="PotFlourSack1" type="Node2D" parent="Breakables" unique_id=2125855472]
-position = Vector2(115, 1259)
-
-[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotFlourSack1" unique_id=1073801303]
-scale = Vector2(0.33, 0.33)
-texture = ExtResource("12_r")
-centered = false
-
-[node name="health_component" parent="Breakables/PotFlourSack1" unique_id=1181756368 instance=ExtResource("11_r")]
-max_health = 1
-
-[node name="Hurtbox" parent="Breakables/PotFlourSack1" unique_id=1936624109 node_paths=PackedStringArray("health") instance=ExtResource("10_r")]
-collision_layer = 256
-collision_mask = 0
-health = NodePath("../health_component")
-
-[node name="CollisionShape2D" parent="Breakables/PotFlourSack1/Hurtbox" index="0" unique_id=1868882131]
-position = Vector2(21.5, 29)
-shape = SubResource("RectangleShape2D_2")
-
-[node name="PotCandleCluster1" type="Node2D" parent="Breakables" unique_id=445072993]
-position = Vector2(307, 1265)
-
-[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotCandleCluster1" unique_id=1181225721]
-scale = Vector2(0.33, 0.33)
-texture = ExtResource("13_r")
-centered = false
-
-[node name="health_component" parent="Breakables/PotCandleCluster1" unique_id=1496232044 instance=ExtResource("11_r")]
-max_health = 1
-
-[node name="Hurtbox" parent="Breakables/PotCandleCluster1" unique_id=418515597 node_paths=PackedStringArray("health") instance=ExtResource("10_r")]
-collision_layer = 256
-collision_mask = 0
-health = NodePath("../health_component")
-
-[node name="CollisionShape2D" parent="Breakables/PotCandleCluster1/Hurtbox" index="0" unique_id=1868882131]
-position = Vector2(32, 26)
-shape = SubResource("RectangleShape2D_3")
-
-[node name="PotClayCrock1" type="Node2D" parent="Breakables" unique_id=303959306]
-position = Vector2(595, 1258)
-
-[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotClayCrock1" unique_id=1307295466]
-scale = Vector2(0.33, 0.33)
-texture = ExtResource("15_r")
-centered = false
-
-[node name="health_component" parent="Breakables/PotClayCrock1" unique_id=671627405 instance=ExtResource("11_r")]
-max_health = 1
-
-[node name="Hurtbox" parent="Breakables/PotClayCrock1" unique_id=591099669 node_paths=PackedStringArray("health") instance=ExtResource("10_r")]
-collision_layer = 256
-collision_mask = 0
-health = NodePath("../health_component")
-
-[node name="CollisionShape2D" parent="Breakables/PotClayCrock1/Hurtbox" index="0" unique_id=1868882131]
-position = Vector2(22.25, 29.5)
-shape = SubResource("RectangleShape2D_4")
-
-[node name="PotKettle1" type="Node2D" parent="Breakables" unique_id=851176716]
-position = Vector2(563, 1264.5)
-
-[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotKettle1" unique_id=130459271]
-scale = Vector2(0.33, 0.33)
-texture = ExtResource("22_r")
-centered = false
-
-[node name="health_component" parent="Breakables/PotKettle1" unique_id=1947542316 instance=ExtResource("11_r")]
-max_health = 1
-
-[node name="Hurtbox" parent="Breakables/PotKettle1" unique_id=81582517 node_paths=PackedStringArray("health") instance=ExtResource("10_r")]
-collision_layer = 256
-collision_mask = 0
-health = NodePath("../health_component")
-
-[node name="CollisionShape2D" parent="Breakables/PotKettle1/Hurtbox" index="0" unique_id=1868882131]
-position = Vector2(26.75, 26.25)
-shape = SubResource("RectangleShape2D_5")
-
-[node name="PotClayCrock2" type="Node2D" parent="Breakables" unique_id=1227696741]
-position = Vector2(876.5, 1258)
-
-[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotClayCrock2" unique_id=1537030103]
-scale = Vector2(0.33, 0.33)
-texture = ExtResource("15_r")
-centered = false
-
-[node name="health_component" parent="Breakables/PotClayCrock2" unique_id=1282003473 instance=ExtResource("11_r")]
-max_health = 1
-
-[node name="Hurtbox" parent="Breakables/PotClayCrock2" unique_id=1242285627 node_paths=PackedStringArray("health") instance=ExtResource("10_r")]
-collision_layer = 256
-collision_mask = 0
-health = NodePath("../health_component")
-
-[node name="CollisionShape2D" parent="Breakables/PotClayCrock2/Hurtbox" index="0" unique_id=1868882131]
-position = Vector2(22.25, 29.5)
-shape = SubResource("RectangleShape2D_9")
-
-[node name="PotBreadPile1" type="Node2D" parent="Breakables" unique_id=845684162]
-position = Vector2(1312, 1280)
-
-[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotBreadPile1" unique_id=19165030]
-scale = Vector2(0.33, 0.33)
-texture = ExtResource("24_r")
-centered = false
-
-[node name="health_component" parent="Breakables/PotBreadPile1" unique_id=1869405899 instance=ExtResource("11_r")]
-max_health = 1
-
-[node name="Hurtbox" parent="Breakables/PotBreadPile1" unique_id=1194751059 node_paths=PackedStringArray("health") instance=ExtResource("10_r")]
-collision_layer = 256
-collision_mask = 0
-health = NodePath("../health_component")
-
-[node name="CollisionShape2D" parent="Breakables/PotBreadPile1/Hurtbox" index="0" unique_id=1868882131]
-position = Vector2(40, 18.5)
-shape = SubResource("RectangleShape2D_10")
-
-[node name="PotPlateStack1" type="Node2D" parent="Breakables" unique_id=373405749]
-position = Vector2(1811, 1283.5)
-
-[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotPlateStack1" unique_id=663539997]
-scale = Vector2(0.33, 0.33)
-texture = ExtResource("26_r")
-centered = false
-
-[node name="health_component" parent="Breakables/PotPlateStack1" unique_id=1410446390 instance=ExtResource("11_r")]
-max_health = 1
-
-[node name="Hurtbox" parent="Breakables/PotPlateStack1" unique_id=1586677938 node_paths=PackedStringArray("health") instance=ExtResource("10_r")]
-collision_layer = 256
-collision_mask = 0
-health = NodePath("../health_component")
-
-[node name="CollisionShape2D" parent="Breakables/PotPlateStack1/Hurtbox" index="0" unique_id=1868882131]
-position = Vector2(24.5, 16.75)
-shape = SubResource("RectangleShape2D_11")
-
-[node name="PotStockpot1" type="Node2D" parent="Breakables" unique_id=39335691]
-position = Vector2(2124.5, 1250.5)
-
-[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotStockpot1" unique_id=2032427895]
-scale = Vector2(0.33, 0.33)
-texture = ExtResource("27_r")
-centered = false
-
-[node name="health_component" parent="Breakables/PotStockpot1" unique_id=1913717680 instance=ExtResource("11_r")]
-max_health = 1
-
-[node name="Hurtbox" parent="Breakables/PotStockpot1" unique_id=1564617543 node_paths=PackedStringArray("health") instance=ExtResource("10_r")]
-collision_layer = 256
-collision_mask = 0
-health = NodePath("../health_component")
-
-[node name="CollisionShape2D" parent="Breakables/PotStockpot1/Hurtbox" index="0" unique_id=1868882131]
-position = Vector2(31.5, 33.25)
-shape = SubResource("RectangleShape2D_12")
-
-[node name="PotMug1" type="Node2D" parent="Breakables" unique_id=7680898]
-position = Vector2(1868.5, 1277)
-
-[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotMug1" unique_id=386706386]
-scale = Vector2(0.33, 0.33)
-texture = ExtResource("28_r")
-centered = false
-
-[node name="health_component" parent="Breakables/PotMug1" unique_id=1704349678 instance=ExtResource("11_r")]
-max_health = 1
-
-[node name="Hurtbox" parent="Breakables/PotMug1" unique_id=238763866 node_paths=PackedStringArray("health") instance=ExtResource("10_r")]
-collision_layer = 256
-collision_mask = 0
-health = NodePath("../health_component")
-
-[node name="CollisionShape2D" parent="Breakables/PotMug1/Hurtbox" index="0" unique_id=1868882131]
-position = Vector2(16.5, 20)
-shape = SubResource("RectangleShape2D_13")
-
-[node name="PotFlourSack2" type="Node2D" parent="Breakables" unique_id=1717221214]
-position = Vector2(928, 1259)
-
-[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotFlourSack2" unique_id=2051962828]
-scale = Vector2(0.33, 0.33)
-texture = ExtResource("12_r")
-centered = false
-
-[node name="health_component" parent="Breakables/PotFlourSack2" unique_id=254449834 instance=ExtResource("11_r")]
-max_health = 1
-
-[node name="Hurtbox" parent="Breakables/PotFlourSack2" unique_id=1592002989 node_paths=PackedStringArray("health") instance=ExtResource("10_r")]
-collision_layer = 256
-collision_mask = 0
-health = NodePath("../health_component")
-
-[node name="CollisionShape2D" parent="Breakables/PotFlourSack2/Hurtbox" index="0" unique_id=1868882131]
-position = Vector2(21.5, 29)
-shape = SubResource("RectangleShape2D_14")
-
-[node name="PotCandleCluster2" type="Node2D" parent="Breakables" unique_id=1789884732]
-position = Vector2(2502, 1265)
-
-[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotCandleCluster2" unique_id=633875182]
-scale = Vector2(0.33, 0.33)
-texture = ExtResource("13_r")
-centered = false
-
-[node name="health_component" parent="Breakables/PotCandleCluster2" unique_id=1853641510 instance=ExtResource("11_r")]
-max_health = 1
-
-[node name="Hurtbox" parent="Breakables/PotCandleCluster2" unique_id=1069626140 node_paths=PackedStringArray("health") instance=ExtResource("10_r")]
-collision_layer = 256
-collision_mask = 0
-health = NodePath("../health_component")
-
-[node name="CollisionShape2D" parent="Breakables/PotCandleCluster2/Hurtbox" index="0" unique_id=1868882131]
-position = Vector2(32, 26)
-shape = SubResource("RectangleShape2D_20")
-
-[node name="PotCandleCluster3" type="Node2D" parent="Breakables" unique_id=1286331282]
-position = Vector2(3468.5, 1265)
-
-[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotCandleCluster3" unique_id=13845367]
-scale = Vector2(0.33, 0.33)
-texture = ExtResource("13_r")
-centered = false
-
-[node name="health_component" parent="Breakables/PotCandleCluster3" unique_id=81345621 instance=ExtResource("11_r")]
-max_health = 1
-
-[node name="Hurtbox" parent="Breakables/PotCandleCluster3" unique_id=889695646 node_paths=PackedStringArray("health") instance=ExtResource("10_r")]
-collision_layer = 256
-collision_mask = 0
-health = NodePath("../health_component")
-
-[node name="CollisionShape2D" parent="Breakables/PotCandleCluster3/Hurtbox" index="0" unique_id=1868882131]
-position = Vector2(32, 26)
-shape = SubResource("RectangleShape2D_45")
-
-[node name="PotBreadPile2" type="Node2D" parent="Breakables" unique_id=452541061]
-position = Vector2(3596.5, 1280)
-
-[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotBreadPile2" unique_id=171697873]
-scale = Vector2(0.33, 0.33)
-texture = ExtResource("24_r")
-centered = false
-
-[node name="health_component" parent="Breakables/PotBreadPile2" unique_id=1250588963 instance=ExtResource("11_r")]
-max_health = 1
-
-[node name="Hurtbox" parent="Breakables/PotBreadPile2" unique_id=970516861 node_paths=PackedStringArray("health") instance=ExtResource("10_r")]
-collision_layer = 256
-collision_mask = 0
-health = NodePath("../health_component")
-
-[node name="CollisionShape2D" parent="Breakables/PotBreadPile2/Hurtbox" index="0" unique_id=1868882131]
-position = Vector2(40, 18.5)
-shape = SubResource("RectangleShape2D_46")
-
-[node name="PotClayCrock3" type="Node2D" parent="Breakables" unique_id=621268913]
-position = Vector2(3718, 1258)
-
-[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotClayCrock3" unique_id=1479837291]
-scale = Vector2(0.33, 0.33)
-texture = ExtResource("15_r")
-centered = false
-
-[node name="health_component" parent="Breakables/PotClayCrock3" unique_id=834920403 instance=ExtResource("11_r")]
-max_health = 1
-
-[node name="Hurtbox" parent="Breakables/PotClayCrock3" unique_id=1734038565 node_paths=PackedStringArray("health") instance=ExtResource("10_r")]
-collision_layer = 256
-collision_mask = 0
-health = NodePath("../health_component")
-
-[node name="CollisionShape2D" parent="Breakables/PotClayCrock3/Hurtbox" index="0" unique_id=1868882131]
-position = Vector2(22.25, 29.5)
-shape = SubResource("RectangleShape2D_47")
-
-[node name="PotFlourSack4" type="Node2D" parent="Breakables" unique_id=1963130584]
-position = Vector2(1442, 1276.5)
-
-[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotFlourSack4" unique_id=1854616400]
-scale = Vector2(0.23, 0.23)
-texture = ExtResource("12_r")
-centered = false
-
-[node name="health_component" parent="Breakables/PotFlourSack4" unique_id=1552157158 instance=ExtResource("11_r")]
-max_health = 1
-
-[node name="Hurtbox" parent="Breakables/PotFlourSack4" unique_id=53697699 node_paths=PackedStringArray("health") instance=ExtResource("10_r")]
-collision_layer = 256
-collision_mask = 0
-health = NodePath("../health_component")
-
-[node name="CollisionShape2D" parent="Breakables/PotFlourSack4/Hurtbox" index="0" unique_id=1868882131]
-position = Vector2(15, 20.25)
-shape = SubResource("RectangleShape2D_49")
-
-[node name="PotBarrel2" type="Node2D" parent="Breakables" unique_id=1178562685]
-position = Vector2(990, 1272)
-
-[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotBarrel2" unique_id=366277705]
-scale = Vector2(0.23, 0.23)
-texture = ExtResource("9_r")
-centered = false
-flip_h = true
-
-[node name="health_component" parent="Breakables/PotBarrel2" unique_id=226262300 instance=ExtResource("11_r")]
-max_health = 1
-
-[node name="Hurtbox" parent="Breakables/PotBarrel2" unique_id=68541924 node_paths=PackedStringArray("health") instance=ExtResource("10_r")]
-collision_layer = 256
-collision_mask = 0
-health = NodePath("../health_component")
-
-[node name="CollisionShape2D" parent="Breakables/PotBarrel2/Hurtbox" index="0" unique_id=1868882131]
-position = Vector2(16.5, 22.5)
-shape = SubResource("RectangleShape2D_50")
-
-[node name="PotBarrel3" type="Node2D" parent="Breakables" unique_id=1295391326]
-position = Vector2(1057, 1272)
-
-[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotBarrel3" unique_id=1343471470]
-scale = Vector2(0.23, 0.23)
-texture = ExtResource("9_r")
-centered = false
-flip_h = true
-
-[node name="health_component" parent="Breakables/PotBarrel3" unique_id=953268490 instance=ExtResource("11_r")]
-max_health = 1
-
-[node name="Hurtbox" parent="Breakables/PotBarrel3" unique_id=1307179301 node_paths=PackedStringArray("health") instance=ExtResource("10_r")]
-collision_layer = 256
-collision_mask = 0
-health = NodePath("../health_component")
-
-[node name="CollisionShape2D" parent="Breakables/PotBarrel3/Hurtbox" index="0" unique_id=1868882131]
-position = Vector2(16.5, 22.5)
-shape = SubResource("RectangleShape2D_51")
-
-[node name="PotMug2" type="Node2D" parent="Breakables" unique_id=1509964240]
-position = Vector2(1949, 1289)
-
-[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotMug2" unique_id=158787717]
-scale = Vector2(0.23, 0.23)
-texture = ExtResource("28_r")
-centered = false
-flip_h = true
-
-[node name="health_component" parent="Breakables/PotMug2" unique_id=250283605 instance=ExtResource("11_r")]
-max_health = 1
-
-[node name="Hurtbox" parent="Breakables/PotMug2" unique_id=2011989963 node_paths=PackedStringArray("health") instance=ExtResource("10_r")]
-collision_layer = 256
-collision_mask = 0
-health = NodePath("../health_component")
-
-[node name="CollisionShape2D" parent="Breakables/PotMug2/Hurtbox" index="0" unique_id=1868882131]
-position = Vector2(11.5, 14)
-shape = SubResource("RectangleShape2D_52")
-
-[node name="PotPlateStack2" type="Node2D" parent="Breakables" unique_id=1178090473]
-position = Vector2(1628.5, 1293.5)
-
-[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotPlateStack2" unique_id=1221460232]
-scale = Vector2(0.23, 0.23)
-texture = ExtResource("26_r")
-centered = false
-flip_h = true
-
-[node name="health_component" parent="Breakables/PotPlateStack2" unique_id=943687376 instance=ExtResource("11_r")]
-max_health = 1
-
-[node name="Hurtbox" parent="Breakables/PotPlateStack2" unique_id=884804953 node_paths=PackedStringArray("health") instance=ExtResource("10_r")]
-collision_layer = 256
-collision_mask = 0
-health = NodePath("../health_component")
-
-[node name="CollisionShape2D" parent="Breakables/PotPlateStack2/Hurtbox" index="0" unique_id=1868882131]
-position = Vector2(17.25, 11.75)
-shape = SubResource("RectangleShape2D_53")
-
-[node name="PotClayCrock4" type="Node2D" parent="Breakables" unique_id=648165688]
-position = Vector2(1570.5, 1275.5)
-
-[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotClayCrock4" unique_id=1028663757]
-scale = Vector2(0.23, 0.23)
-texture = ExtResource("15_r")
-centered = false
-flip_h = true
-
-[node name="health_component" parent="Breakables/PotClayCrock4" unique_id=304965013 instance=ExtResource("11_r")]
-max_health = 1
-
-[node name="Hurtbox" parent="Breakables/PotClayCrock4" unique_id=195260801 node_paths=PackedStringArray("health") instance=ExtResource("10_r")]
-collision_layer = 256
-collision_mask = 0
-health = NodePath("../health_component")
-
-[node name="CollisionShape2D" parent="Breakables/PotClayCrock4/Hurtbox" index="0" unique_id=1868882131]
-position = Vector2(15.5, 20.75)
-shape = SubResource("RectangleShape2D_54")
-
-[node name="PotMug3" type="Node2D" parent="Breakables" unique_id=1587468683]
-position = Vector2(3549, 1289)
-
-[node name="Sprite2D" type="Sprite2D" parent="Breakables/PotMug3" unique_id=1554350947]
-scale = Vector2(0.23, 0.23)
-texture = ExtResource("28_r")
-centered = false
-flip_h = true
-
-[node name="health_component" parent="Breakables/PotMug3" unique_id=682429445 instance=ExtResource("11_r")]
-max_health = 1
-
-[node name="Hurtbox" parent="Breakables/PotMug3" unique_id=732370820 node_paths=PackedStringArray("health") instance=ExtResource("10_r")]
-collision_layer = 256
-collision_mask = 0
-health = NodePath("../health_component")
-
-[node name="CollisionShape2D" parent="Breakables/PotMug3/Hurtbox" index="0" unique_id=1868882131]
-position = Vector2(11.5, 14)
-shape = SubResource("RectangleShape2D_55")
-
 [node name="Switches" type="Node2D" parent="." unique_id=81930075]
 
 [node name="Gates" type="Node2D" parent="." unique_id=77109632]
@@ -2134,16 +1612,16 @@ limit_right = 4736
 limit_bottom = 1376
 
 [node name="CollisionShape2D" parent="Player/Hurtbox" parent_id_path=PackedInt32Array(921023227, 887145532) index="0" unique_id=1868882131]
-shape = SubResource("RectangleShape2D_knvbm")
+shape = SubResource("RectangleShape2D_rrmma")
 
 [node name="CollisionShape2D" parent="Player/Attacks/SideSlash" parent_id_path=PackedInt32Array(921023227, 1898026828) index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_i0aog")
+shape = SubResource("RectangleShape2D_vuwda")
 
 [node name="CollisionShape2D" parent="Player/Attacks/UpSlash" parent_id_path=PackedInt32Array(921023227, 2052691650) index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_p0jqe")
+shape = SubResource("RectangleShape2D_ewe4t")
 
 [node name="CollisionShape2D" parent="Player/Attacks/DownSlash" parent_id_path=PackedInt32Array(921023227, 614013444) index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_5860a")
+shape = SubResource("RectangleShape2D_un0ih")
 
 [node name="Foreground" type="Parallax2D" parent="." unique_id=1248020328]
 z_index = 20
@@ -2173,8 +1651,6 @@ position = Vector2(3677, 384)
 [node name="TeppaniOni" parent="." unique_id=319771871 instance=ExtResource("45_vuwda")]
 position = Vector2(4248, 365)
 auto_start = false
-intro_lines = Array[ExtResource("46_vuwda")]([])
-intro_roar_time = 2.0
 
 [node name="ArenaTrigger" parent="." unique_id=1029785907 node_paths=PackedStringArray("boss", "gates") instance=ExtResource("47_ewe4t")]
 position = Vector2(3910, 316)
@@ -2262,52 +1738,61 @@ texture_scale = 4.0
 [node name="BurgerGrunt" parent="." unique_id=833499792 instance=ExtResource("51_i0aog")]
 position = Vector2(520, 1300)
 
-[connection signal="died" from="Breakables/PotBarrel1/health_component" to="Breakables/PotBarrel1" method="queue_free"]
-[connection signal="died" from="Breakables/PotFlourSack1/health_component" to="Breakables/PotFlourSack1" method="queue_free"]
-[connection signal="died" from="Breakables/PotCandleCluster1/health_component" to="Breakables/PotCandleCluster1" method="queue_free"]
-[connection signal="died" from="Breakables/PotClayCrock1/health_component" to="Breakables/PotClayCrock1" method="queue_free"]
-[connection signal="died" from="Breakables/PotKettle1/health_component" to="Breakables/PotKettle1" method="queue_free"]
-[connection signal="died" from="Breakables/PotClayCrock2/health_component" to="Breakables/PotClayCrock2" method="queue_free"]
-[connection signal="died" from="Breakables/PotBreadPile1/health_component" to="Breakables/PotBreadPile1" method="queue_free"]
-[connection signal="died" from="Breakables/PotPlateStack1/health_component" to="Breakables/PotPlateStack1" method="queue_free"]
-[connection signal="died" from="Breakables/PotStockpot1/health_component" to="Breakables/PotStockpot1" method="queue_free"]
-[connection signal="died" from="Breakables/PotMug1/health_component" to="Breakables/PotMug1" method="queue_free"]
-[connection signal="died" from="Breakables/PotFlourSack2/health_component" to="Breakables/PotFlourSack2" method="queue_free"]
-[connection signal="died" from="Breakables/PotCandleCluster2/health_component" to="Breakables/PotCandleCluster2" method="queue_free"]
-[connection signal="died" from="Breakables/PotCandleCluster3/health_component" to="Breakables/PotCandleCluster3" method="queue_free"]
-[connection signal="died" from="Breakables/PotBreadPile2/health_component" to="Breakables/PotBreadPile2" method="queue_free"]
-[connection signal="died" from="Breakables/PotClayCrock3/health_component" to="Breakables/PotClayCrock3" method="queue_free"]
-[connection signal="died" from="Breakables/PotFlourSack4/health_component" to="Breakables/PotFlourSack4" method="queue_free"]
-[connection signal="died" from="Breakables/PotBarrel2/health_component" to="Breakables/PotBarrel2" method="queue_free"]
-[connection signal="died" from="Breakables/PotBarrel3/health_component" to="Breakables/PotBarrel3" method="queue_free"]
-[connection signal="died" from="Breakables/PotMug2/health_component" to="Breakables/PotMug2" method="queue_free"]
-[connection signal="died" from="Breakables/PotPlateStack2/health_component" to="Breakables/PotPlateStack2" method="queue_free"]
-[connection signal="died" from="Breakables/PotClayCrock4/health_component" to="Breakables/PotClayCrock4" method="queue_free"]
-[connection signal="died" from="Breakables/PotMug3/health_component" to="Breakables/PotMug3" method="queue_free"]
+[node name="LoreText" parent="." unique_id=1882387057 instance=ExtResource("51_p0jqe")]
+position = Vector2(357, 1234)
+text = "A/D To Move
+
+Left Mouse Button To Attack"
+
+[node name="LoreText2" parent="." unique_id=599907616 instance=ExtResource("51_p0jqe")]
+position = Vector2(1138, 1159)
+text = "Space To Jump
+
+hi ;)"
+
+[node name="BurgerGrunt2" parent="." unique_id=962185600 instance=ExtResource("51_i0aog")]
+position = Vector2(861, 1302)
+
+[node name="Tenderizer" parent="." unique_id=1374265090 instance=ExtResource("42_f8evt")]
+position = Vector2(1140, 1234)
+
+[node name="GargoyleCook" parent="." unique_id=724758594 instance=ExtResource("43_ftkg2")]
+position = Vector2(1394, 1220)
+
+[node name="GargoyleCook2" parent="." unique_id=2141236715 instance=ExtResource("43_ftkg2")]
+position = Vector2(1727, 1162)
+
+[node name="GargoyleCook3" parent="." unique_id=132724255 instance=ExtResource("43_ftkg2")]
+position = Vector2(2019, 1197)
+
+[node name="Tenderizer2" parent="." unique_id=805086811 instance=ExtResource("42_f8evt")]
+position = Vector2(1854, 1296)
+
+[node name="BurgerGrunt3" parent="." unique_id=1552328434 instance=ExtResource("51_i0aog")]
+position = Vector2(2201, 1295)
+
+[node name="BurgerGrunt4" parent="." unique_id=1242059491 instance=ExtResource("51_i0aog")]
+position = Vector2(2540, 1298)
+
+[node name="GargoyleCook4" parent="." unique_id=1677709859 instance=ExtResource("43_ftkg2")]
+position = Vector2(2828, 1169)
+
+[node name="GargoyleCook5" parent="." unique_id=2101317998 instance=ExtResource("43_ftkg2")]
+position = Vector2(3157, 1152)
+
+[node name="GargoyleCook6" parent="." unique_id=827612968 instance=ExtResource("43_ftkg2")]
+position = Vector2(3708, 1228)
+
+[node name="GargoyleCook7" parent="." unique_id=59228856 instance=ExtResource("43_ftkg2")]
+position = Vector2(3532, 863)
+
+[node name="GargoyleCook8" parent="." unique_id=371743456 instance=ExtResource("43_ftkg2")]
+position = Vector2(3695, 642)
+
+[node name="GargoyleCook9" parent="." unique_id=1962405422 instance=ExtResource("43_ftkg2")]
+position = Vector2(3515, 419)
 
 [editable path="Hazards/Spikes1"]
-[editable path="Breakables/PotBarrel1/Hurtbox"]
-[editable path="Breakables/PotFlourSack1/Hurtbox"]
-[editable path="Breakables/PotCandleCluster1/Hurtbox"]
-[editable path="Breakables/PotClayCrock1/Hurtbox"]
-[editable path="Breakables/PotKettle1/Hurtbox"]
-[editable path="Breakables/PotClayCrock2/Hurtbox"]
-[editable path="Breakables/PotBreadPile1/Hurtbox"]
-[editable path="Breakables/PotPlateStack1/Hurtbox"]
-[editable path="Breakables/PotStockpot1/Hurtbox"]
-[editable path="Breakables/PotMug1/Hurtbox"]
-[editable path="Breakables/PotFlourSack2/Hurtbox"]
-[editable path="Breakables/PotCandleCluster2/Hurtbox"]
-[editable path="Breakables/PotCandleCluster3/Hurtbox"]
-[editable path="Breakables/PotBreadPile2/Hurtbox"]
-[editable path="Breakables/PotClayCrock3/Hurtbox"]
-[editable path="Breakables/PotFlourSack4/Hurtbox"]
-[editable path="Breakables/PotBarrel2/Hurtbox"]
-[editable path="Breakables/PotBarrel3/Hurtbox"]
-[editable path="Breakables/PotMug2/Hurtbox"]
-[editable path="Breakables/PotPlateStack2/Hurtbox"]
-[editable path="Breakables/PotClayCrock4/Hurtbox"]
-[editable path="Breakables/PotMug3/Hurtbox"]
 [editable path="Player"]
 [editable path="Player/Hurtbox"]
 [editable path="Player/Attacks/SideSlash"]
