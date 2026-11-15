@@ -1,0 +1,111 @@
+{
+ "enemy": "smiling_harlequin",
+ "floor": "fraud",
+ "type": "infantry",
+ "sheet": "smiling_harlequin_hd_frame264x234_8cols_8rows.png",
+ "frame_size": [
+  264,
+  234
+ ],
+ "columns": 8,
+ "rows": 8,
+ "godot": {
+  "animated_sprite_scale": 0.2,
+  "offset": [
+   0,
+   -63.0
+  ],
+  "texture_filter": "Linear Mipmap",
+  "facing": "right (flip_h for left)",
+  "origin": "feet"
+ },
+ "animations": [
+  {
+   "name": "idle",
+   "row": 0,
+   "frames": 6,
+   "fps": 6,
+   "loop": true,
+   "events": {}
+  },
+  {
+   "name": "walk",
+   "row": 1,
+   "frames": 8,
+   "fps": 10,
+   "loop": true,
+   "events": {
+    "step": [
+     0,
+     4
+    ],
+    "bells": [
+     2,
+     6
+    ]
+   }
+  },
+  {
+   "name": "alert",
+   "row": 2,
+   "frames": 5,
+   "fps": 12,
+   "loop": false,
+   "events": {},
+   "note": "plays once when the player is first spotted: both daggers come out and the smile turns into a grin"
+  },
+  {
+   "name": "run",
+   "row": 3,
+   "frames": 8,
+   "fps": 14,
+   "loop": true,
+   "events": {
+    "step": [
+     0,
+     4
+    ]
+   }
+  },
+  {
+   "name": "windup",
+   "row": 4,
+   "frames": 4,
+   "fps": 10,
+   "loop": false,
+   "events": {}
+  },
+  {
+   "name": "lunge",
+   "row": 5,
+   "frames": 4,
+   "fps": 14,
+   "loop": false,
+   "events": {
+    "hit_active": [
+     0,
+     1,
+     2
+    ]
+   },
+   "note": "dagger stab: enable LungeHitbox on frames 0-2"
+  },
+  {
+   "name": "hurt",
+   "row": 6,
+   "frames": 3,
+   "fps": 12,
+   "loop": false,
+   "events": {}
+  },
+  {
+   "name": "death",
+   "row": 7,
+   "frames": 6,
+   "fps": 10,
+   "loop": false,
+   "events": {},
+   "note": "queue_free after the last frame"
+  }
+ ]
+}

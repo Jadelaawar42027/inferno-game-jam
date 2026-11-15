@@ -34,8 +34,9 @@ class_name Player
 @onready var anim: AnimatedSprite2D = $Visual/AnimatedSprite2D
 @onready var breath_puff: CPUParticles2D = $Visual/BreathPuff
 
-
 @onready var camera: Camera2D = $Camera2D
+
+@onready var ability_manager: AbilityManager = $AbilityManager
 
 var coyote_timer := 0.0
 var jump_buffer_timer := 0.0
@@ -53,6 +54,8 @@ var last_dir := 0.0
 var action_lock := false
 var was_on_floor := true
 var fall_speed_peak := 0.0
+
+var is_invisible := false
 
 @export var hard_land_speed := 600.0
 var slash_combo := 0
@@ -130,7 +133,8 @@ func _physics_process(delta: float) -> void:
 	
 	if not is_on_floor():
 		fall_speed_peak = max(fall_speed_peak, velocity.y)
-		
+	
+	ability_manager.physics_update(delta)
 	move_and_slide()
 	
 	if direction != 0 and hurt_lock_timer <= 0 and not action_lock:
@@ -245,3 +249,6 @@ func get_move_dir() -> float:
 	if right: return 1.0
 	if left: return -1.0
 	return 0.0
+
+func play_absorb_animation() -> void:
+	pass

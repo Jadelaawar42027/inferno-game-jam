@@ -1,0 +1,270 @@
+{
+ "name": "ferry_beast",
+ "floor": "fraud",
+ "px_per_unit": 0.11,
+ "sheet": "ferry_beast_frame484x279_8cols_12rows.png",
+ "frame_size": [
+  484,
+  279
+ ],
+ "columns": 8,
+ "rows": 12,
+ "frames_total": 93,
+ "godot": {
+  "animated_sprite_scale": 0.5455,
+  "offset": [
+   0,
+   -104.7
+  ],
+  "texture_filter": "Linear Mipmap",
+  "facing": "right (flip_h for left)"
+ },
+ "animations": [
+  {
+   "name": "idle",
+   "frames": 6,
+   "fps": 6,
+   "loop": true,
+   "seconds": 1.0,
+   "events": {}
+  },
+  {
+   "name": "walk",
+   "frames": 8,
+   "fps": 9,
+   "loop": true,
+   "seconds": 0.89,
+   "events": {
+    "step": [
+     2,
+     6
+    ]
+   }
+  },
+  {
+   "name": "intro",
+   "frames": 6,
+   "fps": 8,
+   "loop": false,
+   "seconds": 0.75,
+   "events": {},
+   "note": "a polite bow before the fight"
+  },
+  {
+   "name": "reveal",
+   "frames": 6,
+   "fps": 9,
+   "loop": false,
+   "seconds": 0.67,
+   "events": {
+    "reveal": [
+     3
+    ]
+   },
+   "note": "phase change: when it ends, swap to ferry_beast_p2_frames.tres"
+  },
+  {
+   "name": "sting_windup",
+   "frames": 4,
+   "fps": 9,
+   "loop": false,
+   "seconds": 0.44,
+   "events": {
+    "rattle": [
+     0
+    ]
+   }
+  },
+  {
+   "name": "sting",
+   "frames": 3,
+   "fps": 14,
+   "loop": false,
+   "seconds": 0.21,
+   "events": {
+    "hit_active": [
+     1,
+     2
+    ],
+    "impact": [
+     2
+    ]
+   },
+   "note": "aim at where the player stood when the windup ended"
+  },
+  {
+   "name": "sting_stuck",
+   "frames": 3,
+   "fps": 8,
+   "loop": true,
+   "seconds": 0.38,
+   "events": {},
+   "note": "stinger stuck in the floor: punish window"
+  },
+  {
+   "name": "sting_recover",
+   "frames": 3,
+   "fps": 10,
+   "loop": false,
+   "seconds": 0.3,
+   "events": {}
+  },
+  {
+   "name": "swipe_windup",
+   "frames": 3,
+   "fps": 10,
+   "loop": false,
+   "seconds": 0.3,
+   "events": {}
+  },
+  {
+   "name": "swipe",
+   "frames": 5,
+   "fps": 12,
+   "loop": false,
+   "seconds": 0.42,
+   "events": {
+    "hit_active": [
+     0,
+     2
+    ]
+   },
+   "note": "two swipes: near paw, then far paw"
+  },
+  {
+   "name": "spray_windup",
+   "frames": 3,
+   "fps": 8,
+   "loop": false,
+   "seconds": 0.38,
+   "events": {
+    "gurgle": [
+     0
+    ]
+   }
+  },
+  {
+   "name": "spray",
+   "frames": 4,
+   "fps": 10,
+   "loop": false,
+   "seconds": 0.4,
+   "events": {
+    "spawn_venom": [
+     0
+    ]
+   },
+   "note": "spawn three venom globs from the tail tip on frame 0"
+  },
+  {
+   "name": "lunge_windup",
+   "frames": 4,
+   "fps": 9,
+   "loop": false,
+   "seconds": 0.44,
+   "events": {}
+  },
+  {
+   "name": "lunge",
+   "frames": 3,
+   "fps": 12,
+   "loop": true,
+   "seconds": 0.25,
+   "events": {
+    "hit_active": [
+     0,
+     1,
+     2
+    ]
+   },
+   "note": "loop while he slides across the floor"
+  },
+  {
+   "name": "lunge_end",
+   "frames": 3,
+   "fps": 10,
+   "loop": false,
+   "seconds": 0.3,
+   "events": {}
+  },
+  {
+   "name": "sting_windup_lie",
+   "frames": 4,
+   "fps": 9,
+   "loop": false,
+   "seconds": 0.44,
+   "events": {
+    "tell": [
+     2
+    ]
+   },
+   "note": "same windup, but the real face flashes on the last two frames: follow it with a different attack"
+  },
+  {
+   "name": "swipe_windup_lie",
+   "frames": 3,
+   "fps": 9,
+   "loop": false,
+   "seconds": 0.33,
+   "events": {
+    "tell": [
+     1
+    ]
+   },
+   "note": "same windup, but the real face flashes on the last two frames: follow it with a different attack"
+  },
+  {
+   "name": "lunge_windup_lie",
+   "frames": 4,
+   "fps": 9,
+   "loop": false,
+   "seconds": 0.44,
+   "events": {
+    "tell": [
+     2
+    ]
+   },
+   "note": "same windup, but the real face flashes on the last two frames: follow it with a different attack"
+  },
+  {
+   "name": "stun",
+   "frames": 4,
+   "fps": 8,
+   "loop": true,
+   "seconds": 0.5,
+   "events": {},
+   "note": "a real stun: eyes shut, stars, tail flat"
+  },
+  {
+   "name": "fake_stun",
+   "frames": 4,
+   "fps": 8,
+   "loop": true,
+   "seconds": 0.5,
+   "events": {},
+   "note": "the False Opening: no stars, one eye open, smiling; counter with sting if hit"
+  },
+  {
+   "name": "hurt",
+   "frames": 2,
+   "fps": 12,
+   "loop": false,
+   "seconds": 0.17,
+   "events": {},
+   "note": "optional flinch"
+  },
+  {
+   "name": "death",
+   "frames": 8,
+   "fps": 10,
+   "loop": false,
+   "seconds": 0.8,
+   "events": {
+    "thud": [
+     4
+    ]
+   },
+   "note": "the real face shows as he dies"
+  }
+ ]
+}

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bdat257tark2a"]
+
+[ext_resource type="Script" uid="uid://dscla4nl0jnxv" path="res://scenes/abilities/dash_behavior.gd" id="1_omckl"]
+
+[node name="DashBehavior" type="Node" unique_id=1486933416]
+script = ExtResource("1_omckl")

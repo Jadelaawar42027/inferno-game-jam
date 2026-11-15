@@ -1,0 +1,147 @@
+{
+ "name": "boss_fx",
+ "floor": "fx",
+ "px_per_unit": 0.3,
+ "sheet": "boss_fx_frame252x372_16cols_3rows.png",
+ "frame_size": [
+  252,
+  372
+ ],
+ "columns": 16,
+ "rows": 3,
+ "frames_total": 45,
+ "godot": {
+  "animated_sprite_scale": 0.2,
+  "offset": [
+   0,
+   -132.0
+  ],
+  "texture_filter": "Linear Mipmap",
+  "facing": "right (flip_h for left)"
+ },
+ "animations": [
+  {
+   "name": "shockwave",
+   "frames": 4,
+   "fps": 12,
+   "loop": true,
+   "seconds": 0.33,
+   "events": {},
+   "note": "ground wave; travels along the floor, flip_h for left"
+  },
+  {
+   "name": "fire",
+   "frames": 4,
+   "fps": 10,
+   "loop": true,
+   "seconds": 0.4,
+   "events": {},
+   "note": "burning floor patch"
+  },
+  {
+   "name": "meatball",
+   "frames": 4,
+   "fps": 12,
+   "loop": true,
+   "seconds": 0.33,
+   "events": {},
+   "note": "thrown meatball; rotate the node to face travel if you like"
+  },
+  {
+   "name": "meatball_idle",
+   "frames": 2,
+   "fps": 6,
+   "loop": true,
+   "seconds": 0.33,
+   "events": {},
+   "note": "meatball lying on the floor"
+  },
+  {
+   "name": "coin",
+   "frames": 6,
+   "fps": 14,
+   "loop": true,
+   "seconds": 0.43,
+   "events": {},
+   "note": "spinning coin: Midas coin rain and the player's coin throw"
+  },
+  {
+   "name": "rock",
+   "frames": 4,
+   "fps": 10,
+   "loop": true,
+   "seconds": 0.4,
+   "events": {},
+   "note": "falling rock"
+  },
+  {
+   "name": "rock_break",
+   "frames": 3,
+   "fps": 12,
+   "loop": false,
+   "seconds": 0.25,
+   "events": {},
+   "note": "rock hits the floor; free it after"
+  },
+  {
+   "name": "venom",
+   "frames": 3,
+   "fps": 12,
+   "loop": true,
+   "seconds": 0.25,
+   "events": {},
+   "note": "venom glob in flight"
+  },
+  {
+   "name": "puddle",
+   "frames": 4,
+   "fps": 8,
+   "loop": true,
+   "seconds": 0.5,
+   "events": {},
+   "note": "venom puddle on the floor"
+  },
+  {
+   "name": "warning",
+   "frames": 2,
+   "fps": 6,
+   "loop": true,
+   "seconds": 0.33,
+   "events": {},
+   "note": "marker where something will land"
+  },
+  {
+   "name": "pillar_rise",
+   "frames": 4,
+   "fps": 14,
+   "loop": false,
+   "seconds": 0.29,
+   "events": {
+    "hit_active": [
+     1,
+     2,
+     3
+    ]
+   },
+   "note": "gold pillar erupts"
+  },
+  {
+   "name": "pillar",
+   "frames": 2,
+   "fps": 5,
+   "loop": true,
+   "seconds": 0.4,
+   "events": {},
+   "note": "pillar standing"
+  },
+  {
+   "name": "pillar_sink",
+   "frames": 3,
+   "fps": 12,
+   "loop": false,
+   "seconds": 0.25,
+   "events": {},
+   "note": "pillar drops back; free it after"
+  }
+ ]
+}
