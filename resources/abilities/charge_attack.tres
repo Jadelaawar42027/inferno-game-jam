@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ability" format=3 uid="uid://8nhwloo4s556"]
+
+[ext_resource type="PackedScene" uid="uid://duw2eon0tk5l3" path="res://scenes/abilities/charge_attack_behavior.tscn" id="1_61jgt"]
+[ext_resource type="Script" uid="uid://bx64sb70mo5f" path="res://scripts/abilities/ability.gd" id="1_bndi6"]
+
+[resource]
+script = ExtResource("1_bndi6")
+id = &"charge_attack"
+display_name = "Charge Attack"
+behavior = ExtResource("1_61jgt")
+metadata/_custom_type_script = "uid://bx64sb70mo5f"
