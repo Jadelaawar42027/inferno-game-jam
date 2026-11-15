@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bvschcfxqd4kd" path="res://scenes/Components/hurtbox.tscn" id="3_p47bc"]
 [ext_resource type="PackedScene" uid="uid://bsxufnevdum76" path="res://scenes/Components/hitbox.tscn" id="4_75vfm"]
 [ext_resource type="SpriteFrames" uid="uid://bl1elduuoxp86" path="res://assets/sprites/knight/knight_frames_hd.tres" id="5_p47bc"]
+[ext_resource type="Shader" uid="uid://ddibj6ssw35jd" path="res://assets/shaders/corruption.gdshader" id="5_qek5x"]
 [ext_resource type="Script" uid="uid://be3r6wqkyspak" path="res://scenes/player/ability_manager.gd" id="6_75vfm"]
 [ext_resource type="PackedScene" uid="uid://cvj618ugsj3gy" path="res://scenes/ui/pauseMenu.tscn" id="7_0owmy"]
 
@@ -26,6 +27,16 @@ size = Vector2(20, 24)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h17s1"]
 resource_local_to_scene = true
 size = Vector2(20, 22)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qek5x"]
+shader = ExtResource("5_qek5x")
+shader_parameter/eye_color = Vector3(0.561, 0.953, 1)
+shader_parameter/tolerance = 0.3
+shader_parameter/calm_color = Color(0.35, 0.75, 1, 1)
+shader_parameter/corrupt_color = Color(1, 0.12, 0.18, 1)
+shader_parameter/corruption = 0.0
+shader_parameter/glow_strength = 1.5
+shader_parameter/glow_radius = 10.0
 
 [sub_resource type="Gradient" id="Gradient_p47bc"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -100,11 +111,13 @@ shape = SubResource("RectangleShape2D_h17s1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visual" unique_id=806931827]
 texture_filter = 4
+material = SubResource("ShaderMaterial_qek5x")
 position = Vector2(0, -8)
 scale = Vector2(0.2, 0.2)
 sprite_frames = ExtResource("5_p47bc")
 animation = &"idle"
-frame_progress = 0.43328258
+frame = 3
+frame_progress = 0.44408944
 offset = Vector2(0, -18)
 
 [node name="BreathPuff" type="CPUParticles2D" parent="Visual" unique_id=483567130]

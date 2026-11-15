@@ -39,6 +39,7 @@ signal absorb_finished(ability: Ability)
 @onready var camera: Camera2D = $Camera2D
 
 @onready var ability_manager: AbilityManager = $AbilityManager
+@onready var eye_mat := anim.material as ShaderMaterial
 
 var coyote_timer := 0.0
 var jump_buffer_timer := 0.0
@@ -214,7 +215,10 @@ func _ready() -> void:
 	anim.frame_changed.connect(_on_frame_changed)
 	anim.play("idle")
 	add_to_group("player")
-	if GameState.checkpoint != Vector2.INF: global_position = GameState.checkpoint
+	if GameState.checkpoint != Vector2.INF: 
+		global_position = GameState.checkpoint
+		camera.reset_smoothing()
+	eye_mat.set_shader_parameter("corruption", GameState.corruption())
 
 func _on_anim_finished()->void:
 	if anim.animation == "run_start": anim.play("run"); return
@@ -270,9 +274,15 @@ func play_absorb_animation(ability: Ability) -> void:
 	cam_tween.tween_property(camera, "zoom", camera.zoom * 1.3, 0.4)
 	play_action("absorb")
 	await anim.animation_finished
+	set_corruption_smooth()
 	shake(4.0)
 	var back := create_tween()
 	back.tween_property(camera, "zoom", camera.zoom / 1.3, 0.5)
 	hurtbox.invulnerable = false
 	absorbing = false
 	absorb_finished.emit(ability)
+
+func set_corruption_smooth() -> void:
+	var from: float = eye_mat.get_shader_parameter("corruption")
+	var t := create_tween()
+	t.tween_method(func(v: float): eye_mat.set_shader_parameter("corruption", v), from, GameState.corruption(), 1.2)
