@@ -51,10 +51,4 @@ func _unhandled_input(event):
 		
 		
 #Might want to remove this once done with test
-func _ready() -> void:
-	
-	#Test is below. Run f6 to see basic dialog
-	
-	#dialog_start("The Devil", [load('res://scenes/ui/test/test1.tres'), load('res://scenes/ui/test/test2.tres')])
-	pass
 	
