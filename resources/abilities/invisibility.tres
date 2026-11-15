@@ -8,4 +8,6 @@ script = ExtResource("1_vfpxl")
 id = &"invisibility"
 display_name = "Invisibility"
 behavior = ExtResource("1_33sjm")
+action = &"invisbility"
+description = "Press Q to go invisible for 3 seconds."
 metadata/_custom_type_script = "uid://bx64sb70mo5f"

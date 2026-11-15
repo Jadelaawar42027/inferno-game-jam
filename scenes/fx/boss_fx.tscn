@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://debcxo1bbugnr"]
+
+[ext_resource type="SpriteFrames" uid="uid://e016ji3yxpqa" path="res://assets/sprites/fx/boss_fx_frames.tres" id="1_d8j77"]
+[ext_resource type="Script" uid="uid://cj21qekhetgvn" path="res://scripts/bosses/boss_fx.gd" id="1_rbnv5"]
+[ext_resource type="PackedScene" uid="uid://bsxufnevdum76" path="res://scenes/Components/hitbox.tscn" id="2_brddt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rbnv5"]
+resource_local_to_scene = true
+size = Vector2(16, 16)
+
+[node name="BossFx" type="Node2D" unique_id=1507484423]
+script = ExtResource("1_rbnv5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=664157131]
+texture_filter = 4
+scale = Vector2(0.2, 0.2)
+sprite_frames = ExtResource("1_d8j77")
+animation = &"coin"
+
+[node name="Hitbox" parent="." unique_id=1898026828 instance=ExtResource("2_brddt")]
+collision_layer = 16
+collision_mask = 64
+damage = 1
+persistent = true
+
+[node name="CollisionShape2D" parent="Hitbox" index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_rbnv5")
+
+[node name="Ray" type="RayCast2D" parent="." unique_id=1781195616]
+target_position = Vector2(0, 6)
+
+[editable path="Hitbox"]

@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://dij1hnakfww2u"]
+
+[ext_resource type="PackedScene" uid="uid://dsdemrjm0ref5" path="res://scenes/bosses/boss.tscn" id="1_70pnh"]
+[ext_resource type="Script" uid="uid://4f5jiglj234p" path="res://scripts/bosses/teppani_oni.gd" id="2_6w6tf"]
+[ext_resource type="Resource" uid="uid://dux8jnhiqyqwi" path="res://resources/abilities/dash.tres" id="2_uqchq"]
+[ext_resource type="Shader" uid="uid://bcycvorrmew66" path="res://scenes/enemies/hitflash.gdshader" id="2_yjodc"]
+[ext_resource type="SpriteFrames" uid="uid://cdi1f6lufdkot" path="res://assets/sprites/bosses/teppan_oni/teppan_oni_frames.tres" id="3_yjodc"]
+[ext_resource type="PackedScene" uid="uid://bsxufnevdum76" path="res://scenes/Components/hitbox.tscn" id="4_x7g1t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7g1t"]
+size = Vector2(80, 100)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6w6tf"]
+resource_local_to_scene = true
+shader = ExtResource("2_yjodc")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_amount = 0.0
+shader_parameter/additive_mix = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_651q3"]
+resource_local_to_scene = true
+size = Vector2(80, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4a6vd"]
+resource_local_to_scene = true
+size = Vector2(80, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aq8lw"]
+resource_local_to_scene = true
+size = Vector2(70, 70)
+
+[node name="TeppaniOni" unique_id=319771871 instance=ExtResource("1_70pnh")]
+script = ExtResource("2_6w6tf")
+hop_speed = 140.0
+hop_height = -380.0
+heal_amount = 4
+boss_name = "Teppan Oni"
+recover_time = 0.9
+auto_start = true
+reward = ExtResource("2_uqchq")
+think_time = Vector2(0.7, 1.4)
+preferred_range = Vector2(50, 120)
+move_speed = 70.0
+reposition_time = 1.5
+intro_anim = "roar"
+voice_id = "oni"
+voice_pitch = 0.9
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=220595465]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_x7g1t")
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=962650832]
+texture_filter = 4
+material = SubResource("ShaderMaterial_6w6tf")
+position = Vector2(0, -4.73)
+scale = Vector2(0.46, 0.46)
+sprite_frames = ExtResource("3_yjodc")
+frame_progress = 0.0
+
+[node name="HealthComponent" parent="." index="2" unique_id=555885103]
+max_health = 50
+
+[node name="CollisionShape2D" parent="Hurtbox" parent_id_path=PackedInt32Array(887145532) index="0" unique_id=1868882131]
+shape = SubResource("RectangleShape2D_651q3")
+
+[node name="CollisionShape2D" parent="ContactHitbox" parent_id_path=PackedInt32Array(1898026828) index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_4a6vd")
+
+[node name="KnifeHitbox" parent="." index="5" unique_id=1898026828 instance=ExtResource("4_x7g1t")]
+position = Vector2(75, -10)
+collision_layer = 16
+collision_mask = 64
+damage = 1
+
+[node name="CollisionShape2D" parent="KnifeHitbox" index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_aq8lw")
+
+[editable path="Hurtbox"]
+[editable path="ContactHitbox"]
+[editable path="KnifeHitbox"]

@@ -8,4 +8,6 @@ script = ExtResource("1_bndi6")
 id = &"charge_attack"
 display_name = "Charge Attack"
 behavior = ExtResource("1_61jgt")
+action = &"attack"
+description = "Hold ATTACK to charge a heavy blow."
 metadata/_custom_type_script = "uid://bx64sb70mo5f"

@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 class_name Player
 
+signal absorb_finished(ability: Ability)
+
 @onready var visual: Node2D = $Visual
 
 @export_group("Movement")
@@ -37,10 +39,12 @@ class_name Player
 @onready var camera: Camera2D = $Camera2D
 
 @onready var ability_manager: AbilityManager = $AbilityManager
+@onready var eye_mat := anim.material as ShaderMaterial
 
 var coyote_timer := 0.0
 var jump_buffer_timer := 0.0
 var facing := 1
+var absorbing := false
 
 var attack_cooldown_timer := 0.0
 var attack_active_timer := 0.0
@@ -79,6 +83,7 @@ func start_attack(dir: float) -> void:
 	active_hitbox.activate()
 	attack_active_timer = attack_active_time
 	attack_cooldown_timer = attack_cooldown
+	VoiceManager.play_line("dante_attack", "Voice", randf_range(0.95, 1.05), false)
 
 func end_attack() -> void:
 	if active_hitbox == null: return
@@ -91,6 +96,12 @@ func _physics_process(delta: float) -> void:
 	recoil_timer -= delta
 	hurt_lock_timer -= delta
 	invincibility_timer -= delta
+	
+	if absorbing or is_dead:
+		velocity.x = 0
+		velocity.y = minf(velocity.y + fall_gravity * delta, max_fall_speed)
+		move_and_slide()
+		return
 	
 	if is_on_floor():
 		coyote_timer = coyote_time
@@ -167,15 +178,19 @@ func _on_hurt(hitbox: Hitbox) ->void:
 	hurtbox.invulnerable = true
 	end_attack()
 	play_action("recoil")
+	VoiceManager.play_line("dante_hurt", "Voice", 1.0, false)
 	hit_stop(0.1)
 	shake(5.0)
 
 func _on_died() ->void:
-	print("Dead")
-	Engine.time_scale = 1.0
-	get_tree().reload_current_scene.call_deferred()
+	if is_dead: return
 	is_dead = true
-	anim.play("death")
+	Engine.time_scale = 1.0
+	end_attack()
+	play_action("death")
+	VoiceManager.play_line("dante_death")
+	await get_tree().create_timer(0.8).timeout
+	GameState.reload_floor()
 
 func hit_stop(duration: float) ->void:
 	Engine.time_scale = 0.05
@@ -203,6 +218,10 @@ func _ready() -> void:
 	anim.frame_changed.connect(_on_frame_changed)
 	anim.play("idle")
 	add_to_group("player")
+	if GameState.checkpoint != Vector2.INF: 
+		global_position = GameState.checkpoint
+		camera.reset_smoothing()
+	eye_mat.set_shader_parameter("corruption", GameState.corruption())
 
 func _on_anim_finished()->void:
 	if anim.animation == "run_start": anim.play("run"); return
@@ -250,5 +269,23 @@ func get_move_dir() -> float:
 	if left: return -1.0
 	return 0.0
 
-func play_absorb_animation() -> void:
-	pass
+func play_absorb_animation(ability: Ability) -> void:
+	absorbing = true
+	end_attack()
+	hurtbox.invulnerable = true
+	var cam_tween := create_tween()
+	cam_tween.tween_property(camera, "zoom", camera.zoom * 1.3, 0.4)
+	play_action("absorb")
+	await anim.animation_finished
+	set_corruption_smooth()
+	shake(4.0)
+	var back := create_tween()
+	back.tween_property(camera, "zoom", camera.zoom / 1.3, 0.5)
+	hurtbox.invulnerable = false
+	absorbing = false
+	absorb_finished.emit(ability)
+
+func set_corruption_smooth() -> void:
+	var from: float = eye_mat.get_shader_parameter("corruption")
+	var t := create_tween()
+	t.tween_method(func(v: float): eye_mat.set_shader_parameter("corruption", v), from, GameState.corruption(), 1.2)

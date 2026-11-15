@@ -8,4 +8,6 @@ script = ExtResource("1_l4hqf")
 id = &"gold_throw"
 display_name = "Gold Throw"
 behavior = ExtResource("1_wyhvj")
+action = &"throw"
+description = "Press K to throw a gold coin."
 metadata/_custom_type_script = "uid://bx64sb70mo5f"

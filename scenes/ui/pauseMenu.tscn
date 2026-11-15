@@ -38,7 +38,9 @@ text = "Quit"
 [node name="QuitConfirm" type="ConfirmationDialog" parent="." unique_id=1609563522]
 title = ""
 ok_button_text = "Yes"
-dialog_text = "Dooming yourself that easily?"
+dialog_text = "Dooming yourself that easily?
+
+Return to main menu"
 cancel_button_text = "No"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]

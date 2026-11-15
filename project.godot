@@ -11,13 +11,18 @@ config_version=5
 [application]
 
 config/name="Inferno Game Jam"
-run/main_scene="uid://degaw268gnce8"
+run/main_scene="uid://crpl31c0famvp"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://b1y0x1wgns03s"
 
 [autoload]
 
 GameState="*uid://dr0x16xacs11b"
+VoiceManager="*uid://btfbqyp5qrtdl"
 
 [display]
 
