@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://cvj618ugsj3gy"]
+
+[ext_resource type="Script" uid="uid://bbf3pba5mermm" path="res://scripts/ui/pauseMenu.gd" id="1_unqsy"]
+
+[node name="PauseMenu" type="Control" unique_id=578825807]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_unqsy")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=631289558]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=767766912]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=524354403]
+layout_mode = 2
+
+[node name="Resume" type="Button" parent="CenterContainer/VBoxContainer" unique_id=2382526]
+layout_mode = 2
+text = "Resume"
+
+[node name="Quit" type="Button" parent="CenterContainer/VBoxContainer" unique_id=2002822521]
+layout_mode = 2
+text = "Quit"
+
+[node name="QuitConfirm" type="ConfirmationDialog" parent="." unique_id=1609563522]
+title = ""
+ok_button_text = "Yes"
+dialog_text = "Dooming yourself that easily?"
+cancel_button_text = "No"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="confirmed" from="QuitConfirm" to="." method="_on_quit_confirm_confirmed"]

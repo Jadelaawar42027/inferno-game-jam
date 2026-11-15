@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://crpl31c0famvp"]
+
+[ext_resource type="Script" uid="uid://7pyhkosvmmky" path="res://scripts/ui/mainMenu.gd" id="1_ph80j"]
+[ext_resource type="PackedScene" uid="uid://degaw268gnce8" path="res://scenes/levels/scene_1.tscn" id="2_j3ryx"]
+
+[node name="MainMenu" type="Control" unique_id=561175303]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 1.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ph80j")
+
+[node name="TestArea" parent="." unique_id=1130552543 instance=ExtResource("2_j3ryx")]
+process_mode = 4
+position = Vector2(318, 179)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=316399735]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 2.0
+offset_right = -1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=5238879]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=972434117]
+layout_mode = 2
+text = "Inferno Game Jam"
+
+[node name="PlayButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1971518153]
+layout_mode = 2
+text = "New Game"
+
+[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=338669001]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/QuitButton" to="." method="_on_quit_pressed"]
