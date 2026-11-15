@@ -18,6 +18,8 @@ const FX_SCENE := preload("res://scenes/fx/boss_fx.tscn")
 @export var move_speed := 60.0
 @export var reposition_time := 1.5
 @export var intro_anim := "roar"
+@export var voice_id := ""
+@export var voice_pitch := 1.0
 
 var phase := 1
 var active := false
@@ -46,6 +48,7 @@ func activate(p: Player) -> void:
 	brain()
 
 func brain() -> void:
+	say("intro")
 	await play_and_wait(intro_anim)
 	await wait(0.4)
 	while active and not is_dead:
@@ -99,6 +102,7 @@ func _on_health_changed(current: int, max_hp: int) -> void:
 		if ratio <= phase_thresholds[i]: next = i + 2
 	if next > phase:
 		phase = next
+		say("phase" + str(phase))
 		phase_changed.emit(phase)
 		on_phase_entered(phase)
 
@@ -114,10 +118,11 @@ func die() -> void:
 	for child in get_children():
 		if child is Hitbox: child.deactivate()
 	boss_defeated.emit()
+	say("death")
 	if sprite.sprite_frames and sprite.sprite_frames.has_animation("death"):
 		sprite.play("death")
 		await sprite.animation_finished
-	GameState.absorb(reward)
+	if reward: GameState.absorb(reward)
 	queue_free()
 
 func wait(seconds: float) -> void:
@@ -148,3 +153,8 @@ func spawn_fx(anim: String, pos: Vector2, vel := Vector2.ZERO) -> BossFx:
 func _on_hurt(_hitbox: Hitbox) -> void:
 	if is_dead: return
 	on_hit_flash()
+	if randf() < 0.3: say("hurt", false)
+
+func say(moment: String, interrupt := true) -> void:
+	if voice_id == "": return
+	VoiceManager.play_line(voice_id + "_" + moment, "BossVoice", voice_pitch, interrupt)

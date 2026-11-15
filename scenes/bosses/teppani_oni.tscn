@@ -43,6 +43,8 @@ preferred_range = Vector2(50, 120)
 move_speed = 70.0
 reposition_time = 1.5
 intro_anim = "roar"
+voice_id = "oni"
+voice_pitch = 0.9
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=220595465]
 position = Vector2(0, -3)

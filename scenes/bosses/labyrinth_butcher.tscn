@@ -50,6 +50,8 @@ preferred_range = Vector2(60, 160)
 move_speed = 60.0
 reposition_time = 1.5
 intro_anim = "roar"
+voice_id = "butcher"
+voice_pitch = 0.85
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=220595465]
 shape = SubResource("RectangleShape2D_ouu0a")

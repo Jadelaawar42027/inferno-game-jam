@@ -83,6 +83,7 @@ func start_attack(dir: float) -> void:
 	active_hitbox.activate()
 	attack_active_timer = attack_active_time
 	attack_cooldown_timer = attack_cooldown
+	VoiceManager.play_line("dante_attack", "Voice", randf_range(0.95, 1.05), false)
 
 func end_attack() -> void:
 	if active_hitbox == null: return
@@ -177,6 +178,7 @@ func _on_hurt(hitbox: Hitbox) ->void:
 	hurtbox.invulnerable = true
 	end_attack()
 	play_action("recoil")
+	VoiceManager.play_line("dante_hurt", "Voice", 1.0, false)
 	hit_stop(0.1)
 	shake(5.0)
 
@@ -186,6 +188,7 @@ func _on_died() ->void:
 	Engine.time_scale = 1.0
 	end_attack()
 	play_action("death")
+	VoiceManager.play_line("dante_death")
 	await get_tree().create_timer(0.8).timeout
 	GameState.reload_floor()
 
