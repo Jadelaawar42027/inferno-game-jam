@@ -1,0 +1,93 @@
+{
+ "enemy": "war_harpy",
+ "floor": "violence",
+ "type": "flying",
+ "sheet": "war_harpy_hd_frame228x234_8cols_6rows.png",
+ "frame_size": [
+  228,
+  234
+ ],
+ "columns": 8,
+ "rows": 6,
+ "godot": {
+  "animated_sprite_scale": 0.2,
+  "offset": [
+   0,
+   27.0
+  ],
+  "texture_filter": "Linear Mipmap",
+  "facing": "right (flip_h for left)",
+  "origin": "body centre"
+ },
+ "animations": [
+  {
+   "name": "idle",
+   "row": 0,
+   "frames": 6,
+   "fps": 8,
+   "loop": true,
+   "events": {}
+  },
+  {
+   "name": "fly",
+   "row": 1,
+   "frames": 8,
+   "fps": 12,
+   "loop": true,
+   "events": {
+    "flap": [
+     2
+    ]
+   }
+  },
+  {
+   "name": "swoop_windup",
+   "row": 2,
+   "frames": 4,
+   "fps": 10,
+   "loop": false,
+   "events": {
+    "screech": [
+     1
+    ]
+   }
+  },
+  {
+   "name": "swoop",
+   "row": 3,
+   "frames": 4,
+   "fps": 14,
+   "loop": true,
+   "events": {
+    "hit_active": [
+     0,
+     1,
+     2,
+     3
+    ]
+   },
+   "note": "the dive: SwoopHitbox stays on while this plays"
+  },
+  {
+   "name": "hurt",
+   "row": 4,
+   "frames": 3,
+   "fps": 12,
+   "loop": false,
+   "events": {}
+  },
+  {
+   "name": "death",
+   "row": 5,
+   "frames": 6,
+   "fps": 10,
+   "loop": false,
+   "events": {
+    "drop_javelin": [
+     1
+    ]
+   },
+   "note": "queue_free after the last frame"
+  }
+ ]
+}

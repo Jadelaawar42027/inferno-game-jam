@@ -10,6 +10,7 @@ signal boss_defeated
 @export var phase_thresholds: Array[float] = [0.5]
 @export var recover_time := 0.8
 @export var auto_start := false 
+@export var reward: Ability
 
 var phase := 1
 var active := false
@@ -36,6 +37,10 @@ func activate(p: Player) -> void:
 
 func brain() -> void:
 	while active and not is_dead:
+		if player_target.is_invisible:
+			play_anim("idle")
+			await wait(0.2)
+			continue
 		var attack := pick_attack()
 		if attack == "": return
 		last_attack = attack
@@ -58,6 +63,7 @@ func do_attack(_attack_name: String) -> void:
 	await wait(0.1)
 
 func _on_health_changed(current: int, max_hp: int) -> void:
+	if is_dead: return
 	var ratio := float(current) / max_hp
 	var next := 1
 	for i in phase_thresholds.size():
@@ -81,6 +87,7 @@ func die() -> void:
 	if sprite.sprite_frames and sprite.sprite_frames.has_animation("death"):
 		sprite.play("death")
 		await sprite.animation_finished
+	GameState.absorb(reward)
 	queue_free()
 
 func wait(seconds: float) -> void:

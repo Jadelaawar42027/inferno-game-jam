@@ -1,0 +1,212 @@
+{
+ "name": "teppan_oni",
+ "floor": "gluttony",
+ "px_per_unit": 0.13,
+ "sheet": "teppan_oni_frame520x372_7cols_11rows.png",
+ "frame_size": [
+  520,
+  372
+ ],
+ "columns": 7,
+ "rows": 11,
+ "frames_total": 72,
+ "godot": {
+  "animated_sprite_scale": 0.4615,
+  "offset": [
+   0,
+   -107.8
+  ],
+  "texture_filter": "Linear Mipmap",
+  "facing": "right (flip_h for left)"
+ },
+ "animations": [
+  {
+   "name": "idle",
+   "frames": 6,
+   "fps": 6,
+   "loop": true,
+   "seconds": 1.0,
+   "events": {}
+  },
+  {
+   "name": "walk",
+   "frames": 8,
+   "fps": 8,
+   "loop": true,
+   "seconds": 1.0,
+   "events": {
+    "step": [
+     0,
+     4
+    ]
+   }
+  },
+  {
+   "name": "roar",
+   "frames": 5,
+   "fps": 10,
+   "loop": false,
+   "seconds": 0.5,
+   "events": {
+    "roar": [
+     2
+    ]
+   },
+   "note": "intro and phase change"
+  },
+  {
+   "name": "jump_windup",
+   "frames": 3,
+   "fps": 12,
+   "loop": false,
+   "seconds": 0.25,
+   "events": {},
+   "note": "crouch before every hop of the slam combo"
+  },
+  {
+   "name": "jump",
+   "frames": 2,
+   "fps": 8,
+   "loop": true,
+   "seconds": 0.25,
+   "events": {},
+   "note": "in the air; move the boss in code"
+  },
+  {
+   "name": "slam_land",
+   "frames": 4,
+   "fps": 12,
+   "loop": false,
+   "seconds": 0.33,
+   "events": {
+    "impact": [
+     0
+    ],
+    "spawn_shockwave": [
+     0
+    ]
+   },
+   "note": "spawn one shockwave each side on frame 0"
+  },
+  {
+   "name": "knife_draw",
+   "frames": 4,
+   "fps": 10,
+   "loop": false,
+   "seconds": 0.4,
+   "events": {
+    "unsheathe": [
+     2
+    ]
+   }
+  },
+  {
+   "name": "knife_flurry",
+   "frames": 6,
+   "fps": 16,
+   "loop": true,
+   "seconds": 0.38,
+   "events": {
+    "hit_active": [
+     1,
+     3
+    ]
+   },
+   "note": "loop it for the whole flurry; a hit lands every time frames 1 and 3 play"
+  },
+  {
+   "name": "knife_sheath",
+   "frames": 4,
+   "fps": 8,
+   "loop": false,
+   "seconds": 0.5,
+   "events": {
+    "sheathe": [
+     2
+    ]
+   },
+   "note": "punish window"
+  },
+  {
+   "name": "flambe_windup",
+   "frames": 4,
+   "fps": 8,
+   "loop": false,
+   "seconds": 0.5,
+   "events": {
+    "inhale": [
+     0
+    ]
+   }
+  },
+  {
+   "name": "flambe",
+   "frames": 4,
+   "fps": 12,
+   "loop": true,
+   "seconds": 0.33,
+   "events": {
+    "spawn_fire": [
+     0
+    ]
+   },
+   "note": "loop while breathing; spawn fire patches along the floor"
+  },
+  {
+   "name": "toss_windup",
+   "frames": 3,
+   "fps": 10,
+   "loop": false,
+   "seconds": 0.3,
+   "events": {}
+  },
+  {
+   "name": "toss",
+   "frames": 3,
+   "fps": 12,
+   "loop": false,
+   "seconds": 0.25,
+   "events": {
+    "spawn_meatball": [
+     0
+    ]
+   },
+   "note": "spawn the meatball on frame 0; play three times for three meatballs"
+  },
+  {
+   "name": "eat",
+   "frames": 6,
+   "fps": 8,
+   "loop": false,
+   "seconds": 0.75,
+   "events": {
+    "heal": [
+     5
+    ]
+   },
+   "note": "walk to a meatball first; heal on the last frame"
+  },
+  {
+   "name": "hurt",
+   "frames": 2,
+   "fps": 12,
+   "loop": false,
+   "seconds": 0.17,
+   "events": {},
+   "note": "optional flinch; do not play it during attacks"
+  },
+  {
+   "name": "death",
+   "frames": 8,
+   "fps": 10,
+   "loop": false,
+   "seconds": 0.8,
+   "events": {
+    "thud": [
+     4
+    ]
+   },
+   "note": "emit boss_defeated after it"
+  }
+ ]
+}

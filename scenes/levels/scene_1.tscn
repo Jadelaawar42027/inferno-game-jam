@@ -2,10 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://deejvq1mv7666" path="res://scenes/player/player.tscn" id="1_e77pf"]
 [ext_resource type="PackedScene" uid="uid://cmxd0mu2gy1gr" path="res://scenes/levels/platform.tscn" id="2_ake7g"]
-[ext_resource type="PackedScene" uid="uid://cqafy7ipeychu" path="res://scenes/enemies/enemyInfantry.tscn" id="3_drx3o"]
-[ext_resource type="PackedScene" uid="uid://wll4q5h4hwvl" path="res://scenes/enemies/enemyHeavy.tscn" id="4_mok1g"]
-[ext_resource type="PackedScene" uid="uid://0xkohbbfcjkg" path="res://scenes/enemies/enemy_flying.tscn" id="5_mok1g"]
-[ext_resource type="PackedScene" uid="uid://dl56uuruh758q" path="res://scenes/bosses/test_boss.tscn" id="6_c22k0"]
 
 [node name="TestArea" type="Node2D" unique_id=1130552543]
 
@@ -29,21 +25,3 @@ position = Vector2(307, -76)
 
 [node name="Platform5" parent="." unique_id=1585276328 instance=ExtResource("2_ake7g")]
 position = Vector2(440, 21)
-
-[node name="Infantry" parent="." unique_id=319771871 instance=ExtResource("3_drx3o")]
-position = Vector2(317, -96)
-
-[node name="Heavy" parent="." unique_id=1771310597 instance=ExtResource("4_mok1g")]
-position = Vector2(433, -3)
-
-[node name="Flying" parent="." unique_id=1594236509 instance=ExtResource("5_mok1g")]
-position = Vector2(530, -186)
-hover_distance = 40.0
-hover_height_min = 55.0
-hover_height_max = 80.0
-hover_speed = 80.0
-orbit_speed = 1.5
-
-[node name="TestBoss" parent="." unique_id=805712653 instance=ExtResource("6_c22k0")]
-position = Vector2(192, -65)
-auto_start = true

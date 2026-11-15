@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://c5srpiexy77bs"]
+
+[ext_resource type="PackedScene" uid="uid://cqafy7ipeychu" path="res://scenes/enemies/enemyInfantry.tscn" id="1_ujyi3"]
+[ext_resource type="Shader" uid="uid://bcycvorrmew66" path="res://scenes/enemies/hitflash.gdshader" id="2_or8nt"]
+[ext_resource type="SpriteFrames" uid="uid://demhte2j2jynr" path="res://assets/sprites/enemies/golden_piggy/golden_piggy_frames.tres" id="3_or8nt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kro8k"]
+size = Vector2(24, 20)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_or8nt"]
+resource_local_to_scene = true
+shader = ExtResource("2_or8nt")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_amount = 0.0
+shader_parameter/additive_mix = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8wq5e"]
+resource_local_to_scene = true
+size = Vector2(24, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6mhrp"]
+resource_local_to_scene = true
+size = Vector2(24, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jdjb5"]
+resource_local_to_scene = true
+size = Vector2(16, 16)
+
+[node name="GoldenPiggy" unique_id=319771871 instance=ExtResource("1_ujyi3")]
+texture_filter = 4
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=220595465]
+shape = SubResource("RectangleShape2D_kro8k")
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=962650832]
+texture_filter = 4
+material = SubResource("ShaderMaterial_or8nt")
+position = Vector2(0, -5)
+scale = Vector2(0.2, 0.2)
+sprite_frames = ExtResource("3_or8nt")
+frame_progress = 0.0
+
+[node name="CollisionShape2D" parent="Hurtbox" parent_id_path=PackedInt32Array(887145532) index="0" unique_id=1868882131]
+shape = SubResource("RectangleShape2D_8wq5e")
+
+[node name="CollisionShape2D" parent="ContactHitbox" parent_id_path=PackedInt32Array(1898026828) index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_6mhrp")
+
+[node name="CollisionShape2D" parent="LungeHitbox" parent_id_path=PackedInt32Array(2027277294) index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_jdjb5")
+
+[editable path="Hurtbox"]
+[editable path="ContactHitbox"]
+[editable path="LungeHitbox"]

@@ -1,0 +1,245 @@
+{
+ "name": "labyrinth_butcher",
+ "floor": "violence",
+ "px_per_unit": 0.12,
+ "sheet": "labyrinth_butcher_frame466x394_8cols_10rows.png",
+ "frame_size": [
+  466,
+  394
+ ],
+ "columns": 8,
+ "rows": 10,
+ "frames_total": 80,
+ "godot": {
+  "animated_sprite_scale": 0.5,
+  "offset": [
+   0,
+   -107.8
+  ],
+  "texture_filter": "Linear Mipmap",
+  "facing": "right (flip_h for left)"
+ },
+ "animations": [
+  {
+   "name": "idle",
+   "frames": 6,
+   "fps": 6,
+   "loop": true,
+   "seconds": 1.0,
+   "events": {}
+  },
+  {
+   "name": "walk",
+   "frames": 8,
+   "fps": 9,
+   "loop": true,
+   "seconds": 0.89,
+   "events": {
+    "step": [
+     0,
+     4
+    ]
+   }
+  },
+  {
+   "name": "roar",
+   "frames": 5,
+   "fps": 10,
+   "loop": false,
+   "seconds": 0.5,
+   "events": {
+    "roar": [
+     2
+    ]
+   },
+   "note": "intro and phase change"
+  },
+  {
+   "name": "charge_windup",
+   "frames": 5,
+   "fps": 9,
+   "loop": false,
+   "seconds": 0.56,
+   "events": {
+    "scrape": [
+     2,
+     4
+    ]
+   },
+   "note": "paws the ground"
+  },
+  {
+   "name": "charge",
+   "frames": 6,
+   "fps": 14,
+   "loop": true,
+   "seconds": 0.43,
+   "events": {
+    "step": [
+     0,
+     3
+    ],
+    "hit_active": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5
+    ]
+   },
+   "note": "loop while he runs; stop at the wall"
+  },
+  {
+   "name": "charge_crash",
+   "frames": 4,
+   "fps": 12,
+   "loop": false,
+   "seconds": 0.33,
+   "events": {
+    "crash": [
+     0
+    ]
+   },
+   "note": "hit the wall"
+  },
+  {
+   "name": "stun",
+   "frames": 4,
+   "fps": 8,
+   "loop": true,
+   "seconds": 0.5,
+   "events": {},
+   "note": "punish window after hitting the wall"
+  },
+  {
+   "name": "gore_windup",
+   "frames": 3,
+   "fps": 10,
+   "loop": false,
+   "seconds": 0.3,
+   "events": {}
+  },
+  {
+   "name": "gore",
+   "frames": 4,
+   "fps": 14,
+   "loop": false,
+   "seconds": 0.29,
+   "events": {
+    "hit_active": [
+     0,
+     1
+    ]
+   },
+   "note": "upward horn scoop; launch the player"
+  },
+  {
+   "name": "pound_windup",
+   "frames": 4,
+   "fps": 9,
+   "loop": false,
+   "seconds": 0.44,
+   "events": {}
+  },
+  {
+   "name": "pound",
+   "frames": 4,
+   "fps": 12,
+   "loop": false,
+   "seconds": 0.33,
+   "events": {
+    "impact": [
+     0
+    ],
+    "spawn_shockwave": [
+     0
+    ],
+    "spawn_rocks": [
+     0
+    ]
+   },
+   "note": "shockwaves both ways and falling rocks on frame 0"
+  },
+  {
+   "name": "lash_windup",
+   "frames": 3,
+   "fps": 10,
+   "loop": false,
+   "seconds": 0.3,
+   "events": {
+    "rattle": [
+     0
+    ]
+   }
+  },
+  {
+   "name": "lash",
+   "frames": 5,
+   "fps": 14,
+   "loop": false,
+   "seconds": 0.36,
+   "events": {
+    "hit_active": [
+     1,
+     2
+    ]
+   },
+   "note": "the chain sweeps low in front of him"
+  },
+  {
+   "name": "leap_windup",
+   "frames": 3,
+   "fps": 12,
+   "loop": false,
+   "seconds": 0.25,
+   "events": {}
+  },
+  {
+   "name": "leap",
+   "frames": 2,
+   "fps": 8,
+   "loop": true,
+   "seconds": 0.25,
+   "events": {},
+   "note": "in the air; move the boss in code"
+  },
+  {
+   "name": "leap_land",
+   "frames": 4,
+   "fps": 12,
+   "loop": false,
+   "seconds": 0.33,
+   "events": {
+    "impact": [
+     0
+    ],
+    "spawn_shockwave": [
+     0
+    ]
+   }
+  },
+  {
+   "name": "hurt",
+   "frames": 2,
+   "fps": 12,
+   "loop": false,
+   "seconds": 0.17,
+   "events": {},
+   "note": "optional flinch"
+  },
+  {
+   "name": "death",
+   "frames": 8,
+   "fps": 10,
+   "loop": false,
+   "seconds": 0.8,
+   "events": {
+    "thud": [
+     4
+    ]
+   },
+   "note": "emit boss_defeated after it"
+  }
+ ]
+}

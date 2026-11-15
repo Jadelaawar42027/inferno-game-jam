@@ -13,7 +13,7 @@ shader_parameter/flash_amount = 0.0
 shader_parameter/additive_mix = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3mldf"]
-radius = 25.019993
+radius = 90.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vyw6b"]
 resource_local_to_scene = true

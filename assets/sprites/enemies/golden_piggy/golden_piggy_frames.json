@@ -1,0 +1,123 @@
+{
+ "enemy": "golden_piggy",
+ "floor": "greed",
+ "type": "infantry",
+ "sheet": "golden_piggy_hd_frame312x228_8cols_8rows.png",
+ "frame_size": [
+  312,
+  228
+ ],
+ "columns": 8,
+ "rows": 8,
+ "godot": {
+  "animated_sprite_scale": 0.2,
+  "offset": [
+   0,
+   -72.0
+  ],
+  "texture_filter": "Linear Mipmap",
+  "facing": "right (flip_h for left)",
+  "origin": "feet"
+ },
+ "animations": [
+  {
+   "name": "idle",
+   "row": 0,
+   "frames": 6,
+   "fps": 6,
+   "loop": true,
+   "events": {
+    "sparkle": [
+     0,
+     3
+    ]
+   }
+  },
+  {
+   "name": "walk",
+   "row": 1,
+   "frames": 8,
+   "fps": 10,
+   "loop": true,
+   "events": {
+    "step": [
+     0,
+     4
+    ]
+   }
+  },
+  {
+   "name": "alert",
+   "row": 2,
+   "frames": 5,
+   "fps": 12,
+   "loop": false,
+   "events": {
+    "coin_pop": [
+     1
+    ]
+   },
+   "note": "plays once when the player is first spotted"
+  },
+  {
+   "name": "run",
+   "row": 3,
+   "frames": 8,
+   "fps": 14,
+   "loop": true,
+   "events": {
+    "step": [
+     2,
+     6
+    ]
+   },
+   "note": "the head-down dash while chasing"
+  },
+  {
+   "name": "windup",
+   "row": 4,
+   "frames": 4,
+   "fps": 10,
+   "loop": false,
+   "events": {},
+   "note": "paws the ground and snorts"
+  },
+  {
+   "name": "lunge",
+   "row": 5,
+   "frames": 4,
+   "fps": 14,
+   "loop": true,
+   "events": {
+    "hit_active": [
+     0,
+     1,
+     2,
+     3
+    ]
+   },
+   "note": "the ram: LungeHitbox stays on while this plays"
+  },
+  {
+   "name": "hurt",
+   "row": 6,
+   "frames": 3,
+   "fps": 12,
+   "loop": false,
+   "events": {}
+  },
+  {
+   "name": "death",
+   "row": 7,
+   "frames": 6,
+   "fps": 10,
+   "loop": false,
+   "events": {
+    "shatter": [
+     1
+    ]
+   },
+   "note": "shatters into coins; queue_free after the last frame"
+  }
+ ]
+}

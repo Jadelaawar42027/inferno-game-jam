@@ -35,6 +35,7 @@ func _ready() -> void:
 	detection_radius.body_exited.connect(_on_detection_radius_body_exited)
 
 func _physics_process(delta: float) -> void:
+	if is_dead: return
 	cooldown_timer -= delta
 	state_timer -= delta
 	match state:
@@ -55,7 +56,6 @@ func fly_patrol(delta: float) -> void:
 	if player_in_range: 
 		pick_hover_height()
 		state = State.HOVER
-
 
 func start_windup() -> void:
 	state = State.WINDUP

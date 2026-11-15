@@ -1,0 +1,134 @@
+{
+ "enemy": "false_cupid",
+ "floor": "fraud",
+ "type": "flying",
+ "sheet": "false_cupid_hd_frame240x198_8cols_9rows.png",
+ "frame_size": [
+  240,
+  198
+ ],
+ "columns": 8,
+ "rows": 9,
+ "godot": {
+  "animated_sprite_scale": 0.2,
+  "offset": [
+   0,
+   9.0
+  ],
+  "texture_filter": "Linear Mipmap",
+  "facing": "right (flip_h for left)",
+  "origin": "body centre"
+ },
+ "animations": [
+  {
+   "name": "idle_calm",
+   "row": 0,
+   "frames": 6,
+   "fps": 8,
+   "loop": true,
+   "events": {},
+   "note": "before he has seen the player"
+  },
+  {
+   "name": "fly_calm",
+   "row": 1,
+   "frames": 8,
+   "fps": 12,
+   "loop": true,
+   "events": {
+    "flap": [
+     2
+    ]
+   },
+   "note": "patrol before he has seen the player"
+  },
+  {
+   "name": "transform",
+   "row": 2,
+   "frames": 8,
+   "fps": 10,
+   "loop": false,
+   "events": {
+    "halo_crack": [
+     1
+    ],
+    "drop_bow": [
+     2
+    ],
+    "roar": [
+     5
+    ]
+   },
+   "note": "plays once when the player enters DetectionRadius; after it use idle / fly / swoop"
+  },
+  {
+   "name": "idle",
+   "row": 3,
+   "frames": 6,
+   "fps": 8,
+   "loop": true,
+   "events": {}
+  },
+  {
+   "name": "fly",
+   "row": 4,
+   "frames": 8,
+   "fps": 12,
+   "loop": true,
+   "events": {
+    "flap": [
+     2
+    ]
+   }
+  },
+  {
+   "name": "swoop_windup",
+   "row": 5,
+   "frames": 4,
+   "fps": 10,
+   "loop": false,
+   "events": {
+    "screech": [
+     1
+    ]
+   }
+  },
+  {
+   "name": "swoop",
+   "row": 6,
+   "frames": 4,
+   "fps": 14,
+   "loop": true,
+   "events": {
+    "hit_active": [
+     0,
+     1,
+     2,
+     3
+    ]
+   },
+   "note": "the claw dive: SwoopHitbox stays on while this plays"
+  },
+  {
+   "name": "hurt",
+   "row": 7,
+   "frames": 3,
+   "fps": 12,
+   "loop": false,
+   "events": {}
+  },
+  {
+   "name": "death",
+   "row": 8,
+   "frames": 6,
+   "fps": 10,
+   "loop": false,
+   "events": {
+    "halo_drop": [
+     1
+    ]
+   },
+   "note": "queue_free after the last frame"
+  }
+ ]
+}

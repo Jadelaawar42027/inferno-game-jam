@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://nocvn7y1jua"]
+
+[ext_resource type="PackedScene" uid="uid://wll4q5h4hwvl" path="res://scenes/enemies/enemyHeavy.tscn" id="1_fivra"]
+[ext_resource type="Shader" uid="uid://bcycvorrmew66" path="res://scenes/enemies/hitflash.gdshader" id="2_plmou"]
+[ext_resource type="SpriteFrames" path="res://assets/sprites/enemies/hooded_headsman/hooded_headsman_frames.tres" id="3_plmou"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xj0ic"]
+size = Vector2(20, 34)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xj0ic"]
+resource_local_to_scene = true
+shader = ExtResource("2_plmou")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_amount = 0.0
+shader_parameter/additive_mix = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x55ds"]
+resource_local_to_scene = true
+size = Vector2(20, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3cvdi"]
+resource_local_to_scene = true
+size = Vector2(20, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_witrk"]
+resource_local_to_scene = true
+size = Vector2(14, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_faf0l"]
+resource_local_to_scene = true
+size = Vector2(36, 12)
+
+[node name="HoodedHeadsman" unique_id=319771871 instance=ExtResource("1_fivra")]
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=220595465]
+shape = SubResource("RectangleShape2D_xj0ic")
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=962650832]
+texture_filter = 4
+material = SubResource("ShaderMaterial_xj0ic")
+position = Vector2(0, -5)
+scale = Vector2(0.2, 0.2)
+sprite_frames = ExtResource("3_plmou")
+frame_progress = 0.0
+
+[node name="CollisionShape2D" parent="Hurtbox" parent_id_path=PackedInt32Array(887145532) index="0" unique_id=1868882131]
+shape = SubResource("RectangleShape2D_x55ds")
+
+[node name="CollisionShape2D" parent="ContactHitbox" parent_id_path=PackedInt32Array(1898026828) index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_3cvdi")
+
+[node name="CollisionShape2D" parent="ChargeHitbox" parent_id_path=PackedInt32Array(1396349982) index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_witrk")
+
+[node name="CollisionShape2D" parent="SlamHitbox" parent_id_path=PackedInt32Array(2139374393) index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_faf0l")
+
+[editable path="Hurtbox"]
+[editable path="ContactHitbox"]
+[editable path="ChargeHitbox"]
+[editable path="SlamHitbox"]

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://duw2eon0tk5l3"]
+
+[ext_resource type="Script" uid="uid://0gn4rj4nopco" path="res://scenes/abilities/charge_attack_behavior.gd" id="1_jot0d"]
+
+[node name="ChargeAttackBehavior" type="Node" unique_id=456351268]
+script = ExtResource("1_jot0d")

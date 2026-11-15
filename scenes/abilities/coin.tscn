@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://b3ew52hftugg5"]
+
+[ext_resource type="Script" uid="uid://d1ugn8jcor87f" path="res://scenes/abilities/coin.gd" id="1_1q4w4"]
+[ext_resource type="SpriteFrames" uid="uid://e016ji3yxpqa" path="res://assets/sprites/fx/boss_fx_frames.tres" id="2_lhx3x"]
+[ext_resource type="PackedScene" uid="uid://bsxufnevdum76" path="res://scenes/Components/hitbox.tscn" id="3_njeni"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hpwfp"]
+radius = 4.0
+
+[node name="Coin" type="Node" unique_id=545474644]
+script = ExtResource("1_1q4w4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1384852403]
+texture_filter = 4
+position = Vector2(0, -26)
+scale = Vector2(0.2, 0.2)
+sprite_frames = ExtResource("2_lhx3x")
+animation = &"coin"
+frame = 3
+frame_progress = 0.15530886
+
+[node name="Hitbox" parent="." unique_id=1898026828 instance=ExtResource("3_njeni")]
+collision_layer = 8
+collision_mask = 128
+damage = 1
+
+[node name="CollisionShape2D" parent="Hitbox" index="0" unique_id=612733107]
+shape = SubResource("CircleShape2D_hpwfp")
+
+[node name="Ray" type="RayCast2D" parent="." unique_id=946039216]
+
+[editable path="Hitbox"]

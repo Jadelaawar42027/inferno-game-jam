@@ -1,0 +1,245 @@
+{
+ "name": "living_statue",
+ "floor": "greed",
+ "sheet": "living_statue_frame494x377_8cols_10rows.png",
+ "frame_size": [
+  494,
+  377
+ ],
+ "columns": 8,
+ "rows": 10,
+ "frames_total": 80,
+ "godot": {
+  "animated_sprite_scale": 0.4615,
+  "offset": [
+   0,
+   -102.7
+  ],
+  "texture_filter": "Linear Mipmap",
+  "facing": "right (flip_h for left)"
+ },
+ "animations": [
+  {
+   "name": "idle",
+   "frames": 6,
+   "fps": 6,
+   "loop": true,
+   "seconds": 1.0,
+   "events": {}
+  },
+  {
+   "name": "walk",
+   "frames": 8,
+   "fps": 7,
+   "loop": true,
+   "seconds": 1.14,
+   "events": {
+    "step": [
+     2,
+     6
+    ]
+   },
+   "note": "slow and heavy"
+  },
+  {
+   "name": "roar",
+   "frames": 5,
+   "fps": 10,
+   "loop": false,
+   "seconds": 0.5,
+   "events": {
+    "roar": [
+     2
+    ]
+   },
+   "note": "intro and phase change (cracks flare)"
+  },
+  {
+   "name": "touch_windup",
+   "frames": 4,
+   "fps": 8,
+   "loop": false,
+   "seconds": 0.5,
+   "events": {
+    "glow": [
+     0
+    ]
+   }
+  },
+  {
+   "name": "touch",
+   "frames": 4,
+   "fps": 12,
+   "loop": false,
+   "seconds": 0.33,
+   "events": {
+    "hit_active": [
+     0,
+     1,
+     2
+    ]
+   },
+   "note": "the grab; on a hit freeze the player"
+  },
+  {
+   "name": "touch_recover",
+   "frames": 3,
+   "fps": 8,
+   "loop": false,
+   "seconds": 0.38,
+   "events": {},
+   "note": "punish window if he missed"
+  },
+  {
+   "name": "stomp_windup",
+   "frames": 4,
+   "fps": 8,
+   "loop": false,
+   "seconds": 0.5,
+   "events": {}
+  },
+  {
+   "name": "stomp",
+   "frames": 4,
+   "fps": 12,
+   "loop": false,
+   "seconds": 0.33,
+   "events": {
+    "impact": [
+     0
+    ],
+    "spawn_pillars": [
+     0
+    ]
+   },
+   "note": "start the pillar line on frame 0"
+  },
+  {
+   "name": "rain_windup",
+   "frames": 3,
+   "fps": 8,
+   "loop": false,
+   "seconds": 0.38,
+   "events": {}
+  },
+  {
+   "name": "rain",
+   "frames": 4,
+   "fps": 10,
+   "loop": true,
+   "seconds": 0.4,
+   "events": {
+    "spawn_coins": [
+     0
+    ]
+   },
+   "note": "loop while coins fall"
+  },
+  {
+   "name": "guard_start",
+   "frames": 3,
+   "fps": 10,
+   "loop": false,
+   "seconds": 0.3,
+   "events": {
+    "clang": [
+     2
+    ]
+   }
+  },
+  {
+   "name": "guard",
+   "frames": 2,
+   "fps": 4,
+   "loop": true,
+   "seconds": 0.5,
+   "events": {},
+   "note": "invulnerable while this loops"
+  },
+  {
+   "name": "guard_counter",
+   "frames": 4,
+   "fps": 12,
+   "loop": false,
+   "seconds": 0.33,
+   "events": {
+    "hit_active": [
+     0,
+     1
+    ],
+    "spawn_shockwave": [
+     0
+    ]
+   },
+   "note": "only if the player hit him during guard"
+  },
+  {
+   "name": "topple_windup",
+   "frames": 4,
+   "fps": 8,
+   "loop": false,
+   "seconds": 0.5,
+   "events": {
+    "creak": [
+     1
+    ]
+   }
+  },
+  {
+   "name": "topple",
+   "frames": 3,
+   "fps": 12,
+   "loop": false,
+   "seconds": 0.25,
+   "events": {
+    "impact": [
+     2
+    ],
+    "hit_active": [
+     1,
+     2
+    ]
+   },
+   "note": "falls flat on his face"
+  },
+  {
+   "name": "topple_down",
+   "frames": 4,
+   "fps": 6,
+   "loop": true,
+   "seconds": 0.67,
+   "events": {},
+   "note": "lying down with the cracks glowing: punish window"
+  },
+  {
+   "name": "topple_rise",
+   "frames": 5,
+   "fps": 8,
+   "loop": false,
+   "seconds": 0.62,
+   "events": {}
+  },
+  {
+   "name": "hurt",
+   "frames": 2,
+   "fps": 12,
+   "loop": false,
+   "seconds": 0.17,
+   "events": {},
+   "note": "optional flinch"
+  },
+  {
+   "name": "death",
+   "frames": 8,
+   "fps": 10,
+   "loop": false,
+   "seconds": 0.8,
+   "events": {
+    "shatter": [
+     2
+    ]
+   },
+   "note": "crumbles into a pile of gold that stays on the last frame"
+  }
+ ]
+}
