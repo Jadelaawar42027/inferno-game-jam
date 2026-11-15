@@ -92,7 +92,7 @@ func snack() -> void:
 		if absf(b.global_position.x - global_position.x) < absf(target.global_position.x - global_position.x): target = b
 	sprite.play("walk")
 	var t := 0.0
-	while is_instance_valid(target) and absf(target.global_position.x - global_position.x) > 30 and t < 3.0:
+	while is_instance_valid(target) and absf(target.global_position.x - global_position.x) > 30 and t < 3.0 and not is_dead:
 		set_facing(signf(target.global_position.x - global_position.x))
 		velocity.x = direction * walk_speed * 3
 		t += get_physics_process_delta_time()

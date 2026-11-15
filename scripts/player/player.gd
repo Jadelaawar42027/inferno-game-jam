@@ -46,6 +46,8 @@ var jump_buffer_timer := 0.0
 var facing := 1
 var absorbing := false
 
+var cutscene_lock := false
+
 var attack_cooldown_timer := 0.0
 var attack_active_timer := 0.0
 var recoil_timer := 0.0
@@ -97,9 +99,11 @@ func _physics_process(delta: float) -> void:
 	hurt_lock_timer -= delta
 	invincibility_timer -= delta
 	
-	if absorbing or is_dead:
+	if absorbing or is_dead or cutscene_lock:
 		velocity.x = 0
 		velocity.y = minf(velocity.y + fall_gravity * delta, max_fall_speed)
+		if cutscene_lock and is_on_floor() and anim.animation != "idle":
+			anim.play("idle")
 		move_and_slide()
 		return
 	

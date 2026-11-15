@@ -3,6 +3,9 @@ extends Area2D
 
 @export var boss: Boss
 @export var gates: Array[Node2D]
+@export var fight_zoom := Vector2(1.0, 1.0)
+@export var pan_time := 0.8
+
 
 var triggered := false
 
@@ -15,8 +18,25 @@ func _on_body_entered(body: Node2D) -> void:
 	triggered = true
 	set_deferred("monitoring", false)
 	for g in gates: set_gate(g, true)
+	body.cutscene_lock = true
+	var cam: Camera2D = body.camera
+	var cam_pos := cam.global_position
+	cam.top_level = true
+	cam.global_position = cam_pos
+	var t := create_tween().set_parallel().set_trans(Tween.TRANS_SINE)
+	t.tween_property(cam, "global_position", (body.global_position + boss.global_position) / 2.0, pan_time)
+	t.tween_property(cam, "zoom", fight_zoom, pan_time)
+	await t.finished
+	await boss.play_intro(body)
+	var back := create_tween().set_trans(Tween.TRANS_SINE)
+	back.tween_property(cam, "global_position", body.global_position, 0.4)
+	await back.finished
+	cam.top_level = false
+	cam.position = Vector2.ZERO
+	body.cutscene_lock = false
 	boss.activate(body)
-	
+
+
 func set_gate(g: Node2D, closed: bool) -> void:
 	var gate_body: StaticBody2D = g.get_node("GateBody")
 	gate_body.set_deferred("process_mode", Node.PROCESS_MODE_INHERIT if closed else Node.PROCESS_MODE_DISABLED)

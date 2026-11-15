@@ -26,10 +26,12 @@ var player_near := false
 var player_in_range: bool:
 	get: return player_near and player_target != null and not player_target.is_invisible
 
-
+@export var patrol_distance := 64.0
+var home_x := 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	home_x = global_position.x
 	health.died.connect(die)
 	hurtbox.hurt.connect(_on_hurt)
 	sprite.animation_finished.connect(_on_anim_finished)
@@ -72,6 +74,10 @@ func set_facing(dir: float) -> void:
 
 func patrol()->void:
 	velocity.x = direction * walk_speed
+	if direction > 0 and global_position.x >= home_x + patrol_distance:
+		set_facing(-1)
+	elif direction < 0 and global_position.x <= home_x - patrol_distance:
+		set_facing(1)
 	if is_on_wall(): set_facing(-direction)
 	elif check_platform and is_on_floor() and not check_platform.is_colliding(): set_facing(-direction)
 

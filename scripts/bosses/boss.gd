@@ -6,6 +6,7 @@ signal boss_started
 signal phase_changed(new_phase: int)
 signal boss_defeated
 
+
 const FX_SCENE := preload("res://scenes/fx/boss_fx.tscn")
 
 @export var boss_name := "Boss"
@@ -20,7 +21,10 @@ const FX_SCENE := preload("res://scenes/fx/boss_fx.tscn")
 @export var intro_anim := "roar"
 @export var voice_id := ""
 @export var voice_pitch := 1.0
+@export var intro_lines: Array[DialogLine]
+@export var intro_roar_time := 2.0
 
+var intro_done := false
 var phase := 1
 var active := false
 var last_attack := ""
@@ -48,8 +52,9 @@ func activate(p: Player) -> void:
 	brain()
 
 func brain() -> void:
-	say("intro")
-	await play_and_wait(intro_anim)
+	if not intro_done:
+		say("intro")
+		await play_and_wait(intro_anim)
 	await wait(0.4)
 	while active and not is_dead:
 		if player_target.is_invisible:
@@ -126,6 +131,8 @@ func die() -> void:
 	queue_free()
 
 func wait(seconds: float) -> void:
+	if not is_inside_tree():
+		return
 	await get_tree().create_timer(seconds, false).timeout
 
 func dx_to_player() -> float:
@@ -158,3 +165,28 @@ func _on_hurt(_hitbox: Hitbox) -> void:
 func say(moment: String, interrupt := true) -> void:
 	if voice_id == "": return
 	VoiceManager.play_line(voice_id + "_" + moment, "Boss Voice", voice_pitch, interrupt)
+
+func play_intro(p: Player) -> void:
+	player_target = p
+	intro_done = true
+	face_player()
+	say("intro")
+	var has_roar: bool = sprite.sprite_frames != null and sprite.sprite_frames.has_animation(intro_anim)
+	var left := intro_roar_time
+	while left > 0.0 and not is_dead:
+		if has_roar and (not sprite.is_playing() or sprite.animation != intro_anim):
+			sprite.play(intro_anim)
+		left -= get_physics_process_delta_time()
+		await get_tree().physics_frame
+	play_anim("idle")
+	if intro_lines.is_empty():
+		return
+	var dialog = get_tree().get_first_node_in_group("dialog_box")
+	if dialog == null:
+		return
+	dialog.dialog_start(boss_name, intro_lines, false)
+	await dialog.dialog_finished
+
+func _exit_tree() -> void:
+	active = false
+	is_dead = true
