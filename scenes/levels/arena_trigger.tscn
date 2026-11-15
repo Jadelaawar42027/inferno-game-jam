@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cajlavpcicmhj"]
+
+[ext_resource type="Script" uid="uid://cywlutmfh8363" path="res://scripts/levels/arena_trigger.gd" id="1_5m1ut"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80f48"]
+size = Vector2(32, 200)
+
+[node name="ArenaTrigger" type="Area2D" unique_id=1029785907]
+collision_layer = 512
+collision_mask = 2
+script = ExtResource("1_5m1ut")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1612285334]
+shape = SubResource("RectangleShape2D_80f48")
