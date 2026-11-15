@@ -5,8 +5,7 @@ class_name DialogTrigger
 @export var LINES: Array[DialogLine]
 var PLAYER_IN_RANGE := false
 
-
-
+@export var PORTRAIT: Texture2D
 
 #Signals to check if the player is in range
 func _on_body_entered(body: Node2D) -> void:
@@ -23,5 +22,5 @@ func _unhandled_input(event: InputEvent) -> void:
 	if PLAYER_IN_RANGE and event.is_action_pressed("interact"):
 		var dialog_box = get_tree().get_first_node_in_group("dialog_box")
 		if dialog_box and not dialog_box.visible:
-			dialog_box.dialog_start(NAME_SPEAKER, LINES)
+			ialog_box.dialog_start(NAME_SPEAKER, LINES, true, PORTRAIT)
 			get_viewport().set_input_as_handled()

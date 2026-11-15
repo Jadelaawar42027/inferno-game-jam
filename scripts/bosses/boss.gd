@@ -23,6 +23,7 @@ const FX_SCENE := preload("res://scenes/fx/boss_fx.tscn")
 @export var voice_pitch := 1.0
 @export var intro_lines: Array[DialogLine]
 @export var intro_roar_time := 2.0
+@export var portrait: Texture2D
 
 var intro_done := false
 var phase := 1
@@ -190,3 +191,9 @@ func play_intro(p: Player) -> void:
 func _exit_tree() -> void:
 	active = false
 	is_dead = true
+
+func talk(lines: Array[DialogLine]) -> void:
+	var dialog := get_tree().get_first_node_in_group("dialog_box")
+	if dialog == null or lines.is_empty(): return
+	dialog.dialog_start(boss_name, lines, true, portrait)
+	await dialog.dialog_finished

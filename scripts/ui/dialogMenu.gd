@@ -2,6 +2,12 @@ extends Control
 
 @export var NAME_HERO = "HERO"
 @export var NAME_TARGET = "OTHER"
+@export var PORTRAIT_HERO: Texture2D
+
+var portrait_target: Texture2D
+@onready var HERO_PORTRAIT: TextureRect = $HeroPortrait
+@onready var TARGET_PORTRAIT: TextureRect = $OtherPortrait
+
 var LINES_ARRAY : Array[DialogLine] = [] #Sets the array to the dialog line
 var LINES_INDEX = 0
 var paused_by_me := false
@@ -17,9 +23,10 @@ signal dialog_finished
 func _ready() -> void:
 	visible = false
 
-func dialog_start(target_name: String, lines: Array[DialogLine], pause_game := true):
+func dialog_start(target_name: String, lines: Array[DialogLine], pause_game := true, target_portrait: Texture2D = null):
 	if lines.is_empty(): return
 	NAME_TARGET = target_name
+	portrait_target = target_portrait
 	LINES_ARRAY = lines
 	LINES_INDEX = 0
 	show_line()
@@ -35,9 +42,15 @@ func show_line():
 	else:
 		TEXT_CONTAINER.text = line.TEXT
 		if line.SPEAKER == DialogLine.STATE_SPEAKER.HERO:
+			HERO_PORTRAIT.texture = line.PORTRAIT if line.PORTRAIT else PORTRAIT_HERO
+			HERO_PORTRAIT.visible = HERO_PORTRAIT.texture != null
+			TARGET_PORTRAIT.visible = false
 			HERO_CONTAINER.text = NAME_HERO
 			TARGET_CONTAINER.text = ""
 		elif line.SPEAKER == DialogLine.STATE_SPEAKER.OTHER:
+			TARGET_PORTRAIT.texture = line.PORTRAIT if line.PORTRAIT else portrait_target
+			TARGET_PORTRAIT.visible = TARGET_PORTRAIT.texture != null
+			HERO_PORTRAIT.visible = false
 			HERO_CONTAINER.text = ""
 			TARGET_CONTAINER.text = NAME_TARGET
 		if line.VOICE != "": VoiceManager.play_line(line.VOICE, "Master")

@@ -5,27 +5,29 @@
 [ext_resource type="Resource" uid="uid://dux8jnhiqyqwi" path="res://resources/abilities/dash.tres" id="2_uqchq"]
 [ext_resource type="Shader" uid="uid://bcycvorrmew66" path="res://scenes/enemies/hitflash.gdshader" id="2_yjodc"]
 [ext_resource type="SpriteFrames" uid="uid://cdi1f6lufdkot" path="res://assets/sprites/bosses/teppan_oni/teppan_oni_frames.tres" id="3_yjodc"]
+[ext_resource type="Script" uid="uid://dkj0fvj30brcg" path="res://scripts/ui/dialog_line.gd" id="4_4a6vd"]
 [ext_resource type="PackedScene" uid="uid://bsxufnevdum76" path="res://scenes/Components/hitbox.tscn" id="4_x7g1t"]
+[ext_resource type="Texture2D" uid="uid://ch2q0si4lsfl7" path="res://assets/sprites/portraits/teppan_oni_portrait.png" id="5_aq8lw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x7g1t"]
 size = Vector2(80, 100)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6w6tf"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8glaw"]
 resource_local_to_scene = true
 shader = ExtResource("2_yjodc")
 shader_parameter/flash_color = Color(1, 1, 1, 1)
 shader_parameter/flash_amount = 0.0
 shader_parameter/additive_mix = 0.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_651q3"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4uej4"]
 resource_local_to_scene = true
 size = Vector2(80, 100)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4a6vd"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_njm3d"]
 resource_local_to_scene = true
 size = Vector2(80, 100)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_aq8lw"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mgu07"]
 resource_local_to_scene = true
 size = Vector2(70, 70)
 
@@ -34,7 +36,7 @@ script = ExtResource("2_6w6tf")
 hop_speed = 140.0
 hop_height = -380.0
 heal_amount = 4
-boss_name = "Teppan Oni"
+boss_name = "Hibachi Chef"
 recover_time = 0.9
 auto_start = true
 reward = ExtResource("2_uqchq")
@@ -45,6 +47,9 @@ reposition_time = 1.5
 intro_anim = "roar"
 voice_id = "oni"
 voice_pitch = 0.9
+intro_lines = Array[ExtResource("4_4a6vd")]([])
+intro_roar_time = 2.0
+portrait = ExtResource("5_aq8lw")
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=220595465]
 position = Vector2(0, -3)
@@ -52,7 +57,7 @@ shape = SubResource("RectangleShape2D_x7g1t")
 
 [node name="AnimatedSprite2D" parent="." index="1" unique_id=962650832]
 texture_filter = 4
-material = SubResource("ShaderMaterial_6w6tf")
+material = SubResource("ShaderMaterial_8glaw")
 position = Vector2(0, -4.73)
 scale = Vector2(0.46, 0.46)
 sprite_frames = ExtResource("3_yjodc")
@@ -62,10 +67,10 @@ frame_progress = 0.0
 max_health = 50
 
 [node name="CollisionShape2D" parent="Hurtbox" parent_id_path=PackedInt32Array(887145532) index="0" unique_id=1868882131]
-shape = SubResource("RectangleShape2D_651q3")
+shape = SubResource("RectangleShape2D_4uej4")
 
 [node name="CollisionShape2D" parent="ContactHitbox" parent_id_path=PackedInt32Array(1898026828) index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_4a6vd")
+shape = SubResource("RectangleShape2D_njm3d")
 
 [node name="KnifeHitbox" parent="." index="5" unique_id=1898026828 instance=ExtResource("4_x7g1t")]
 position = Vector2(75, -10)
@@ -74,7 +79,7 @@ collision_mask = 64
 damage = 1
 
 [node name="CollisionShape2D" parent="KnifeHitbox" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_aq8lw")
+shape = SubResource("RectangleShape2D_mgu07")
 
 [editable path="Hurtbox"]
 [editable path="ContactHitbox"]

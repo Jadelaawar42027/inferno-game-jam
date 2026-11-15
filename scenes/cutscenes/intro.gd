@@ -17,13 +17,14 @@ signal key_pressed
 var waiting_for_key := false
 
 const KNIGHT_FRAMES := preload("res://assets/sprites/knight/knight_frames_hd.tres")
+const VIRGIL_PORTRAIT := preload("res://assets/sprites/portraits/virgil_portrait.png")
 
 func _ready() -> void:
 	var pulse := create_tween().set_loops()
-	pulse.tween_property(circle_glow, "modulate:a", 0.45, 1.4).set_trans(Tween.TRANS_SINE)
-	pulse.parallel().tween_property(circle_light, "energy", 0.9, 1.4).set_trans(Tween.TRANS_SINE)
-	pulse.tween_property(circle_glow, "modulate:a", 1.0, 1.4).set_trans(Tween.TRANS_SINE)
-	pulse.parallel().tween_property(circle_light, "energy", 1.3, 1.4).set_trans(Tween.TRANS_SINE)
+	pulse.tween_property(circle_glow, "modulate:a", 0.3, 2.2).set_trans(Tween.TRANS_SINE)
+	pulse.parallel().tween_property(circle_light, "energy", 0.55, 2.2).set_trans(Tween.TRANS_SINE)
+	pulse.tween_property(circle_glow, "modulate:a", 0.6, 2.2).set_trans(Tween.TRANS_SINE)
+	pulse.parallel().tween_property(circle_light, "energy", 0.75, 2.2).set_trans(Tween.TRANS_SINE)
 	dialog.NAME_HERO = "Dante"
 	dante.play("sleep")
 	virgil.play("idle")
@@ -31,7 +32,7 @@ func _ready() -> void:
 	dante.play("wake")
 	await dante.animation_finished
 	virgil.play("talk")
-	dialog.dialog_start("Virgil", lines_wake, false)
+	dialog.dialog_start("Virgil", lines_wake, false, VIRGIL_PORTRAIT)
 	await dialog.dialog_finished
 	virgil.play("idle")
 	dante.play("get_up")
@@ -39,13 +40,13 @@ func _ready() -> void:
 	dante.sprite_frames = KNIGHT_FRAMES
 	dante.play("idle")
 	virgil.play("talk")
-	dialog.dialog_start("Virgil", lines_talk, false)
+	dialog.dialog_start("Virgil", lines_talk, false, VIRGIL_PORTRAIT)
 	await dialog.dialog_finished
 	virgil.play("cast")
 	await virgil.animation_finished
 	virgil.play("cast_hold")
 	staff_glow.amount = 40
-	dialog.dialog_start("Virgil", lines_spell, false)
+	dialog.dialog_start("Virgil", lines_spell, false, VIRGIL_PORTRAIT)
 	await dialog.dialog_finished
 	key_hint.text = "Press ENTER — Vinculum Aeternum"
 	key_hint.visible = true
@@ -59,7 +60,7 @@ func _ready() -> void:
 	dante.play("idle")
 	virgil.play("talk")
 	staff_glow.amount = 14
-	dialog.dialog_start("Virgil", lines_after, false)
+	dialog.dialog_start("Virgil", lines_after, false, VIRGIL_PORTRAIT)
 	await dialog.dialog_finished
 	virgil.play("idle")
 	GameState.start_floor(1)

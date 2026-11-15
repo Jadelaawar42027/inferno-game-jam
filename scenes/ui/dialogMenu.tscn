@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://7ekpfe2fw7i1"]
 
 [ext_resource type="Script" uid="uid://n102nfex5a5" path="res://scripts/ui/dialogMenu.gd" id="1_nwicm"]
+[ext_resource type="Texture2D" uid="uid://r8loupo0ipst" path="res://assets/sprites/portraits/dante_portrait.png" id="2_bjou2"]
 
 [node name="DialogMenu" type="Control" unique_id=1994849097 groups=["dialog_box"]]
 process_mode = 3
@@ -11,6 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nwicm")
+PORTRAIT_HERO = ExtResource("2_bjou2")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=499490247]
 custom_minimum_size = Vector2(0, 80)
@@ -50,3 +52,35 @@ text = "Other"
 layout_mode = 2
 text = "Sample Text Here asdawdwaeawaxdaeweaaw"
 autowrap_mode = 2
+
+[node name="HeroPortrait" type="TextureRect" parent="." unique_id=1217778210]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -177.0
+offset_right = 88.0
+offset_bottom = -97.0
+grow_vertical = 0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="OtherPortrait" type="TextureRect" parent="." unique_id=6531245]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -86.65997
+offset_top = -177.0
+offset_right = -6.659973
+offset_bottom = -97.0
+grow_horizontal = 0
+grow_vertical = 0
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
