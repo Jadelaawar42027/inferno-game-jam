@@ -110,6 +110,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = 0
 		velocity.y = minf(velocity.y + fall_gravity * delta, max_fall_speed)
 		if cutscene_lock and is_on_floor() and anim.animation != "idle":
+			action_lock = false
 			anim.play("idle")
 		move_and_slide()
 		return
