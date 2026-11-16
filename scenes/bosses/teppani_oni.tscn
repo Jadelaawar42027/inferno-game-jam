@@ -10,25 +10,48 @@
 [ext_resource type="Texture2D" uid="uid://ch2q0si4lsfl7" path="res://assets/sprites/portraits/teppan_oni_portrait.png" id="5_aq8lw"]
 [ext_resource type="Texture2D" uid="uid://bk6a0dag83hhl" path="res://assets/sprites/virgil/virgil_portrait.png" id="6_aq8lw"]
 
+[sub_resource type="Resource" id="Resource_k6r5x"]
+script = ExtResource("4_4a6vd")
+SPEAKER = 1
+TEXT = "Ah... I keep eating and eating, but it's never enough! I eat, I devour, I chew, I bite, I gorge, I gnaw, I munch, I crunch, I savor... Pure gluttony! Ah, thank you for this feast, I truly appreciate it. TIME TO EAT!"
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="Resource_aq8lw"]
+script = ExtResource("4_4a6vd")
+SPEAKER = 1
+TEXT = "Ha. I know all too well how it feels to feast alone. Still setting a place for her at the table?"
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="Resource_8glaw"]
+script = ExtResource("4_4a6vd")
+TEXT = "Yield to me, foul beast."
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="Resource_njm3d"]
+script = ExtResource("4_4a6vd")
+SPEAKER = 1
+TEXT = "Well done, my warrior. You are on the right path. Keep going."
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x7g1t"]
 size = Vector2(80, 100)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8glaw"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aq8lw"]
 resource_local_to_scene = true
 shader = ExtResource("2_yjodc")
 shader_parameter/flash_color = Color(1, 1, 1, 1)
 shader_parameter/flash_amount = 0.0
 shader_parameter/additive_mix = 0.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8glaw"]
+resource_local_to_scene = true
+size = Vector2(80, 100)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4uej4"]
 resource_local_to_scene = true
 size = Vector2(80, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_njm3d"]
-resource_local_to_scene = true
-size = Vector2(80, 100)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mgu07"]
 resource_local_to_scene = true
 size = Vector2(70, 70)
 
@@ -48,11 +71,11 @@ reposition_time = 1.5
 intro_anim = "roar"
 voice_id = "oni"
 voice_pitch = 0.9
-intro_lines = Array[ExtResource("4_4a6vd")]([])
+intro_lines = Array[ExtResource("4_4a6vd")]([SubResource("Resource_k6r5x")])
 intro_roar_time = 2.0
 portrait = ExtResource("5_aq8lw")
-death_lines = Array[ExtResource("4_4a6vd")]([])
-guide_lines = Array[ExtResource("4_4a6vd")]([])
+death_lines = Array[ExtResource("4_4a6vd")]([SubResource("Resource_aq8lw"), SubResource("Resource_8glaw")])
+guide_lines = Array[ExtResource("4_4a6vd")]([SubResource("Resource_njm3d")])
 guide_name = "Virgil"
 guide_portrait = ExtResource("6_aq8lw")
 
@@ -62,7 +85,7 @@ shape = SubResource("RectangleShape2D_x7g1t")
 
 [node name="AnimatedSprite2D" parent="." index="1" unique_id=962650832]
 texture_filter = 4
-material = SubResource("ShaderMaterial_8glaw")
+material = SubResource("ShaderMaterial_aq8lw")
 position = Vector2(0, -4.73)
 scale = Vector2(0.46, 0.46)
 sprite_frames = ExtResource("3_yjodc")
@@ -72,10 +95,10 @@ frame_progress = 0.0
 max_health = 50
 
 [node name="CollisionShape2D" parent="Hurtbox" parent_id_path=PackedInt32Array(887145532) index="0" unique_id=1868882131]
-shape = SubResource("RectangleShape2D_4uej4")
+shape = SubResource("RectangleShape2D_8glaw")
 
 [node name="CollisionShape2D" parent="ContactHitbox" parent_id_path=PackedInt32Array(1898026828) index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_njm3d")
+shape = SubResource("RectangleShape2D_4uej4")
 
 [node name="KnifeHitbox" parent="." index="5" unique_id=1898026828 instance=ExtResource("4_x7g1t")]
 position = Vector2(75, -10)
@@ -84,7 +107,7 @@ collision_mask = 64
 damage = 1
 
 [node name="CollisionShape2D" parent="KnifeHitbox" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_mgu07")
+shape = SubResource("RectangleShape2D_njm3d")
 
 [editable path="Hurtbox"]
 [editable path="ContactHitbox"]

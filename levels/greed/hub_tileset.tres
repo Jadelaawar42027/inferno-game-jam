@@ -1,9 +1,9 @@
-[gd_resource type="TileSet" format=3]
+[gd_resource type="TileSet" format=3 uid="uid://b3r2g5wtpyd0c"]
 
-[ext_resource type="Texture2D" path="res://levels/greed/art/tiles/skin0_96px.png" id="1_tex"]
-[ext_resource type="Texture2D" path="res://levels/greed/art/tiles/skin1_96px.png" id="2_tex"]
-[ext_resource type="Texture2D" path="res://levels/greed/art/tiles/skin2_96px.png" id="3_tex"]
-[ext_resource type="Texture2D" path="res://levels/greed/art/tiles/skin3_96px.png" id="4_tex"]
+[ext_resource type="Texture2D" uid="uid://bvps0xgsf14v2" path="res://levels/greed/art/tiles/skin0_96px.png" id="1_tex"]
+[ext_resource type="Texture2D" uid="uid://cgxq4264ov84u" path="res://levels/greed/art/tiles/skin1_96px.png" id="2_tex"]
+[ext_resource type="Texture2D" uid="uid://xjid776i6ed1" path="res://levels/greed/art/tiles/skin2_96px.png" id="3_tex"]
+[ext_resource type="Texture2D" uid="uid://dg8x7qchc0i7q" path="res://levels/greed/art/tiles/skin3_96px.png" id="4_tex"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0"]
 texture = ExtResource("1_tex")

@@ -10,33 +10,79 @@
 [ext_resource type="Texture2D" uid="uid://47vewq1oylhg" path="res://assets/sprites/portraits/minotaur_portrait.png" id="5_mm4tc"]
 [ext_resource type="Texture2D" uid="uid://bk6a0dag83hhl" path="res://assets/sprites/virgil/virgil_portrait.png" id="6_mm4tc"]
 
+[sub_resource type="Resource" id="Resource_kvlxm"]
+script = ExtResource("4_ia6u2")
+SPEAKER = 1
+TEXT = "There’s beauty to annihilation... In war... In chaos... In violence."
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="Resource_4qnvb"]
+script = ExtResource("4_ia6u2")
+SPEAKER = 1
+TEXT = "Taking things by force... Oh how alike we are"
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="Resource_mm4tc"]
+script = ExtResource("4_ia6u2")
+TEXT = "Do not compare me to the likes of you"
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="Resource_vhf5f"]
+script = ExtResource("4_ia6u2")
+SPEAKER = 1
+TEXT = "In another life, you and I could have been good friends..."
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="Resource_gn7is"]
+script = ExtResource("4_ia6u2")
+SPEAKER = 1
+TEXT = "Where were you when she needed you?"
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="Resource_3tpeb"]
+script = ExtResource("4_ia6u2")
+TEXT = "Silence, you wretched thing."
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="Resource_j8g8w"]
+script = ExtResource("4_ia6u2")
+SPEAKER = 1
+TEXT = "You couldn’t protect h-"
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="Resource_8p6un"]
+script = ExtResource("4_ia6u2")
+SPEAKER = 1
+TEXT = "These sinners possess insight into the soul. Do not let their words toy with you."
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ouu0a"]
 size = Vector2(56, 100)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vhf5f"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mm4tc"]
 resource_local_to_scene = true
 shader = ExtResource("2_jpny8")
 shader_parameter/flash_color = Color(1, 1, 1, 1)
 shader_parameter/flash_amount = 0.0
 shader_parameter/additive_mix = 0.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j8g8w"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vhf5f"]
 resource_local_to_scene = true
 size = Vector2(72, 100)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gn7is"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j8g8w"]
 resource_local_to_scene = true
 size = Vector2(56, 86)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3tpeb"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gn7is"]
 resource_local_to_scene = true
 size = Vector2(40, 50)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8p6un"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3tpeb"]
 resource_local_to_scene = true
 size = Vector2(45, 90)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0yeh"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8p6un"]
 resource_local_to_scene = true
 size = Vector2(90, 30)
 
@@ -55,11 +101,11 @@ reposition_time = 1.5
 intro_anim = "roar"
 voice_id = "butcher"
 voice_pitch = 0.85
-intro_lines = Array[ExtResource("4_ia6u2")]([])
+intro_lines = Array[ExtResource("4_ia6u2")]([SubResource("Resource_kvlxm"), SubResource("Resource_4qnvb"), SubResource("Resource_mm4tc"), SubResource("Resource_vhf5f")])
 intro_roar_time = 2.0
 portrait = ExtResource("5_mm4tc")
-death_lines = Array[ExtResource("4_ia6u2")]([])
-guide_lines = Array[ExtResource("4_ia6u2")]([])
+death_lines = Array[ExtResource("4_ia6u2")]([SubResource("Resource_gn7is"), SubResource("Resource_3tpeb"), SubResource("Resource_j8g8w")])
+guide_lines = Array[ExtResource("4_ia6u2")]([SubResource("Resource_8p6un")])
 guide_name = "Virgil"
 guide_portrait = ExtResource("6_mm4tc")
 
@@ -68,7 +114,7 @@ shape = SubResource("RectangleShape2D_ouu0a")
 
 [node name="AnimatedSprite2D" parent="." index="1" unique_id=962650832]
 texture_filter = 4
-material = SubResource("ShaderMaterial_vhf5f")
+material = SubResource("ShaderMaterial_mm4tc")
 scale = Vector2(0.5, 0.5)
 sprite_frames = ExtResource("3_jpny8")
 frame_progress = 0.0
@@ -77,10 +123,10 @@ frame_progress = 0.0
 max_health = 60
 
 [node name="CollisionShape2D" parent="Hurtbox" parent_id_path=PackedInt32Array(887145532) index="0" unique_id=1868882131]
-shape = SubResource("RectangleShape2D_j8g8w")
+shape = SubResource("RectangleShape2D_vhf5f")
 
 [node name="CollisionShape2D" parent="ContactHitbox" parent_id_path=PackedInt32Array(1898026828) index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_gn7is")
+shape = SubResource("RectangleShape2D_j8g8w")
 
 [node name="ChargeHitbox" parent="." index="5" unique_id=1898026828 instance=ExtResource("4_ouu0a")]
 position = Vector2(35, -30)
@@ -89,7 +135,7 @@ collision_mask = 64
 damage = 2
 
 [node name="CollisionShape2D" parent="ChargeHitbox" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_3tpeb")
+shape = SubResource("RectangleShape2D_gn7is")
 
 [node name="GoreHitbox" parent="." index="6" unique_id=348030455 instance=ExtResource("4_ouu0a")]
 position = Vector2(55, -30)
@@ -98,7 +144,7 @@ collision_mask = 64
 damage = 2
 
 [node name="CollisionShape2D" parent="GoreHitbox" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_8p6un")
+shape = SubResource("RectangleShape2D_3tpeb")
 
 [node name="LashHitbox" parent="." index="7" unique_id=2119848848 instance=ExtResource("4_ouu0a")]
 position = Vector2(70, 35)
@@ -107,7 +153,7 @@ collision_mask = 64
 damage = 1
 
 [node name="CollisionShape2D" parent="LashHitbox" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_o0yeh")
+shape = SubResource("RectangleShape2D_8p6un")
 
 [editable path="Hurtbox"]
 [editable path="ContactHitbox"]
