@@ -63,7 +63,8 @@ blend_mode = 1
 
 [node name="Intro" type="Node2D" unique_id=97179949]
 script = ExtResource("1_imqjk")
-lines_talk = Array[ExtResource("2_visfg")]([SubResource("Resource_5wt6c"), SubResource("Resource_visfg"), SubResource("Resource_qfj6x"), SubResource("Resource_imqjk"), SubResource("Resource_0dhg5")])
+lines_talk = Array[ExtResource("2_visfg")]([SubResource("Resource_5wt6c"), SubResource("Resource_visfg"), SubResource("Resource_qfj6x"), SubResource("Resource_imqjk")])
+virgil_talk = Array[ExtResource("2_visfg")]([SubResource("Resource_0dhg5")])
 
 [node name="BgFar" type="Sprite2D" parent="." unique_id=1381621664]
 modulate = Color(0.7254902, 0.7490196, 0.827451, 1)

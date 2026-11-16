@@ -18,7 +18,7 @@ const VIRGIL_PORTRAIT := preload("res://assets/sprites/portraits/virgil_portrait
 func _ready() -> void:
 	dialog.NAME_HERO = "Dante"
 	virgil.play("talk")
-	dialog.dialog_start("Virgil", lines_talk, false, VIRGIL_PORTRAIT)
+	dialog.dialog_start("Chef", lines_talk, false, VIRGIL_PORTRAIT)
 	
 
 

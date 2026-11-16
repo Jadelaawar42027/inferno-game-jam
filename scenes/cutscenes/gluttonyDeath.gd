@@ -5,6 +5,7 @@ extends Node2D
 #
 
 @export var lines_talk: Array[DialogLine]
+@export var virgil_talk: Array[DialogLine]
 @onready var dialog := $UI/DialogMenu
 @onready var key_hint: Label = $UI/KeyHint
 @onready var dante: AnimatedSprite2D = $Dante
@@ -18,7 +19,9 @@ const VIRGIL_PORTRAIT := preload("res://assets/sprites/portraits/virgil_portrait
 func _ready() -> void:
 	dialog.NAME_HERO = "Dante"
 	virgil.play("talk")
-	dialog.dialog_start("Virgil", lines_talk, false, VIRGIL_PORTRAIT)
+	dialog.dialog_start("Chef", lines_talk, false, VIRGIL_PORTRAIT)
+	await dialog.dialog_finished
+	dialog.dialog_start("Virgil", virgil_talk, false, VIRGIL_PORTRAIT)
 	
 
 
