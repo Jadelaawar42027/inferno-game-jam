@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://7pyhkosvmmky" path="res://scripts/ui/mainMenu.gd" id="1_ph80j"]
 [ext_resource type="PackedScene" uid="uid://degaw268gnce8" path="res://scenes/levels/scene_1.tscn" id="2_j3ryx"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2h2w"]
+bg_color = Color(0.28118682, 0.28118688, 0.2811868, 1)
+
 [node name="MainMenu" type="Control" unique_id=561175303]
 layout_mode = 3
 anchors_preset = 15
@@ -43,9 +46,54 @@ text = "Inferno Game Jam"
 layout_mode = 2
 text = "New Game"
 
+[node name="Settings" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1471935511]
+layout_mode = 2
+text = "Settings"
+
 [node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=338669001]
 layout_mode = 2
 text = "Quit"
 
+[node name="SettingsPanelContainer" type="PanelContainer" parent="." unique_id=1988047513]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -321.0
+offset_top = -177.5
+offset_right = 319.0
+offset_bottom = 184.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_b2h2w")
+
+[node name="SettingsContainer" type="CenterContainer" parent="SettingsPanelContainer" unique_id=838409989]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPanelContainer/SettingsContainer" unique_id=2147067689]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsPanelContainer/SettingsContainer/VBoxContainer" unique_id=560152080]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Settings"
+
+[node name="HSlider" type="HSlider" parent="SettingsPanelContainer/SettingsContainer/VBoxContainer" unique_id=114456652]
+layout_mode = 2
+tooltip_text = "Sound"
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="ReturntoMain" type="Button" parent="SettingsPanelContainer/SettingsContainer/VBoxContainer" unique_id=480076530]
+layout_mode = 2
+text = "Back
+"
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/QuitButton" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="SettingsPanelContainer/SettingsContainer/VBoxContainer/ReturntoMain" to="." method="_on_returnto_main_pressed"]
