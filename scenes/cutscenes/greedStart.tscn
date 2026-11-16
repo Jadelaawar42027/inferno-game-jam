@@ -1,0 +1,200 @@
+[gd_scene format=3 uid="uid://yos4clj7lh1c"]
+
+[ext_resource type="Script" uid="uid://btf4vrsico71r" path="res://scenes/cutscenes/greedStart.gd" id="1_x5re0"]
+[ext_resource type="Script" uid="uid://dkj0fvj30brcg" path="res://scripts/ui/dialog_line.gd" id="2_a6326"]
+[ext_resource type="Texture2D" uid="uid://c03lw41e23m23" path="res://assets/art/intro/bg_far.png" id="3_tkwuj"]
+[ext_resource type="Texture2D" uid="uid://d3rsrlch1g73l" path="res://assets/art/intro/bg_mid.png" id="4_3pw5p"]
+[ext_resource type="Texture2D" uid="uid://cduaysm0qgmfs" path="res://assets/art/intro/ground.png" id="5_l22nx"]
+[ext_resource type="Texture2D" uid="uid://dcebpthjnb08e" path="res://assets/art/intro/magic_circle_glow.png" id="6_s4hfb"]
+[ext_resource type="Texture2D" uid="uid://bbac5f57mu38g" path="res://assets/art/intro/magic_circle.png" id="7_cu5sr"]
+[ext_resource type="SpriteFrames" uid="uid://cs6dmjrbhqjml" path="res://assets/sprites/virgil/virgil_frames.tres" id="8_0gsln"]
+[ext_resource type="Shader" uid="uid://ddibj6ssw35jd" path="res://assets/shaders/corruption.gdshader" id="9_2d12j"]
+[ext_resource type="SpriteFrames" uid="uid://bfr1sntwo4nhh" path="res://assets/sprites/knight/knight_cutscene_frames.tres" id="10_18ybc"]
+[ext_resource type="Texture2D" uid="uid://d0kv4jrf3vi8y" path="res://assets/art/intro/particle_glow.png" id="11_lis61"]
+[ext_resource type="Texture2D" uid="uid://bplqa5jmnhyhj" path="res://assets/art/intro/light_soft.png" id="12_o0umw"]
+[ext_resource type="PackedScene" uid="uid://7ekpfe2fw7i1" path="res://scenes/ui/dialogMenu.tscn" id="13_m5po0"]
+[ext_resource type="Texture2D" uid="uid://bgy4x6thjft4b" path="res://assets/art/intro/particle_snow.png" id="14_uhdee"]
+[ext_resource type="Gradient" path="res://assets/art/intro/fade_in_out.tres" id="15_gmbta"]
+[ext_resource type="Texture2D" uid="uid://c2kkk0rgqgpcn" path="res://assets/art/intro/foreground.png" id="16_8oh08"]
+[ext_resource type="Texture2D" uid="uid://bpl5r4citug83" path="res://assets/art/intro/vignette.png" id="17_h512w"]
+
+[sub_resource type="Resource" id="Resource_5wt6c"]
+script = ExtResource("2_a6326")
+SPEAKER = 1
+TEXT = "Tell me, how does it feel to absorb a new authority? Name your price mortal, I'll give you anything you desire in exchange for it."
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="Resource_a6326"]
+script = ExtResource("2_a6326")
+TEXT = "What I desire lies on the other side of your corpse. Surrender, and I'll make this an easy death for you"
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="Resource_tkwuj"]
+script = ExtResource("2_a6326")
+SPEAKER = 1
+TEXT = "How disappointing... Then I'll simply take it from you mortal"
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xb6c1"]
+blend_mode = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_srmfs"]
+shader = ExtResource("9_2d12j")
+shader_parameter/eye_color = Vector3(0.561, 0.953, 1)
+shader_parameter/tolerance = 0.2
+shader_parameter/calm_color = Color(0.35, 0.75, 1, 1)
+shader_parameter/corrupt_color = Color(1, 0.12, 0.18, 1)
+shader_parameter/corruption = 0.0
+shader_parameter/glow_strength = 1.5
+shader_parameter/glow_radius = 10.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_80f48"]
+blend_mode = 1
+
+[node name="Intro" type="Node2D" unique_id=97179949]
+script = ExtResource("1_x5re0")
+lines_talk = Array[ExtResource("2_a6326")]([SubResource("Resource_5wt6c"), SubResource("Resource_a6326"), SubResource("Resource_tkwuj")])
+
+[node name="BgFar" type="Sprite2D" parent="." unique_id=1381621664]
+modulate = Color(0.7254902, 0.7490196, 0.827451, 1)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_tkwuj")
+
+[node name="BgMid" type="Sprite2D" parent="." unique_id=1365187476]
+modulate = Color(0.7254902, 0.7490196, 0.827451, 1)
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("4_3pw5p")
+
+[node name="Ground" type="Sprite2D" parent="." unique_id=937227297]
+position = Vector2(-138.16, -153.8)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_l22nx")
+centered = false
+
+[node name="CircleGlow" type="Sprite2D" parent="." unique_id=1385942646]
+material = SubResource("CanvasItemMaterial_xb6c1")
+position = Vector2(0, 2)
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("6_s4hfb")
+
+[node name="Circle" type="Sprite2D" parent="." unique_id=1489865121]
+position = Vector2(0, 2)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_cu5sr")
+
+[node name="Props" type="Node2D" parent="." unique_id=177463867]
+
+[node name="Virgil" type="AnimatedSprite2D" parent="." unique_id=317167012]
+texture_filter = 4
+position = Vector2(45, 0)
+scale = Vector2(0.12, 0.12)
+sprite_frames = ExtResource("8_0gsln")
+animation = &"idle"
+offset = Vector2(25, -142)
+
+[node name="Dante" type="AnimatedSprite2D" parent="." unique_id=246548628]
+texture_filter = 4
+material = SubResource("ShaderMaterial_srmfs")
+scale = Vector2(0.2, 0.2)
+sprite_frames = ExtResource("10_18ybc")
+animation = &"sleep"
+autoplay = "sleep"
+offset = Vector2(0, -54)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1847123984]
+color = Color(0.6392157, 0.654902, 0.7411765, 1)
+
+[node name="StaffGlow" type="CPUParticles2D" parent="." unique_id=485439603]
+material = SubResource("CanvasItemMaterial_80f48")
+position = Vector2(55, -27)
+amount = 14
+texture = ExtResource("11_lis61")
+lifetime = 1.4
+emission_shape = 1
+emission_sphere_radius = 3.0
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, -8)
+initial_velocity_min = 2.0
+initial_velocity_max = 6.0
+scale_amount_min = 0.15
+scale_amount_max = 0.35
+color = Color(0.62352943, 0.8901961, 1, 1)
+
+[node name="Lights" type="Node2D" parent="." unique_id=415389452]
+
+[node name="CircleLight" type="PointLight2D" parent="Lights" unique_id=636411079]
+position = Vector2(0, -8)
+color = Color(0.7490196, 0.8901961, 1, 1)
+energy = 0.76
+texture = ExtResource("12_o0umw")
+texture_scale = 2.2
+
+[node name="StaffLight" type="PointLight2D" parent="Lights" unique_id=319111671]
+position = Vector2(55, -26)
+color = Color(0.25490198, 0.65882355, 0.9607843, 1)
+energy = 0.5
+texture = ExtResource("12_o0umw")
+texture_scale = 0.35
+
+[node name="WarmLight" type="PointLight2D" parent="Lights" unique_id=1560556644]
+position = Vector2(10, -30)
+color = Color(1, 0.76862746, 0.5411765, 1)
+energy = 0.35
+texture = ExtResource("12_o0umw")
+texture_scale = 2.5
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=117314770]
+position = Vector2(22, -40.19)
+zoom = Vector2(2.5, 2.5)
+
+[node name="Ambience" type="AudioStreamPlayer" parent="." unique_id=83170236]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1352101296]
+
+[node name="DialogMenu" parent="UI" unique_id=1994849097 instance=ExtResource("13_m5po0")]
+
+[node name="KeyHint" type="Label" parent="UI" unique_id=1460996201]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -92.5
+offset_top = -19.0
+offset_right = 92.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "ENTER - Viniculum Aeternum"
+horizontal_alignment = 1
+
+[node name="Snow" type="CPUParticles2D" parent="." unique_id=908748938]
+position = Vector2(22, -120)
+amount = 80
+texture = ExtResource("14_uhdee")
+lifetime = 7.0
+preprocess = 7.0
+emission_shape = 3
+emission_rect_extents = Vector2(170, 2)
+direction = Vector2(0, 1)
+spread = 20.0
+gravity = Vector2(3, 6)
+initial_velocity_min = 8.0
+initial_velocity_max = 16.0
+angular_velocity_min = -20.0
+angular_velocity_max = 20.0
+scale_amount_min = 0.4
+color = Color(0.8117647, 0.93333334, 1, 1)
+color_ramp = ExtResource("15_gmbta")
+
+[node name="Foreground" type="Sprite2D" parent="." unique_id=1724094706]
+position = Vector2(-1.0000001, -19.000002)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("16_8oh08")
+
+[node name="Vignette" type="Sprite2D" parent="." unique_id=1148299299]
+modulate = Color(1, 1, 1, 0.5882353)
+position = Vector2(22, -28)
+scale = Vector2(0.21, 0.21)
+texture = ExtResource("17_h512w")
