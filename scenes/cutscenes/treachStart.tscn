@@ -1,0 +1,279 @@
+[gd_scene format=3 uid="uid://c3qfutjav4s3v"]
+
+[ext_resource type="Script" uid="uid://ipjf2nr6dhyw" path="res://scenes/cutscenes/treachStart.gd" id="1_u2sa1"]
+[ext_resource type="Script" uid="uid://dkj0fvj30brcg" path="res://scripts/ui/dialog_line.gd" id="2_xjek1"]
+[ext_resource type="Texture2D" uid="uid://c03lw41e23m23" path="res://assets/art/intro/bg_far.png" id="3_vd0fi"]
+[ext_resource type="Texture2D" uid="uid://d3rsrlch1g73l" path="res://assets/art/intro/bg_mid.png" id="4_wgy1t"]
+[ext_resource type="Texture2D" uid="uid://cduaysm0qgmfs" path="res://assets/art/intro/ground.png" id="5_dlsab"]
+[ext_resource type="Texture2D" uid="uid://dcebpthjnb08e" path="res://assets/art/intro/magic_circle_glow.png" id="6_y44sf"]
+[ext_resource type="Texture2D" uid="uid://bbac5f57mu38g" path="res://assets/art/intro/magic_circle.png" id="7_neb6q"]
+[ext_resource type="SpriteFrames" uid="uid://cs6dmjrbhqjml" path="res://assets/sprites/virgil/virgil_frames.tres" id="8_2w6a7"]
+[ext_resource type="Shader" uid="uid://ddibj6ssw35jd" path="res://assets/shaders/corruption.gdshader" id="9_sr0fl"]
+[ext_resource type="SpriteFrames" uid="uid://bfr1sntwo4nhh" path="res://assets/sprites/knight/knight_cutscene_frames.tres" id="10_5nb5l"]
+[ext_resource type="Texture2D" uid="uid://d0kv4jrf3vi8y" path="res://assets/art/intro/particle_glow.png" id="11_0aow8"]
+[ext_resource type="Texture2D" uid="uid://bplqa5jmnhyhj" path="res://assets/art/intro/light_soft.png" id="12_r65xx"]
+[ext_resource type="PackedScene" uid="uid://7ekpfe2fw7i1" path="res://scenes/ui/dialogMenu.tscn" id="13_08mn4"]
+[ext_resource type="Texture2D" uid="uid://bgy4x6thjft4b" path="res://assets/art/intro/particle_snow.png" id="14_63kq0"]
+[ext_resource type="Gradient" path="res://assets/art/intro/fade_in_out.tres" id="15_m62pw"]
+[ext_resource type="Texture2D" uid="uid://c2kkk0rgqgpcn" path="res://assets/art/intro/foreground.png" id="16_i34sg"]
+[ext_resource type="Texture2D" uid="uid://bpl5r4citug83" path="res://assets/art/intro/vignette.png" id="17_lv1is"]
+
+[sub_resource type="Resource" id="Resource_cow77"]
+script = ExtResource("2_xjek1")
+SPEAKER = 1
+TEXT = "My child, you have done well to come this far. I was right in choosing you"
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="Resource_u2sa1"]
+script = ExtResource("2_xjek1")
+TEXT = "Virgil? What's going on, and where is she?"
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="Resource_xjek1"]
+script = ExtResource("2_xjek1")
+SPEAKER = 1
+TEXT = "Your desperation and delusion caused you to cling onto the slightest hope you could bring her back, leading you to me. You believed your own daughter belonged in hell... How sad."
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="Resource_vd0fi"]
+script = ExtResource("2_xjek1")
+SPEAKER = 1
+TEXT = "Fortunately for me, it was the only door I needed to make you trust me, and to make you step into that magic circle with me."
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="Resource_wgy1t"]
+script = ExtResource("2_xjek1")
+TEXT = "What's the meaning of this!?!?!"
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="Resource_dlsab"]
+script = ExtResource("2_xjek1")
+TEXT = "WHERE THE HELL IS SHE VIRGIL?????"
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="Resource_y44sf"]
+script = ExtResource("2_xjek1")
+SPEAKER = 1
+TEXT = "Don't you understand? She was never in hell. Her soul passed on long ago. Not even the ancient magic you sought could bring her back"
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="Resource_neb6q"]
+script = ExtResource("2_xjek1")
+TEXT = "N-no..."
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="Resource_2w6a7"]
+script = ExtResource("2_xjek1")
+TEXT = "A feeling of weakness spreads through my body... I feel dizzy. Disoriented. My legs give out. I stare in shock"
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="Resource_sr0fl"]
+script = ExtResource("2_xjek1")
+TEXT = "I remember the day I couldn't save her. Her smile. Her sobs. Her last words to me. Something nefarious is bubbling inside me. I glare at Virgil with soul-less eyes"
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="Resource_5nb5l"]
+script = ExtResource("2_xjek1")
+SPEAKER = 1
+TEXT = "You see, before I was sealed by the Last Archangel, I split a fragment of my soul, cut loose from hell and sent into the living world"
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="Resource_0aow8"]
+script = ExtResource("2_xjek1")
+SPEAKER = 1
+TEXT = "My seals could only be fractured by a mortal soul, carrying every sin, so I couldn't use my alibi to set me free. For years, this piece of my consciousness was tasked with leading capable and trusting mortals into hell, in an attempt to free me."
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="Resource_r65xx"]
+script = ExtResource("2_xjek1")
+SPEAKER = 1
+TEXT = "But oh how I underestimated the task. They were all too weak. Until I laid my eyes on you…"
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="Resource_08mn4"]
+script = ExtResource("2_xjek1")
+SPEAKER = 1
+TEXT = "Containing ancient knowledge, Virgil. No, I… became known as the ArchMagus, building my reputation as the sage who was rumored to  have the ability to tether lost souls back into reality"
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="Resource_63kq0"]
+script = ExtResource("2_xjek1")
+SPEAKER = 1
+TEXT = "No chains hold a man like the thing he longs for.."
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="Resource_m62pw"]
+script = ExtResource("2_xjek1")
+TEXT = "You... I will devour you. I will own you. I will annihilate you. I will wear your face. And for your betrayal, I will take your place... I'll show you a true devil.."
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="Resource_i34sg"]
+script = ExtResource("2_xjek1")
+SPEAKER = 1
+TEXT = "I'd love to see you try"
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xb6c1"]
+blend_mode = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_srmfs"]
+shader = ExtResource("9_sr0fl")
+shader_parameter/eye_color = Vector3(0.561, 0.953, 1)
+shader_parameter/tolerance = 0.2
+shader_parameter/calm_color = Color(0.35, 0.75, 1, 1)
+shader_parameter/corrupt_color = Color(1, 0.12, 0.18, 1)
+shader_parameter/corruption = 0.0
+shader_parameter/glow_strength = 1.5
+shader_parameter/glow_radius = 10.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_80f48"]
+blend_mode = 1
+
+[node name="Intro" type="Node2D" unique_id=97179949]
+script = ExtResource("1_u2sa1")
+lines_talk = Array[ExtResource("2_xjek1")]([SubResource("Resource_cow77"), SubResource("Resource_u2sa1"), SubResource("Resource_xjek1"), SubResource("Resource_vd0fi"), SubResource("Resource_wgy1t"), SubResource("Resource_dlsab"), SubResource("Resource_y44sf"), SubResource("Resource_neb6q"), SubResource("Resource_2w6a7"), SubResource("Resource_sr0fl")])
+satan_talk = Array[ExtResource("2_xjek1")]([SubResource("Resource_5nb5l"), SubResource("Resource_0aow8"), SubResource("Resource_r65xx"), SubResource("Resource_08mn4"), SubResource("Resource_63kq0"), SubResource("Resource_m62pw"), SubResource("Resource_i34sg")])
+
+[node name="BgFar" type="Sprite2D" parent="." unique_id=1381621664]
+modulate = Color(0.7254902, 0.7490196, 0.827451, 1)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_vd0fi")
+
+[node name="BgMid" type="Sprite2D" parent="." unique_id=1365187476]
+modulate = Color(0.7254902, 0.7490196, 0.827451, 1)
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("4_wgy1t")
+
+[node name="Ground" type="Sprite2D" parent="." unique_id=937227297]
+position = Vector2(-138.16, -153.8)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_dlsab")
+centered = false
+
+[node name="CircleGlow" type="Sprite2D" parent="." unique_id=1385942646]
+material = SubResource("CanvasItemMaterial_xb6c1")
+position = Vector2(0, 2)
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("6_y44sf")
+
+[node name="Circle" type="Sprite2D" parent="." unique_id=1489865121]
+position = Vector2(0, 2)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_neb6q")
+
+[node name="Props" type="Node2D" parent="." unique_id=177463867]
+
+[node name="Virgil" type="AnimatedSprite2D" parent="." unique_id=317167012]
+texture_filter = 4
+position = Vector2(45, 0)
+scale = Vector2(0.12, 0.12)
+sprite_frames = ExtResource("8_2w6a7")
+animation = &"idle"
+offset = Vector2(25, -142)
+
+[node name="Dante" type="AnimatedSprite2D" parent="." unique_id=246548628]
+texture_filter = 4
+material = SubResource("ShaderMaterial_srmfs")
+scale = Vector2(0.2, 0.2)
+sprite_frames = ExtResource("10_5nb5l")
+animation = &"sleep"
+autoplay = "sleep"
+offset = Vector2(0, -54)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1847123984]
+color = Color(0.6392157, 0.654902, 0.7411765, 1)
+
+[node name="StaffGlow" type="CPUParticles2D" parent="." unique_id=485439603]
+material = SubResource("CanvasItemMaterial_80f48")
+position = Vector2(55, -27)
+amount = 14
+texture = ExtResource("11_0aow8")
+lifetime = 1.4
+emission_shape = 1
+emission_sphere_radius = 3.0
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, -8)
+initial_velocity_min = 2.0
+initial_velocity_max = 6.0
+scale_amount_min = 0.15
+scale_amount_max = 0.35
+color = Color(0.62352943, 0.8901961, 1, 1)
+
+[node name="Lights" type="Node2D" parent="." unique_id=415389452]
+
+[node name="CircleLight" type="PointLight2D" parent="Lights" unique_id=636411079]
+position = Vector2(0, -8)
+color = Color(0.7490196, 0.8901961, 1, 1)
+energy = 0.76
+texture = ExtResource("12_r65xx")
+texture_scale = 2.2
+
+[node name="StaffLight" type="PointLight2D" parent="Lights" unique_id=319111671]
+position = Vector2(55, -26)
+color = Color(0.25490198, 0.65882355, 0.9607843, 1)
+energy = 0.5
+texture = ExtResource("12_r65xx")
+texture_scale = 0.35
+
+[node name="WarmLight" type="PointLight2D" parent="Lights" unique_id=1560556644]
+position = Vector2(10, -30)
+color = Color(1, 0.76862746, 0.5411765, 1)
+energy = 0.35
+texture = ExtResource("12_r65xx")
+texture_scale = 2.5
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=117314770]
+position = Vector2(22, -40.19)
+zoom = Vector2(2.5, 2.5)
+
+[node name="Ambience" type="AudioStreamPlayer" parent="." unique_id=83170236]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1352101296]
+
+[node name="DialogMenu" parent="UI" unique_id=1994849097 instance=ExtResource("13_08mn4")]
+
+[node name="KeyHint" type="Label" parent="UI" unique_id=1460996201]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -92.5
+offset_top = -19.0
+offset_right = 92.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "ENTER - Viniculum Aeternum"
+horizontal_alignment = 1
+
+[node name="Snow" type="CPUParticles2D" parent="." unique_id=908748938]
+position = Vector2(22, -120)
+amount = 80
+texture = ExtResource("14_63kq0")
+lifetime = 7.0
+preprocess = 7.0
+emission_shape = 3
+emission_rect_extents = Vector2(170, 2)
+direction = Vector2(0, 1)
+spread = 20.0
+gravity = Vector2(3, 6)
+initial_velocity_min = 8.0
+initial_velocity_max = 16.0
+angular_velocity_min = -20.0
+angular_velocity_max = 20.0
+scale_amount_min = 0.4
+color = Color(0.8117647, 0.93333334, 1, 1)
+color_ramp = ExtResource("15_m62pw")
+
+[node name="Foreground" type="Sprite2D" parent="." unique_id=1724094706]
+position = Vector2(-1.0000001, -19.000002)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("16_i34sg")
+
+[node name="Vignette" type="Sprite2D" parent="." unique_id=1148299299]
+modulate = Color(1, 1, 1, 0.5882353)
+position = Vector2(22, -28)
+scale = Vector2(0.21, 0.21)
+texture = ExtResource("17_lv1is")
