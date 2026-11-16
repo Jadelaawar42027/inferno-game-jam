@@ -8,34 +8,35 @@
 [ext_resource type="PackedScene" uid="uid://bsxufnevdum76" path="res://scenes/Components/hitbox.tscn" id="4_34xld"]
 [ext_resource type="Script" uid="uid://dkj0fvj30brcg" path="res://scripts/ui/dialog_line.gd" id="4_h6rsg"]
 [ext_resource type="Texture2D" uid="uid://cm0t7n4jxn8cy" path="res://assets/sprites/portraits/geryon_portrait.png" id="5_gf6tm"]
+[ext_resource type="Texture2D" uid="uid://bk6a0dag83hhl" path="res://assets/sprites/virgil/virgil_portrait.png" id="6_gf6tm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_34xld"]
 size = Vector2(100, 70)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_h6rsg"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hr16r"]
 resource_local_to_scene = true
 shader = ExtResource("2_sm8vc")
 shader_parameter/flash_color = Color(1, 1, 1, 1)
 shader_parameter/flash_amount = 0.0
 shader_parameter/additive_mix = 0.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gf6tm"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_37rcv"]
 resource_local_to_scene = true
 size = Vector2(110, 100)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hr16r"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2cobx"]
 resource_local_to_scene = true
 size = Vector2(100, 90)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_37rcv"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p4vgb"]
 resource_local_to_scene = true
 size = Vector2(40, 60)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2cobx"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7v3ep"]
 resource_local_to_scene = true
 size = Vector2(50, 60)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p4vgb"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vo0i"]
 resource_local_to_scene = true
 size = Vector2(60, 50)
 
@@ -57,6 +58,10 @@ voice_pitch = 1.1
 intro_lines = Array[ExtResource("4_h6rsg")]([])
 intro_roar_time = 2.0
 portrait = ExtResource("5_gf6tm")
+death_lines = Array[ExtResource("4_h6rsg")]([])
+guide_lines = Array[ExtResource("4_h6rsg")]([])
+guide_name = "Virgil"
+guide_portrait = ExtResource("6_gf6tm")
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=220595465]
 position = Vector2(0, 17)
@@ -64,7 +69,7 @@ shape = SubResource("RectangleShape2D_34xld")
 
 [node name="AnimatedSprite2D" parent="." index="1" unique_id=962650832]
 texture_filter = 4
-material = SubResource("ShaderMaterial_h6rsg")
+material = SubResource("ShaderMaterial_hr16r")
 position = Vector2(0, -4.36)
 scale = Vector2(0.54, 0.54)
 sprite_frames = ExtResource("3_sm8vc")
@@ -77,11 +82,11 @@ max_health = 70
 position = Vector2(0, 9)
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=1868882131]
-shape = SubResource("RectangleShape2D_gf6tm")
+shape = SubResource("RectangleShape2D_37rcv")
 
 [node name="CollisionShape2D" parent="ContactHitbox" parent_id_path=PackedInt32Array(1898026828) index="0" unique_id=612733107]
 position = Vector2(0, 11)
-shape = SubResource("RectangleShape2D_hr16r")
+shape = SubResource("RectangleShape2D_2cobx")
 
 [node name="StingHitbox" parent="." index="5" unique_id=1898026828 instance=ExtResource("4_34xld")]
 position = Vector2(70, 10)
@@ -90,7 +95,7 @@ collision_mask = 64
 damage = 2
 
 [node name="CollisionShape2D" parent="StingHitbox" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_37rcv")
+shape = SubResource("RectangleShape2D_p4vgb")
 
 [node name="SwipeHitbox" parent="." index="6" unique_id=259605736 instance=ExtResource("4_34xld")]
 position = Vector2(72, -10)
@@ -99,7 +104,7 @@ collision_mask = 64
 damage = 1
 
 [node name="CollisionShape2D" parent="SwipeHitbox" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_2cobx")
+shape = SubResource("RectangleShape2D_7v3ep")
 
 [node name="LungeHitbox" parent="." index="7" unique_id=427309999 instance=ExtResource("4_34xld")]
 position = Vector2(60, 10)
@@ -108,7 +113,7 @@ collision_mask = 64
 damage = 2
 
 [node name="CollisionShape2D" parent="LungeHitbox" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_p4vgb")
+shape = SubResource("RectangleShape2D_5vo0i")
 
 [editable path="Hurtbox"]
 [editable path="ContactHitbox"]

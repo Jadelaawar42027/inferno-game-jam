@@ -24,6 +24,11 @@ const FX_SCENE := preload("res://scenes/fx/boss_fx.tscn")
 @export var intro_lines: Array[DialogLine]
 @export var intro_roar_time := 2.0
 @export var portrait: Texture2D
+@export var death_lines: Array[DialogLine]
+@export var guide_lines: Array[DialogLine]
+@export var guide_name := "Virgil"
+@export var guide_portrait: Texture2D
+
 
 var intro_done := false
 var phase := 1
@@ -128,6 +133,8 @@ func die() -> void:
 	if sprite.sprite_frames and sprite.sprite_frames.has_animation("death"):
 		sprite.play("death")
 		await sprite.animation_finished
+	await talk(death_lines)
+	await talk(guide_lines, guide_name, guide_portrait)
 	if reward: GameState.absorb(reward)
 	queue_free()
 
@@ -185,15 +192,17 @@ func play_intro(p: Player) -> void:
 	var dialog = get_tree().get_first_node_in_group("dialog_box")
 	if dialog == null:
 		return
-	dialog.dialog_start(boss_name, intro_lines, false)
+	dialog.dialog_start(boss_name, intro_lines, false, portrait)
 	await dialog.dialog_finished
 
 func _exit_tree() -> void:
 	active = false
 	is_dead = true
 
-func talk(lines: Array[DialogLine]) -> void:
+func talk(lines: Array[DialogLine], speaker := "", pic: Texture2D = null) -> void:
 	var dialog := get_tree().get_first_node_in_group("dialog_box")
 	if dialog == null or lines.is_empty(): return
-	dialog.dialog_start(boss_name, lines, true, portrait)
+	if speaker == "": speaker = boss_name
+	if pic == null: pic = portrait
+	dialog.dialog_start(speaker, lines, true, pic)
 	await dialog.dialog_finished

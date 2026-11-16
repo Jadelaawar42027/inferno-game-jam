@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://dkj0fvj30brcg" path="res://scripts/ui/dialog_line.gd" id="3_ms46o"]
 [ext_resource type="Texture2D" uid="uid://xfeaex3busnj" path="res://assets/sprites/portraits/satan_portrait.png" id="4_2ultc"]
 [ext_resource type="PackedScene" uid="uid://bsxufnevdum76" path="res://scenes/Components/hitbox.tscn" id="4_xxn4j"]
+[ext_resource type="Texture2D" uid="uid://bk6a0dag83hhl" path="res://assets/sprites/virgil/virgil_portrait.png" id="5_2ultc"]
 [ext_resource type="Texture2D" uid="uid://dywdm8l1dp2ue" path="res://assets/sprites/bosses/satan/fx/gaze_beam_segment.png" id="5_467h7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_edr2l"]
@@ -66,6 +67,10 @@ voice_pitch = 1.0
 intro_lines = Array[ExtResource("3_ms46o")]([])
 intro_roar_time = 2.0
 portrait = ExtResource("4_2ultc")
+death_lines = Array[ExtResource("3_ms46o")]([])
+guide_lines = Array[ExtResource("3_ms46o")]([])
+guide_name = "Virgil"
+guide_portrait = ExtResource("5_2ultc")
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=220595465]
 position = Vector2(0, -70)
