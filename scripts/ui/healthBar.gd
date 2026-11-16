@@ -10,9 +10,9 @@ class_name HealthBar
 
 #I set the variables here to match the vars in HealthComponent
 func health_bar_update(current_health, max_health):
-	BAR.value = HEALTH.current_health
-	BAR.max_value = HEALTH.max_health
-	pass
+	BAR.max_value = max_health
+	BAR.value = current_health
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,9 +22,3 @@ func _ready() -> void:
 	BAR.max_value = HEALTH.max_health
 	BAR.value = HEALTH.current_health
 	HEALTH.health_changed.connect(health_bar_update)
-		
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

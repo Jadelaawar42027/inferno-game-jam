@@ -196,6 +196,11 @@ script = ExtResource("6_75vfm")
 [node name="DialogMenu" parent="UI" unique_id=1994849097 instance=ExtResource("9_5gtgg")]
 
 [node name="HealthBar" parent="UI" unique_id=1817389811 node_paths=PackedStringArray("HEALTH") instance=ExtResource("13_gx1jg")]
+custom_minimum_size = Vector2(90, 8)
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 8.0
+offset_bottom = 8.0
 HEALTH = NodePath("../../health_component")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1694732085]
