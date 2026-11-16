@@ -52,7 +52,7 @@ max_health = 15
 
 [node name="Check_Platform" type="RayCast2D" parent="." index="3" unique_id=703057103]
 position = Vector2(7, 0)
-target_position = Vector2(0, 16)
+target_position = Vector2(0, 24)
 
 [node name="DetectionRadius" type="Area2D" parent="." index="4" unique_id=622217433]
 collision_layer = 0

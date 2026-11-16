@@ -24,6 +24,8 @@ var cooldown_timer := 0.0
 var bob_time := 0.0
 var home := Vector2.ZERO
 var swoop_dir := Vector2.ZERO
+var locked_target: Player = null
+
 
 @onready var swoop_hitbox: Hitbox = $SwoopHitbox
 @onready var detection_radius: Area2D = $DetectionRadius
@@ -60,6 +62,7 @@ func fly_patrol(delta: float) -> void:
 func start_windup() -> void:
 	state = State.WINDUP
 	state_timer = windup_time
+	locked_target = player_target
 	var dx := player_target.global_position.x - global_position.x
 	if dx != 0: set_facing(signf(dx))
 	on_hit_flash(Color.RED)
@@ -67,11 +70,11 @@ func start_windup() -> void:
 func windup() -> void:
 	velocity = Vector2(0, -20)
 	if state_timer > 0: return
-	if player_target == null:
+	if not is_instance_valid(locked_target):
 		home = global_position
 		state = State.PATROL
 		return
-	swoop_dir = global_position.direction_to(player_target.global_position)
+	swoop_dir = global_position.direction_to(locked_target.global_position)
 	state = State.SWOOP
 	state_timer = swoop_time
 	swoop_hitbox.activate()

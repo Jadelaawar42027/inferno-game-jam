@@ -1,9 +1,9 @@
-[gd_resource type="TileSet" format=3]
+[gd_resource type="TileSet" format=3 uid="uid://bbvgwjvomkefl"]
 
-[ext_resource type="Texture2D" path="res://levels/gluttony/art/tiles/skin0_96px.png" id="1_tex"]
-[ext_resource type="Texture2D" path="res://levels/gluttony/art/tiles/skin1_96px.png" id="2_tex"]
-[ext_resource type="Texture2D" path="res://levels/gluttony/art/tiles/skin2_96px.png" id="3_tex"]
-[ext_resource type="Texture2D" path="res://levels/gluttony/art/tiles/skin3_96px.png" id="4_tex"]
+[ext_resource type="Texture2D" uid="uid://m2tmfmq5ewk5" path="res://levels/gluttony/art/tiles/skin0_96px.png" id="1_tex"]
+[ext_resource type="Texture2D" uid="uid://buxjyekwthvxf" path="res://levels/gluttony/art/tiles/skin1_96px.png" id="2_tex"]
+[ext_resource type="Texture2D" uid="uid://bogevgoaa1lnc" path="res://levels/gluttony/art/tiles/skin2_96px.png" id="3_tex"]
+[ext_resource type="Texture2D" uid="uid://bv2ke00q2x0dg" path="res://levels/gluttony/art/tiles/skin3_96px.png" id="4_tex"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0"]
 texture = ExtResource("1_tex")

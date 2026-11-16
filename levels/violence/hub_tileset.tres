@@ -1,9 +1,9 @@
-[gd_resource type="TileSet" format=3]
+[gd_resource type="TileSet" format=3 uid="uid://s05lsgxpsnr6"]
 
-[ext_resource type="Texture2D" path="res://levels/violence/art/tiles/skin0_96px.png" id="1_tex"]
-[ext_resource type="Texture2D" path="res://levels/violence/art/tiles/skin1_96px.png" id="2_tex"]
-[ext_resource type="Texture2D" path="res://levels/violence/art/tiles/skin2_96px.png" id="3_tex"]
-[ext_resource type="Texture2D" path="res://levels/violence/art/tiles/skin3_96px.png" id="4_tex"]
+[ext_resource type="Texture2D" uid="uid://cm7cnjhic1am" path="res://levels/violence/art/tiles/skin0_96px.png" id="1_tex"]
+[ext_resource type="Texture2D" uid="uid://wnbaccbti3k6" path="res://levels/violence/art/tiles/skin1_96px.png" id="2_tex"]
+[ext_resource type="Texture2D" uid="uid://ewoix71kjq8i" path="res://levels/violence/art/tiles/skin2_96px.png" id="3_tex"]
+[ext_resource type="Texture2D" uid="uid://der5rx2ekuals" path="res://levels/violence/art/tiles/skin3_96px.png" id="4_tex"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0"]
 texture = ExtResource("1_tex")
