@@ -7,6 +7,8 @@ class_name HealthBar
 
 @onready var BAR: ProgressBar = $PanelContainer/Bar
 
+
+#I set the variables here to match the vars in HealthComponent
 func health_bar_update(current_health, max_health):
 	BAR.value = HEALTH.current_health
 	BAR.max_value = HEALTH.max_health
