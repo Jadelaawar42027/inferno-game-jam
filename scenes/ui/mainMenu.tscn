@@ -76,24 +76,117 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="SettingsPanelContainer/SettingsContainer" unique_id=2147067689]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="SettingsPanelContainer/SettingsContainer/VBoxContainer" unique_id=560152080]
+[node name="SettingsTitle" type="Label" parent="SettingsPanelContainer/SettingsContainer/VBoxContainer" unique_id=560152080]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Settings"
 
-[node name="HSlider" type="HSlider" parent="SettingsPanelContainer/SettingsContainer/VBoxContainer" unique_id=114456652]
+[node name="HBoxContainer_MasterVolSlider" type="HBoxContainer" parent="SettingsPanelContainer/SettingsContainer/VBoxContainer" unique_id=471659949]
+layout_mode = 2
+
+[node name="MasterVolSlider" type="HSlider" parent="SettingsPanelContainer/SettingsContainer/VBoxContainer/HBoxContainer_MasterVolSlider" unique_id=114456652]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 tooltip_text = "Sound"
 max_value = 1.0
 step = 0.001
 value = 1.0
 
+[node name="MasterVolSliderLabel" type="Label" parent="SettingsPanelContainer/SettingsContainer/VBoxContainer/HBoxContainer_MasterVolSlider" unique_id=890855149]
+layout_mode = 2
+text = "Master Volume"
+
+[node name="HBoxContainer_MusicVolSlider" type="HBoxContainer" parent="SettingsPanelContainer/SettingsContainer/VBoxContainer" unique_id=132497044]
+layout_mode = 2
+
+[node name="MusicVolSlider" type="HSlider" parent="SettingsPanelContainer/SettingsContainer/VBoxContainer/HBoxContainer_MusicVolSlider" unique_id=1008858553]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+tooltip_text = "Sound"
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="MusicVolSliderLabel" type="Label" parent="SettingsPanelContainer/SettingsContainer/VBoxContainer/HBoxContainer_MusicVolSlider" unique_id=338738710]
+layout_mode = 2
+text = "Music Volume"
+
+[node name="HBoxContainer_SFXVolSlider2" type="HBoxContainer" parent="SettingsPanelContainer/SettingsContainer/VBoxContainer" unique_id=98612821]
+layout_mode = 2
+
+[node name="SFXVolSlider" type="HSlider" parent="SettingsPanelContainer/SettingsContainer/VBoxContainer/HBoxContainer_SFXVolSlider2" unique_id=6931369]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+tooltip_text = "Sound"
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="SFXVolSliderLabel" type="Label" parent="SettingsPanelContainer/SettingsContainer/VBoxContainer/HBoxContainer_SFXVolSlider2" unique_id=481801668]
+layout_mode = 2
+text = "SFX Volume"
+
+[node name="HBoxContainer_VoiceVolSlider2" type="HBoxContainer" parent="SettingsPanelContainer/SettingsContainer/VBoxContainer" unique_id=37194528]
+layout_mode = 2
+
+[node name="VoiceVolSlider" type="HSlider" parent="SettingsPanelContainer/SettingsContainer/VBoxContainer/HBoxContainer_VoiceVolSlider2" unique_id=1461972878]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+tooltip_text = "Sound"
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="VoiceVolSliderLabel" type="Label" parent="SettingsPanelContainer/SettingsContainer/VBoxContainer/HBoxContainer_VoiceVolSlider2" unique_id=1967991572]
+layout_mode = 2
+text = "Voice Volume"
+
+[node name="Keybinds" type="Button" parent="SettingsPanelContainer/SettingsContainer/VBoxContainer" unique_id=1147500715]
+layout_mode = 2
+text = "Keybinds"
+
 [node name="ReturntoMain" type="Button" parent="SettingsPanelContainer/SettingsContainer/VBoxContainer" unique_id=480076530]
 layout_mode = 2
 text = "Back
 "
 
+[node name="KeybindsPanelContainer" type="PanelContainer" parent="." unique_id=1561951678]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -321.0
+offset_top = -177.5
+offset_right = 319.0
+offset_bottom = 184.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_b2h2w")
+
+[node name="KeybindsContainer" type="CenterContainer" parent="KeybindsPanelContainer" unique_id=60542440]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="KeybindsPanelContainer/KeybindsContainer" unique_id=138426634]
+layout_mode = 2
+
+[node name="KeybindsTitle" type="Label" parent="KeybindsPanelContainer/KeybindsContainer/VBoxContainer" unique_id=123828413]
+layout_mode = 2
+text = "Keybinds
+"
+
+[node name="VScrollBar" type="VScrollBar" parent="KeybindsPanelContainer/KeybindsContainer/VBoxContainer" unique_id=1552708486]
+layout_mode = 2
+
+[node name="ReturnToSettings" type="Button" parent="KeybindsPanelContainer/KeybindsContainer/VBoxContainer" unique_id=870860889]
+layout_mode = 2
+text = "Back"
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/QuitButton" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="SettingsPanelContainer/SettingsContainer/VBoxContainer/Keybinds" to="." method="_on_keybinds_pressed"]
 [connection signal="pressed" from="SettingsPanelContainer/SettingsContainer/VBoxContainer/ReturntoMain" to="." method="_on_returnto_main_pressed"]
+[connection signal="pressed" from="KeybindsPanelContainer/KeybindsContainer/VBoxContainer/ReturnToSettings" to="." method="_on_return_to_settings_pressed"]
