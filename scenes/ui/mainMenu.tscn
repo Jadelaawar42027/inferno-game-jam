@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://7pyhkosvmmky" path="res://scripts/ui/mainMenu.gd" id="1_ph80j"]
 [ext_resource type="PackedScene" uid="uid://degaw268gnce8" path="res://scenes/levels/scene_1.tscn" id="2_j3ryx"]
+[ext_resource type="Script" uid="uid://bbs2bb6iblexb" path="res://scripts/Components/input_settings.gd" id="3_c8enf"]
+[ext_resource type="PackedScene" uid="uid://bkalkey6fv1tf" path="res://scenes/ui/input_button.tscn" id="4_oxtcp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2h2w"]
 bg_color = Color(0.28118682, 0.28118688, 0.2811868, 1)
@@ -23,68 +25,70 @@ script = ExtResource("1_ph80j")
 process_mode = 4
 position = Vector2(318, 179)
 
-[node name="CenterContainer" type="CenterContainer" parent="." unique_id=316399735]
-layout_mode = 1
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1386325699]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=316399735]
+unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = 2.0
-offset_right = -1.0
-offset_bottom = 2.0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 2.0
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=5238879]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer" unique_id=5238879]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=972434117]
+[node name="Label" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=972434117]
 layout_mode = 2
 text = "Inferno Game Jam"
 
-[node name="PlayButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1971518153]
+[node name="PlayButton" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=1971518153]
 layout_mode = 2
 text = "New Game"
 
-[node name="Settings" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1471935511]
+[node name="Settings" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=1471935511]
 layout_mode = 2
 text = "Settings"
 
-[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=338669001]
+[node name="QuitButton" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=338669001]
 layout_mode = 2
 text = "Quit"
 
-[node name="SettingsPanelContainer" type="PanelContainer" parent="." unique_id=1988047513]
+[node name="SettingsPanelContainer" type="PanelContainer" parent="CanvasLayer" unique_id=1988047513]
+unique_name_in_owner = true
 visible = false
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -321.0
-offset_top = -177.5
-offset_right = 319.0
-offset_bottom = 184.5
+offset_left = -319.0
+offset_top = -179.0
+offset_right = 321.0
+offset_bottom = 183.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2h2w")
 
-[node name="SettingsContainer" type="CenterContainer" parent="SettingsPanelContainer" unique_id=838409989]
+[node name="SettingsContainer" type="CenterContainer" parent="CanvasLayer/SettingsPanelContainer" unique_id=838409989]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPanelContainer/SettingsContainer" unique_id=2147067689]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/SettingsPanelContainer/SettingsContainer" unique_id=2147067689]
 layout_mode = 2
 
-[node name="SettingsTitle" type="Label" parent="SettingsPanelContainer/SettingsContainer/VBoxContainer" unique_id=560152080]
+[node name="SettingsTitle" type="Label" parent="CanvasLayer/SettingsPanelContainer/SettingsContainer/VBoxContainer" unique_id=560152080]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Settings"
 
-[node name="HBoxContainer_MasterVolSlider" type="HBoxContainer" parent="SettingsPanelContainer/SettingsContainer/VBoxContainer" unique_id=471659949]
+[node name="HBoxContainer_MasterVolSlider" type="HBoxContainer" parent="CanvasLayer/SettingsPanelContainer/SettingsContainer/VBoxContainer" unique_id=471659949]
 layout_mode = 2
 
-[node name="MasterVolSlider" type="HSlider" parent="SettingsPanelContainer/SettingsContainer/VBoxContainer/HBoxContainer_MasterVolSlider" unique_id=114456652]
+[node name="MasterVolSlider" type="HSlider" parent="CanvasLayer/SettingsPanelContainer/SettingsContainer/VBoxContainer/HBoxContainer_MasterVolSlider" unique_id=114456652]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 tooltip_text = "Sound"
@@ -92,14 +96,14 @@ max_value = 1.0
 step = 0.001
 value = 1.0
 
-[node name="MasterVolSliderLabel" type="Label" parent="SettingsPanelContainer/SettingsContainer/VBoxContainer/HBoxContainer_MasterVolSlider" unique_id=890855149]
+[node name="MasterVolSliderLabel" type="Label" parent="CanvasLayer/SettingsPanelContainer/SettingsContainer/VBoxContainer/HBoxContainer_MasterVolSlider" unique_id=890855149]
 layout_mode = 2
 text = "Master Volume"
 
-[node name="HBoxContainer_MusicVolSlider" type="HBoxContainer" parent="SettingsPanelContainer/SettingsContainer/VBoxContainer" unique_id=132497044]
+[node name="HBoxContainer_MusicVolSlider" type="HBoxContainer" parent="CanvasLayer/SettingsPanelContainer/SettingsContainer/VBoxContainer" unique_id=132497044]
 layout_mode = 2
 
-[node name="MusicVolSlider" type="HSlider" parent="SettingsPanelContainer/SettingsContainer/VBoxContainer/HBoxContainer_MusicVolSlider" unique_id=1008858553]
+[node name="MusicVolSlider" type="HSlider" parent="CanvasLayer/SettingsPanelContainer/SettingsContainer/VBoxContainer/HBoxContainer_MusicVolSlider" unique_id=1008858553]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 tooltip_text = "Sound"
@@ -107,14 +111,14 @@ max_value = 1.0
 step = 0.001
 value = 1.0
 
-[node name="MusicVolSliderLabel" type="Label" parent="SettingsPanelContainer/SettingsContainer/VBoxContainer/HBoxContainer_MusicVolSlider" unique_id=338738710]
+[node name="MusicVolSliderLabel" type="Label" parent="CanvasLayer/SettingsPanelContainer/SettingsContainer/VBoxContainer/HBoxContainer_MusicVolSlider" unique_id=338738710]
 layout_mode = 2
 text = "Music Volume"
 
-[node name="HBoxContainer_SFXVolSlider2" type="HBoxContainer" parent="SettingsPanelContainer/SettingsContainer/VBoxContainer" unique_id=98612821]
+[node name="HBoxContainer_SFXVolSlider2" type="HBoxContainer" parent="CanvasLayer/SettingsPanelContainer/SettingsContainer/VBoxContainer" unique_id=98612821]
 layout_mode = 2
 
-[node name="SFXVolSlider" type="HSlider" parent="SettingsPanelContainer/SettingsContainer/VBoxContainer/HBoxContainer_SFXVolSlider2" unique_id=6931369]
+[node name="SFXVolSlider" type="HSlider" parent="CanvasLayer/SettingsPanelContainer/SettingsContainer/VBoxContainer/HBoxContainer_SFXVolSlider2" unique_id=6931369]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 tooltip_text = "Sound"
@@ -122,14 +126,14 @@ max_value = 1.0
 step = 0.001
 value = 1.0
 
-[node name="SFXVolSliderLabel" type="Label" parent="SettingsPanelContainer/SettingsContainer/VBoxContainer/HBoxContainer_SFXVolSlider2" unique_id=481801668]
+[node name="SFXVolSliderLabel" type="Label" parent="CanvasLayer/SettingsPanelContainer/SettingsContainer/VBoxContainer/HBoxContainer_SFXVolSlider2" unique_id=481801668]
 layout_mode = 2
 text = "SFX Volume"
 
-[node name="HBoxContainer_VoiceVolSlider2" type="HBoxContainer" parent="SettingsPanelContainer/SettingsContainer/VBoxContainer" unique_id=37194528]
+[node name="HBoxContainer_VoiceVolSlider2" type="HBoxContainer" parent="CanvasLayer/SettingsPanelContainer/SettingsContainer/VBoxContainer" unique_id=37194528]
 layout_mode = 2
 
-[node name="VoiceVolSlider" type="HSlider" parent="SettingsPanelContainer/SettingsContainer/VBoxContainer/HBoxContainer_VoiceVolSlider2" unique_id=1461972878]
+[node name="VoiceVolSlider" type="HSlider" parent="CanvasLayer/SettingsPanelContainer/SettingsContainer/VBoxContainer/HBoxContainer_VoiceVolSlider2" unique_id=1461972878]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 tooltip_text = "Sound"
@@ -137,56 +141,67 @@ max_value = 1.0
 step = 0.001
 value = 1.0
 
-[node name="VoiceVolSliderLabel" type="Label" parent="SettingsPanelContainer/SettingsContainer/VBoxContainer/HBoxContainer_VoiceVolSlider2" unique_id=1967991572]
+[node name="VoiceVolSliderLabel" type="Label" parent="CanvasLayer/SettingsPanelContainer/SettingsContainer/VBoxContainer/HBoxContainer_VoiceVolSlider2" unique_id=1967991572]
 layout_mode = 2
 text = "Voice Volume"
 
-[node name="Keybinds" type="Button" parent="SettingsPanelContainer/SettingsContainer/VBoxContainer" unique_id=1147500715]
+[node name="Keybinds" type="Button" parent="CanvasLayer/SettingsPanelContainer/SettingsContainer/VBoxContainer" unique_id=1147500715]
 layout_mode = 2
 text = "Keybinds"
 
-[node name="ReturntoMain" type="Button" parent="SettingsPanelContainer/SettingsContainer/VBoxContainer" unique_id=480076530]
+[node name="ReturntoMain" type="Button" parent="CanvasLayer/SettingsPanelContainer/SettingsContainer/VBoxContainer" unique_id=480076530]
 layout_mode = 2
 text = "Back
 "
 
-[node name="KeybindsPanelContainer" type="PanelContainer" parent="." unique_id=1561951678]
+[node name="KeybindsPanelContainer" type="PanelContainer" parent="CanvasLayer" unique_id=1561951678]
+unique_name_in_owner = true
 visible = false
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -321.0
-offset_top = -177.5
-offset_right = 319.0
-offset_bottom = 184.5
+offset_left = -218.0
+offset_top = -171.5
+offset_right = 222.0
+offset_bottom = 168.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2h2w")
+metadata/_edit_use_anchors_ = true
 
-[node name="KeybindsContainer" type="CenterContainer" parent="KeybindsPanelContainer" unique_id=60542440]
+[node name="KeybindsContainer" type="MarginContainer" parent="CanvasLayer/KeybindsPanelContainer" unique_id=1420587015]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="KeybindsPanelContainer/KeybindsContainer" unique_id=138426634]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/KeybindsPanelContainer/KeybindsContainer" unique_id=138426634]
 layout_mode = 2
 
-[node name="KeybindsTitle" type="Label" parent="KeybindsPanelContainer/KeybindsContainer/VBoxContainer" unique_id=123828413]
+[node name="KeybindsTitle" type="Label" parent="CanvasLayer/KeybindsPanelContainer/KeybindsContainer/VBoxContainer" unique_id=123828413]
 layout_mode = 2
 text = "Keybinds
 "
 
-[node name="VScrollBar" type="VScrollBar" parent="KeybindsPanelContainer/KeybindsContainer/VBoxContainer" unique_id=1552708486]
+[node name="ScrollContainer_Keybinds" type="ScrollContainer" parent="CanvasLayer/KeybindsPanelContainer/KeybindsContainer/VBoxContainer" unique_id=823073098]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ActionsVBoxContainer" type="VBoxContainer" parent="CanvasLayer/KeybindsPanelContainer/KeybindsContainer/VBoxContainer/ScrollContainer_Keybinds" unique_id=2057419426]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_c8enf")
+
+[node name="InputButton" parent="CanvasLayer/KeybindsPanelContainer/KeybindsContainer/VBoxContainer/ScrollContainer_Keybinds/ActionsVBoxContainer" unique_id=918614133 instance=ExtResource("4_oxtcp")]
 layout_mode = 2
 
-[node name="ReturnToSettings" type="Button" parent="KeybindsPanelContainer/KeybindsContainer/VBoxContainer" unique_id=870860889]
+[node name="ReturnToSettings" type="Button" parent="CanvasLayer/KeybindsPanelContainer/KeybindsContainer/VBoxContainer" unique_id=870860889]
 layout_mode = 2
 text = "Back"
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/QuitButton" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="SettingsPanelContainer/SettingsContainer/VBoxContainer/Keybinds" to="." method="_on_keybinds_pressed"]
-[connection signal="pressed" from="SettingsPanelContainer/SettingsContainer/VBoxContainer/ReturntoMain" to="." method="_on_returnto_main_pressed"]
-[connection signal="pressed" from="KeybindsPanelContainer/KeybindsContainer/VBoxContainer/ReturnToSettings" to="." method="_on_return_to_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/QuitButton" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/SettingsPanelContainer/SettingsContainer/VBoxContainer/Keybinds" to="." method="_on_keybinds_pressed"]
+[connection signal="pressed" from="CanvasLayer/SettingsPanelContainer/SettingsContainer/VBoxContainer/ReturntoMain" to="." method="_on_returnto_main_pressed"]
+[connection signal="pressed" from="CanvasLayer/KeybindsPanelContainer/KeybindsContainer/VBoxContainer/ReturnToSettings" to="." method="_on_return_to_settings_pressed"]
