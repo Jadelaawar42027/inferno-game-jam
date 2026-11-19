@@ -1,26 +1,30 @@
-[gd_scene format=3]
+[gd_scene format=4 uid="uid://dbb45y2dhykkc"]
 
-[ext_resource type="Texture2D" path="res://levels/treachery/art/bg/bg0_haze.png" id="1_r"]
-[ext_resource type="Texture2D" path="res://levels/treachery/art/bg/bg1_far_cocytus.png" id="2_r"]
-[ext_resource type="Texture2D" path="res://levels/treachery/art/bg/fog_band.png" id="3_r"]
-[ext_resource type="Texture2D" path="res://levels/treachery/art/bg/bg2_mid_frozen_pillars.png" id="4_r"]
-[ext_resource type="Texture2D" path="res://levels/treachery/art/bg/bg3_near_shards.png" id="5_r"]
-[ext_resource type="TileSet" path="res://levels/treachery/treachery_tileset.tres" id="6_r"]
-[ext_resource type="Texture2D" path="res://levels/treachery/art/arena/arena_ice_floor_tile.png" id="7_r"]
-[ext_resource type="Texture2D" path="res://levels/treachery/art/props/prop_frozen_traitors_wide.png" id="8_r"]
-[ext_resource type="Texture2D" path="res://levels/treachery/art/props/prop_frozen_traitor.png" id="9_r"]
-[ext_resource type="Texture2D" path="res://levels/treachery/art/props/prop_ice_crystals.png" id="10_r"]
-[ext_resource type="Texture2D" path="res://levels/treachery/art/props/prop_cold_brazier.png" id="11_r"]
-[ext_resource type="SpriteFrames" path="res://assets/sprites/bosses/satan/satan_frames.tres" id="12_r"]
-[ext_resource type="Texture2D" path="res://levels/treachery/art/props/prop_icicles.png" id="13_r"]
-[ext_resource type="Texture2D" path="res://levels/treachery/art/props/prop_broken_chains.png" id="14_r"]
-[ext_resource type="Texture2D" path="res://levels/treachery/art/props/prop_lantern.png" id="15_r"]
-[ext_resource type="Texture2D" path="res://levels/treachery/art/gameplay/arena_gate_frame_0.png" id="16_r"]
-[ext_resource type="Texture2D" path="res://levels/treachery/art/gameplay/arena_gate_frame_1.png" id="17_r"]
-[ext_resource type="Texture2D" path="res://levels/treachery/art/gameplay/arena_gate_frame_2.png" id="18_r"]
-[ext_resource type="Texture2D" path="res://levels/treachery/art/gameplay/arena_gate_frame_3.png" id="19_r"]
+[ext_resource type="Texture2D" uid="uid://dehekm01cvd2u" path="res://levels/treachery/art/bg/bg0_haze.png" id="1_r"]
+[ext_resource type="Texture2D" uid="uid://1subrhfsqgnj" path="res://levels/treachery/art/bg/bg1_far_cocytus.png" id="2_r"]
+[ext_resource type="Texture2D" uid="uid://c5j34e4i2h7qd" path="res://levels/treachery/art/bg/fog_band.png" id="3_r"]
+[ext_resource type="Texture2D" uid="uid://ckowk1ya76ra4" path="res://levels/treachery/art/bg/bg2_mid_frozen_pillars.png" id="4_r"]
+[ext_resource type="Texture2D" uid="uid://f8x2cwx5bcbh" path="res://levels/treachery/art/bg/bg3_near_shards.png" id="5_r"]
+[ext_resource type="TileSet" uid="uid://bna6sfb4ehnjq" path="res://levels/treachery/treachery_tileset.tres" id="6_r"]
+[ext_resource type="Texture2D" uid="uid://c625g1bkch0o0" path="res://levels/treachery/art/arena/arena_ice_floor_tile.png" id="7_r"]
+[ext_resource type="Texture2D" uid="uid://p0jje7ef1o5p" path="res://levels/treachery/art/props/prop_frozen_traitors_wide.png" id="8_r"]
+[ext_resource type="Texture2D" uid="uid://3slr36iv2pww" path="res://levels/treachery/art/props/prop_frozen_traitor.png" id="9_r"]
+[ext_resource type="Texture2D" uid="uid://deybjfs238rop" path="res://levels/treachery/art/props/prop_ice_crystals.png" id="10_r"]
+[ext_resource type="Texture2D" uid="uid://ogelxi5hvc8q" path="res://levels/treachery/art/props/prop_cold_brazier.png" id="11_r"]
+[ext_resource type="Texture2D" uid="uid://dkupp4snjlkca" path="res://levels/treachery/art/props/prop_icicles.png" id="13_r"]
+[ext_resource type="Texture2D" uid="uid://dey3sauaqv70l" path="res://levels/treachery/art/props/prop_broken_chains.png" id="14_r"]
+[ext_resource type="Texture2D" uid="uid://c6gs3g24n4kng" path="res://levels/treachery/art/props/prop_lantern.png" id="15_r"]
+[ext_resource type="Texture2D" uid="uid://cf84k3ypsqyk7" path="res://levels/treachery/art/gameplay/arena_gate_frame_0.png" id="16_r"]
+[ext_resource type="Texture2D" uid="uid://bqelig6ymhduq" path="res://levels/treachery/art/gameplay/arena_gate_frame_1.png" id="17_r"]
+[ext_resource type="Texture2D" uid="uid://d072rsidlflis" path="res://levels/treachery/art/gameplay/arena_gate_frame_2.png" id="18_r"]
+[ext_resource type="Texture2D" uid="uid://m4j7eqc1jbwi" path="res://levels/treachery/art/gameplay/arena_gate_frame_3.png" id="19_r"]
 [ext_resource type="PackedScene" uid="uid://deejvq1mv7666" path="res://scenes/player/player.tscn" id="20_r"]
-[ext_resource type="Texture2D" path="res://levels/treachery/art/bg/fg_frame.png" id="21_r"]
+[ext_resource type="Texture2D" uid="uid://crmy66gkv2wpu" path="res://levels/treachery/art/bg/fg_frame.png" id="21_r"]
+[ext_resource type="Texture2D" uid="uid://1oi3f0uwr5x8" path="res://assets/art/intro/prop_ice_crystals.png" id="23_pfgta"]
+[ext_resource type="PackedScene" uid="uid://cqbggeanxf2hx" path="res://scenes/bosses/satan.tscn" id="30_satan"]
+[ext_resource type="SpriteFrames" uid="uid://cs6dmjrbhqjml" path="res://assets/sprites/virgil/virgil_frames.tres" id="31_virgil"]
+[ext_resource type="Script" uid="uid://csk530b5lxxul" path="res://scenes/cutscenes/treachery_cutscene.gd" id="32_cut"]
+[ext_resource type="Script" uid="uid://dkj0fvj30brcg" path="res://scripts/ui/dialog_line.gd" id="33_dl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1"]
 animations = [{
@@ -37,521 +41,668 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("19_r")
 }],
-"loop": false,
+"loop": 0,
 "name": &"close",
 "speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2"]
-size = Vector2(54.40, 109.20)
+size = Vector2(54.4, 109.2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3"]
-size = Vector2(54.40, 109.20)
+size = Vector2(54.4, 109.2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4"]
-size = Vector2(32.00, 96.00)
+size = Vector2(32, 96)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5"]
-size = Vector2(32.00, 96.00)
+size = Vector2(32, 96)
 
-[node name="SatanArena" type="Node2D"]
+[sub_resource type="Resource" id="DL_cow77"]
+script = ExtResource("33_dl")
+SPEAKER = 1
+TEXT = "My child, you have done well to come this far. I was right in choosing you"
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="DL_u2sa1"]
+script = ExtResource("33_dl")
+TEXT = "Virgil? What's going on, and where is she?"
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="DL_xjek1"]
+script = ExtResource("33_dl")
+SPEAKER = 1
+TEXT = "Your desperation and delusion caused you to cling onto the slightest hope you could bring her back, leading you to me. You believed your own daughter belonged in hell... How sad."
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="DL_vd0fi"]
+script = ExtResource("33_dl")
+SPEAKER = 1
+TEXT = "Fortunately for me, it was the only door I needed to make you trust me, and to make you step into that magic circle with me."
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="DL_wgy1t"]
+script = ExtResource("33_dl")
+TEXT = "What's the meaning of this!?!?!"
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="DL_dlsab"]
+script = ExtResource("33_dl")
+TEXT = "WHERE THE HELL IS SHE VIRGIL?????"
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="DL_y44sf"]
+script = ExtResource("33_dl")
+SPEAKER = 1
+TEXT = "Don't you understand? She was never in hell. Her soul passed on long ago. Not even the ancient magic you sought could bring her back"
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="DL_neb6q"]
+script = ExtResource("33_dl")
+TEXT = "N-no..."
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="DL_2w6a7"]
+script = ExtResource("33_dl")
+TEXT = "A feeling of weakness spreads through my body... I feel dizzy. Disoriented. My legs give out. I stare in shock"
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="DL_sr0fl"]
+script = ExtResource("33_dl")
+TEXT = "I remember the day I couldn't save her. Her smile. Her sobs. Her last words to me. Something nefarious is bubbling inside me. I glare at Virgil with soul-less eyes"
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="DL_5nb5l"]
+script = ExtResource("33_dl")
+SPEAKER = 1
+TEXT = "You see, before I was sealed by the Last Archangel, I split a fragment of my soul, cut loose from hell and sent into the living world"
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="DL_0aow8"]
+script = ExtResource("33_dl")
+SPEAKER = 1
+TEXT = "My seals could only be fractured by a mortal soul, carrying every sin, so I couldn't use my alibi to set me free. For years, this piece of my consciousness was tasked with leading capable and trusting mortals into hell, in an attempt to free me."
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="DL_r65xx"]
+script = ExtResource("33_dl")
+SPEAKER = 1
+TEXT = "But oh how I underestimated the task. They were all too weak. Until I laid my eyes on you…"
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="DL_08mn4"]
+script = ExtResource("33_dl")
+SPEAKER = 1
+TEXT = "Containing ancient knowledge, Virgil. No, I… became known as the ArchMagus, building my reputation as the sage who was rumored to  have the ability to tether lost souls back into reality"
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="DL_63kq0"]
+script = ExtResource("33_dl")
+SPEAKER = 1
+TEXT = "No chains hold a man like the thing he longs for.."
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="DL_m62pw"]
+script = ExtResource("33_dl")
+TEXT = "You... I will devour you. I will own you. I will annihilate you. I will wear your face. And for your betrayal, I will take your place... I'll show you a true devil.."
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="DL_i34sg"]
+script = ExtResource("33_dl")
+SPEAKER = 1
+TEXT = "I'd love to see you try"
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="Resource_pfgta"]
+script = ExtResource("33_dl")
+TEXT = "Hell is being let loose… I know what I must do."
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="Resource" id="Resource_1wrdp"]
+script = ExtResource("33_dl")
+TEXT = "Goodbye, daughter."
+metadata/_custom_type_script = "uid://dkj0fvj30brcg"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trigger"]
+size = Vector2(20, 320)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wrdp"]
+resource_local_to_scene = true
+size = Vector2(10, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6yqq5"]
+resource_local_to_scene = true
+size = Vector2(40, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4eu2"]
+resource_local_to_scene = true
+size = Vector2(34, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xc2ix"]
+resource_local_to_scene = true
+size = Vector2(34, 40)
+
+[node name="SatanArena" type="Node2D" unique_id=1674211803]
 texture_filter = 2
 
-[node name="Parallax" type="Node2D" parent="."]
+[node name="Parallax" type="Node2D" parent="." unique_id=1820155550]
 z_index = -10
 
-[node name="L0_bg0_haze_0" type="Parallax2D" parent="Parallax"]
-scroll_scale = Vector2(0.05, 1.00)
-repeat_size = Vector2(1706.67, 0.00)
+[node name="L0_bg0_haze_0" type="Parallax2D" parent="Parallax" unique_id=2073802192]
+scroll_scale = Vector2(0.05, 1)
+repeat_size = Vector2(1706.67, 0)
 repeat_times = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax/L0_bg0_haze_0"]
-position = Vector2(0.00, 0.00)
+[node name="Sprite2D" type="Sprite2D" parent="Parallax/L0_bg0_haze_0" unique_id=1592685891]
 scale = Vector2(0.44, 0.44)
 texture = ExtResource("1_r")
 centered = false
 
-[node name="L1_bg1_far_cocytus_0" type="Parallax2D" parent="Parallax"]
-scroll_scale = Vector2(0.20, 1.00)
-repeat_size = Vector2(1706.67, 0.00)
+[node name="L1_bg1_far_cocytus_0" type="Parallax2D" parent="Parallax" unique_id=646726559]
+scroll_scale = Vector2(0.2, 1)
+repeat_size = Vector2(1706.67, 0)
 repeat_times = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax/L1_bg1_far_cocytus_0"]
-position = Vector2(0.00, 0.00)
+[node name="Sprite2D" type="Sprite2D" parent="Parallax/L1_bg1_far_cocytus_0" unique_id=1616616134]
 scale = Vector2(0.44, 0.44)
 texture = ExtResource("2_r")
 centered = false
 
-[node name="L2_fog_band_0" type="Parallax2D" parent="Parallax"]
-scroll_scale = Vector2(0.30, 1.00)
-repeat_size = Vector2(1280.00, 0.00)
+[node name="L2_fog_band_0" type="Parallax2D" parent="Parallax" unique_id=1140469969]
+scroll_scale = Vector2(0.3, 1)
+repeat_size = Vector2(1280, 0)
 repeat_times = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax/L2_fog_band_0"]
-position = Vector2(0.00, 126.00)
+[node name="Sprite2D" type="Sprite2D" parent="Parallax/L2_fog_band_0" unique_id=2094282118]
+position = Vector2(0, 126)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("3_r")
 centered = false
 
-[node name="L3_bg2_mid_frozen_pillars_0" type="Parallax2D" parent="Parallax"]
-scroll_scale = Vector2(0.45, 1.00)
-repeat_size = Vector2(1280.00, 0.00)
+[node name="L3_bg2_mid_frozen_pillars_0" type="Parallax2D" parent="Parallax" unique_id=307609793]
+scroll_scale = Vector2(0.45, 1)
+repeat_size = Vector2(1280, 0)
 repeat_times = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax/L3_bg2_mid_frozen_pillars_0"]
-position = Vector2(0.00, -228.00)
+[node name="Sprite2D" type="Sprite2D" parent="Parallax/L3_bg2_mid_frozen_pillars_0" unique_id=1439751861]
+position = Vector2(0, -228)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("4_r")
 centered = false
 
-[node name="L3_bg2_mid_frozen_pillars_1" type="Parallax2D" parent="Parallax"]
-scroll_scale = Vector2(0.45, 1.00)
-repeat_size = Vector2(1280.00, 0.00)
+[node name="L3_bg2_mid_frozen_pillars_1" type="Parallax2D" parent="Parallax" unique_id=1081838633]
+scroll_scale = Vector2(0.45, 1)
+repeat_size = Vector2(1280, 0)
 repeat_times = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax/L3_bg2_mid_frozen_pillars_1"]
-position = Vector2(0.00, 120.00)
+[node name="Sprite2D" type="Sprite2D" parent="Parallax/L3_bg2_mid_frozen_pillars_1" unique_id=665605919]
+position = Vector2(0, 120)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("4_r")
 centered = false
 
-[node name="L4_bg3_near_shards_0" type="Parallax2D" parent="Parallax"]
-scroll_scale = Vector2(0.75, 1.00)
-repeat_size = Vector2(1280.00, 0.00)
+[node name="L4_bg3_near_shards_0" type="Parallax2D" parent="Parallax" unique_id=2042834598]
+scroll_scale = Vector2(0.75, 1)
+repeat_size = Vector2(1280, 0)
 repeat_times = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax/L4_bg3_near_shards_0"]
-position = Vector2(0.00, 120.00)
+[node name="Sprite2D" type="Sprite2D" parent="Parallax/L4_bg3_near_shards_0" unique_id=230533234]
+position = Vector2(0, 120)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("5_r")
 centered = false
 
-[node name="Tiles" type="TileMapLayer" parent="."]
+[node name="Tiles" type="TileMapLayer" parent="." unique_id=1571614328]
 scale = Vector2(0.33, 0.33)
-tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 1, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 2, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 3, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 4, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 5, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 6, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 7, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 8, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 9, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 10, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 11, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 12, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 13, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 14, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 15, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 16, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 17, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 18, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 19, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 20, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 21, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 22, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 23, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 24, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 25, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 26, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 27, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 28, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 29, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 30, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 31, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 32, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 33, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 34, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 35, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 36, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 37, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 38, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 39, 0, 0, 0, 0, 0, 5, 0, 2, 0, 0, 0, 0, 0, 1, 0, 0, 0, 5, 0, 2, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 2, 0, 1, 0, 0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0, 0, 0, 4, 0, 3, 0, 0, 0, 4, 0, 1, 0, 0, 0, 4, 0, 3, 0, 0, 0, 5, 0, 1, 0, 0, 0, 1, 0, 2, 0, 0, 0, 6, 0, 1, 0, 0, 0, 1, 0, 2, 0, 0, 0, 7, 0, 1, 0, 0, 0, 1, 0, 2, 0, 0, 0, 8, 0, 1, 0, 0, 0, 4, 0, 3, 0, 0, 0, 9, 0, 1, 0, 0, 0, 1, 0, 2, 0, 0, 0, 10, 0, 1, 0, 0, 0, 1, 0, 2, 0, 0, 0, 11, 0, 1, 0, 0, 0, 4, 0, 3, 0, 0, 0, 12, 0, 1, 0, 0, 0, 1, 0, 2, 0, 0, 0, 13, 0, 1, 0, 0, 0, 4, 0, 3, 0, 0, 0, 14, 0, 1, 0, 0, 0, 4, 0, 3, 0, 0, 0, 15, 0, 1, 0, 0, 0, 4, 0, 3, 0, 0, 0, 16, 0, 1, 0, 0, 0, 4, 0, 3, 0, 0, 0, 17, 0, 1, 0, 0, 0, 4, 0, 3, 0, 0, 0, 18, 0, 1, 0, 0, 0, 1, 0, 2, 0, 0, 0, 19, 0, 1, 0, 0, 0, 4, 0, 3, 0, 0, 0, 20, 0, 1, 0, 0, 0, 4, 0, 3, 0, 0, 0, 21, 0, 1, 0, 0, 0, 1, 0, 2, 0, 0, 0, 22, 0, 1, 0, 0, 0, 1, 0, 2, 0, 0, 0, 23, 0, 1, 0, 0, 0, 1, 0, 2, 0, 0, 0, 24, 0, 1, 0, 0, 0, 1, 0, 2, 0, 0, 0, 25, 0, 1, 0, 0, 0, 4, 0, 3, 0, 0, 0, 26, 0, 1, 0, 0, 0, 1, 0, 2, 0, 0, 0, 27, 0, 1, 0, 0, 0, 1, 0, 2, 0, 0, 0, 28, 0, 1, 0, 0, 0, 1, 0, 2, 0, 0, 0, 29, 0, 1, 0, 0, 0, 4, 0, 3, 0, 0, 0, 30, 0, 1, 0, 0, 0, 1, 0, 2, 0, 0, 0, 31, 0, 1, 0, 0, 0, 1, 0, 2, 0, 0, 0, 32, 0, 1, 0, 0, 0, 1, 0, 2, 0, 0, 0, 33, 0, 1, 0, 0, 0, 4, 0, 3, 0, 0, 0, 34, 0, 1, 0, 0, 0, 1, 0, 2, 0, 0, 0, 35, 0, 1, 0, 0, 0, 1, 0, 2, 0, 0, 0, 36, 0, 1, 0, 0, 0, 4, 0, 3, 0, 0, 0, 37, 0, 1, 0, 0, 0, 1, 0, 2, 0, 0, 0, 38, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 39, 0, 1, 0, 0, 0, 5, 0, 2, 0, 0, 0, 0, 0, 2, 0, 0, 0, 5, 0, 2, 0, 0, 0, 1, 0, 2, 0, 0, 0, 2, 0, 1, 0, 0, 0, 38, 0, 2, 0, 0, 0, 0, 0, 1, 0, 0, 0, 39, 0, 2, 0, 0, 0, 5, 0, 2, 0, 0, 0, 0, 0, 3, 0, 0, 0, 5, 0, 2, 0, 0, 0, 1, 0, 3, 0, 0, 0, 2, 0, 1, 0, 0, 0, 38, 0, 3, 0, 0, 0, 0, 0, 1, 0, 0, 0, 39, 0, 3, 0, 0, 0, 5, 0, 2, 0, 0, 0, 0, 0, 4, 0, 0, 0, 5, 0, 2, 0, 0, 0, 1, 0, 4, 0, 0, 0, 2, 0, 1, 0, 0, 0, 38, 0, 4, 0, 0, 0, 0, 0, 1, 0, 0, 0, 39, 0, 4, 0, 0, 0, 5, 0, 2, 0, 0, 0, 0, 0, 5, 0, 0, 0, 5, 0, 2, 0, 0, 0, 1, 0, 5, 0, 0, 0, 2, 0, 1, 0, 0, 0, 38, 0, 5, 0, 0, 0, 0, 0, 1, 0, 0, 0, 39, 0, 5, 0, 0, 0, 5, 0, 2, 0, 0, 0, 0, 0, 6, 0, 0, 0, 5, 0, 2, 0, 0, 0, 1, 0, 6, 0, 0, 0, 2, 0, 1, 0, 0, 0, 38, 0, 6, 0, 0, 0, 0, 0, 1, 0, 0, 0, 39, 0, 6, 0, 0, 0, 5, 0, 2, 0, 0, 0, 0, 0, 7, 0, 0, 0, 5, 0, 2, 0, 0, 0, 1, 0, 7, 0, 0, 0, 2, 0, 1, 0, 0, 0, 38, 0, 7, 0, 0, 0, 0, 0, 1, 0, 0, 0, 39, 0, 7, 0, 0, 0, 5, 0, 2, 0, 0, 0, 0, 0, 8, 0, 0, 0, 5, 0, 2, 0, 0, 0, 1, 0, 8, 0, 0, 0, 2, 0, 1, 0, 0, 0, 38, 0, 8, 0, 0, 0, 0, 0, 1, 0, 0, 0, 39, 0, 8, 0, 0, 0, 5, 0, 2, 0, 0, 0, 0, 0, 9, 0, 0, 0, 4, 0, 3, 0, 0, 0, 1, 0, 9, 0, 0, 0, 2, 0, 2, 0, 0, 0, 38, 0, 9, 0, 0, 0, 0, 0, 2, 0, 0, 0, 39, 0, 9, 0, 0, 0, 1, 0, 2, 0, 0, 0, 0, 0, 13, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 13, 0, 0, 0, 5, 0, 3, 0, 0, 0, 2, 0, 13, 0, 0, 0, 4, 0, 2, 0, 0, 0, 3, 0, 13, 0, 0, 0, 1, 0, 0, 0, 0, 0, 4, 0, 13, 0, 0, 0, 0, 0, 3, 0, 0, 0, 5, 0, 13, 0, 0, 0, 4, 0, 2, 0, 0, 0, 6, 0, 13, 0, 0, 0, 4, 0, 2, 0, 0, 0, 7, 0, 13, 0, 0, 0, 1, 0, 0, 0, 0, 0, 8, 0, 13, 0, 0, 0, 1, 0, 0, 0, 0, 0, 9, 0, 13, 0, 0, 0, 1, 0, 0, 0, 0, 0, 10, 0, 13, 0, 0, 0, 4, 0, 2, 0, 0, 0, 11, 0, 13, 0, 0, 0, 5, 0, 3, 0, 0, 0, 12, 0, 13, 0, 0, 0, 1, 0, 0, 0, 0, 0, 13, 0, 13, 0, 0, 0, 5, 0, 3, 0, 0, 0, 14, 0, 13, 0, 0, 0, 1, 0, 0, 0, 0, 0, 15, 0, 13, 0, 0, 0, 4, 0, 2, 0, 0, 0, 16, 0, 13, 0, 0, 0, 4, 0, 2, 0, 0, 0, 17, 0, 13, 0, 0, 0, 1, 0, 0, 0, 0, 0, 18, 0, 13, 0, 0, 0, 5, 0, 3, 0, 0, 0, 19, 0, 13, 0, 0, 0, 4, 0, 2, 0, 0, 0, 20, 0, 13, 0, 0, 0, 0, 0, 3, 0, 0, 0, 21, 0, 13, 0, 0, 0, 1, 0, 0, 0, 0, 0, 22, 0, 13, 0, 0, 0, 4, 0, 2, 0, 0, 0, 23, 0, 13, 0, 0, 0, 5, 0, 3, 0, 0, 0, 24, 0, 13, 0, 0, 0, 1, 0, 0, 0, 0, 0, 25, 0, 13, 0, 0, 0, 4, 0, 2, 0, 0, 0, 26, 0, 13, 0, 0, 0, 5, 0, 3, 0, 0, 0, 27, 0, 13, 0, 0, 0, 0, 0, 3, 0, 0, 0, 28, 0, 13, 0, 0, 0, 5, 0, 3, 0, 0, 0, 29, 0, 13, 0, 0, 0, 1, 0, 0, 0, 0, 0, 30, 0, 13, 0, 0, 0, 5, 0, 3, 0, 0, 0, 31, 0, 13, 0, 0, 0, 1, 0, 0, 0, 0, 0, 32, 0, 13, 0, 0, 0, 5, 0, 3, 0, 0, 0, 33, 0, 13, 0, 0, 0, 4, 0, 2, 0, 0, 0, 34, 0, 13, 0, 0, 0, 0, 0, 3, 0, 0, 0, 35, 0, 13, 0, 0, 0, 1, 0, 0, 0, 0, 0, 36, 0, 13, 0, 0, 0, 1, 0, 0, 0, 0, 0, 37, 0, 13, 0, 0, 0, 4, 0, 2, 0, 0, 0, 38, 0, 13, 0, 0, 0, 5, 0, 3, 0, 0, 0, 39, 0, 13, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 1, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 2, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 3, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 4, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 5, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 6, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 7, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 8, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 9, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 10, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 11, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 12, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 13, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 14, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 15, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 16, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 17, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 18, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 19, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 20, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 21, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 22, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 23, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 24, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 25, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 26, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 27, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 28, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 29, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 30, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 31, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 32, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 33, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 34, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 35, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 36, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 37, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 38, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0, 39, 0, 14, 0, 0, 0, 5, 0, 2, 0, 0, 0)
+tile_map_data = PackedByteArray("AAAAAAAAAAAFAAIAAAABAAAAAAAFAAIAAAACAAAAAAAFAAIAAAADAAAAAAAFAAIAAAAEAAAAAAAFAAIAAAAFAAAAAAAFAAIAAAAGAAAAAAAFAAIAAAAHAAAAAAAFAAIAAAAIAAAAAAAFAAIAAAAJAAAAAAAFAAIAAAAKAAAAAAAFAAIAAAALAAAAAAAFAAIAAAAMAAAAAAAFAAIAAAANAAAAAAAFAAIAAAAOAAAAAAAFAAIAAAAPAAAAAAAFAAIAAAAQAAAAAAAFAAIAAAARAAAAAAAFAAIAAAASAAAAAAAFAAIAAAATAAAAAAAFAAIAAAAUAAAAAAAFAAIAAAAVAAAAAAAFAAIAAAAWAAAAAAAFAAIAAAAXAAAAAAAFAAIAAAAYAAAAAAAFAAIAAAAZAAAAAAAFAAIAAAAaAAAAAAAFAAIAAAAbAAAAAAAFAAIAAAAcAAAAAAAFAAIAAAAdAAAAAAAFAAIAAAAeAAAAAAAFAAIAAAAfAAAAAAAFAAIAAAAgAAAAAAAFAAIAAAAhAAAAAAAFAAIAAAAiAAAAAAAFAAIAAAAjAAAAAAAFAAIAAAAkAAAAAAAFAAIAAAAlAAAAAAAFAAIAAAAmAAAAAAAFAAIAAAAnAAAAAAAFAAIAAAAAAAEAAAAFAAIAAAABAAEAAAABAAEAAAACAAEAAAABAAIAAAADAAEAAAAEAAMAAAAEAAEAAAAEAAMAAAAFAAEAAAABAAIAAAAGAAEAAAABAAIAAAAHAAEAAAABAAIAAAAIAAEAAAAEAAMAAAAJAAEAAAABAAIAAAAKAAEAAAABAAIAAAALAAEAAAAEAAMAAAAMAAEAAAABAAIAAAANAAEAAAAEAAMAAAAOAAEAAAAEAAMAAAAPAAEAAAAEAAMAAAAQAAEAAAAEAAMAAAARAAEAAAAEAAMAAAASAAEAAAABAAIAAAATAAEAAAAEAAMAAAAUAAEAAAAEAAMAAAAVAAEAAAABAAIAAAAWAAEAAAABAAIAAAAXAAEAAAABAAIAAAAYAAEAAAABAAIAAAAZAAEAAAAEAAMAAAAaAAEAAAABAAIAAAAbAAEAAAABAAIAAAAcAAEAAAABAAIAAAAdAAEAAAAEAAMAAAAeAAEAAAABAAIAAAAfAAEAAAABAAIAAAAgAAEAAAABAAIAAAAhAAEAAAAEAAMAAAAiAAEAAAABAAIAAAAjAAEAAAABAAIAAAAkAAEAAAAEAAMAAAAlAAEAAAABAAIAAAAmAAEAAAABAAEAAAAnAAEAAAAFAAIAAAAAAAIAAAAFAAIAAAABAAIAAAACAAEAAAAmAAIAAAAAAAEAAAAnAAIAAAAFAAIAAAAAAAMAAAAFAAIAAAABAAMAAAACAAEAAAAmAAMAAAAAAAEAAAAnAAMAAAAFAAIAAAAAAAQAAAAFAAIAAAABAAQAAAACAAEAAAAmAAQAAAAAAAEAAAAnAAQAAAAFAAIAAAAAAAUAAAAFAAIAAAABAAUAAAACAAEAAAAmAAUAAAAAAAEAAAAnAAUAAAAFAAIAAAAAAAYAAAAFAAIAAAABAAYAAAACAAEAAAAmAAYAAAAAAAEAAAAnAAYAAAAFAAIAAAAAAAcAAAAFAAIAAAABAAcAAAACAAEAAAAmAAcAAAAAAAEAAAAnAAcAAAAFAAIAAAAAAAgAAAAFAAIAAAABAAgAAAACAAEAAAAmAAgAAAAAAAEAAAAnAAgAAAAFAAIAAAAAAAkAAAAEAAMAAAABAAkAAAACAAIAAAAmAAkAAAAAAAIAAAAnAAkAAAABAAIAAAAAAA0AAAABAAAAAAABAA0AAAAFAAMAAAACAA0AAAAEAAIAAAADAA0AAAABAAAAAAAEAA0AAAAAAAMAAAAFAA0AAAAEAAIAAAAGAA0AAAAEAAIAAAAHAA0AAAABAAAAAAAIAA0AAAABAAAAAAAJAA0AAAABAAAAAAAKAA0AAAAEAAIAAAALAA0AAAAFAAMAAAAMAA0AAAABAAAAAAANAA0AAAAFAAMAAAAOAA0AAAABAAAAAAAPAA0AAAAEAAIAAAAQAA0AAAAEAAIAAAARAA0AAAABAAAAAAASAA0AAAAFAAMAAAATAA0AAAAEAAIAAAAUAA0AAAAAAAMAAAAVAA0AAAABAAAAAAAWAA0AAAAEAAIAAAAXAA0AAAAFAAMAAAAYAA0AAAABAAAAAAAZAA0AAAAEAAIAAAAaAA0AAAAFAAMAAAAbAA0AAAAAAAMAAAAcAA0AAAAFAAMAAAAdAA0AAAABAAAAAAAeAA0AAAAFAAMAAAAfAA0AAAABAAAAAAAgAA0AAAAFAAMAAAAhAA0AAAAEAAIAAAAiAA0AAAAAAAMAAAAjAA0AAAABAAAAAAAkAA0AAAABAAAAAAAlAA0AAAAEAAIAAAAmAA0AAAAFAAMAAAAnAA0AAAABAAAAAAAAAA4AAAAFAAIAAAABAA4AAAAFAAIAAAACAA4AAAAFAAIAAAADAA4AAAAFAAIAAAAEAA4AAAAFAAIAAAAFAA4AAAAFAAIAAAAGAA4AAAAFAAIAAAAHAA4AAAAFAAIAAAAIAA4AAAAFAAIAAAAJAA4AAAAFAAIAAAAKAA4AAAAFAAIAAAALAA4AAAAFAAIAAAAMAA4AAAAFAAIAAAANAA4AAAAFAAIAAAAOAA4AAAAFAAIAAAAPAA4AAAAFAAIAAAAQAA4AAAAFAAIAAAARAA4AAAAFAAIAAAASAA4AAAAFAAIAAAATAA4AAAAFAAIAAAAUAA4AAAAFAAIAAAAVAA4AAAAFAAIAAAAWAA4AAAAFAAIAAAAXAA4AAAAFAAIAAAAYAA4AAAAFAAIAAAAZAA4AAAAFAAIAAAAaAA4AAAAFAAIAAAAbAA4AAAAFAAIAAAAcAA4AAAAFAAIAAAAdAA4AAAAFAAIAAAAeAA4AAAAFAAIAAAAfAA4AAAAFAAIAAAAgAA4AAAAFAAIAAAAhAA4AAAAFAAIAAAAiAA4AAAAFAAIAAAAjAA4AAAAFAAIAAAAkAA4AAAAFAAIAAAAlAA4AAAAFAAIAAAAmAA4AAAAFAAIAAAAnAA4AAAAFAAIAAAA=")
 tile_set = ExtResource("6_r")
 
-[node name="Decor" type="Node2D" parent="."]
+[node name="Decor" type="Node2D" parent="." unique_id=85611736]
 
-[node name="Platforms" type="Node2D" parent="."]
-
-[node name="Hazards" type="Node2D" parent="."]
-
-[node name="Breakables" type="Node2D" parent="."]
-
-[node name="Switches" type="Node2D" parent="."]
-
-[node name="Gates" type="Node2D" parent="."]
-
-[node name="ArenaIceFloorTile1" type="Sprite2D" parent="Decor"]
-position = Vector2(96.00, 416.00)
+[node name="ArenaIceFloorTile1" type="Sprite2D" parent="Decor" unique_id=366318891]
+position = Vector2(96, 416)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 
-[node name="ArenaIceFloorTile2" type="Sprite2D" parent="Decor"]
-position = Vector2(128.00, 416.00)
+[node name="ArenaIceFloorTile2" type="Sprite2D" parent="Decor" unique_id=1049412432]
+position = Vector2(128, 416)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 
-[node name="ArenaIceFloorTile3" type="Sprite2D" parent="Decor"]
-position = Vector2(160.00, 416.00)
+[node name="ArenaIceFloorTile3" type="Sprite2D" parent="Decor" unique_id=1741021068]
+position = Vector2(160, 416)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 
-[node name="ArenaIceFloorTile4" type="Sprite2D" parent="Decor"]
-position = Vector2(192.00, 416.00)
+[node name="ArenaIceFloorTile4" type="Sprite2D" parent="Decor" unique_id=100816345]
+position = Vector2(192, 416)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 
-[node name="ArenaIceFloorTile5" type="Sprite2D" parent="Decor"]
-position = Vector2(224.00, 416.00)
+[node name="ArenaIceFloorTile5" type="Sprite2D" parent="Decor" unique_id=2058926205]
+position = Vector2(224, 416)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 
-[node name="ArenaIceFloorTile6" type="Sprite2D" parent="Decor"]
-position = Vector2(256.00, 416.00)
+[node name="ArenaIceFloorTile6" type="Sprite2D" parent="Decor" unique_id=1992363610]
+position = Vector2(256, 416)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 
-[node name="ArenaIceFloorTile7" type="Sprite2D" parent="Decor"]
-position = Vector2(288.00, 416.00)
+[node name="ArenaIceFloorTile7" type="Sprite2D" parent="Decor" unique_id=1639409266]
+position = Vector2(288, 416)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 
-[node name="ArenaIceFloorTile8" type="Sprite2D" parent="Decor"]
-position = Vector2(320.00, 416.00)
+[node name="ArenaIceFloorTile8" type="Sprite2D" parent="Decor" unique_id=1995304615]
+position = Vector2(320, 416)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 
-[node name="ArenaIceFloorTile9" type="Sprite2D" parent="Decor"]
-position = Vector2(352.00, 416.00)
+[node name="ArenaIceFloorTile9" type="Sprite2D" parent="Decor" unique_id=4172299]
+position = Vector2(352, 416)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 
-[node name="ArenaIceFloorTile10" type="Sprite2D" parent="Decor"]
-position = Vector2(384.00, 416.00)
+[node name="ArenaIceFloorTile10" type="Sprite2D" parent="Decor" unique_id=534808721]
+position = Vector2(384, 416)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 
-[node name="ArenaIceFloorTile11" type="Sprite2D" parent="Decor"]
-position = Vector2(416.00, 416.00)
+[node name="ArenaIceFloorTile11" type="Sprite2D" parent="Decor" unique_id=1890285660]
+position = Vector2(416, 416)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 
-[node name="ArenaIceFloorTile12" type="Sprite2D" parent="Decor"]
-position = Vector2(448.00, 416.00)
+[node name="ArenaIceFloorTile12" type="Sprite2D" parent="Decor" unique_id=1716818489]
+position = Vector2(448, 416)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 
-[node name="ArenaIceFloorTile13" type="Sprite2D" parent="Decor"]
-position = Vector2(480.00, 416.00)
+[node name="ArenaIceFloorTile13" type="Sprite2D" parent="Decor" unique_id=406937618]
+position = Vector2(480, 416)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 
-[node name="ArenaIceFloorTile14" type="Sprite2D" parent="Decor"]
-position = Vector2(512.00, 416.00)
+[node name="ArenaIceFloorTile14" type="Sprite2D" parent="Decor" unique_id=96506827]
+position = Vector2(512, 416)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 
-[node name="ArenaIceFloorTile15" type="Sprite2D" parent="Decor"]
-position = Vector2(544.00, 416.00)
+[node name="ArenaIceFloorTile15" type="Sprite2D" parent="Decor" unique_id=773505845]
+position = Vector2(544, 416)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 
-[node name="ArenaIceFloorTile16" type="Sprite2D" parent="Decor"]
-position = Vector2(576.00, 416.00)
+[node name="ArenaIceFloorTile16" type="Sprite2D" parent="Decor" unique_id=1130427087]
+position = Vector2(576, 416)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 
-[node name="ArenaIceFloorTile17" type="Sprite2D" parent="Decor"]
-position = Vector2(608.00, 416.00)
+[node name="ArenaIceFloorTile17" type="Sprite2D" parent="Decor" unique_id=470459996]
+position = Vector2(608, 416)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 
-[node name="ArenaIceFloorTile18" type="Sprite2D" parent="Decor"]
-position = Vector2(640.00, 416.00)
+[node name="ArenaIceFloorTile18" type="Sprite2D" parent="Decor" unique_id=1420952358]
+position = Vector2(640, 416)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 
-[node name="ArenaIceFloorTile19" type="Sprite2D" parent="Decor"]
-position = Vector2(672.00, 416.00)
+[node name="ArenaIceFloorTile19" type="Sprite2D" parent="Decor" unique_id=1631221470]
+position = Vector2(672, 416)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 
-[node name="ArenaIceFloorTile20" type="Sprite2D" parent="Decor"]
-position = Vector2(704.00, 416.00)
+[node name="ArenaIceFloorTile20" type="Sprite2D" parent="Decor" unique_id=319641985]
+position = Vector2(704, 416)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 
-[node name="ArenaIceFloorTile21" type="Sprite2D" parent="Decor"]
-position = Vector2(736.00, 416.00)
+[node name="ArenaIceFloorTile21" type="Sprite2D" parent="Decor" unique_id=93561974]
+position = Vector2(736, 416)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 
-[node name="ArenaIceFloorTile22" type="Sprite2D" parent="Decor"]
-position = Vector2(768.00, 416.00)
+[node name="ArenaIceFloorTile22" type="Sprite2D" parent="Decor" unique_id=223995455]
+position = Vector2(768, 416)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 
-[node name="ArenaIceFloorTile23" type="Sprite2D" parent="Decor"]
-position = Vector2(800.00, 416.00)
+[node name="ArenaIceFloorTile23" type="Sprite2D" parent="Decor" unique_id=1344050098]
+position = Vector2(800, 416)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 
-[node name="ArenaIceFloorTile24" type="Sprite2D" parent="Decor"]
-position = Vector2(832.00, 416.00)
+[node name="ArenaIceFloorTile24" type="Sprite2D" parent="Decor" unique_id=1556994348]
+position = Vector2(832, 416)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 
-[node name="ArenaIceFloorTile25" type="Sprite2D" parent="Decor"]
-position = Vector2(864.00, 416.00)
+[node name="ArenaIceFloorTile25" type="Sprite2D" parent="Decor" unique_id=702349498]
+position = Vector2(864, 416)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 
-[node name="ArenaIceFloorTile26" type="Sprite2D" parent="Decor"]
-position = Vector2(896.00, 416.00)
+[node name="ArenaIceFloorTile26" type="Sprite2D" parent="Decor" unique_id=1839903588]
+position = Vector2(896, 416)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 
-[node name="ArenaIceFloorTile27" type="Sprite2D" parent="Decor"]
-position = Vector2(928.00, 416.00)
+[node name="ArenaIceFloorTile27" type="Sprite2D" parent="Decor" unique_id=843705775]
+position = Vector2(928, 416)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 
-[node name="ArenaIceFloorTile28" type="Sprite2D" parent="Decor"]
-position = Vector2(960.00, 416.00)
+[node name="ArenaIceFloorTile28" type="Sprite2D" parent="Decor" unique_id=842859344]
+position = Vector2(960, 416)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 
-[node name="ArenaIceFloorTile29" type="Sprite2D" parent="Decor"]
-position = Vector2(992.00, 416.00)
+[node name="ArenaIceFloorTile29" type="Sprite2D" parent="Decor" unique_id=888837532]
+position = Vector2(992, 416)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 
-[node name="ArenaIceFloorTile30" type="Sprite2D" parent="Decor"]
-position = Vector2(1024.00, 416.00)
+[node name="ArenaIceFloorTile30" type="Sprite2D" parent="Decor" unique_id=602096338]
+position = Vector2(1024, 416)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 
-[node name="ArenaIceFloorTile31" type="Sprite2D" parent="Decor"]
-position = Vector2(1056.00, 416.00)
+[node name="ArenaIceFloorTile31" type="Sprite2D" parent="Decor" unique_id=1210090630]
+position = Vector2(1056, 416)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 
-[node name="ArenaIceFloorTile32" type="Sprite2D" parent="Decor"]
-position = Vector2(1088.00, 416.00)
+[node name="ArenaIceFloorTile32" type="Sprite2D" parent="Decor" unique_id=777954362]
+position = Vector2(1088, 416)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 
-[node name="ArenaIceFloorTile33" type="Sprite2D" parent="Decor"]
-position = Vector2(1120.00, 416.00)
+[node name="ArenaIceFloorTile33" type="Sprite2D" parent="Decor" unique_id=1624445699]
+position = Vector2(1120, 416)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 
-[node name="ArenaIceFloorTile34" type="Sprite2D" parent="Decor"]
-position = Vector2(1152.00, 416.00)
+[node name="ArenaIceFloorTile34" type="Sprite2D" parent="Decor" unique_id=836459962]
+position = Vector2(1152, 416)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("7_r")
 centered = false
 
-[node name="FrozenTraitorsWide1" type="Sprite2D" parent="Decor"]
-position = Vector2(128.00, 367.50)
+[node name="FrozenTraitorsWide1" type="Sprite2D" parent="Decor" unique_id=663482250]
+position = Vector2(128, 367.5)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("8_r")
 centered = false
 
-[node name="FrozenTraitor1" type="Sprite2D" parent="Decor"]
-position = Vector2(1062.00, 349.00)
+[node name="FrozenTraitor1" type="Sprite2D" parent="Decor" unique_id=2139683201]
+position = Vector2(1062, 349)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("9_r")
 centered = false
 
-[node name="IceCrystals1" type="Sprite2D" parent="Decor"]
-position = Vector2(288.00, 373.50)
+[node name="IceCrystals1" type="Sprite2D" parent="Decor" unique_id=961862623]
+position = Vector2(288, 373.5)
 scale = Vector2(0.22, 0.22)
 texture = ExtResource("10_r")
 centered = false
 
-[node name="IceCrystals2" type="Sprite2D" parent="Decor"]
-position = Vector2(915.00, 373.50)
+[node name="IceCrystals2" type="Sprite2D" parent="Decor" unique_id=1130180078]
+position = Vector2(915, 373.5)
 scale = Vector2(0.22, 0.22)
 texture = ExtResource("10_r")
 centered = false
 flip_h = true
 
-[node name="ColdBrazier1" type="Sprite2D" parent="Decor"]
-position = Vector2(96.00, 361.00)
+[node name="ColdBrazier1" type="Sprite2D" parent="Decor" unique_id=835686958]
+position = Vector2(96, 361)
 scale = Vector2(0.22, 0.22)
 texture = ExtResource("11_r")
 centered = false
 
-[node name="ColdBrazier2" type="Sprite2D" parent="Decor"]
-position = Vector2(1152.00, 361.00)
+[node name="ColdBrazier2" type="Sprite2D" parent="Decor" unique_id=1537108029]
+position = Vector2(1152, 361)
 scale = Vector2(0.22, 0.22)
 texture = ExtResource("11_r")
 centered = false
 
-[node name="Satan" type="AnimatedSprite2D" parent="."]
-position = Vector2(640.00, 419.00)
-scale = Vector2(0.33, 0.33)
-sprite_frames = ExtResource("12_r")
-animation = &"frozen"
-offset = Vector2(0.00, -301.50)
-
-[node name="Icicles1" type="Sprite2D" parent="Decor"]
-position = Vector2(224.00, 61.00)
+[node name="Icicles1" type="Sprite2D" parent="Decor" unique_id=537357240]
+position = Vector2(224, 61)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("13_r")
 centered = false
 
-[node name="Icicles2" type="Sprite2D" parent="Decor"]
-position = Vector2(480.00, 61.00)
+[node name="Icicles2" type="Sprite2D" parent="Decor" unique_id=1087858522]
+position = Vector2(480, 61)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("13_r")
 centered = false
 
-[node name="Icicles3" type="Sprite2D" parent="Decor"]
-position = Vector2(800.00, 61.00)
+[node name="Icicles3" type="Sprite2D" parent="Decor" unique_id=1591644542]
+position = Vector2(800, 61)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("13_r")
 centered = false
 
-[node name="Icicles4" type="Sprite2D" parent="Decor"]
-position = Vector2(1056.00, 61.00)
+[node name="Icicles4" type="Sprite2D" parent="Decor" unique_id=210391425]
+position = Vector2(1056, 61)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("13_r")
 centered = false
 
-[node name="BrokenChains1" type="Sprite2D" parent="Decor"]
-position = Vector2(352.00, 62.00)
+[node name="BrokenChains1" type="Sprite2D" parent="Decor" unique_id=1762852653]
+position = Vector2(352, 62)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("14_r")
 centered = false
 
-[node name="BrokenChains2" type="Sprite2D" parent="Decor"]
-position = Vector2(928.00, 62.00)
+[node name="BrokenChains2" type="Sprite2D" parent="Decor" unique_id=82271207]
+position = Vector2(928, 62)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("14_r")
 centered = false
 
-[node name="Lantern1" type="Sprite2D" parent="Decor"]
-position = Vector2(128.00, 59.00)
+[node name="Lantern1" type="Sprite2D" parent="Decor" unique_id=1632854902]
+position = Vector2(128, 59)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("15_r")
 centered = false
 
-[node name="Lantern2" type="Sprite2D" parent="Decor"]
-position = Vector2(1152.00, 59.00)
+[node name="Lantern2" type="Sprite2D" parent="Decor" unique_id=153938029]
+position = Vector2(1152, 59)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("15_r")
 centered = false
 
-[node name="Gate_L" type="Node2D" parent="Gates"]
-position = Vector2(14.00, 280.00)
+[node name="Platforms" type="Node2D" parent="." unique_id=280048498]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Gates/Gate_L"]
+[node name="Hazards" type="Node2D" parent="." unique_id=1438386176]
+
+[node name="Breakables" type="Node2D" parent="." unique_id=359035048]
+
+[node name="Switches" type="Node2D" parent="." unique_id=1925382759]
+
+[node name="Gates" type="Node2D" parent="." unique_id=1275061824]
+
+[node name="Gate_L" type="Node2D" parent="Gates" unique_id=670673296]
+position = Vector2(14, 280)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Gates/Gate_L" unique_id=135113399]
 scale = Vector2(0.33, 0.33)
 sprite_frames = SubResource("SpriteFrames_1")
 animation = &"close"
 centered = false
 
-[node name="GateBody" type="StaticBody2D" parent="Gates/Gate_L"]
+[node name="GateBody" type="StaticBody2D" parent="Gates/Gate_L" unique_id=2055748201]
 process_mode = 4
-collision_layer = 1
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate_L/GateBody"]
-position = Vector2(34.00, 84.00)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate_L/GateBody" unique_id=135506382]
+position = Vector2(34, 84)
 shape = SubResource("RectangleShape2D_2")
 
-[node name="Gate_R" type="Node2D" parent="Gates"]
-position = Vector2(1197.50, 280.00)
+[node name="Gate_R" type="Node2D" parent="Gates" unique_id=1238670908]
+position = Vector2(1197.5, 280)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Gates/Gate_R"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Gates/Gate_R" unique_id=102290157]
 scale = Vector2(0.33, 0.33)
 sprite_frames = SubResource("SpriteFrames_1")
 animation = &"close"
 centered = false
 flip_h = true
 
-[node name="GateBody" type="StaticBody2D" parent="Gates/Gate_R"]
+[node name="GateBody" type="StaticBody2D" parent="Gates/Gate_R" unique_id=72997058]
 process_mode = 4
-collision_layer = 1
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate_R/GateBody"]
-position = Vector2(34.00, 84.00)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gates/Gate_R/GateBody" unique_id=1069433977]
+position = Vector2(34, 84)
 shape = SubResource("RectangleShape2D_3")
 
-[node name="Exits" type="Node2D" parent="."]
+[node name="Satan" parent="." unique_id=971591881 instance=ExtResource("30_satan")]
+position = Vector2(640, 419)
 
-[node name="Spawns" type="Node2D" parent="."]
+[node name="Exits" type="Node2D" parent="." unique_id=1753884845]
 
-[node name="Exit_L" type="Area2D" parent="Exits"]
-position = Vector2(16.00, 368.00)
+[node name="Exit_L" type="Area2D" parent="Exits" unique_id=1525782560]
+position = Vector2(16, 368)
 collision_layer = 512
 collision_mask = 2
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Exits/Exit_L"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exits/Exit_L" unique_id=1708465237]
 shape = SubResource("RectangleShape2D_4")
 
-[node name="Spawn_L" type="Marker2D" parent="Spawns"]
-position = Vector2(83.20, 416.00)
-
-[node name="Exit_R" type="Area2D" parent="Exits"]
-position = Vector2(1264.00, 368.00)
+[node name="Exit_R" type="Area2D" parent="Exits" unique_id=1797428686]
+position = Vector2(1264, 368)
 collision_layer = 512
 collision_mask = 2
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Exits/Exit_R"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exits/Exit_R" unique_id=2004285866]
 shape = SubResource("RectangleShape2D_5")
 
-[node name="Spawn_R" type="Marker2D" parent="Spawns"]
-position = Vector2(1196.80, 416.00)
+[node name="Spawns" type="Node2D" parent="." unique_id=807517123]
 
-[node name="Cutscene" type="Node2D" parent="."]
+[node name="Spawn_L" type="Marker2D" parent="Spawns" unique_id=1255019347]
+position = Vector2(83.2, 416)
 
-[node name="WalkStop" type="Marker2D" parent="Cutscene"]
-position = Vector2(352.00, 419.00)
+[node name="Spawn_R" type="Marker2D" parent="Spawns" unique_id=365960145]
+position = Vector2(1196.8, 416)
 
-[node name="VirgilSpot" type="Marker2D" parent="Cutscene"]
-position = Vector2(524.80, 419.00)
+[node name="Cutscene" type="Node2D" parent="." unique_id=1068070454]
+script = ExtResource("32_cut")
+lines_virgil = Array[ExtResource("33_dl")]([SubResource("DL_cow77"), SubResource("DL_u2sa1"), SubResource("DL_xjek1"), SubResource("DL_vd0fi"), SubResource("DL_wgy1t"), SubResource("DL_dlsab"), SubResource("DL_y44sf"), SubResource("DL_neb6q"), SubResource("DL_2w6a7"), SubResource("DL_sr0fl")])
+lines_satan = Array[ExtResource("33_dl")]([SubResource("DL_5nb5l"), SubResource("DL_0aow8"), SubResource("DL_r65xx"), SubResource("DL_08mn4"), SubResource("DL_63kq0"), SubResource("DL_m62pw"), SubResource("DL_i34sg")])
+lines_quake = Array[ExtResource("33_dl")]([SubResource("Resource_pfgta")])
+lines_goodbye = Array[ExtResource("33_dl")]([SubResource("Resource_1wrdp")])
 
-[node name="CamFace" type="Marker2D" parent="Cutscene"]
-position = Vector2(640.00, 254.00)
+[node name="WalkStop" type="Marker2D" parent="Cutscene" unique_id=1757651022]
+position = Vector2(352, 419)
 
-[node name="CamDuel" type="Marker2D" parent="Cutscene"]
-position = Vector2(496.00, 344.00)
+[node name="VirgilSpot" type="Marker2D" parent="Cutscene" unique_id=1181331711]
+position = Vector2(524.8, 419)
 
-[node name="SatanSpawn" type="Marker2D" parent="Cutscene"]
-position = Vector2(640.00, 419.00)
+[node name="CamFace" type="Marker2D" parent="Cutscene" unique_id=2008250883]
+position = Vector2(640, 254)
 
-[node name="Fight" type="Node2D" parent="."]
+[node name="CamDuel" type="Marker2D" parent="Cutscene" unique_id=1899514645]
+position = Vector2(496, 344)
 
-[node name="Pillar1" type="Marker2D" parent="Fight"]
-position = Vector2(256.00, 419.00)
+[node name="SatanSpawn" type="Marker2D" parent="Cutscene" unique_id=399796859]
+position = Vector2(640, 419)
 
-[node name="Pillar2" type="Marker2D" parent="Fight"]
-position = Vector2(448.00, 419.00)
+[node name="Virgil" type="AnimatedSprite2D" parent="Cutscene" unique_id=370313265]
+texture_filter = 4
+position = Vector2(524.8, 419)
+scale = Vector2(0.1, 0.1)
+sprite_frames = ExtResource("31_virgil")
+animation = &"idle"
+autoplay = "idle"
+offset = Vector2(17, -144)
 
-[node name="Pillar3" type="Marker2D" parent="Fight"]
-position = Vector2(832.00, 419.00)
+[node name="Trigger" type="Area2D" parent="Cutscene" unique_id=1933474109]
+position = Vector2(352, 300)
+collision_layer = 0
+collision_mask = 2
+monitorable = false
 
-[node name="Pillar4" type="Marker2D" parent="Fight"]
-position = Vector2(1024.00, 419.00)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cutscene/Trigger" unique_id=1089453544]
+shape = SubResource("RectangleShape2D_trigger")
 
-[node name="IcicleLeft" type="Marker2D" parent="Fight"]
-position = Vector2(96.00, 83.20)
+[node name="IceShell" type="Sprite2D" parent="Cutscene" unique_id=782895550]
+visible = false
+z_index = 1
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("23_pfgta")
+centered = false
+offset = Vector2(-125, -220)
 
-[node name="IcicleRight" type="Marker2D" parent="Fight"]
-position = Vector2(1184.00, 83.20)
+[node name="Fight" type="Node2D" parent="." unique_id=601773088]
 
-[node name="HoverLeft" type="Marker2D" parent="Fight"]
-position = Vector2(320.00, 192.00)
+[node name="Pillar1" type="Marker2D" parent="Fight" unique_id=1141786991]
+position = Vector2(256, 419)
 
-[node name="HoverCenter" type="Marker2D" parent="Fight"]
-position = Vector2(640.00, 160.00)
+[node name="Pillar2" type="Marker2D" parent="Fight" unique_id=925231712]
+position = Vector2(448, 419)
 
-[node name="HoverRight" type="Marker2D" parent="Fight"]
-position = Vector2(960.00, 192.00)
+[node name="Pillar3" type="Marker2D" parent="Fight" unique_id=2086231432]
+position = Vector2(832, 419)
 
-[node name="Player" parent="." instance=ExtResource("20_r")]
-position = Vector2(83.20, 416.00)
+[node name="Pillar4" type="Marker2D" parent="Fight" unique_id=1016034609]
+position = Vector2(1024, 419)
+
+[node name="IcicleLeft" type="Marker2D" parent="Fight" unique_id=483130106]
+position = Vector2(96, 83.2)
+
+[node name="IcicleRight" type="Marker2D" parent="Fight" unique_id=1415532799]
+position = Vector2(1184, 83.2)
+
+[node name="HoverLeft" type="Marker2D" parent="Fight" unique_id=416347396]
+position = Vector2(320, 192)
+
+[node name="HoverCenter" type="Marker2D" parent="Fight" unique_id=2019373314]
+position = Vector2(640, 160)
+
+[node name="HoverRight" type="Marker2D" parent="Fight" unique_id=437760017]
+position = Vector2(960, 192)
+
+[node name="Player" parent="." unique_id=2073137616 instance=ExtResource("20_r")]
+position = Vector2(83.2, 416)
 
 [node name="Camera2D" parent="Player" index="2" unique_id=623591930]
 limit_left = 0
@@ -559,14 +710,26 @@ limit_top = 0
 limit_right = 1280
 limit_bottom = 480
 
-[node name="Foreground" type="Parallax2D" parent="."]
+[node name="CollisionShape2D" parent="Player/Hurtbox" parent_id_path=PackedInt32Array(2073137616, 887145532) index="0" unique_id=1868882131]
+shape = SubResource("RectangleShape2D_1wrdp")
+
+[node name="CollisionShape2D" parent="Player/Attacks/SideSlash" parent_id_path=PackedInt32Array(2073137616, 1898026828) index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_6yqq5")
+
+[node name="CollisionShape2D" parent="Player/Attacks/UpSlash" parent_id_path=PackedInt32Array(2073137616, 2052691650) index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_m4eu2")
+
+[node name="CollisionShape2D" parent="Player/Attacks/DownSlash" parent_id_path=PackedInt32Array(2073137616, 614013444) index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_xc2ix")
+
+[node name="Foreground" type="Parallax2D" parent="." unique_id=1497122544]
 z_index = 20
-scroll_scale = Vector2(1.20, 1.00)
-repeat_size = Vector2(1280.00, 0.00)
+scroll_scale = Vector2(1.2, 1)
+repeat_size = Vector2(1280, 0)
 repeat_times = 3
 
-[node name="Sprite0" type="Sprite2D" parent="Foreground"]
-position = Vector2(0.00, 343.20)
+[node name="Sprite0" type="Sprite2D" parent="Foreground" unique_id=1385370800]
+position = Vector2(0, 343.2)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("21_r")
 centered = false
@@ -574,3 +737,7 @@ region_enabled = true
 region_rect = Rect2(0, 669, 3840, 411)
 
 [editable path="Player"]
+[editable path="Player/Hurtbox"]
+[editable path="Player/Attacks/SideSlash"]
+[editable path="Player/Attacks/UpSlash"]
+[editable path="Player/Attacks/DownSlash"]

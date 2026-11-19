@@ -72,7 +72,6 @@ freeze_time = 1.0
 guard_time = 1.5
 down_time = 1.6
 boss_name = "Midas"
-auto_start = true
 reward = ExtResource("2_xq2ia")
 think_time = Vector2(0.8, 1.5)
 preferred_range = Vector2(70, 150)

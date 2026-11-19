@@ -435,6 +435,38 @@ region = Rect2(2772, 1224, 252, 204)
 atlas = ExtResource("1_knight")
 region = Rect2(3024, 1224, 252, 204)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_freeze0"]
+atlas = ExtResource("1_knight")
+region = Rect2(2016, 2040, 252, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_freeze1"]
+atlas = ExtResource("1_knight")
+region = Rect2(2268, 2040, 252, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_freeze2"]
+atlas = ExtResource("1_knight")
+region = Rect2(2520, 2040, 252, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_freeze3"]
+atlas = ExtResource("1_knight")
+region = Rect2(2772, 2040, 252, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_freeze4"]
+atlas = ExtResource("1_knight")
+region = Rect2(3024, 2040, 252, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_freeze5"]
+atlas = ExtResource("1_knight")
+region = Rect2(3276, 2040, 252, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_freeze6"]
+atlas = ExtResource("1_knight")
+region = Rect2(3528, 2040, 252, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_freeze7"]
+atlas = ExtResource("1_knight")
+region = Rect2(3780, 2040, 252, 204)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_37"]
 atlas = ExtResource("1_knight")
 region = Rect2(1260, 408, 252, 204)
@@ -1252,6 +1284,35 @@ animations = [{
 "loop": 0,
 "name": &"focus_heal",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_freeze0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_freeze1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_freeze2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_freeze3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_freeze4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_freeze5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_freeze6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_freeze7")
+}],
+"loop": 0,
+"name": &"freeze",
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,

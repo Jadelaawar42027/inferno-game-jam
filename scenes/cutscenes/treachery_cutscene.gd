@@ -14,11 +14,19 @@ const SATAN_PORTRAIT := preload("res://assets/sprites/portraits/satan_portrait.p
 var cam: Camera2D
 var triggered := false
 
+const FX := preload("res://scenes/fx/boss_fx.tscn")
+
+@export var lines_quake: Array[DialogLine]
+@export var lines_goodbye: Array[DialogLine]
+
+var quaking := false
+
+
 func _ready() -> void:
 	trigger.body_entered.connect(_on_trigger_body_entered)
 	satan.boss_defeated.connect(_on_satan_defeated)
 	if GameState.satan_intro_seen: virgil.hide()
-	
+
 func _on_trigger_body_entered(body: Node2D) -> void:
 	if triggered or not body is Player: return
 	triggered = true
@@ -83,4 +91,39 @@ func set_gate(g: Node) -> void:
 
 func _on_satan_defeated() -> void:
 	await satan.tree_exited
-	GameState.go_to_next_floor()
+	var dialog = get_tree().get_first_node_in_group("dialog_box")
+	await player.play_absorb_animation(null)
+	player.absorbing = true
+	player.anim.play("idle")
+	quaking = true
+	rockfall()
+	dialog.dialog_start("Dante", lines_quake, false)
+	await dialog.dialog_finished
+	await walk_to($SatanSpawn.global_position.x)
+	player.anim.play("cast")
+	player.anim.play("freeze")
+	SFX.play("ice_crack")
+	await player.anim.animation_finished
+
+func rockfall() -> void:
+	while quaking:
+		var rock := FX.instantiate() as BossFx
+		rock.anim_name = "rock"
+		rock.gravity = 700.0
+		rock.land_anim = "rock_break"
+		rock.land_sfx = "rock_break"
+		rock.position = Vector2(randf_range(80, 1200), 160)
+		get_parent().add_child(rock)
+		rock.hitbox.deactivate()
+		player.shake(2.5)
+		await get_tree().create_timer(0.3).timeout
+
+func walk_to(x: float) -> void:
+	var dir := signf(x - player.global_position.x)
+	if dir == 0: return
+	player.facing = int(dir)
+	player.visual.scale.x = dir
+	player.anim.play("run")
+	var time := absf(x - player.global_position.x) / player.run_speed
+	await create_tween().tween_property(player, "global_position:x", x, time).finished
+	player.anim.play("idle")

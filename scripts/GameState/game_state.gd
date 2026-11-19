@@ -23,6 +23,8 @@ var abilities: Array[Ability] = []
 var sins_absorbed: int:
 	get: return abilities.size()
 	
+var satan_intro_seen := false
+
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -97,3 +99,4 @@ func reset() -> void:
 	abilities.clear()
 	current_floor = 0
 	checkpoint = Vector2.INF
+	satan_intro_seen = false

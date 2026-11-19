@@ -62,7 +62,6 @@ hop_height = -380.0
 heal_amount = 4
 boss_name = "Hibachi Chef"
 recover_time = 0.9
-auto_start = true
 reward = ExtResource("2_uqchq")
 think_time = Vector2(0.7, 1.4)
 preferred_range = Vector2(50, 120)
