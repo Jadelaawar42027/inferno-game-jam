@@ -166,19 +166,19 @@ metadata/_custom_type_script = "uid://dkj0fvj30brcg"
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_trigger"]
 size = Vector2(20, 320)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wrdp"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfgta"]
 resource_local_to_scene = true
 size = Vector2(10, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6yqq5"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wrdp"]
 resource_local_to_scene = true
 size = Vector2(40, 34)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4eu2"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6yqq5"]
 resource_local_to_scene = true
 size = Vector2(34, 40)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xc2ix"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4eu2"]
 resource_local_to_scene = true
 size = Vector2(34, 40)
 
@@ -711,16 +711,16 @@ limit_right = 1280
 limit_bottom = 480
 
 [node name="CollisionShape2D" parent="Player/Hurtbox" parent_id_path=PackedInt32Array(2073137616, 887145532) index="0" unique_id=1868882131]
-shape = SubResource("RectangleShape2D_1wrdp")
+shape = SubResource("RectangleShape2D_pfgta")
 
 [node name="CollisionShape2D" parent="Player/Attacks/SideSlash" parent_id_path=PackedInt32Array(2073137616, 1898026828) index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_6yqq5")
+shape = SubResource("RectangleShape2D_1wrdp")
 
 [node name="CollisionShape2D" parent="Player/Attacks/UpSlash" parent_id_path=PackedInt32Array(2073137616, 2052691650) index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_m4eu2")
+shape = SubResource("RectangleShape2D_6yqq5")
 
 [node name="CollisionShape2D" parent="Player/Attacks/DownSlash" parent_id_path=PackedInt32Array(2073137616, 614013444) index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_xc2ix")
+shape = SubResource("RectangleShape2D_m4eu2")
 
 [node name="Foreground" type="Parallax2D" parent="." unique_id=1497122544]
 z_index = 20

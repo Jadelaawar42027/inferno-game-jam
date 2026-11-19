@@ -50,7 +50,6 @@ func heavy_patrol() -> void:
 		if alerted: start_charge()
 		else: start_alert()
 
-
 func start_charge() -> void:
 	state = State.CHARGE_WINDUP
 	state_timer = charge_windup_time
@@ -63,6 +62,7 @@ func charge_windup() -> void:
 	state = State.CHARGE
 	state_timer = charge_time
 	charge_hitbox.activate()
+	SFX.play("heavy_charge")
 
 func charge() -> void:
 	velocity.x = direction * charge_speed
@@ -87,6 +87,7 @@ func slam_windup() -> void:
 	state = State.SLAM
 	state_timer = slam_active_time
 	slam_hitbox.activate()
+	SFX.play("heavy_slam")
 
 func slam() -> void:
 	velocity.x = 0
@@ -118,6 +119,7 @@ func start_alert() -> void:
 	state_timer = alert_time
 	velocity.x = 0
 	play_locked("alert")
+	SFX.play("enemy_alert")
 
 func alert() -> void:
 	velocity.x = 0

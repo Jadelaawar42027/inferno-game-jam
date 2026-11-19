@@ -24,6 +24,7 @@ func get_attacks() -> Array[String]:
 func do_attack(attack_name: String) -> void:
 	if reveal_pending:
 		reveal_pending = false
+		sfx("roar")
 		await play_and_wait("reveal")
 		if is_dead: return
 		sprite.sprite_frames = P2_FRAMES

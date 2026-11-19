@@ -171,7 +171,7 @@ func gust() -> void:
 		r.gravity = 700.0
 		r.land_anim = "rock_break"
 		r.harmless_on_land = true
-		r.land_sfx = "butcher_rock_break"
+		r.land_sfx = "rock_break"
 		await wait(0.15)
 	if sprite.is_playing(): await sprite.animation_finished
 

@@ -2,7 +2,7 @@ extends StaticBody2D
 
 
 func _ready() -> void:
-	SFX.play("satan_icicle")
+	SFX.play("icicle")
 	scale.y = 0.0
 	create_tween().tween_property(self, "scale:y", 1.0, 0.35)
 	await get_tree().create_timer(8.0, false).timeout
