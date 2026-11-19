@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://1oq5tc6ugkgm"
+path="res://.godot/imported/sfx_venom_puddle.wav-3aad9f41e4166b25c6d81153306f8b58.sample"
+
+[deps]
+
+source_file="res://sound_effects/Bosses/Ferry Beast/sfx_venom_puddle.wav"
+dest_files=["res://.godot/imported/sfx_venom_puddle.wav-3aad9f41e4166b25c6d81153306f8b58.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

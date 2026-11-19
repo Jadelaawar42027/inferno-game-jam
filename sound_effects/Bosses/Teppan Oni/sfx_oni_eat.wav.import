@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ucx4tasrc2vr"
+path="res://.godot/imported/sfx_oni_eat.wav-58e314ce945b0fd666e060bee4161c1d.sample"
+
+[deps]
+
+source_file="res://sound_effects/Bosses/Teppan Oni/sfx_oni_eat.wav"
+dest_files=["res://.godot/imported/sfx_oni_eat.wav-58e314ce945b0fd666e060bee4161c1d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

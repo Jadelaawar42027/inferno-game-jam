@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c81odlfdo3544"
+path="res://.godot/imported/sfx_butcher_charge.wav-be4d7b7601b2d875fa0b1ab94c4ec3ee.sample"
+
+[deps]
+
+source_file="res://sound_effects/Bosses/Labyrinth Butcher/sfx_butcher_charge.wav"
+dest_files=["res://.godot/imported/sfx_butcher_charge.wav-be4d7b7601b2d875fa0b1ab94c4ec3ee.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

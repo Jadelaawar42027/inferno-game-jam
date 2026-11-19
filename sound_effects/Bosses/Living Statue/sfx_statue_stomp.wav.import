@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d4jnrr3wdajc"
+path="res://.godot/imported/sfx_statue_stomp.wav-6ac6a780ad9c6422bfd73fd78dccd219.sample"
+
+[deps]
+
+source_file="res://sound_effects/Bosses/Living Statue/sfx_statue_stomp.wav"
+dest_files=["res://.godot/imported/sfx_statue_stomp.wav-6ac6a780ad9c6422bfd73fd78dccd219.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

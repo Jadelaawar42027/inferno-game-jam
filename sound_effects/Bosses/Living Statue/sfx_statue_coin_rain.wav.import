@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bvj4fc6b5s2lo"
+path="res://.godot/imported/sfx_statue_coin_rain.wav-a10530efde1d4c3b393491978069a87c.sample"
+
+[deps]
+
+source_file="res://sound_effects/Bosses/Living Statue/sfx_statue_coin_rain.wav"
+dest_files=["res://.godot/imported/sfx_statue_coin_rain.wav-a10530efde1d4c3b393491978069a87c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
