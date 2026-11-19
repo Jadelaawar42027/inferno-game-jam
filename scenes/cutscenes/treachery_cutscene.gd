@@ -100,10 +100,14 @@ func _on_satan_defeated() -> void:
 	dialog.dialog_start("Dante", lines_quake, false)
 	await dialog.dialog_finished
 	await walk_to($SatanSpawn.global_position.x)
-	player.anim.play("cast")
 	player.anim.play("freeze")
 	SFX.play("ice_crack")
 	await get_tree().create_timer(1.2).timeout
+	quaking = false
+	dialog.dialog_start("Dante", lines_goodbye, false)
+	await dialog.dialog_finished
+	GameState.go_to_next_floor()
+
 
 func rockfall() -> void:
 	while quaking:
