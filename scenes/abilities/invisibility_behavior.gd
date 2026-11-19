@@ -20,8 +20,10 @@ func start() -> void:
 	timer = duration
 	player.is_invisible = true
 	player.visual.modulate.a = alpha
+	SFX.play("invis_on")
 
 func end() -> void:
 	player.is_invisible = false
 	player.visual.modulate.a = 1.0
 	cooldown_timer = cooldown
+	SFX.play("invis_off")

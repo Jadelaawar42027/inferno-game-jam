@@ -164,19 +164,19 @@ size = Vector2(54.4, 109.2)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_31"]
 size = Vector2(54.4, 109.2)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_psjk2"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a5237"]
 resource_local_to_scene = true
 size = Vector2(10, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1lekg"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_psjk2"]
 resource_local_to_scene = true
 size = Vector2(40, 34)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jah5o"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1lekg"]
 resource_local_to_scene = true
 size = Vector2(34, 40)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1gd4c"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jah5o"]
 resource_local_to_scene = true
 size = Vector2(34, 40)
 
@@ -1390,16 +1390,16 @@ limit_right = 6592
 limit_bottom = 1888
 
 [node name="CollisionShape2D" parent="Player/Hurtbox" parent_id_path=PackedInt32Array(1734184684, 887145532) index="0" unique_id=1868882131]
-shape = SubResource("RectangleShape2D_psjk2")
+shape = SubResource("RectangleShape2D_a5237")
 
 [node name="CollisionShape2D" parent="Player/Attacks/SideSlash" parent_id_path=PackedInt32Array(1734184684, 1898026828) index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_1lekg")
+shape = SubResource("RectangleShape2D_psjk2")
 
 [node name="CollisionShape2D" parent="Player/Attacks/UpSlash" parent_id_path=PackedInt32Array(1734184684, 2052691650) index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_jah5o")
+shape = SubResource("RectangleShape2D_1lekg")
 
 [node name="CollisionShape2D" parent="Player/Attacks/DownSlash" parent_id_path=PackedInt32Array(1734184684, 614013444) index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_1gd4c")
+shape = SubResource("RectangleShape2D_jah5o")
 
 [node name="Backdrops" type="Node2D" parent="." unique_id=1100074780]
 z_index = -5

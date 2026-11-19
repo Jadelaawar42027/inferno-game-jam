@@ -57,6 +57,7 @@ func fly_patrol(delta: float) -> void:
 	if is_on_wall() or (absf(offset) > patrol_range and signf(offset) == direction): set_facing(-direction)
 	if player_in_range: 
 		pick_hover_height()
+		SFX.play("enemy_alert")
 		state = State.HOVER
 
 func start_windup() -> void:
@@ -78,6 +79,7 @@ func windup() -> void:
 	state = State.SWOOP
 	state_timer = swoop_time
 	swoop_hitbox.activate()
+	SFX.play("flyer_swoop")
 
 func swoop() -> void:
 	velocity = swoop_dir * swoop_speed

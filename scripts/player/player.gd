@@ -41,6 +41,8 @@ signal absorb_finished(ability: Ability)
 @onready var ability_manager: AbilityManager = $AbilityManager
 @onready var eye_mat := anim.material as ShaderMaterial
 
+@onready var footsteps: AudioStreamPlayer2D = $Footsteps
+
 var coyote_timer := 0.0
 var jump_buffer_timer := 0.0
 var facing := 1
@@ -90,6 +92,7 @@ func start_attack(dir: float) -> void:
 	fx.modulate = Color.WHITE.lerp(Color(1, 0.3, 0.35), GameState.corruption())
 	fx.stop()
 	fx.play("slash")
+	SFX.play("slash")
 	attack_active_timer = attack_active_time
 	attack_cooldown_timer = attack_cooldown
 	VoiceManager.play_line("dante_attack", "Voice", randf_range(0.95, 1.05), false)
@@ -112,6 +115,7 @@ func _physics_process(delta: float) -> void:
 		if cutscene_lock and is_on_floor() and anim.animation != "idle":
 			action_lock = false
 			anim.play("idle")
+		footsteps.stop()
 		move_and_slide()
 		return
 	
@@ -170,10 +174,15 @@ func _physics_process(delta: float) -> void:
 		visual.visible = true
 		hurtbox.invulnerable = false
 	update_animation()
+	var running := is_on_floor() and absf(velocity.x) > 10.0
+	if running and not footsteps.playing: footsteps.play()
+	elif not running: footsteps.stop()
 	was_on_floor = is_on_floor()
 
 func _on_slash_hit(_hurtbox: Hurtbox, slash: Hitbox)->void:
+	SFX.play("slash_hit")
 	if slash == down_slash: 
+		SFX.play("pogo")
 		velocity.y = pogo_velocity
 		play_action("pogo")
 	elif slash == side_slash: recoil_timer = recoil_time
@@ -190,6 +199,7 @@ func _on_hurt(hitbox: Hitbox) ->void:
 	hurtbox.invulnerable = true
 	end_attack()
 	play_action("recoil")
+	SFX.play("player_hurt")
 	VoiceManager.play_line("dante_hurt", "Voice", 1.0, false)
 	hit_stop(0.1)
 	shake(5.0)
@@ -200,6 +210,7 @@ func _on_died() ->void:
 	Engine.time_scale = 1.0
 	end_attack()
 	play_action("death")
+	SFX.play("player_death")
 	VoiceManager.play_line("dante_death")
 	await get_tree().create_timer(0.8).timeout
 	GameState.reload_floor()
@@ -261,6 +272,7 @@ func update_animation()-> void:
 		else:
 			play_action("land")
 		fall_speed_peak = 0.0
+		SFX.play("land")
 		return
 	if not is_on_floor() and velocity.y < 0: anim.play("jump"); return
 	if not is_on_floor(): anim.play("fall"); return
@@ -291,6 +303,7 @@ func play_absorb_animation(ability: Ability) -> void:
 	var cam_tween := create_tween()
 	cam_tween.tween_property(camera, "zoom", camera.zoom * 1.3, 0.4)
 	play_action("absorb")
+	SFX.play("absorb")
 	await anim.animation_finished
 	set_corruption_smooth()
 	shake(4.0)

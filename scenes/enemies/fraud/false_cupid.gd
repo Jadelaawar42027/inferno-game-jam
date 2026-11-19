@@ -19,6 +19,7 @@ func start_transform() -> void:
 	var dx := player_target.global_position.x - global_position.x
 	if dx != 0: set_facing(signf(dx))
 	sprite.play("transform")
+	SFX.play("cupid_transformation")
 	await sprite.animation_finished
 	transforming = false
 	transformed = true

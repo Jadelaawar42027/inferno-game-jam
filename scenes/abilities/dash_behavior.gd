@@ -28,3 +28,4 @@ func start_dash() -> void:
 	if not player.is_on_floor(): air_dash_used = true
 	player.end_attack()
 	player.play_action("dash")
+	SFX.play("dash")

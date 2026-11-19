@@ -66,6 +66,7 @@ func lunge(delta: float)->void:
 	if not lunge_started:
 		lunge_started = true
 		lunge_hitbox.activate()
+		SFX.play("enemy_lunge")
 	velocity.x = lunge_dir * lunge_speed
 	lunge_timer -= delta
 	if lunge_timer <= 0: end_lunge()
@@ -87,6 +88,7 @@ func start_alert() -> void:
 	alert_timer = alert_time
 	velocity.x = 0
 	play_locked("alert")
+	SFX.play("enemy_alert")
 
 func alert(delta: float) -> void:
 	velocity.x = 0

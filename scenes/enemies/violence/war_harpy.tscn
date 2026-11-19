@@ -4,7 +4,7 @@
 [ext_resource type="Shader" uid="uid://bcycvorrmew66" path="res://scenes/enemies/hitflash.gdshader" id="2_k3j1r"]
 [ext_resource type="Texture2D" uid="uid://bdsxd3ebyr4pf" path="res://assets/sprites/enemies/war_harpy/war_harpy_hd_frame228x234_8cols_6rows.png" id="3_k3j1r"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_kwm1j"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k3j1r"]
 resource_local_to_scene = true
 shader = ExtResource("2_k3j1r")
 shader_parameter/flash_color = Color(1, 1, 1, 1)
@@ -261,15 +261,15 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kwm1j"]
+resource_local_to_scene = true
+size = Vector2(12, 22)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2bkfb"]
 resource_local_to_scene = true
 size = Vector2(12, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bttf7"]
-resource_local_to_scene = true
-size = Vector2(12, 22)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oiuu6"]
 resource_local_to_scene = true
 size = Vector2(16, 16)
 
@@ -279,24 +279,25 @@ hover_height_min = 55.0
 hover_height_max = 80.0
 hover_speed = 80.0
 orbit_speed = 1.5
+death_sfx = "flyer_death"
 
 [node name="AnimatedSprite2D" parent="." index="1" unique_id=962650832]
 modulate = Color(1, 1, 1, 1)
 texture_filter = 4
-material = SubResource("ShaderMaterial_kwm1j")
+material = SubResource("ShaderMaterial_k3j1r")
 position = Vector2(0, 7)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_kwm1j")
 frame_progress = 0.0
 
 [node name="CollisionShape2D" parent="Hurtbox" parent_id_path=PackedInt32Array(887145532) index="0" unique_id=1868882131]
-shape = SubResource("RectangleShape2D_2bkfb")
+shape = SubResource("RectangleShape2D_kwm1j")
 
 [node name="CollisionShape2D" parent="ContactHitbox" parent_id_path=PackedInt32Array(1898026828) index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_bttf7")
+shape = SubResource("RectangleShape2D_2bkfb")
 
 [node name="CollisionShape2D" parent="SwoopHitbox" parent_id_path=PackedInt32Array(1898026828) index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_oiuu6")
+shape = SubResource("RectangleShape2D_bttf7")
 
 [editable path="Hurtbox"]
 [editable path="ContactHitbox"]

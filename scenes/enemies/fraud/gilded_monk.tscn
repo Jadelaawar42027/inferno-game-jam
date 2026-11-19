@@ -7,12 +7,16 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nwo3f"]
 size = Vector2(24, 30)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vivyt"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nwo3f"]
 resource_local_to_scene = true
 shader = ExtResource("2_nwo3f")
 shader_parameter/flash_color = Color(1, 1, 1, 1)
 shader_parameter/flash_amount = 0.0
 shader_parameter/additive_mix = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vivyt"]
+resource_local_to_scene = true
+size = Vector2(24, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_idfqj"]
 resource_local_to_scene = true
@@ -20,39 +24,36 @@ size = Vector2(24, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0y4gj"]
 resource_local_to_scene = true
-size = Vector2(24, 30)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1k46s"]
-resource_local_to_scene = true
 size = Vector2(14, 22)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3ar5"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1k46s"]
 resource_local_to_scene = true
 size = Vector2(36, 12)
 
 [node name="GildedMonk" unique_id=319771871 instance=ExtResource("1_sewk4")]
+death_sfx = "flyer_death"
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=220595465]
 shape = SubResource("RectangleShape2D_nwo3f")
 
 [node name="AnimatedSprite2D" parent="." index="1" unique_id=962650832]
-material = SubResource("ShaderMaterial_vivyt")
+material = SubResource("ShaderMaterial_nwo3f")
 position = Vector2(0, -8)
 scale = Vector2(0.2, 0.2)
 sprite_frames = ExtResource("3_nwo3f")
 frame_progress = 0.0
 
 [node name="CollisionShape2D" parent="Hurtbox" parent_id_path=PackedInt32Array(887145532) index="0" unique_id=1868882131]
-shape = SubResource("RectangleShape2D_idfqj")
+shape = SubResource("RectangleShape2D_vivyt")
 
 [node name="CollisionShape2D" parent="ContactHitbox" parent_id_path=PackedInt32Array(1898026828) index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_0y4gj")
+shape = SubResource("RectangleShape2D_idfqj")
 
 [node name="CollisionShape2D" parent="ChargeHitbox" parent_id_path=PackedInt32Array(1396349982) index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_1k46s")
+shape = SubResource("RectangleShape2D_0y4gj")
 
 [node name="CollisionShape2D" parent="SlamHitbox" parent_id_path=PackedInt32Array(2139374393) index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_a3ar5")
+shape = SubResource("RectangleShape2D_1k46s")
 
 [editable path="Hurtbox"]
 [editable path="ContactHitbox"]

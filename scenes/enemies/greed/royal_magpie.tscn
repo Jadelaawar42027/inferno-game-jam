@@ -3,26 +3,27 @@
 [ext_resource type="PackedScene" uid="uid://0xkohbbfcjkg" path="res://scenes/enemies/enemy_flying.tscn" id="1_1y7op"]
 [ext_resource type="Shader" uid="uid://bcycvorrmew66" path="res://scenes/enemies/hitflash.gdshader" id="2_5auhu"]
 [ext_resource type="SpriteFrames" uid="uid://4ufgckb22vpi" path="res://assets/sprites/enemies/royal_magpie/royal_magpie_frames.tres" id="3_5auhu"]
+[ext_resource type="AudioStream" uid="uid://cr808per2dm1r" path="res://sound_effects/Enemies/sfx_flyer_wings.wav" id="4_04p33"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_04p33"]
 size = Vector2(12, 14)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5auhu"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7arcd"]
 resource_local_to_scene = true
 shader = ExtResource("2_5auhu")
 shader_parameter/flash_color = Color(1, 1, 1, 1)
 shader_parameter/flash_amount = 0.0
 shader_parameter/additive_mix = 0.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7arcd"]
-resource_local_to_scene = true
-size = Vector2(12, 14)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_465jl"]
 resource_local_to_scene = true
 size = Vector2(12, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4q6tx"]
+resource_local_to_scene = true
+size = Vector2(12, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yj4e2"]
 resource_local_to_scene = true
 size = Vector2(16, 16)
 
@@ -32,13 +33,14 @@ hover_height_min = 55.0
 hover_height_max = 80.0
 hover_speed = 80.0
 orbit_speed = 1.5
+death_sfx = "flyer_death"
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=220595465]
 shape = SubResource("RectangleShape2D_04p33")
 
 [node name="AnimatedSprite2D" parent="." index="1" unique_id=962650832]
 modulate = Color(1, 1, 1, 1)
-material = SubResource("ShaderMaterial_5auhu")
+material = SubResource("ShaderMaterial_7arcd")
 position = Vector2(0, 10)
 scale = Vector2(0.2, 0.2)
 sprite_frames = ExtResource("3_5auhu")
@@ -46,13 +48,17 @@ frame_progress = 0.0
 
 [node name="CollisionShape2D" parent="Hurtbox" parent_id_path=PackedInt32Array(887145532) index="0" unique_id=1868882131]
 texture_filter = 4
-shape = SubResource("RectangleShape2D_7arcd")
-
-[node name="CollisionShape2D" parent="ContactHitbox" parent_id_path=PackedInt32Array(1898026828) index="0" unique_id=612733107]
 shape = SubResource("RectangleShape2D_465jl")
 
-[node name="CollisionShape2D" parent="SwoopHitbox" parent_id_path=PackedInt32Array(1898026828) index="0" unique_id=612733107]
+[node name="CollisionShape2D" parent="ContactHitbox" parent_id_path=PackedInt32Array(1898026828) index="0" unique_id=612733107]
 shape = SubResource("RectangleShape2D_4q6tx")
+
+[node name="CollisionShape2D" parent="SwoopHitbox" parent_id_path=PackedInt32Array(1898026828) index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_yj4e2")
+
+[node name="Wings" type="AudioStreamPlayer2D" parent="." index="7" unique_id=368865303]
+stream = ExtResource("4_04p33")
+bus = &"SFX"
 
 [editable path="Hurtbox"]
 [editable path="ContactHitbox"]

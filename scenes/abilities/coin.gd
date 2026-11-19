@@ -14,9 +14,13 @@ func _ready() -> void:
 	sprite.play("coin")
 	ray.target_position = Vector2(6 * direction, 0)
 	hitbox.activate()
-	hitbox.hit_landed.connect(func(_h): queue_free())
+	hitbox.hit_landed.connect(_on_hit)
 	get_tree().create_timer(lifetime).timeout.connect(queue_free)
 
 func _physics_process(delta: float) -> void:
 	position.x += direction * speed * delta
 	if ray.is_colliding(): queue_free()
+
+func _on_hit(_h) -> void:
+	SFX.play("coin_hit")
+	queue_free()

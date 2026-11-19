@@ -27,6 +27,8 @@ var player_in_range: bool:
 	get: return player_near and player_target != null and not player_target.is_invisible
 
 @export var patrol_distance := 64.0
+@export var death_sfx := "enemy_death"
+
 var home_x := 0.0
 
 # Called when the node enters the scene tree for the first time.
@@ -40,15 +42,18 @@ func _on_hurt(_hitbox: Hitbox)->void:
 	if is_dead:
 		return
 	on_hit_flash()
+	SFX.play("enemy_hurt")
 	play_locked("hurt")
 
 func die()->void:
 	if is_dead: return
 	is_dead = true
+	SFX.play(death_sfx)
 	velocity = Vector2.ZERO
 	hurtbox.set_deferred("monitorable", false)
 	for child in get_children():
 		if child is Hitbox: child.deactivate()
+		if child is AudioStreamPlayer2D: child.stop()
 	if play_locked("death"): await sprite.animation_finished
 	queue_free()
 
