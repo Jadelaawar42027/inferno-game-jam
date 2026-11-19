@@ -12,6 +12,7 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if active or not body is Player: return
 	GameState.checkpoint = spawn.global_position
+	SFX.play("checkpoint")
 	set_active()
 
 func set_active() -> void:

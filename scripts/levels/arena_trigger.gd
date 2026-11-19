@@ -49,6 +49,7 @@ func set_gate(g: Node2D, closed: bool) -> void:
 		spr.play("close")
 	else:
 		spr.play_backwards("close")
+	SFX.play("gate_close" if closed else "gate_open")
 	
 func _on_sin_absorbed(_a: Ability) -> void:
 	if not triggered: return

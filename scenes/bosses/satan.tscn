@@ -13,38 +13,38 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_edr2l"]
 size = Vector2(70, 140)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8o6s5"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2ultc"]
 resource_local_to_scene = true
 shader = ExtResource("2_edr2l")
 shader_parameter/flash_color = Color(1, 1, 1, 1)
 shader_parameter/flash_amount = 0.0
 shader_parameter/additive_mix = 0.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pgro3"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8o6s5"]
 resource_local_to_scene = true
 size = Vector2(90, 140)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_usnhk"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pgro3"]
 resource_local_to_scene = true
 size = Vector2(70, 120)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jmfp"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_usnhk"]
 resource_local_to_scene = true
 size = Vector2(70, 80)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4px7"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jmfp"]
 resource_local_to_scene = true
 size = Vector2(140, 30)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6tmfk"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4px7"]
 resource_local_to_scene = true
 size = Vector2(80, 120)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_75s8g"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6tmfk"]
 resource_local_to_scene = true
 size = Vector2(160, 40)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ar3t3"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75s8g"]
 resource_local_to_scene = true
 size = Vector2(400, 16)
 
@@ -71,6 +71,7 @@ death_lines = Array[ExtResource("3_ms46o")]([])
 guide_lines = Array[ExtResource("3_ms46o")]([])
 guide_name = "Virgil"
 guide_portrait = ExtResource("5_2ultc")
+sfx_prefix = "satan"
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=220595465]
 position = Vector2(0, -70)
@@ -78,7 +79,7 @@ shape = SubResource("RectangleShape2D_edr2l")
 
 [node name="AnimatedSprite2D" parent="." index="1" unique_id=962650832]
 texture_filter = 4
-material = SubResource("ShaderMaterial_8o6s5")
+material = SubResource("ShaderMaterial_2ultc")
 scale = Vector2(0.333, 0.333)
 sprite_frames = ExtResource("3_edr2l")
 frame_progress = 0.0
@@ -91,13 +92,13 @@ max_health = 120
 position = Vector2(0, -70)
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=1868882131]
-shape = SubResource("RectangleShape2D_pgro3")
+shape = SubResource("RectangleShape2D_8o6s5")
 
 [node name="ContactHitbox" parent="." index="4" unique_id=1898026828]
 position = Vector2(0, -60)
 
 [node name="CollisionShape2D" parent="ContactHitbox" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_usnhk")
+shape = SubResource("RectangleShape2D_pgro3")
 
 [node name="ClawHitbox" parent="." index="5" unique_id=1163225649 instance=ExtResource("4_xxn4j")]
 position = Vector2(60, -80)
@@ -106,7 +107,7 @@ collision_mask = 64
 damage = 1
 
 [node name="CollisionShape2D" parent="ClawHitbox" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_7jmfp")
+shape = SubResource("RectangleShape2D_usnhk")
 
 [node name="TailHitbox" parent="." index="6" unique_id=108164802 instance=ExtResource("4_xxn4j")]
 position = Vector2(40, -15)
@@ -115,7 +116,7 @@ collision_mask = 64
 damage = 1
 
 [node name="CollisionShape2D" parent="TailHitbox" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_d4px7")
+shape = SubResource("RectangleShape2D_7jmfp")
 
 [node name="ChargeHitbox" parent="." index="7" unique_id=269974463 instance=ExtResource("4_xxn4j")]
 position = Vector2(40, -60)
@@ -124,7 +125,7 @@ collision_mask = 64
 damage = 2
 
 [node name="CollisionShape2D" parent="ChargeHitbox" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_6tmfk")
+shape = SubResource("RectangleShape2D_d4px7")
 
 [node name="SlamHitbox" parent="." index="8" unique_id=2086307984 instance=ExtResource("4_xxn4j")]
 position = Vector2(0, -20)
@@ -132,7 +133,7 @@ collision_layer = 16
 collision_mask = 64
 
 [node name="CollisionShape2D" parent="SlamHitbox" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_75s8g")
+shape = SubResource("RectangleShape2D_6tmfk")
 
 [node name="BeamPivot" type="Node2D" parent="." index="9" unique_id=533983086]
 position = Vector2(0, -130)
@@ -143,7 +144,7 @@ collision_layer = 16
 collision_mask = 64
 
 [node name="CollisionShape2D" parent="BeamPivot/BeamHitbox" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_ar3t3")
+shape = SubResource("RectangleShape2D_75s8g")
 
 [node name="Beam" type="Sprite2D" parent="BeamPivot" index="1" unique_id=1613223604]
 texture_repeat = 2

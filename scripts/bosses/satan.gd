@@ -86,6 +86,7 @@ func hit_window(hb: Hitbox, frame: int, length := 0.12) -> void:
 
 func claw() -> void:
 	sprite.play("claw")
+	sfx("claw")
 	await hit_window(claw_hitbox, 1)
 	await hit_window(claw_hitbox, 3)
 	if sprite.is_playing(): await sprite.animation_finished
@@ -93,6 +94,7 @@ func claw() -> void:
 
 func tail() -> void:
 	sprite.play("tail")
+	sfx("tail")
 	await hit_window(tail_hitbox, 2)
 	if sprite.is_playing(): await sprite.animation_finished
 
@@ -121,9 +123,11 @@ func charge() -> void:
 
 func flight() -> void:
 	await play_and_wait("takeoff")
+	sfx("takeoff")
 	flying = true
 	velocity = Vector2.ZERO
 	sprite.play("fly")
+	sfx("screech")
 	var hover := get_node_or_null("../Fight/HoverCenter") as Marker2D
 	var top := hover.global_position if hover else global_position + Vector2(0, -150)
 	await create_tween().tween_property(self, "global_position", top, 0.5).finished
@@ -144,6 +148,7 @@ func flight() -> void:
 
 func swoop() -> void:
 	sprite.play("swoop")
+	sfx("swoop")
 	await wait(0.25)
 	charge_hitbox.activate()
 	var target := player_target.global_position + Vector2(0, -20)
@@ -155,6 +160,7 @@ func swoop() -> void:
 
 func gust() -> void:
 	sprite.play("gust")
+	sfx("gust")
 	await wait(0.2)
 	player_target.velocity.x = direction * 260
 	player_target.hurt_lock_timer = 0.35
@@ -165,6 +171,7 @@ func gust() -> void:
 		r.gravity = 700.0
 		r.land_anim = "rock_break"
 		r.harmless_on_land = true
+		r.land_sfx = "butcher_rock_break"
 		await wait(0.15)
 	if sprite.is_playing(): await sprite.animation_finished
 
@@ -183,6 +190,7 @@ func land() -> void:
 
 func breath() -> void:
 	sprite.play("breath")
+	sfx("breath")
 	while sprite.frame < 1 and not is_dead: await get_tree().process_frame
 	for i in 4:
 		spawn_fx("puddle", global_position + Vector2(direction * (50 + i * 40), 0))
@@ -191,6 +199,7 @@ func breath() -> void:
 
 func orbs() -> void:
 	sprite.play("orbs")
+	sfx("orbs")
 	while sprite.frame < 2 and not is_dead: await get_tree().process_frame
 	for i in 3:
 		var aim := player_target.global_position + Vector2(0, -12)
@@ -206,6 +215,7 @@ func beam() -> void:
 	var start := (player_target.global_position - beam_pivot.global_position).angle() - 0.6 * direction
 	beam_pivot.rotation = start
 	$BeamPivot/Beam.visible = true
+	sfx("beam")
 	if not player_target.is_invisible: beam_hitbox.activate()
 	await create_tween().tween_property(beam_pivot, "rotation", start + 1.2 * direction, 0.9).finished
 	beam_hitbox.deactivate()
@@ -214,6 +224,7 @@ func beam() -> void:
 
 func roar() -> void:
 	sprite.play("roar")
+	sfx("roar")
 	for m in ["Pillar1", "Pillar2", "Pillar3", "Pillar4"]:
 		var spot := get_node_or_null("../Fight/" + m) as Marker2D
 		if spot == null: continue
@@ -238,6 +249,7 @@ func final_stand() -> void:
 	final_done = true
 	flying = true
 	await create_tween().tween_property(self, "global_position", global_position + Vector2(0, -120), 0.5).finished
+	sfx("chest")
 	await play_and_wait("chest_open")
 	weak_point = true
 	await wait(2.5)

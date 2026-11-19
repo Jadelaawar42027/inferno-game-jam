@@ -43,13 +43,16 @@ func belly_slam() -> void:
 		await wait(0.1)
 		while not is_on_floor() and not is_dead: await get_tree().physics_frame
 		velocity.x = 0
+		sfx("slam")
 		spawn_fx("shockwave", global_position + Vector2(30, 50), Vector2(160, 0))
 		spawn_fx("shockwave", global_position + Vector2(-30, 50), Vector2(-160, 0))
 		await play_and_wait("slam_land")
 
 func knife_flurry() -> void:
+	sfx("knife_draw")
 	await play_and_wait("knife_draw")
 	sprite.play("knife_flurry")
+	sfx("knives")
 	knife_hitbox.position.x = 75 * direction
 	var cuts := 6 if phase == 1 else 9
 	for i in cuts:
@@ -65,6 +68,7 @@ func knife_flurry() -> void:
 func flambe() -> void:
 	await play_and_wait("flambe_windup")
 	sprite.play("flambe")
+	sfx("flambe")
 	var patches := 4 if phase == 1 else 6
 	for i in patches:
 		spawn_fx("fire", global_position + Vector2(direction * (60 + i * 28), 50))
@@ -77,6 +81,7 @@ func meatball_toss() -> void:
 		face_player()
 		await play_and_wait("toss_windup")
 		sprite.play("toss")
+		sfx("meatball")
 		var fx := spawn_fx("meatball", global_position + Vector2(direction * 40, -40), Vector2(direction * randf_range(90, 180), -280))
 		fx.gravity = 700.0
 		fx.land_anim = "meatball_idle"
@@ -100,6 +105,7 @@ func snack() -> void:
 	velocity.x = 0
 	if not is_instance_valid(target): return
 	sprite.play("eat")
+	sfx("eat")
 	await wait(0.2)
 	if is_instance_valid(target): target.queue_free()
 	await sprite.animation_finished

@@ -62,6 +62,7 @@ func tail_sting(skip_windup := false) -> void:
 		sprite.play("sting")
 		await wait(0.07)
 		sting_hitbox.activate()
+		sfx("sting")
 		await sprite.animation_finished
 		sting_hitbox.deactivate()
 		if is_dead: return
@@ -77,6 +78,7 @@ func paw_swipe(skip_windup := false) -> void:
 		if is_dead: return
 	sprite.play("swipe")
 	swipe_hitbox.activate()
+	sfx("swipe")
 	await wait(0.1)
 	swipe_hitbox.deactivate()
 	await wait(0.08)
@@ -92,11 +94,13 @@ func venom_spray(skip_windup := false) -> void:
 		await play_and_wait("spray_windup")
 		if is_dead: return
 	sprite.play("spray")
+	sfx("spray")
 	var vx := clampf(dx_to_player() / 0.9, -220, 220)
 	for spread in [-40.0, 0.0, 40.0]:
 		var g := spawn_fx("venom", global_position + Vector2(direction * 50, -60), Vector2(vx + spread, -250))
 		g.gravity = 500.0
 		g.land_anim = "puddle"
+		g.land_sfx = sfx_key("venom_puddle")
 	await sprite.animation_finished
 
 func slither_lunge(skip_windup := false) -> void:
@@ -133,6 +137,7 @@ func the_lie() -> void:
 
 func false_opening() -> void:
 	sprite.play("fake_stun")
+	sfx("fake")
 	faking = true
 	fake_hit = false
 	var t := 0.0

@@ -46,6 +46,7 @@ func bull_charge() -> void:
 	var runs := 1 if phase == 1 else 3
 	for r in runs:
 		sprite.play("charge")
+		sfx("charge")
 		charge_hitbox.activate()
 		var t := 0.0
 		while (t < 0.1 or not is_on_wall()) and t < 2.5 and not is_dead:
@@ -60,15 +61,18 @@ func bull_charge() -> void:
 			await wait(0.25)
 			if is_dead: return
 	spawn_rocks(3)
+	sfx("crash")
 	await play_and_wait("charge_crash")
 	if is_dead: return
 	sprite.play("stun")
+	sfx("stun")
 	await wait(stun_time)
 
 func horn_gore() -> void:
 	await play_and_wait("gore_windup")
 	if is_dead: return
 	sprite.play("gore")
+	sfx("gore")
 	gore_hitbox.activate()
 	await wait(0.15)
 	gore_hitbox.deactivate()
@@ -82,6 +86,7 @@ func ground_pound() -> void:
 	await play_and_wait("pound_windup")
 	if is_dead: return
 	sprite.play("pound")
+	sfx("pound")
 	spawn_fx("shockwave", global_position + Vector2(40, 50), Vector2(180, 0))
 	spawn_fx("shockwave", global_position + Vector2(-40, 50), Vector2(-180, 0))
 	spawn_rocks(4 if phase == 1 else 7)
@@ -96,6 +101,7 @@ func spawn_rocks(count: int) -> void:
 		r.gravity = 700.0
 		r.land_anim = "rock_break"
 		r.harmless_on_land = true
+		r.land_sfx = sfx_key("rock_break")
 		await wait(0.15)
 
 func chain_lash() -> void:
@@ -104,6 +110,7 @@ func chain_lash() -> void:
 	sprite.play("lash")
 	await wait(0.07)
 	lash_hitbox.activate()
+	sfx("lash")
 	await wait(0.15)
 	lash_hitbox.deactivate()
 	if is_dead: return
@@ -113,6 +120,7 @@ func leap_crush() -> void:
 	await play_and_wait("leap_windup")
 	if is_dead: return
 	sprite.play("leap")
+	sfx("leap")
 	velocity = Vector2(clampf(dx_to_player() * 1.4, -220, 220), leap_height)
 	await wait(0.1)
 	while not is_on_floor() and not is_dead: await get_tree().physics_frame

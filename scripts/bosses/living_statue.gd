@@ -45,6 +45,7 @@ func golden_touch() -> void:
 	if is_dead: return
 	touch_hitbox.position.x = 75 * direction
 	sprite.play("touch")
+	sfx("touch")
 	touch_hitbox.activate()
 	velocity.x = direction * touch_speed
 	await wait(0.3)
@@ -68,6 +69,7 @@ func statue_stomp() -> void:
 	await play_and_wait("stomp_windup")
 	if is_dead: return
 	sprite.play("stomp")
+	sfx("stomp")
 	var count := 5 if phase == 1 else 7
 	for i in count:
 		if is_dead: return
@@ -78,6 +80,7 @@ func statue_stomp() -> void:
 
 func spawn_pillar(pos: Vector2) -> void:
 	var p := spawn_fx("pillar_rise", pos)
+	sfx("pillar")
 	await p.sprite.animation_finished
 	if not is_instance_valid(p): return
 	p.sprite.play("pillar")
@@ -92,6 +95,7 @@ func coin_rain() -> void:
 	await play_and_wait("rain_windup")
 	if is_dead: return
 	sprite.play("rain")
+	sfx("coin_rain")
 	var count := 8 if phase == 1 else 12
 	for i in count:
 		if is_dead: return
@@ -106,6 +110,7 @@ func statue_guard() -> void:
 	await play_and_wait("guard_start")
 	if is_dead: return
 	sprite.play("guard")
+	sfx("guard")
 	hurtbox.invulnerable = true
 	guarding = true
 	guard_hit = false
@@ -118,7 +123,7 @@ func statue_guard() -> void:
 		spawn_fx("shockwave", global_position + Vector2(30, 50), Vector2(180, 0))
 		spawn_fx("shockwave", global_position + Vector2(-30, 50), Vector2(-180, 0))
 		await sprite.animation_finished
-		
+
 func _on_hurtbox_area_entered(area: Area2D) -> void:
 	if guarding and area is Hitbox: guard_hit = true
 
@@ -134,6 +139,7 @@ func topple() -> void:
 	await sprite.animation_finished
 	if is_dead: return
 	topple_hitbox.deactivate()
+	sfx("topple")
 	spawn_fx("shockwave", global_position + Vector2(direction * 110, 50), Vector2(direction * 180, 0))
 	sprite.play("topple_down")
 	await wait(down_time)

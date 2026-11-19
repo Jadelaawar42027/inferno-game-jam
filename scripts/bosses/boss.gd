@@ -28,7 +28,7 @@ const FX_SCENE := preload("res://scenes/fx/boss_fx.tscn")
 @export var guide_lines: Array[DialogLine]
 @export var guide_name := "Virgil"
 @export var guide_portrait: Texture2D
-
+@export var sfx_prefix := ""
 
 var intro_done := false
 var phase := 1
@@ -113,6 +113,7 @@ func _on_health_changed(current: int, max_hp: int) -> void:
 		if ratio <= phase_thresholds[i]: next = i + 2
 	if next > phase:
 		phase = next
+		SFX.play("boss_phase")
 		say("phase" + str(phase))
 		phase_changed.emit(phase)
 		on_phase_entered(phase)
@@ -129,6 +130,7 @@ func die() -> void:
 	for child in get_children():
 		if child is Hitbox: child.deactivate()
 	boss_defeated.emit()
+	sfx("death")
 	say("death")
 	if sprite.sprite_frames and sprite.sprite_frames.has_animation("death"):
 		sprite.play("death")
@@ -151,6 +153,7 @@ func face_player() -> void:
 	if dx != 0: set_facing(signf(dx))
 
 func play_and_wait(anim_name: String, fallback := 0.4) -> void:
+	if anim_name == "roar": sfx("roar")
 	if sprite.sprite_frames and sprite.sprite_frames.has_animation(anim_name):
 		sprite.stop()
 		sprite.play(anim_name)
@@ -158,6 +161,7 @@ func play_and_wait(anim_name: String, fallback := 0.4) -> void:
 	else: await wait(fallback)
 
 func spawn_fx(anim: String, pos: Vector2, vel := Vector2.ZERO) -> BossFx:
+	if anim == "shockwave" or anim == "warning": SFX.play(anim)
 	var fx := FX_SCENE.instantiate() as BossFx
 	fx.anim_name = anim
 	fx.velocity = vel
@@ -168,6 +172,7 @@ func spawn_fx(anim: String, pos: Vector2, vel := Vector2.ZERO) -> BossFx:
 func _on_hurt(_hitbox: Hitbox) -> void:
 	if is_dead: return
 	on_hit_flash()
+	SFX.play("boss_hurt")
 	if randf() < 0.3: say("hurt", false)
 
 func say(moment: String, interrupt := true) -> void:
@@ -179,6 +184,7 @@ func play_intro(p: Player) -> void:
 	intro_done = true
 	face_player()
 	say("intro")
+	sfx("roar")
 	var has_roar: bool = sprite.sprite_frames != null and sprite.sprite_frames.has_animation(intro_anim)
 	var left := intro_roar_time
 	while left > 0.0 and not is_dead:
@@ -206,3 +212,10 @@ func talk(lines: Array[DialogLine], speaker := "", pic: Texture2D = null) -> voi
 	if pic == null: pic = portrait
 	dialog.dialog_start(speaker, lines, true, pic)
 	await dialog.dialog_finished
+
+func sfx_key(sound: String) -> String:
+	var own := sfx_prefix + "_" + sound
+	return own if SFX.sounds.has(own) else sound
+
+func sfx(sound: String) -> void:
+	SFX.play(sfx_key(sound))

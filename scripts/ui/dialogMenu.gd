@@ -56,6 +56,7 @@ func show_line():
 		if line.VOICE != "": VoiceManager.play_line(line.VOICE, "Master")
 
 func next_line():
+	SFX.play("ui_dialog")
 	LINES_INDEX += 1
 	if LINES_INDEX < LINES_ARRAY.size():
 		show_line()
@@ -69,4 +70,3 @@ func _unhandled_input(event):
 	if visible and (event.is_action_pressed("interact") or event.is_action_pressed("ui_accept")):
 		next_line()
 		get_viewport().set_input_as_handled()
-		

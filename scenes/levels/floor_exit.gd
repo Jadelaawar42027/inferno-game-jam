@@ -18,6 +18,7 @@ func set_open(value: bool, instant: bool) -> void:
 	barrier_shape.set_deferred("disabled", value)
 	if instant: seal.modulate.a = 0.0 if value else 1.0
 	else: create_tween().tween_property(seal, "modulate:a", 0.0 if value else 1.0, 0.8)
+	if value and not instant: SFX.play("exit_open")
 
 func _on_body_entered(body: Node2D) -> void:
 	if not open or not body is Player: return

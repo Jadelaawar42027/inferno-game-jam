@@ -9,13 +9,16 @@ func _unhandled_input(event):
 	if event.is_action_pressed("pause"):
 		get_tree().paused = not get_tree().paused
 		visible = get_tree().paused
+		SFX.play("ui_pause")
 		get_viewport().set_input_as_handled()
 
 func _on_resume_pressed() -> void:
+	SFX.play("ui_select")
 	get_tree().paused = false
 	visible = false
 
 func _on_quit_pressed() -> void:
+	SFX.play("ui_select")
 	$QuitConfirm.popup_centered()
 
 func _on_quit_confirm_confirmed() -> void:

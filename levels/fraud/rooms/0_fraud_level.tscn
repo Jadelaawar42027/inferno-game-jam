@@ -2405,6 +2405,7 @@ color = Color(1, 0.8, 0.45, 1)
 [node name="FerryBeast" parent="." unique_id=1290722783 instance=ExtResource("912_hub")]
 position = Vector2(5328, 1741.33)
 auto_start = false
+sfx_prefix = ""
 
 [node name="ArenaTrigger" parent="." unique_id=1993210185 node_paths=PackedStringArray("boss", "gates") instance=ExtResource("914_hub")]
 position = Vector2(4880, 1692)

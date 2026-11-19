@@ -78,6 +78,7 @@ death_lines = Array[ExtResource("4_4a6vd")]([SubResource("Resource_aq8lw"), SubR
 guide_lines = Array[ExtResource("4_4a6vd")]([SubResource("Resource_njm3d")])
 guide_name = "Virgil"
 guide_portrait = ExtResource("6_aq8lw")
+sfx_prefix = "oni"
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=220595465]
 position = Vector2(0, -3)

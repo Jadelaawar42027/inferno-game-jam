@@ -11,11 +11,13 @@ var velocity := Vector2.ZERO
 var gravity := 0.0
 var land_anim := ""
 var harmless_on_land := false
+var land_sfx := ""
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hitbox: Hitbox = $Hitbox
 @onready var hit_shape: CollisionShape2D = $Hitbox/CollisionShape2D
 @onready var ray: RayCast2D = $Ray
+
 
 func _ready() -> void:
 	sprite.play(anim_name)
@@ -34,6 +36,7 @@ func _physics_process(delta: float) -> void:
 func land() -> void:
 	gravity = 0.0
 	velocity = Vector2.ZERO
+	if land_sfx != "": SFX.play(land_sfx)
 	if SIZES.has(land_anim):
 		(hit_shape.shape as RectangleShape2D).size = SIZES[land_anim]
 		hitbox.position.y = -SIZES[land_anim].y / 2 if land_anim in GROUND else 0.0
