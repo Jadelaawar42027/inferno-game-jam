@@ -5,6 +5,7 @@ class_name DashBehavior
 @export var dash_speed := 420.0
 @export var dash_time := 0.18
 @export var cooldown := 0.5
+@export var iframe_time := 0.3
 
 var timer := 0.0
 var cooldown_timer := 0.0
@@ -29,3 +30,5 @@ func start_dash() -> void:
 	player.end_attack()
 	player.play_action("dash")
 	SFX.play("dash")
+	player.hurtbox.invulnerable = true
+	player.invincibility_timer = iframe_time
