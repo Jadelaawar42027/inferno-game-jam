@@ -103,7 +103,7 @@ func _on_satan_defeated() -> void:
 	player.anim.play("cast")
 	player.anim.play("freeze")
 	SFX.play("ice_crack")
-	await player.anim.animation_finished
+	await get_tree().create_timer(1.2).timeout
 
 func rockfall() -> void:
 	while quaking:
