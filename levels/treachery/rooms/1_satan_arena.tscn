@@ -638,7 +638,7 @@ position = Vector2(352, 419)
 position = Vector2(524.8, 419)
 
 [node name="CamFace" type="Marker2D" parent="Cutscene" unique_id=2008250883]
-position = Vector2(640, 254)
+position = Vector2(640, 326.42)
 
 [node name="CamDuel" type="Marker2D" parent="Cutscene" unique_id=1899514645]
 position = Vector2(496, 344)
