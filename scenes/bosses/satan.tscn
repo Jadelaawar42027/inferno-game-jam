@@ -85,9 +85,6 @@ sprite_frames = ExtResource("3_edr2l")
 frame_progress = 0.0
 offset = Vector2(0, -301)
 
-[node name="HealthComponent" parent="." index="2" unique_id=555885103]
-max_health = 120
-
 [node name="Hurtbox" parent="." index="3" unique_id=887145532]
 position = Vector2(0, -70)
 

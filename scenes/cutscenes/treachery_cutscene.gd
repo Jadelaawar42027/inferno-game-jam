@@ -19,6 +19,10 @@ const FX := preload("res://scenes/fx/boss_fx.tscn")
 @export var lines_quake: Array[DialogLine]
 @export var lines_goodbye: Array[DialogLine]
 
+@export var fight_zoom := Vector2(1.0, 1.0)
+var start_zoom := Vector2.ONE
+
+
 var quaking := false
 
 
@@ -72,6 +76,8 @@ func play_short() -> void:
 
 func grab_camera() -> void:
 	cam = player.camera
+	start_zoom = cam.zoom
+	create_tween().set_trans(Tween.TRANS_SINE).tween_property(cam, "zoom", fight_zoom, 0.8)
 	var p := cam.global_position
 	cam.top_level = true
 	cam.global_position = p
@@ -93,6 +99,7 @@ func _on_satan_defeated() -> void:
 	await satan.tree_exited
 	var dialog = get_tree().get_first_node_in_group("dialog_box")
 	await player.play_absorb_animation(null)
+	create_tween().set_trans(Tween.TRANS_SINE).tween_property(cam, "zoom", start_zoom, 0.6)
 	player.absorbing = true
 	player.anim.play("idle")
 	quaking = true
@@ -107,7 +114,6 @@ func _on_satan_defeated() -> void:
 	dialog.dialog_start("Dante", lines_goodbye, false)
 	await dialog.dialog_finished
 	GameState.go_to_next_floor()
-
 
 func rockfall() -> void:
 	while quaking:

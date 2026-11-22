@@ -1,5 +1,7 @@
 extends Control
 
+func _ready() -> void:
+	MusicManager.play("awakening")
 
 func _on_play_button_pressed() -> void:
 	SFX.play("ui_select")

@@ -26,7 +26,7 @@ var a: AudioStreamPlayer
 var b: AudioStreamPlayer
 var current: AudioStreamPlayer
 var current_key := ""
-
+const START_AT := {"satan_boss": 30.0}
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -47,7 +47,7 @@ func play(key: String, fade := 1.0) -> void:
 	var next := b if current == a else a
 	next.stream = TRACKS[key]
 	next.volume_db = -40.0
-	next.play()
+	next.play(START_AT.get(key, 0.0))
 	var old := current
 	current = next
 	var t := create_tween().set_parallel()

@@ -5,6 +5,7 @@ class_name Player
 signal absorb_finished(ability: Ability)
 
 @onready var visual: Node2D = $Visual
+@export var fraud_health_multiplier := 4
 
 @export_group("Movement")
 @export var run_speed :float = 150
@@ -252,6 +253,9 @@ func _ready() -> void:
 	down_slash.hit_landed.connect(_on_slash_hit.bind(down_slash))
 	hurtbox.hurt.connect(_on_hurt)
 	health.died.connect(_on_died)
+	if GameState.has_ability(&"invisibility"):
+		health.max_health *= fraud_health_multiplier
+		health.reset()
 	anim.animation_finished.connect(_on_anim_finished)
 	anim.frame_changed.connect(_on_frame_changed)
 	anim.play("idle")

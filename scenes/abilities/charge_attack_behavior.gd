@@ -4,7 +4,7 @@ class_name ChargeAttackBehavior
 
 @export var min_charge := 0.5
 @export var max_charge := 3.0
-@export var max_damage := 4
+@export var damage_multiplier := 2.0
 @export var move_slow := 0.4
 
 var hold := 0.0
@@ -32,10 +32,9 @@ func physics_update(delta: float) -> void:
 func release() -> void:
 	if charge_sfx: charge_sfx.stop()
 	SFX.play("charge_release")
-	var ratio := clampf((hold - min_charge) / (max_charge - min_charge), 0.0, 1.0)
 	hold = 0.0
 	charging = false
-	player.side_slash.damage = 2 + int(ratio * (max_damage - 2))
+	player.side_slash.damage = int(base_damage * damage_multiplier)
 	player.side_slash.position.x = player.facing * 19
 	player.active_hitbox = player.side_slash
 	player.side_slash.activate()

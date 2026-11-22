@@ -110,7 +110,7 @@ shape = SubResource("RectangleShape2D_ugbui")
 position = Vector2(19, -11)
 collision_layer = 8
 collision_mask = 384
-damage = 100
+damage = 4
 
 [node name="CollisionShape2D" parent="Attacks/SideSlash" index="0" unique_id=612733107]
 shape = SubResource("RectangleShape2D_fcs02")
@@ -127,7 +127,7 @@ animation = &"slash"
 position = Vector2(0, -34)
 collision_layer = 8
 collision_mask = 384
-damage = 20
+damage = 4
 
 [node name="CollisionShape2D" parent="Attacks/UpSlash" index="0" unique_id=612733107]
 shape = SubResource("RectangleShape2D_myrg7")
@@ -144,7 +144,7 @@ animation = &"slash"
 position = Vector2(0, 11)
 collision_layer = 8
 collision_mask = 384
-damage = 20
+damage = 4
 pogo_allowed = true
 
 [node name="CollisionShape2D" parent="Attacks/DownSlash" index="0" unique_id=612733107]

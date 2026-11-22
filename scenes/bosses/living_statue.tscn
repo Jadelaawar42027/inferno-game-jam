@@ -102,7 +102,7 @@ sprite_frames = ExtResource("3_3gqlq")
 frame_progress = 0.0
 
 [node name="HealthComponent" parent="." index="2" unique_id=555885103]
-max_health = 50
+max_health = 70
 
 [node name="Hurtbox" parent="." index="3" unique_id=887145532]
 collision_mask = 8

@@ -3471,7 +3471,7 @@ Jump + Down Slash To Pogo
 "
 
 [node name="Tutorial3" parent="Tutorial" unique_id=1812372519 instance=ExtResource("912_hub")]
-position = Vector2(4041, 656)
+position = Vector2(4040, 656)
 text = "Double Tap Space To 
 Double Jump
 
@@ -3481,7 +3481,7 @@ Head Down Now!
 [node name="GuideArrows" type="Node2D" parent="." unique_id=1675589963]
 
 [node name="Arrow1" parent="GuideArrows" unique_id=1999417816 instance=ExtResource("912_hub")]
-position = Vector2(3703, 238)
+position = Vector2(3685, 243)
 text = "v"
 font_size = 16
 color = Color(1, 0.8, 0.45, 1)
@@ -3575,7 +3575,7 @@ gates = [NodePath("../Gates/Gate_L"), NodePath("../Gates/Gate_R")]
 
 [node name="WallText" parent="." unique_id=1344689292 instance=ExtResource("917_hub")]
 modulate = Color(3, 3, 3, 1)
-position = Vector2(6976, 1456)
+position = Vector2(6969, 1455)
 ability = ExtResource("918_hub")
 
 [connection signal="died" from="Breakables/PotClayCrock1/health_component" to="Breakables/PotClayCrock1" method="queue_free"]

@@ -13,6 +13,8 @@ var reveal_pending := false
 var faking := false
 var fake_hit := false
 
+@onready var contact_hitbox: Hitbox = $ContactHitbox
+
 func get_attacks() -> Array[String]:
 	var d := absf(dx_to_player())
 	var list: Array[String] = ["spray"]
@@ -109,6 +111,7 @@ func slither_lunge(skip_windup := false) -> void:
 		await play_and_wait("lunge_windup")
 		if is_dead: return
 	sprite.play("lunge")
+	contact_hitbox.deactivate()
 	lunge_hitbox.activate()
 	var t := 0.0
 	while (t < 0.1 or not is_on_wall()) and t < 1.2 and not is_dead:
@@ -118,6 +121,7 @@ func slither_lunge(skip_windup := false) -> void:
 	var hit_wall := is_on_wall()
 	velocity.x = 0
 	lunge_hitbox.deactivate()
+	contact_hitbox.activate()
 	if is_dead: return
 	await play_and_wait("lunge_end")
 	if hit_wall and not is_dead:

@@ -121,7 +121,7 @@ sprite_frames = ExtResource("3_jpny8")
 frame_progress = 0.0
 
 [node name="HealthComponent" parent="." index="2" unique_id=555885103]
-max_health = 60
+max_health = 90
 
 [node name="CollisionShape2D" parent="Hurtbox" parent_id_path=PackedInt32Array(887145532) index="0" unique_id=1868882131]
 shape = SubResource("RectangleShape2D_vhf5f")
