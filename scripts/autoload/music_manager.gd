@@ -38,20 +38,23 @@ func _ready() -> void:
 	add_child(b)
 	current = a
 
-
 func play(key: String, fade := 1.0) -> void:
 	if key == current_key: return
+	if not TRACKS.has(key): 
+		push_warning("Music missing: " + key) 
+		return
 	current_key = key
 	var next := b if current == a else a
 	next.stream = TRACKS[key]
 	next.volume_db = -40.0
 	next.play()
+	var old := current
+	current = next
 	var t := create_tween().set_parallel()
 	t.tween_property(next, "volume_db", 0.0, fade)
-	t.tween_property(current, "volume_db", -40.0, fade)
+	t.tween_property(old, "volume_db", -40.0, fade)
 	await t.finished
-	current.stop()
-	current = next
+	if old != current: old.stop()
 
-func play_for_scene(path: String) -> void:
-	if FLOOR_TRACKS.has(path): play(FLOOR_TRACKS[path])
+func play_for_scene(path: String, fade := 1.0) -> void:
+	if FLOOR_TRACKS.has(path): play(FLOOR_TRACKS[path], fade)

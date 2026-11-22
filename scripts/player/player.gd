@@ -69,6 +69,13 @@ var is_invisible := false
 var slash_combo := 0
 var is_dead = false
 
+@export var max_air_jumps := 1
+@export var double_jump_velocity :float = -290
+@onready var double_jump_puff: CPUParticles2D = $DoubleJumpPuff
+
+var air_jumps_left := 0
+
+
 func start_attack(dir: float) -> void:
 	if dir != 0:
 		facing = int(dir)
@@ -121,6 +128,7 @@ func _physics_process(delta: float) -> void:
 	
 	if is_on_floor():
 		coyote_timer = coyote_time
+		air_jumps_left = max_air_jumps
 	else: 
 		coyote_timer -= delta
 	
@@ -148,6 +156,13 @@ func _physics_process(delta: float) -> void:
 			velocity.y = jump_velocity
 			jump_buffer_timer = 0
 			coyote_timer = 0
+		elif Input.is_action_just_pressed("jump") and air_jumps_left > 0:
+			velocity.y = double_jump_velocity
+			air_jumps_left -= 1
+			jump_buffer_timer = 0
+			double_jump_puff.restart()
+			play_action("double_jump")
+
 			
 		if Input.is_action_just_released("jump") and velocity.y < 0:
 			velocity.y *= jump_cut_multiplier

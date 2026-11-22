@@ -3464,10 +3464,18 @@ position = Vector2(3684, 225)
 text = "Folow The Arrows To Boss"
 
 [node name="Tutorial2" parent="Tutorial" unique_id=27449550 instance=ExtResource("912_hub")]
-position = Vector2(3984, 646.4)
+position = Vector2(3900, 656)
 text = "Space To Jump
 
 Jump + Down Slash To Pogo
+"
+
+[node name="Tutorial3" parent="Tutorial" unique_id=1812372519 instance=ExtResource("912_hub")]
+position = Vector2(4041, 656)
+text = "Double Tap Space To 
+Double Jump
+
+Head Down Now!
 "
 
 [node name="GuideArrows" type="Node2D" parent="." unique_id=1675589963]
@@ -3558,6 +3566,7 @@ color = Color(1, 0.8, 0.45, 1)
 
 [node name="TeppaniOni" parent="." unique_id=1351169364 instance=ExtResource("913_hub")]
 position = Vector2(6976, 1613.33)
+boss_track = ""
 
 [node name="ArenaTrigger" parent="." unique_id=979082255 node_paths=PackedStringArray("boss", "gates") instance=ExtResource("915_hub")]
 position = Vector2(6512, 1564)

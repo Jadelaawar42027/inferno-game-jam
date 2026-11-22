@@ -66,6 +66,7 @@ func change_to(path: String) -> void:
 	else: get_tree().change_scene_to_file(path)
 	await get_tree().process_frame
 	await get_tree().process_frame
+	MusicManager.play_for_scene(get_tree().current_scene.scene_file_path)
 	get_tree().paused = false
 	await fade(0.0)
 	transitioning = false

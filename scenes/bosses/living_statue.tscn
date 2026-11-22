@@ -88,6 +88,7 @@ guide_lines = Array[ExtResource("4_j5jpt")]([SubResource("Resource_23gyv")])
 guide_name = "Virgil"
 guide_portrait = ExtResource("6_23gyv")
 sfx_prefix = "statue"
+boss_track = "greed_boss"
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=220595465]
 position = Vector2(0, -2)

@@ -71,6 +71,7 @@ guide_lines = Array[ExtResource("3_ms46o")]([])
 guide_name = "Virgil"
 guide_portrait = ExtResource("5_2ultc")
 sfx_prefix = "satan"
+boss_track = "satan_boss"
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=220595465]
 position = Vector2(0, -70)

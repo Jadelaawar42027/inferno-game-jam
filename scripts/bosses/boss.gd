@@ -29,6 +29,7 @@ const FX_SCENE := preload("res://scenes/fx/boss_fx.tscn")
 @export var guide_name := "Virgil"
 @export var guide_portrait: Texture2D
 @export var sfx_prefix := ""
+@export var boss_track := ""
 
 var intro_done := false
 var phase := 1
@@ -54,6 +55,7 @@ func activate(p: Player) -> void:
 	if active or is_dead or p == null: return
 	player_target = p
 	active = true
+	if boss_track != "": MusicManager.play(boss_track, 0.5)
 	boss_started.emit()
 	brain()
 
@@ -130,6 +132,7 @@ func die() -> void:
 	for child in get_children():
 		if child is Hitbox: child.deactivate()
 	boss_defeated.emit()
+	MusicManager.play_for_scene(get_tree().current_scene.scene_file_path, 2.0)
 	sfx("death")
 	say("death")
 	if sprite.sprite_frames and sprite.sprite_frames.has_animation("death"):

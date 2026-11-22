@@ -108,6 +108,7 @@ guide_lines = Array[ExtResource("4_ia6u2")]([SubResource("Resource_8p6un")])
 guide_name = "Virgil"
 guide_portrait = ExtResource("6_mm4tc")
 sfx_prefix = "butcher"
+boss_track = "violence_boss"
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=220595465]
 shape = SubResource("RectangleShape2D_ouu0a")

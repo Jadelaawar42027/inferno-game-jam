@@ -20,6 +20,7 @@ const KNIGHT_FRAMES := preload("res://assets/sprites/knight/knight_frames_hd.tre
 const VIRGIL_PORTRAIT := preload("res://assets/sprites/portraits/virgil_portrait.png")
 
 func _ready() -> void:
+	MusicManager.play("awakening")
 	var pulse := create_tween().set_loops()
 	pulse.tween_property(circle_glow, "modulate:a", 0.3, 2.2).set_trans(Tween.TRANS_SINE)
 	pulse.parallel().tween_property(circle_light, "energy", 0.55, 2.2).set_trans(Tween.TRANS_SINE)
