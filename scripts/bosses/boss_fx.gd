@@ -5,6 +5,9 @@ class_name BossFx
 const SIZES := {"shockwave": Vector2(24, 16), "fire": Vector2(22, 24), "meatball": Vector2(14, 14), "rock": Vector2(16, 16), "venom": Vector2(10, 10), "puddle": Vector2(30, 5), "pillar_rise": Vector2(22, 60), "coin": Vector2(8, 8)}
 const GROUND := ["shockwave", "fire", "puddle", "pillar_rise", "warning"]
 const LIFE := {"shockwave": 0.9, "fire": 2.0, "warning": 0.6, "puddle": 4.0}
+const FLOOR_ANIMS := ["shockwave", "fire", "puddle", "pillar_rise", "pillar", "pillar_sink", "warning", "meatball_idle", "rock_break"]
+const FLOOR_OFFSET := -132.0
+
 
 var anim_name := "meatball"
 var velocity := Vector2.ZERO
@@ -20,6 +23,7 @@ var land_sfx := ""
 
 
 func _ready() -> void:
+	if anim_name in FLOOR_ANIMS: sprite.offset.y = FLOOR_OFFSET
 	sprite.play(anim_name)
 	sprite.flip_h = velocity.x < 0
 	var size: Vector2 = SIZES.get(anim_name, Vector2.ZERO)
@@ -45,6 +49,7 @@ func land() -> void:
 	if land_anim == "":
 		queue_free()
 		return
+	sprite.offset.y = FLOOR_OFFSET if land_anim in FLOOR_ANIMS else 0.0
 	sprite.play(land_anim)
 	if not sprite.sprite_frames.get_animation_loop(land_anim):
 		await sprite.animation_finished

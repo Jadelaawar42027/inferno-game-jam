@@ -18,25 +18,25 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_docu8"]
 size = Vector2(12, 22)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gx1jg"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugbui"]
 resource_local_to_scene = true
 size = Vector2(10, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugbui"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcs02"]
 resource_local_to_scene = true
 size = Vector2(40, 34)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_y5xv1"]
 blend_mode = 1
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcs02"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_myrg7"]
 resource_local_to_scene = true
 size = Vector2(34, 40)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_80f48"]
 blend_mode = 1
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_myrg7"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvlxm"]
 resource_local_to_scene = true
 size = Vector2(34, 40)
 
@@ -101,7 +101,7 @@ health = NodePath("../health_component")
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=1868882131]
 position = Vector2(0, -10)
-shape = SubResource("RectangleShape2D_gx1jg")
+shape = SubResource("RectangleShape2D_ugbui")
 
 [node name="Attacks" type="Node2D" parent="." unique_id=804652063]
 
@@ -112,7 +112,7 @@ collision_mask = 384
 damage = 100
 
 [node name="CollisionShape2D" parent="Attacks/SideSlash" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_ugbui")
+shape = SubResource("RectangleShape2D_fcs02")
 
 [node name="SlashFX" type="AnimatedSprite2D" parent="Attacks/SideSlash" unique_id=1823698374]
 visible = false
@@ -129,7 +129,7 @@ collision_mask = 384
 damage = 20
 
 [node name="CollisionShape2D" parent="Attacks/UpSlash" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_fcs02")
+shape = SubResource("RectangleShape2D_myrg7")
 
 [node name="SlashFX" type="AnimatedSprite2D" parent="Attacks/UpSlash" unique_id=602250638]
 visible = false
@@ -147,7 +147,7 @@ damage = 20
 pogo_allowed = true
 
 [node name="CollisionShape2D" parent="Attacks/DownSlash" index="0" unique_id=612733107]
-shape = SubResource("RectangleShape2D_myrg7")
+shape = SubResource("RectangleShape2D_kvlxm")
 
 [node name="SlashFX" type="AnimatedSprite2D" parent="Attacks/DownSlash" unique_id=1053420339]
 visible = false

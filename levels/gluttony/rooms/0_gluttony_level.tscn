@@ -3450,19 +3450,30 @@ font_size = 8
 [node name="Tutorial" type="Node2D" parent="." unique_id=947822245]
 
 [node name="Tutorial1" parent="Tutorial" unique_id=71991689 instance=ExtResource("912_hub")]
-position = Vector2(3504, 646.4)
+position = Vector2(3646, 657)
+text = "These Lead You To The Boss Faster:"
+
+[node name="Beginning" parent="Tutorial" unique_id=1882387057 instance=ExtResource("912_hub")]
+position = Vector2(3684, 94)
 text = "A/D To Move
 
 Left Mouse Button To Attack"
 
+[node name="Beginning2" parent="Tutorial" unique_id=163068235 instance=ExtResource("912_hub")]
+position = Vector2(3684, 225)
+text = "Folow The Arrows To Boss"
+
 [node name="Tutorial2" parent="Tutorial" unique_id=27449550 instance=ExtResource("912_hub")]
 position = Vector2(3984, 646.4)
-text = "Space To Jump"
+text = "Space To Jump
+
+Jump + Down Slash To Pogo
+"
 
 [node name="GuideArrows" type="Node2D" parent="." unique_id=1675589963]
 
 [node name="Arrow1" parent="GuideArrows" unique_id=1999417816 instance=ExtResource("912_hub")]
-position = Vector2(3680, 115.2)
+position = Vector2(3703, 238)
 text = "v"
 font_size = 16
 color = Color(1, 0.8, 0.45, 1)
@@ -3547,7 +3558,6 @@ color = Color(1, 0.8, 0.45, 1)
 
 [node name="TeppaniOni" parent="." unique_id=1351169364 instance=ExtResource("913_hub")]
 position = Vector2(6976, 1613.33)
-auto_start = false
 
 [node name="ArenaTrigger" parent="." unique_id=979082255 node_paths=PackedStringArray("boss", "gates") instance=ExtResource("915_hub")]
 position = Vector2(6512, 1564)
