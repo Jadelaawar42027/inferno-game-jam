@@ -16,13 +16,14 @@ func _on_returnto_main_pressed() -> void:
 	SFX.play("ui_select")
 	%SettingsPanelContainer.visible = false
 	%CenterContainer.visible = true
-
+	%MainCamera2D.make_current()
 
 #Opens the setting page
 func _on_settings_pressed() -> void:
 	SFX.play("ui_select")
 	%SettingsPanelContainer.visible = true
 	%CenterContainer.visible = false
+	%Settings2DCamera.make_current()
 
 #
 

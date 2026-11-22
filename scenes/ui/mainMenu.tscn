@@ -1,9 +1,42 @@
 [gd_scene format=3 uid="uid://crpl31c0famvp"]
 
 [ext_resource type="Script" uid="uid://7pyhkosvmmky" path="res://scripts/ui/mainMenu.gd" id="1_ph80j"]
-[ext_resource type="PackedScene" uid="uid://degaw268gnce8" path="res://scenes/levels/scene_1.tscn" id="2_j3ryx"]
+[ext_resource type="PackedScene" uid="uid://bi64a2q6pyui4" path="res://levels/gluttony/rooms/0_gluttony_level.tscn" id="2_f0x07"]
 [ext_resource type="Script" uid="uid://bbs2bb6iblexb" path="res://scripts/Components/input_settings.gd" id="3_c8enf"]
+[ext_resource type="PackedScene" uid="uid://bejik2t3denae" path="res://levels/fraud/rooms/0_fraud_level.tscn" id="3_f0x07"]
 [ext_resource type="PackedScene" uid="uid://bkalkey6fv1tf" path="res://scenes/ui/input_button.tscn" id="4_oxtcp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6rc6a"]
+resource_local_to_scene = true
+size = Vector2(10, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ceogi"]
+resource_local_to_scene = true
+size = Vector2(40, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5v4xd"]
+resource_local_to_scene = true
+size = Vector2(34, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ds3hr"]
+resource_local_to_scene = true
+size = Vector2(34, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0nxtt"]
+resource_local_to_scene = true
+size = Vector2(10, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hx7br"]
+resource_local_to_scene = true
+size = Vector2(40, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wipqc"]
+resource_local_to_scene = true
+size = Vector2(34, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iug6h"]
+resource_local_to_scene = true
+size = Vector2(34, 40)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2h2w"]
 bg_color = Color(0.28118682, 0.28118688, 0.2811868, 1)
@@ -21,9 +54,99 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ph80j")
 
-[node name="TestArea" parent="." unique_id=1130552543 instance=ExtResource("2_j3ryx")]
+[node name="MainCamera2D" type="Camera2D" parent="." unique_id=1446681083]
+unique_name_in_owner = true
+position = Vector2(2491, 829)
+zoom = Vector2(2, 2)
+
+[node name="Settings2DCamera" type="Camera2D" parent="." unique_id=2045931190]
+unique_name_in_owner = true
+visible = false
+position = Vector2(2697, 2795)
+zoom = Vector2(2, 2)
+
+[node name="GorgingKitchens2" parent="." unique_id=1443486961 instance=ExtResource("2_f0x07")]
 process_mode = 4
 position = Vector2(318, 179)
+
+[node name="Player" parent="GorgingKitchens2" index="11" unique_id=2062711150]
+visible = false
+
+[node name="Camera2D" parent="GorgingKitchens2/Player" index="2" unique_id=623591930]
+enabled = false
+
+[node name="CollisionShape2D" parent="GorgingKitchens2/Player/Hurtbox" parent_id_path=PackedInt32Array(1443486961, 2062711150, 887145532) index="0" unique_id=1868882131]
+shape = SubResource("RectangleShape2D_6rc6a")
+
+[node name="CollisionShape2D" parent="GorgingKitchens2/Player/Attacks/SideSlash" parent_id_path=PackedInt32Array(1443486961, 2062711150, 1898026828) index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_ceogi")
+
+[node name="CollisionShape2D" parent="GorgingKitchens2/Player/Attacks/UpSlash" parent_id_path=PackedInt32Array(1443486961, 2062711150, 2052691650) index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_5v4xd")
+
+[node name="CollisionShape2D" parent="GorgingKitchens2/Player/Attacks/DownSlash" parent_id_path=PackedInt32Array(1443486961, 2062711150, 614013444) index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_ds3hr")
+
+[node name="UI" parent="GorgingKitchens2/Player" index="7" unique_id=1341298659]
+visible = false
+
+[node name="AmbientFill26" parent="GorgingKitchens2/Lights" parent_id_path=PackedInt32Array(1443486961, 1920909662) index="75" unique_id=2042832263]
+position = Vector2(2941, 1006)
+
+[node name="AmbientFill27" parent="GorgingKitchens2/Lights" parent_id_path=PackedInt32Array(1443486961, 1920909662) index="76" unique_id=907936719]
+position = Vector2(2175, 648)
+
+[node name="BurgerGrunt" parent="GorgingKitchens2/Enemies" parent_id_path=PackedInt32Array(1443486961, 1936344992) index="0" unique_id=1967836048]
+position = Vector2(2232, 729)
+
+[node name="Tutorial" parent="GorgingKitchens2" index="18" unique_id=947822245]
+visible = false
+
+[node name="GuideArrows" parent="GorgingKitchens2" index="19" unique_id=1675589963]
+visible = false
+
+[node name="GardenOfLies" parent="." unique_id=599813052 instance=ExtResource("3_f0x07")]
+process_mode = 4
+position = Vector2(522, 2039)
+
+[node name="Exits" parent="GardenOfLies" index="9" unique_id=1336800967]
+visible = false
+
+[node name="Player" parent="GardenOfLies" index="11" unique_id=1734184684]
+visible = false
+
+[node name="Camera2D" parent="GardenOfLies/Player" index="2" unique_id=623591930]
+visible = false
+
+[node name="CollisionShape2D" parent="GardenOfLies/Player/Hurtbox" parent_id_path=PackedInt32Array(599813052, 1734184684, 887145532) index="0" unique_id=1868882131]
+shape = SubResource("RectangleShape2D_0nxtt")
+
+[node name="CollisionShape2D" parent="GardenOfLies/Player/Attacks/SideSlash" parent_id_path=PackedInt32Array(599813052, 1734184684, 1898026828) index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_hx7br")
+
+[node name="CollisionShape2D" parent="GardenOfLies/Player/Attacks/UpSlash" parent_id_path=PackedInt32Array(599813052, 1734184684, 2052691650) index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_wipqc")
+
+[node name="CollisionShape2D" parent="GardenOfLies/Player/Attacks/DownSlash" parent_id_path=PackedInt32Array(599813052, 1734184684, 614013444) index="0" unique_id=612733107]
+shape = SubResource("RectangleShape2D_iug6h")
+
+[node name="UI" parent="GardenOfLies/Player" index="7" unique_id=1341298659]
+visible = false
+
+[node name="Enemies" parent="GardenOfLies" index="15" unique_id=1981317121]
+visible = false
+
+[node name="Checkpoints" parent="GardenOfLies" index="16" unique_id=1524091901]
+visible = false
+
+[node name="SecretMessages" parent="GardenOfLies" index="17" unique_id=98555912]
+visible = false
+
+[node name="Tutorial" parent="GardenOfLies" index="18" unique_id=1601873881]
+visible = false
+
+[node name="GuideArrows" parent="GardenOfLies" index="19" unique_id=317595422]
+visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1386325699]
 
@@ -72,7 +195,6 @@ offset_right = 321.0
 offset_bottom = 183.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_b2h2w")
 
 [node name="SettingsContainer" type="CenterContainer" parent="CanvasLayer/SettingsPanelContainer" unique_id=838409989]
 layout_mode = 2
@@ -181,6 +303,8 @@ layout_mode = 2
 layout_mode = 2
 text = "Keybinds
 "
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ScrollContainer_Keybinds" type="ScrollContainer" parent="CanvasLayer/KeybindsPanelContainer/KeybindsContainer/VBoxContainer" unique_id=823073098]
 custom_minimum_size = Vector2(200, 30)
@@ -209,3 +333,57 @@ text = "Back"
 [connection signal="pressed" from="CanvasLayer/SettingsPanelContainer/SettingsContainer/VBoxContainer/Keybinds" to="." method="_on_keybinds_pressed"]
 [connection signal="pressed" from="CanvasLayer/SettingsPanelContainer/SettingsContainer/VBoxContainer/ReturntoMain" to="." method="_on_returnto_main_pressed"]
 [connection signal="pressed" from="CanvasLayer/KeybindsPanelContainer/KeybindsContainer/VBoxContainer/ReturnToSettings" to="." method="_on_return_to_settings_pressed"]
+
+[editable path="GorgingKitchens2"]
+[editable path="GorgingKitchens2/Hazards/Spikes1"]
+[editable path="GorgingKitchens2/Hazards/Spikes2"]
+[editable path="GorgingKitchens2/Hazards/Spikes3"]
+[editable path="GorgingKitchens2/Hazards/Spikes4"]
+[editable path="GorgingKitchens2/Hazards/Spikes5"]
+[editable path="GorgingKitchens2/Hazards/Spikes6"]
+[editable path="GorgingKitchens2/Breakables/PotClayCrock1/Hurtbox"]
+[editable path="GorgingKitchens2/Breakables/PotBarrel1/Hurtbox"]
+[editable path="GorgingKitchens2/Breakables/PotFlourSack1/Hurtbox"]
+[editable path="GorgingKitchens2/Breakables/PotClayCrock2/Hurtbox"]
+[editable path="GorgingKitchens2/Breakables/PotBarrel2/Hurtbox"]
+[editable path="GorgingKitchens2/Breakables/Block1/Hurtbox"]
+[editable path="GorgingKitchens2/Breakables/PotBonePile1/Hurtbox"]
+[editable path="GorgingKitchens2/Breakables/PotBonePile2/Hurtbox"]
+[editable path="GorgingKitchens2/Breakables/PotPlateStack1/Hurtbox"]
+[editable path="GorgingKitchens2/Player"]
+[editable path="GorgingKitchens2/Player/Hurtbox"]
+[editable path="GorgingKitchens2/Player/Attacks/SideSlash"]
+[editable path="GorgingKitchens2/Player/Attacks/UpSlash"]
+[editable path="GorgingKitchens2/Player/Attacks/DownSlash"]
+[editable path="GorgingKitchens2/Checkpoints/Checkpoint1"]
+[editable path="GorgingKitchens2/Checkpoints/Checkpoint2"]
+[editable path="GorgingKitchens2/Checkpoints/Checkpoint3"]
+[editable path="GardenOfLies"]
+[editable path="GardenOfLies/Hazards/Pool1"]
+[editable path="GardenOfLies/Hazards/Pool2"]
+[editable path="GardenOfLies/Hazards/Pool3"]
+[editable path="GardenOfLies/Hazards/Spikes1"]
+[editable path="GardenOfLies/Hazards/Spikes2"]
+[editable path="GardenOfLies/Breakables/PotUrn1/Hurtbox"]
+[editable path="GardenOfLies/Breakables/PotUrn2/Hurtbox"]
+[editable path="GardenOfLies/Breakables/PotMirror1/Hurtbox"]
+[editable path="GardenOfLies/Breakables/PotMirror2/Hurtbox"]
+[editable path="GardenOfLies/Breakables/PotMirror3/Hurtbox"]
+[editable path="GardenOfLies/Breakables/PotUrn3/Hurtbox"]
+[editable path="GardenOfLies/Breakables/PotUrn4/Hurtbox"]
+[editable path="GardenOfLies/Breakables/PotMirror4/Hurtbox"]
+[editable path="GardenOfLies/Breakables/PotUrn5/Hurtbox"]
+[editable path="GardenOfLies/Breakables/PotUrn6/Hurtbox"]
+[editable path="GardenOfLies/Breakables/PotMirror5/Hurtbox"]
+[editable path="GardenOfLies/Breakables/PotUrn7/Hurtbox"]
+[editable path="GardenOfLies/Breakables/PotMirror6/Hurtbox"]
+[editable path="GardenOfLies/Breakables/PotUrn8/Hurtbox"]
+[editable path="GardenOfLies/Switches/Target1/Hurtbox"]
+[editable path="GardenOfLies/Player"]
+[editable path="GardenOfLies/Player/Hurtbox"]
+[editable path="GardenOfLies/Player/Attacks/SideSlash"]
+[editable path="GardenOfLies/Player/Attacks/UpSlash"]
+[editable path="GardenOfLies/Player/Attacks/DownSlash"]
+[editable path="GardenOfLies/Checkpoints/Checkpoint1"]
+[editable path="GardenOfLies/Checkpoints/Checkpoint2"]
+[editable path="GardenOfLies/Checkpoints/Checkpoint3"]
